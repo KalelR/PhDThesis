@@ -1,0 +1,7 @@
+*.png
+figures/*
+*.aux
+*.lot
+*.fls
+*.fdb*
+*.zip

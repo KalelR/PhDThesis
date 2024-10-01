@@ -1,0 +1,158 @@
+\documentclass[reprint,onecolumn,superscriptaddress,showpacs,amsmath,amssymb,aps,prx,floatfix,]{revtex4-2}
+% \documentclass[reprint,superscriptaddress,showpacs,amsmath,amssymb,aps,prx,floatfix,]{revtex4-2}
+% \documentclass[preprint,superscriptaddress,showpacs,amsmath,amssymb,aps,prx,floatfix,]{revtex4-2}
+
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath}
+\usepackage{graphicx}		
+\usepackage{natbib}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{mathrsfs}
+\usepackage{multirow}
+\usepackage{xfrac}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{comment}
+% \newcommand*{\meanR}{\ensuremath{\langle R \rangle}}
+\newcommand*{\meanR}{\ensuremath{R}}
+\newcommand*{\walrus}{\ensuremath{\coloneqq}}
+\renewcommand\thefigure{S\arabic{figure}}
+
+% \renewcommand{\i}{\mathrm{i}}
+
+\begin{document}
+
+\title{Supplemental Material - Small changes at single nodes can shift global network dynamics}
+
+\author{Kalel L. Rossi}
+\affiliation{Theoretical Physics/Complex Systems, ICBM, Carl von Ossietzky University of Oldenburg, Oldenburg, Lower Saxony, Germany}
+\author{Roberto C. Budzinski}
+\affiliation{Department of Mathematics, Western University, London, Ontario, Canada}
+\affiliation{Brain and Mind Institute, Western University, London, Ontario, Canada}
+\affiliation{Western Academy for Advanced Research, Western University, London, Ontario, Canada}
+\author{Bruno R. R. Boaretto}
+\affiliation{Institute of Science and Technology, Federal University of São Paulo, São José dos Campos, São Paulo, Brazil}
+\author{Lyle E. Muller}
+\affiliation{Department of Mathematics, Western University, London, Ontario, Canada}
+\affiliation{Brain and Mind Institute, Western University, London, Ontario, Canada}
+\affiliation{Western Academy for Advanced Research, Western University, London, Ontario, Canada}
+\author{Ulrike Feudel}
+\affiliation{Theoretical Physics/Complex Systems, ICBM, Carl von Ossietzky University of Oldenburg, Oldenburg, Lower Saxony, Germany}
+
+
+\maketitle
+
+
+%\section*{Supplementary Results}
+
+% (c) we add another type of realization: changing the seed controlling the random rewiring of connections in the topology. In the region of strong STSF, we fix a coupling strength $\epsilon = XX$ and rewiring probability $p = XX$, and study the system at different shuffles of the natural frequencies and different samples of the topology. The network with highest degree of PS for each shuffle is marked with X, so we see that different networks are most synchronized at different shuffles. 
+
+% than others (Sup. Fig. \ref{sup:fig:complexxsensitivity}(a)); increasing the $\omega_{switched}$ of a single unit does not change the synchronization monotonically (Fig. \ref{fig:complexxsensitivity}(b)); no network realization synchronizes more, or less, than others (Fig. \ref{fig:complexxsensitivity}(c)).
+
+% Fig. \ref{fig:complexxsensitivity}(a) takes a closer look at panels (i) and (k) of Fig. \ref{fig:transition_sync} by calculating the difference between $\meanR$ of each shuffle with the unshuffled, original, realization. Red indicates that a shuffle is more synchronized than the unshuffled version, while blue indicates it is less synchronized. We see no shuffle synchronizes more for all topologies; instead, there is a complex dependence on the frequencies and $p$.
+% The same is true for panel (b), where we again compare realizations where a chosen unit's frequency was changed by $\delta \omega$ and the original, unchanged version. The black dashed lines indicate roughly where differences in the degree of synchronization become significant, above $0.1$ in this case. To generate at least this difference, the frequency of the units needs to be changed by at least $\delta \omega XX$. This is a small change, but not infinitesimal. Further, we see that the synchronization is not a monotonic function of $\delta \omega$, thereby making it harder to predict the behavior of the system given some change.  
+% \begin{figure*}[htb]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{figures/figure_3.pdf}
+%     \caption{\textbf{Complex sensitivity}. (a): Difference between mean degree of phase synchronization $\meanR$ for each shuffle id and the original, unshuffled realization for $\epsilon = 4.51282$ for $20$ shuffles. Red squares indicate shuffles which enhanced the PS, while blue indicates those whose decreased it. No shuffle id always synchronizes more, or less, than others. x-special/nautilus-clipboard
+% copy
+% file:///home/kalel/tethys/malleability/plots/paper/sensitivity/sensitivity-deltaR-deltaomega-unitid-ku_ws_501_unit_p01145_eps451282_varyomegaadd_linspace-80unitsonly.pdf
+%  \textcolor{orange}{I would just remove panel a, it is not very convincing.}
+%     }
+%     \label{sup:fig:complexxsensitivity}
+% \end{figure*}
+
+
+\section{Malleability due to changes on the topology}
+In the main text, we focus on the dynamical changes arising from changing natural frequencies of the oscillators. However, similar changes occur if the natural frequencies are kept fixed and the topology is changed instead. To show this, we study the dynamical malleability during the topology-induced transition in Watts-Strogatz networks. Since the Watts-Strogatz networks are generated by a random rewiring of connections with probability $p$, different realizations of the rewiring (i.e. of the link-disorder) lead to different networks. In Fig. S1, we show the result for 500 distinct realizations for each value of $p$, and we see an increase in the dynamical malleability during the transition to phase synchronization, very similarly to the results for shuffling natural frequencies. These results corroborate the generality of the increased dynamical malleability near synchronization transitions - networks are similarly sensitive to disorder in both parameter types, frequency and topology.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{figures/resampletopology-transitionsync-p.png}
+    \caption{\textbf{Resampling topology has very similar effects to shuffling frequencies}. Analogous to Fig. 3e, keeping the original frequencies and initial conditions, but simulating networks generated via the Watts-Strogatz algorithm with a different seed for the random rewiring. Resampling topology has a similar effect to resampling the natural frequencies by shuffling, for instance.}
+    \label{sup:fig:transitionresamplingtop}
+\end{figure}
+
+
+\section{Scaling of malleability}
+How does the amplitude of dynamical malleability (i.e. the sample-to-sample fluctuations) depend on the size of the networks? To study this, we repeat the parameter space shown in Fig. 4 of the main text for smaller and bigger networks. Smaller networks have significant dynamical malleability spread over a wider region of the parameter space, which is consistent with the fact that phase transitions become more blurred in smaller networks, meaning the transitions occur over wider regions. As the network size increases, the region with dynamical malleability decreases, as the transition curves move closer to the transition in the thermodynamic limit. This is qualitatively consistent with calculations made in (Hong et al., \textit{Physical Review Letters} 99, 184101, 2007) for all-to-all networks. The amplitude of the malleability is extremely large for smaller networks, and the difference $\Delta$ between the most and least synchronized samples for $N = 25$ can reach $\Delta = 0.99$. Interestingly, this amplitude does not decrease rapidly with network size, and remains high for even $N = 5000$. In this case, $\Delta = 0.88$ was reached in the most malleable cases.  This suggests that the dynamical malleability remains non-zero in the vicinity of the transition (the critical line) for networks with size $N\to\infty$, a phenomenon called non-self-averaging. Indeed, all-to-all networks were suggested to be non-self-averaging in (Hong et al., \textit{Journal of the Korean Physical Society}, 49 5, 2006). The results point out qualitative consistency in the scaling for Watts-Strogatz and all-to-all networks already reported in the literature, and show that the behavior we observe here can occur for a wide range of network sizes.
+
+\begin{figure*}[htb]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/scaling-allNs-epstill10.png}
+    \caption{\textbf{Scaling of malleability with system size}. For each network size $N$, the left panel shows the time-averaged degree of phase synchronization averaged over $501$ samples of the natural frequencies and over $5$ samples of topology; while the left panel shows the standard deviation over the samples, averaged over the topologies. The region of significant sample-to-sample (STS) fluctuations decreases with the network size $N$, but the peak of fluctuations (measured through either standard deviation of gap $\Delta$) decreases only slightly up to $N = 5000$, reaching $\Delta = 0.9$ there. The decrease in the size of the STS fluctuations region is described by (Hong et al., \textit{Physical Review Letters} 99, 184101, 2007) for all-to-all networks as scaling with $N^{-2/5}$. The scaling in the magnitude of the STS fluctuations seems to suggest the networks are non-self-averaging. }
+    \label{sup:fig:scaling}
+\end{figure*}
+
+\section{Frequency synchronization and temporal fluctuations}
+We have focused in this work mainly on the synchronization of the phases $\theta$, and not on the instantaneous frequencies $\dot{\theta}$. As stated in the main text, this is because the arrangement of the phases, measured by the degree of phase synchronization, is the quantity that changes most and more clearly. To understand this, we can look at measures of the degree of frequency synchronization in the same parameter space as in Fig. 4. Commonly, the instantaneous frequencies $\dot{\theta}$ are distributed across different orders of magnitude, with several units having $\dot{\theta}$ close to the average, at $0$, and a few outliers with $|\dot{\theta}| \sim 10$. Because of this, we use three different dispersion quantifiers, measuring different aspects of the distribution : (i) the interquartile interval IQI measures the difference between the $75$th and $25$th percentile of the distribution, and so is a measure of dispersion of the bulk frequencies, excluding outliers; (ii) the standard deviation, calculated as usual, which thus considers the bulk and the outliers; (iii) the gap of the distribution, meaning the difference between the maximum and minimum values, which thus only considers the outliers. Each of these quantifiers is applied at each time step of the time-series and then averaged over time so that we obtain $\mathrm{FS}_k \walrus \langle \mathrm{k}( \{\dot{\theta}(t)\}) \rangle$, in which $k = \{\mathrm{IQI}, \mathrm{std}, \mathrm{gap}\}$. This value, averaged over $1000$ samples, is shown on the left part of panels of Fig. S3. On the right part, we see the standard deviation of these values across samples. We thus see, as expected, that for very small coupling strengths $\epsilon$ (roughly, $\epsilon \lessapprox 0.8$), there is no frequency synchronization, as all dispersion measures are high, and there are none or very little sample-to-sample fluctuations. As the coupling gets stronger, the instantaneous frequencies get more synchronized. But the quantifiers start to decrease (towards zero, meaning frequency synchronized) at different values of $\epsilon$. We see that $\overline{\mathrm{FS}_I}$ decreases first, meaning the bulk frequencies start to synchronize first; then $\overline{\mathrm{FS}_s}$ decreases and later $\overline{\mathrm{FS}_g}$ decreases, meaning the outlier units are the last to synchronize their frequencies. For these averages across samples, there is a weak dependence on the topology, as networks with more shorter-range connections tend to reach frequency synchronization later. 
+
+The sample-to-sample fluctuations of the frequency synchronization also increase during the transition from frequency desynchronization to frequency synchronization, and peak right before the samples reach frequency synchronization, similarly to the behavior for phase synchronization (see Fig. 3e, for instance). Therefore, the frequency synchronization has a similar phenomenology as the phase synchronization, but the latter has a stronger dependence on the topology, which is more interesting. The sample-to-sample fluctuations for phase synchronization are also clearer, motivating our choice to focus on it.
+
+% We can also look at the temporal fluctuations of the degree of phase synchronization $r(t)$. To do this, we measure its standard deviation across each sample, generating $\chi \walrus \mathrm{std}(r(t))$, and then average over samples (left part) or calculate the standard deviation across samples (right part) of Fig. S3 (d). As usual in transitions to synchronization, the fluctuations in $r(t)$ increase during the transition. The networks with high fluctuations in $r(t)$ have been verified to keep this behavior for long periods, suggesting it is not due to a short transient.
+
+%
+\begin{figure*}[htb]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/frequencysynchronization.png}
+    \caption{\textbf{Frequency synchronization in parameter surface.}  The panels show additional quantifiers for the same setup as Fig. 4: they are color-coded over the same parameter space $p \text{---} \epsilon$ and analyzed over the same $1000$ simulations. Within each panel, the left part shows the average over the simulations, while the right shows the standard deviation. Panel (a) shows quantifier $\mathrm{FS}_I \walrus \langle \mathrm{IQI}(\{\dot{\theta}(t)\}) \rangle$, the temporal average over the interquartile interval of the instantaneous frequencies $\dot{\theta}_i$, a measure of dispersion of the bulk frequencies (difference between $75$th and $25$th percentile); panel (b) shows $\mathrm{FS}_s \walrus \langle \mathrm{std}(\{\dot{\theta}(t)\}) \rangle$, the standard deviation over the instantaneous frequencies; panel (c) shows $\mathrm{FS}_g \walrus \langle \mathrm{gap}(\{\dot{\theta}(t)\}) \rangle$, the gap (difference between extremes) of the instantaneous frequencies. All are thus measures of the synchronization of instantaneous frequencies, with the latter two more sensitive to the behavior of outliers.
+    % Panel (d) shows the standard deviation $\chi$ of the time-dependent Kuramoto order parameter $r(t)$, and is a measure of the systems' temporal fluctuations. It peaks along the $\epsilon$-induced transition, a well-known behavior at phase transitions.
+    }
+    \label{sup:fig:additionalsurfaces}
+\end{figure*}
+
+\section{Boundaries of basins of attraction are smooth}
+
+As we demonstrate in Fig. 7 of the main text, the Watts-Strogatz networks possess a large number of coexisting attractors (multistability) during the transition to phase synchronization. A possible behavior would be that the boundaries separating the basins of attraction are fractal. This would mean that arbitrarily small changes in the basin boundaries, for fixed parameter changes, or even arbitrarily small noise, could have a large consequence for the network. We chose initial conditions inspired by findings in (Halekotte, \textit{Journal of Physics: Complexity}, 3 2, 2021) which suggested that fractal boundaries are obtained when the initial conditions of units whose degree differ most are changed. Even with this procedure, we obtained a few distinct attractors, each with very distinct degrees of phase synchronization and distinct instantaneous frequencies, and plotted the cross-section of the basins of attraction. We obtain complicated patterns, but still with seemingly smooth basin boundaries. This is also consistent with our results in Fig. 5b, which show that there is a rough minimum threshold for changes in parameters to lead to significant changes in the network's dynamics.
+%
+\begin{figure*}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/basins.png}
+    % \includegraphics[width=0.8\textwidth]{figures/basins_second.png}
+    \caption{\textbf{Cross sections of basins of attraction  for WS networks}. Varied initial condition of two units, keeping all others fixed. These are surfaces of section of the full basins. Attractors here are considered different if their $\meanR$ and other features of the dynamics are different, and the same if all are equal, up to several decimal places, (see discussion in Section 3D for the features). This criterion could be extended to include other comparison features, and results would be the same. Units on the y axis have the highest degree in the network (10) and on the x axis have the lowest degree (3). They were chosen following findings in (Halekotte, \textit{Journal of Physics: Complexity}, 3 2, 2021) which suggested that the cross sections taken from units with more distinct degrees tended to be fractal. Even with these choices, basins boundaries seem to be smooth. Parameters are for high malleability, $\epsilon = 4.51282$, $p = 0.13111$. }
+    \label{sup:fig:basins}
+\end{figure*}
+
+\section{Malleability in simple excitable units}
+As an example of the generality of the phenomenon we describe in the main text, we show here a very similar phenomenology in a very different type of unit: excitable units (cellular automata). Networks with these units have analytically-proven phase transitions from a quiet to an active network state. During these transitions, we observe malleability, very similarly to the Kuramoto networks. 
+
+The results we show are inspired by (Hesse and Gross, 2014, \textit{Frontiers in Systems Neuroscience}, 8 166, 2014), in which the analytical argument for the phase transition is also shown.
+The excitable units are inspired by neuronal dynamics, but very simplified: the units' states and time are discretized. The units have two states: excited or not, and time evolves only in integer numbers. An excited unit at a time step $t$ becomes silent at time $t+1$. To become excited, a unit has to be excited by others. This occurs in the following way: an excited unit has a probability $p$ of exciting the units it is connected to. The units are connected in a network with randomly chosen connections - for our simulations, an Erdos-Renyi network - of size $N$ and average connectivity $z$ an undirected connections. 
+
+An initial activation state (initial condition) can evolve towards a silent state (a fixed point) or towards an active state. This evolution depends on the parameters - the higher the average probability of exciting other units, the higher the chance that activation persists in the network.  The system can be analytically shown to have a phase transition from the silent to the active states as the average connectivity $z$ increases - a phase transition of onset of activity. The order parameter for measuring the transition is, naturally, the average activation $A$: it is the time average of the network average activation. The transition occurs at a critical $z$ value of $z_c = 1/p$. For finite systems, the transition is blurred (different realizations transition at different $z$ values) and shifted towards the right (for higher $z$ values). 
+
+These behaviors can clearly be seen in the simulations, as illustrated in Fig. S5. In (a), the transition is clearly shifted towards the right of $z_c = 1/p = 10$. Tests (not shown) show that increasing $N$ shifts the transition towards the left. For panel (b) we see the malleability: from the topology there is already disorder on the connections, so we can expect malleability by changing the topology realization, which is what we indeed see. Note the large fluctuations, very similar to what is seen in the Kuramoto networks.
+
+Besides malleability, we also see a similar profile for multistability by keeping the topology fixed and changing initial conditions.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/excitableunits.png}
+    \caption{\textbf{Phase transition and malleability in excitable units}
+    (a) the phase transition: the mean activation $A$ over the mean connectivity $z$, averaged over 10 initial conditions and 10 topology samples for $p_i = p = 0.1$ and $N = 100$.  (b) the malleability: for $500$ topology samples with the same initial conditions, at the same parameters of panel (a). As before, the malleability is measured via either $\Delta$, the gap between the maximum and minimum values of $A$, and $\mathrm{std}$, the standard deviation over all values of $A$. (c) the multistability: $500$ initial conditions with the same topology and parameters of (a) are shown in (c); (d) and (e) malleability and multistability in bigger networks: same as panel (b) and (c) respectively but for $N = 500$: the fluctuations decrease as the system tends to the thermodynamic limit. 
+    %(e) malleability for disorder in $p$: now we introduce disorder on the probabilities (such that each unit has a distinct $p$), which generates even more malleability. 
+    }
+    \label{fig:excitableunits}
+\end{figure}
+
+%\bibliography{references}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
