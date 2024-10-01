@@ -284,12 +284,6 @@
 	pdfdisplaydoctitle=true,
 	pdfstartview=Fit,
 	pdfnewwindow=true,
-%
-	pdfcontactaddress={Massachusetts Institute of Technology, 77 Massachusetts Avenue},
-    pdfcontactcity={Cambridge, MA},
-    pdfcontactpostcode={02139-4307},
-    pdfcontactcountry={USA},
-    pdfcontacturl={https://dspace.mit.edu/handle/1721.1/7582},% DSPACE@MIT theses page
 }
  		
 %%%%%%%%%%%%  PDF bookmark strings  %%%%%%%%%%%%%%%%
@@ -903,7 +897,7 @@
 	}
 
 \tl_new:N \g_titlepage_institution_name_tl
-\tl_gset:Nn \g_titlepage_institution_name_tl {Massachusetts\ Institute\ of\ Technology} 
+% \tl_gset:Nn \g_titlepage_institution_name_tl {Massachusetts\ Institute\ of\ Technology} 
 \cs_new:Npn \Institution #1 { \tl_gset:Nn \g_titlepage_institution_name_tl {\tl_trim_spaces:n #1} }
 
 

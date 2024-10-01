@@ -1,3 +1,26 @@
 \chapter{Methodology}
 
-\section[Multistability]{Multistability}
+\section[Multistability]{Multistability: coexistence of multiple end solutions}
+
+A dynamical system is described by a state variable $x = (x_1, x_2, \ldots, x_n)^T \in M$, where $M$ is called the state space. Typically, $M = \mathbb{R}^n$, when it is said to be n-dimensional. The state variable is thus a point in this state space. In a continuous-time dynamical system, the state evolves according to the equation:
+%
+\begin{align}\label{eq:general-ds}
+    \dot{x}(t) = f(x(t); p)
+\end{align}
+
+where $f : M->M$ and $p$ denotes parameters of the system.  Systems obeying Eq.~\ref{eq:general-ds} are deterministic: the system's future state, described in $x(t)$, is completely determined by XX. There is no randomness, no stochasticity, no noise, that is external to this evolution and that would break this determinism. Therefore, by providing an initial state, an initial condition, $x_0$, we can integrate the system forwards and backwards in time and obtain a trajectory $x(t)$. This is also said to be a solution of the system, obeying the condition $x(0) = x_0$.  A fundamental theorem for these systems is the theorem of existence and uniqueness of solutions. MAIS NA PAG 47 DO ARGYRYS. It states that for every initial condition $x_0$ there is one unique solution $x(t)$. Another initial condition $x_{0,2} \notin x(t)$ will generate a different trajectory $x_2(t)$ that never intersects $x(t)$. This provides a crucial property in state space: trajectories cannot intersect.  
+Furthermore, there is a lack of an explicit time dependence in $f$ - i.e., $\frac{\partial f}{\partial t} = 0$. In this case, the dynamical system is said to be autonomous. This type of system is the one we focus on in this thesis. 
+
+Although trajectories do not cross, they can converge to the same end point. A very simple mathematical example is a linear system, of the form 
+\begin{align}
+    \dot{x}(t) = A x(t)
+\end{align}
+
+where $A$ is a constant $(n \times n)$ matrix. The general solution to this system can be written analytically:
+%
+\begin{align}\label{eq:solution-linear}
+    x(t) = \sum_{i=1}^n C_i e^{\lambda_i t} y_i
+\end{align}
+
+where $\lambda_i \in \mathbb{C}$ and $y_i \in \mathbb{R}^n$ are the eigenvalues and eigenvectors, respectively, of the matrix $A$. This is in the case when the eigenvalues $\lambda_i$ are different. Then, each initial condition determines the constant coefficients $C_i \in \mathbb{R}$. CHECK THE CONDITION OF DIFFERENT EIGENVALUES - OR DOES IT JUST HAVE TO BE DIAGONALIZABLE? WHAT Happens when there are repeated eigenvals?
+From Eq.~\ref{eq:solution-linear} we notice that the origin of the system, $x = 0$ is a solution. If all the eigenvalues are negative, then all trajectories in state space converge onto this point as $t \to \infty$. In this case, the origin is said to be an attracting solution, or an attractor. 

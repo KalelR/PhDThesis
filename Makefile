@@ -1,6 +1,8 @@
 MAIN=main
 OUTPUT=$(MAIN).pdf
 
+all: clean main open
+
 main: $(MAIN).tex
 	@pdflatex $(MAIN)
 	@bibtex   $(MAIN)
@@ -13,12 +15,10 @@ bib:
 
 # dessa forma somente os arquivos removidos são listados na saída
 clean:
-	rm paper-malleability/*.aux
-	rm *.aux
-	rm 'main.synctex(busy)'
+	@rm -f paper-malleability/*.aux
+	@rm -f *.aux
+	@rm -f 'main.synctex(busy)'
 open:
-	xdg-open $(OUTPUT)&
+	@xdg-open $(OUTPUT)&
 
-purge: clean
-	@rm -f $(OUTPUT)
 
