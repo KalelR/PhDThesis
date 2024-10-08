@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Our dynamical systems and the uniqueness and existence of their solutions}{9}{}%
 \contentsline {subsection}{\numberline {2.1.2}The fate of linear dynamical systems}{9}{}%
 \contentsline {subsection}{\numberline {2.1.3}The fate of nonlinear dynamical systems I: attractors}{10}{}%
-\contentsline {subsection}{\numberline {2.1.4}Formalizing attractors and basins}{10}{}%
+\contentsline {subsection}{\numberline {2.1.4}Formalizing attractors and basins}{12}{}%
 \contentsline {subsection}{\numberline {2.1.5}Invariant manifolds: structures that organize state space}{13}{}%
 \contentsline {subsection}{\numberline {2.1.6}The fate of nonlinear systems II: multistability and basins of attraction}{15}{}%
 \contentsline {subsection}{\numberline {2.1.7}How to find attractors}{16}{}%
