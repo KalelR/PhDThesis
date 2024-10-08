@@ -1,6 +1,6 @@
 \chapter{Methodology}
 
-\section[Multistability]{Fundamental (to us) aspects of dynamical systems theory}
+\section{Some fundamental aspects of dynamical systems theory}
 
 \subsection{Our dynamical systems and the uniqueness and existence of their solutions}
 In this thesis we study dynamical systems described by a state variable $x = (x_1, x_2, \ldots, x_n)^T \in M $, where $M \subseteq \mathbb{R}^n$ is the state space, and $T$ denotes the transpose operation. The state variable is a point in this n-dimensional state space. In a continuous-time dynamical system, the state evolves according to the equation:
@@ -19,16 +19,17 @@ In state space, each solution describes a trajectory, a path, that goes through 
 
 A useful notation for the evolution of a continuous dynamical system is through the evolution operator $\Phi^t(x)$, which, informally defined, evolves the point $x$ forward $t$ time units. That is, $\Phi^t(x(0)) = x(t)$.
 
-\subsection{The fate of linear dynamical systems}
+\subsection{The fate of linear dynamical systems}\label{method:linear-system}
 Although trajectories do not cross, they can share the same fate, meaning they can converge to the region in state space. We can introduce this notion with a very simple mathematical example of a linear system. It has the form
 % 
 \begin{align}
     \dot{x}(t) = A x(t)
+    \label{eq:linear}
 \end{align}
 
 where $A$ is a constant $(n \times n)$ matrix. %An example of a linear system if a simple harmonic oscillator, which is composed of a spring with constant $k$ connected to a body of mass $m$, whose position then changes according to $m\ddot{x} + kx = 0$. has to have friction here  
 
-If the eigenvalues $\lambda_i \in \mathbb{C}$ of $A$ are all unique, its eigenvectors $v_i \in \mathbb{R}^n$ are linearly independent. Then, the general solution to this system can be written as \cite{strogatz2002nonlinear}:
+If the eigenvalues $\lambda_i \in \mathbb{C}$ of $A$ are all unique, its eigenvectors $v_i \in \mathbb{R}^n$ are linearly independent. Then, the general solution to this system can be written as Ref.~\cite{strogatz2002nonlinear}:
 %
 \begin{align}\label{eq:solution-linear}
     x(t) = \sum_{i=1}^n C_i e^{\lambda_i t} v_i.
@@ -37,7 +38,7 @@ If the eigenvalues $\lambda_i \in \mathbb{C}$ of $A$ are all unique, its eigenve
 Then, each initial condition determines the constant coefficients $C_i \in \mathbb{R}$. 
 From Eq.~\ref{eq:solution-linear} we can already notice that the origin of the system, $ o = (0, \ldots, 0)^T$, is a solution. In fact, it is an equilibrium: $\dot{x} = f(o) = 0$. A trajectory on the origin does not change over time.
 
-As we see from Eq. \ref{eq:solution-linear}, the behavior of trajectories depends on the eigenvalues $\lambda_i$ of the matrix $A$. We can classify the equilibrium at the origin based on these eigenvalues, as shown in Fig.~\ref{fig:method:equilibria-linear.} If the real parts of all the eigenvalues are negative, then all trajectories in state space converge to the origin as $t \to \infty$. In this case, the origin is said to be a stable equilibrium (Figs. \ref{fig:method:equilibria-linear}A-B). If at least one eigenvalue is negative, the trajectories diverge from the origin, which is then an unstable equilibrium (Figs. \ref{fig:method:equilibria-linear}C-F). Stability here refers to the behavior of trajectories near the equilibrium. If it stable, nearby trajectories converge to the equilibrium - or, equivalently, small perturbations that take a trajectory away from the equilibrium will eventually go back to the equilibrium. If it is unstable, then nearby trajectories diverge from it.
+As we see from Eq. \ref{eq:solution-linear}, the behavior of trajectories depends on the eigenvalues $\lambda_i$ of the matrix $A$. We can classify the equilibrium at the origin based on these eigenvalues, as shown in Fig.~\ref{fig:method:equilibria-linear}. If the real parts of all the eigenvalues are negative, then all trajectories in state space converge to the origin as $t \to \infty$. In this case, the origin is said to be a stable equilibrium (Figs. \ref{fig:method:equilibria-linear}A-B). If at least one eigenvalue is negative, the trajectories diverge from the origin, which is then an unstable equilibrium (Figs.~\ref{fig:method:equilibria-linear}C-E). Stability here refers to the behavior of trajectories near the equilibrium. If it stable, nearby trajectories converge to the equilibrium - or, equivalently, small perturbations that take a trajectory away from the equilibrium will eventually go back to the equilibrium. If it is unstable, then nearby trajectories diverge from it.
 
 
 Stable equilibria are the only attracting solution, or attractor, of linear systems. In this case, although different trajectories cannot not intersect, they all converge to the origin as $t \to \infty$. %This origin itself has no dynamics: the trajectory starting at the origin does not move. For this reason we say that the origin, the attractor in this system, is invariant: the set $\{o\}$ flows onto itself.  
@@ -53,70 +54,59 @@ In summary, the ultimate fate of linear systems is kind of boring: either trajec
 
 
 
-\subsection{The fate of nonlinear dynamical systems I: attractors}
-As just seen, stable equilibria are the only possible attractors in linear systems. This is far from true in the case of nonlinear systems. The possible long-term dynamics then can be much more interesting. To start off, stable equilibria are still possible, as shown in Figs.\ref{fig:method:attractors-nonlinear}A-B. Here we also see a different type of transient than for linear systems. The system here is excitable, which means that some trajectories are forced to go on long excursions (excitations) before converging to the stable equilibrium. We study more about this system in Chapter \ref{chap:multistability}. Besids equilibria, nonlinear systems can also have periodic solutions, which vary in time with a certain period $T$ (Fig.~\ref{fig:method:attractors-nonlinear}C). In state space, they correspond to closed curves. Periodic orbits with attracting tendencies are usually called limit cycles \cite{}. 
-Not all curves in state space are closed, however. One can have quasiperiodic dynamics, in which trajectories never repeat exactly, although they might almost repeat. This is seen in Figs.~\ref{fig:method:attractors-nonlinear}E-F. 
-Finally, one can also have chaotic attractors. 
+\subsection{The fate of nonlinear dynamical systems I: attractors}\label{method:nonlinear-I}
+As just seen, stable equilibria are the only possible attractors in linear systems. Going beyond Eq.\ref{eq:linear}, nonlinear systems can have more interesting and complicated long-term dynamics (Fig.~\ref{fig:method:attractors-nonlinear}). Stable equilibria are still possible, as shown in Figs.\ref{fig:method:attractors-nonlinear}A-B. The system here is a conductance-based neuronal model following equations \cite{izhikevichbook}
+%
+\begin{align}
+    &\dot{x} = \big(I - g_L (x_i - E_L)  
+    - g_{Na} m_\infty(x_i) (x_i - E_{Na}) 
+    -g_K y_i (x_i - E_K) \big)/C, \notag\\
+    &\dot{y} = (n_\infty(x) - y_i) / \tau,
+    \label{eq:inapk}
+\end{align}
+
+with all parameters and functions defined in detail in Chapter \ref{chap:multistability}. The input current $I$ is chosen to be $I=2.0$ so the system has excitable dynamics. Its state space is composed of a stable equilibrium, the only attractor, and two unstable equilibria, which create excitable dynamics. Excitability is a type of transient different than seen for linear systems. Some trajectories are forced to go on long excursions (excitations) before converging to the stable equilibrium. We study more about this again in Chapter \ref{chap:multistability}.
+
+Besides equilibria, nonlinear systems can also have periodic solutions, also called limit cycles. They vary in time with a certain period $T$ (Fig.~\ref{fig:method:attractors-nonlinear}C) and correspond to closed curves in state space (Fig.~ \ref{fig:method:attractors-nonlinear}). The system used in this example is still the neuronal model of Eq.\ref{eq:inapk}, but with a different parameter $I=6$, which leads to the system now having a stable limit cycle. We see in this figure again an example of a long transient, with the trajectory initially going on a long excursion before converging to the limit cycle.
+
+Not all curves in state space are closed, however. One can have quasiperiodic dynamics, in which trajectories never repeat exactly, although they might almost repeat. This is seen in Figs.~\ref{fig:method:attractors-nonlinear}E-F. Simulating the trajectory for longer times would fill up the figure more and more. Further, note the varying amplitude of the time series. The system in this example is the forced Van der Pol oscillator, 
+%
+\begin{align}
+    &\dot{x} = v \\
+    &\dot{v} = \mu (1-x^2)v - \alpha x + g \cos(\omega_f t),
+    \label{eq:vanderpol},
+\end{align}
+with parameters $\mu=0.1$, $\alpha=1.0$, $g=0.5$, $\omega_f=\sqrt{3}$ taken from Ref.\cite{shukla2014a}.
+
+
+Finally, one can also have chaotic attractors (Figs.\ref{fig:method:attractors-nonlinear}G-H). These solutions have a wild behavior that nearby trajectories tend to diverge at an exponential rate \cite{}. Despite this local divergence, however, the solutions remain bounded in space. 
+In other words, systems with chaotic attractors are very sensitive to the initial conditions - small changes in initial conditions lead to trajectories that can look very different.  
+% % Moreover, a chaotic attractor typically has a dense set of unstable periodic orbits embedded within it. These periodic orbits form the skeleton of the chaotic dynamics \cite{scholarppedia}
+% The geometric structure of the solutions is very complicated, so proper rigorous analysis are often too difficult to perform. One important result, following the Poincaré-Bendixon Theorem, is that chaos is only possible in flows of dimension $3$ upwards (for maps, dimension $1$ already suffices) \cite{glendinning_1994, strogatz_2018}.
+The system used to generate is shown as the Lorenz system, with equations 
+%
+\begin{align}
+    &\dot{x} = \sigma. (y-x) \\ 
+    &\dot{y} = x(\rho-z) - y \\ 
+    &\dot{z} = x*y -\beta*z,
+    \label{eq:lorenz}
+\end{align}
+and $\sigma = 10$, $\rho = 28$, $\beta = 8/3$. This chaotic attractor in particular has a shape that resembles a butterfly, with trajectories spending some time on one wing before switching to the other wing \cite{argyrisbook}. 
+
 
 
 \begin{figure*}[htb!]
     \centering 
     \includegraphics[width=\textwidth]{attractors-nonlinear/attractors-nonlinear.png}
-    \caption{Basic types of attractors in nonlinear dynamical systems. Each column shows respectively the state space and a time-series of a typical trajectory converging to a type of attractor. The first column corresponds to the Inapk system with $I=2.0$, which has excitable dynamics, converging to a stable equilibrium. The second column shows again the Inapk system but with $I=6.0$, when it now has a stable limit cycle. The third column shows the system defined in Eqs.\ref{}, with a quasiperiodic attractor Finally, column four has an example of a chaotic trajectory on the Lorenz system (Eq.~\ref{eq:lorenz}).}
+    \caption{Basic types of attractors in nonlinear dynamical systems. Each column shows respectively the state space and a time-series of a typical trajectory converging to a type of attractor. The first column corresponds to the neuronal model of Eq.\ref{eq:inapk} with $I=2.0$, which has excitable dynamics, converging to a stable equilibrium. The second column shows again the neuronal system of Eq.\ref{eq:inapk} but with $I=6.0$, when the attractor is now a stable limit cycle. The third column shows the system defined in Eqs.\ref{eq:vanderpol}, with a quasiperiodic attractor Finally, column four has an example of a chaotic trajectory on the Lorenz system (Eq.~\ref{eq:lorenz}).}
     \label{fig:method:attractors-nonlinear}    
 \end{figure*}
 
-Van der Pol
-\begin{align}
-    &\dot{x} = v \\
-    &\dot{v} = \mu (1-x^2)v - \alpha x + g \cos(\omega_f t)
-\end{align}
 
-Lorenz:
-\begin{align}
-    &\dot{x} = \sigma. (y-x) \\ 
-    &\dot{y} = x(\rho-z) - y \\ 
-    &\dot{z} = x*y -\beta*z
-\end{align}
 
 Given now these examples, let us now define the terms we have used a bit more properly. 
 
-% \section{Types of attrators}
-% We can study now a brief over overview of different types of attractors.
 % 
-% \subsection{Fixed points and equilibria}
-% Fixed points (used for maps) and equilibria (for flows) are constant solutions. Mathematically, they are 
-% 
-% \begin{align}
-%    \mathbf{x}_{n+1} &= \mathbf{x}_n \quad \mathrm{(maps)} \\ 
-%    \dot{\mathbf{x}} &= \mathbf{0} \quad \mathrm{(flows)}.
-% \end{align}
-% 
-% For a neuron, this corresponds to the resting state. For further reference, an equilibrium with at least one unstable direction is called a saddle. Also, an orbit connecting a saddle to itself is called a homoclinic orbit.
-% 
-% \subsubsection{Stability of equilibria}
-% There are many definitions of equilibria. Here we present a simple one that is sufficient for getting the intuition behind the concept. Namely, this is the Lyapunov stability, that, simply defined, says that a point $\vec{x}$ (or an equilibrium) is stable if nearby orbits stay near. That is, if and only if for all $\epsilon > 0$ there exists a $\delta>0$ such that if $|\vec{x}-\vec{y}| < \delta$ then $|f(\vec{x},t) - f(\vec{y},t)| < \epsilon$ for all $t \geq0$ \cite{glendinning_1994}.
-% 
-% 
-% \subsection{Periodic orbits}
-% Periodic orbits are attractors that repeats in time. Mathematically, a non-constant solution $\vec{x}(t)$ is such that, for $T > 0$ 
-% \begin{equation}
-%    \vec{x}(t+T) = \vec{x}(t),
-% \end{equation} 
-% where the minimal $T$ is called the period of the solution. A periodic orbit is, then, the set of points that are mapped during the interval $[0, T]$ (it is the image of the interval under $\vec{x}$) \cite{glendinning_1994}. A two-dimensional periodic orbit is a limit cycle.
-% For a neuron, this corresponds to periodic firing.
-% 
-% \subsection{Stability of periodic orbits}
-% Again, a simple view of stability of periodic orbits comes from taking their Poincaré surface of sections. Taking the periodic orbit, a surface transversal to the flow is defined (the Poincaré section) and we register the intersections of the orbit with the surface, generating the Poincaré map \cite{strogatz_2018}. The periodic orbit is a fixed point in this map, so the stability analysis is the same in this case.
-% 
-% \subsection{Chaotic attractors}
-% Nonlinear systems can have solutions that are not periodic, but are still bounded in space. In this case, nearby trajectories diverge (separate) rapidly in time. In other words, the system is very sensitive to the initial conditions. These solutions are called chaotic, forming chaotic attractors, and are very important for the understanding of nonlinear dynamical systems. 
-% The geometric structure of the solutions is very complicated, so proper rigorous analysis are often too difficult to perform. One important result, following the Poincaré-Bendixon Theorem, is that chaos is only possible in flows of dimension $3$ upwards (for maps, dimension $1$ already suffices) \cite{glendinning_1994, strogatz_2018}.
-% In neurons, this naturally corresponds to chaotic firing.
-% 
-% % Moreover, a chaotic attractor typically has a dense set of unstable periodic orbits embedded within it. These periodic orbits form the skeleton of the chaotic dynamics \cite{scholarppedia}
-% 
-
 \subsection{Formalizing attractors and basins}
 We have just presented examples of attractors, sets of points in state space to which trajectories eventually converge, and their basins of attraction, the regions containing those converging trajectories. Since in this thesis we will deal a lot with these concepts, we provide now an attempt at formalizing. The idea is to have the concepts clear in mind for later. In practice, we will only use the informal definition we just gave. In particular, the definition of attractor can vary considerably in the literature. Without attempting to claim any superiority, we attempt here to provide a definition that suits our studies.  
 
@@ -150,8 +140,8 @@ Furthermore, the Milnor attractor does not have to attract all the points in its
 
 \subsection{Invariant manifolds: structures that organize state space}
 
-In Sec.~\ref{sec:linear-system} we only considered the case when all the eigenvalues of the matrix $A$ in the linear system $\dot{x} = A x$ were positive. If one eigenvalue $\lambda_k$ is positive, then trajectories will diverge to infinity following the corresponding eigenvector $v_k$. When some eigenvalues are positive, and some are negative, the origin is a saddle-point. If all eigenvalues are positive, it is called a repeller.
-Figure \ref{fig:equilibria-types} shows examples of equilibria in 2D linear systems. Note that typical trajectories approach the saddle-point along the $y$-axis and then diverge along the $x$-axis. That is, for $t \to -\infty$, trajectories converge to the $y$-axis and for $t \to \infty$ they converge to the $x$-axis. The $y$-axis is called the stable manifold $\mathbb{W}^s(o)$ of the origin $o$ and the $x$-axis is the unstable manifold $\mathbb{W}^u(o)$ of the origin. We can define these manifolds
+In Sec.~\ref{method:linear-system} we only considered the case when all the eigenvalues of the matrix $A$ in the linear system $\dot{x} = A x$ were positive. If one eigenvalue $\lambda_k$ is positive, then trajectories will diverge to infinity following the corresponding eigenvector $v_k$. When some eigenvalues are positive, and some are negative, the origin is a saddle-point. If all eigenvalues are positive, it is called a repeller.
+Figure \ref{fig:method:equilibria-linear} shows examples of equilibria in 2D linear systems. Note that typical trajectories approach the saddle-point along the $y$-axis and then diverge along the $x$-axis. That is, for $t \to -\infty$, trajectories converge to the $y$-axis and for $t \to \infty$ they converge to the $x$-axis. The $y$-axis is called the stable manifold $\mathbb{W}^s(o)$ of the origin $o$ and the $x$-axis is the unstable manifold $\mathbb{W}^u(o)$ of the origin. We can define these manifolds
 \begin{align}
 &\mathbb{W}^s(o) = \{x \in M: \Phi^t(x) \to o \;\mathrm{as}\; t\to\infty\}, 
 &\mathbb{W}^u(o) = \{x \in M: \Phi^t(x) \to o \;\mathrm{as }\; t\to -\infty\}.
@@ -189,7 +179,7 @@ That is, the behavior of the nonlinear system sufficiently close to the equilibr
 
 But the good news don't stop here! There is the Hartman-Grobman theorem, which basically shows that the state space near a hyperbolic equilibrium to the state space of the linearization. An equilibrium is hyperbolic if the eigenvalues of the Jacobian evaluated on it are all nonzero, i.e., if $\lambda_i \neq 0 \forall i=1,\ldots,n$. Topologically equivalent means that the linearized state space and the local state space near the equilibrium are distorted versions of each other. They can be bended and warped, but not ripped. In particular, closed orbits have to remain closed, and connections between saddle points have to remain \cite{strogatz2002nonlinear}. Mathematically, topologically equivalent means there is a homeomorphism (continuous deformation with continuous inverse) from one state space into the other; trajectories can be mapped from one to the other, and the direction of time is the same \cite{strogatz2002nonlinear}. 
 
-Stating the theorem more formally, suppose a hyperbolic equilibrium $x^\star \in M$ such that $f(x^\star) = 0$ and such that all its eigenvalues are nonzero. Then, there is a neighborhood $N$ of $x^\star$ and a homeomorphism $h: N\to M$ such that \cite{argyris}
+Stating the theorem more formally, suppose a hyperbolic equilibrium $x^\star \in M$ such that $f(x^\star) = 0$ and such that all its eigenvalues are nonzero. Then, there is a neighborhood $N$ of $x^\star$ and a homeomorphism $h: N\to M$ such that \cite{argyrisbook}
 \begin{itemize}
     \item $h(x^\star) = 0$
     \item the flow $\dot{x} = f(x)$ in $N$ is topologically conjugate to the flow of the linearization $\dot{y} = A y$ by the continuous map $y = h(x)$. Topologically conjugate basically meaning a change of coordinates in a topological sense.
@@ -197,7 +187,7 @@ Stating the theorem more formally, suppose a hyperbolic equilibrium $x^\star \in
 
 This guarantees that the stability of the equilibrium is the same in both cases, so we can use the linearization to gain important insights about the stability of equilibria in the nonlinear system! 
 
-What about the stable and unstable manifolds? In analogy to the linear case, we can define local stable and unstable sets near a neighborhood $U$ of an equilibrium $x^\star$ for the nonlinear system \cite{argyris}:
+What about the stable and unstable manifolds? In analogy to the linear case, we can define local stable and unstable sets near a neighborhood $U$ of an equilibrium $x^\star$ for the nonlinear system \cite{argyrisbook}:
 % 
 \begin{align}
 &\mathbb{W}^s_\mathrm{loc}(x^\star) = \{x \in M: \Phi^t(x) \to o \;\mathrm{as}\; t\to+\infty\  \mathrm{and}\; \Phi^t(x) \in U \;\forall t \geq 0\}, \\
@@ -210,31 +200,33 @@ Herein comes the stable manifold theorem. It states that, for a hyperbolic equil
     \item The local unstable set $\mathbb{W}^u_\mathrm{loc}(x^\star)$ is a smooth manifold whose tangent space has the same dimension $n_u$ as the unstable space $\mathbb{E}^u$ of the linearization of $f$ at $x^\star$. $\mathbb{W}^u_\mathrm{loc}(x^\star)$ is also tangent to $\mathbb{E}^u$ at $x^\star$.
 \end{itemize}
 
-The homeomorphism guaranteed by the Hartman-Grobman theorem maps $\mathbb{W}^s_\mathrm{loc}(x^\star)$ into $\mathbb{E}^s$ and $\mathbb{W}^u_\mathrm{loc}(x^\star)$ into $\mathbb{E}^u$ one-to-one, as shown in Fig. XX. Further, the stable manifold theorem guarantees that $\mathbb{E}^s$ and $\mathbb{E}^u$ actually approximate the local manifolds $\mathbb{W}^s_\mathrm{loc}(x^\star)$ and $\mathbb{W}^u_\mathrm{loc}(x^\star)$, respectively \cite{argyris}. As a consequence, we get the behavior in Fig. XX. (fig 6.2.4 do argyris)
+The homeomorphism guaranteed by the Hartman-Grobman theorem maps $\mathbb{W}^s_\mathrm{loc}(x^\star)$ into $\mathbb{E}^s$ and $\mathbb{W}^u_\mathrm{loc}(x^\star)$ into $\mathbb{E}^u$ one-to-one, as shown in Fig. XX. Further, the stable manifold theorem guarantees that $\mathbb{E}^s$ and $\mathbb{E}^u$ actually approximate the local manifolds $\mathbb{W}^s_\mathrm{loc}(x^\star)$ and $\mathbb{W}^u_\mathrm{loc}(x^\star)$, respectively \cite{argyrisbook}. As a consequence, we get the behavior illustrated in \figref{fig:method:invariantmanifolds}
 
 The manifolds we just looked at are defined for a local neighborhood $U$ around the equilibrium. We can extend them towards the whole of state space by defining global manifolds as:
 \begin{align}
     \mathbb{W}^s(x^\star) = \bigcup_{t\leq 0} \Phi^t(\mathbb{W}^s_\mathrm{loc}(x^\star)) \\
     \mathbb{W}^u(x^\star) = \bigcup_{t\geq 0} \Phi^t(\mathbb{W}^u_\mathrm{loc}(x^\star))
+    \label{eq:global-manifolds}
 \end{align}
 
 That is, the global stable manifold is obtained by integrating the local stable manifold backwards, looking at where the trajectories on it came from. For the unstable manifold, we integrate the local unstable manifold forwards, to see where it goes to. 
 
-An important fact about the local and global manifolds that follows from their definitions is that they are invariant: trajectories starting on these manifolds stay on them forever \cite{argyris}.
+An important fact about the local and global manifolds that follows from their definitions is that they are invariant: trajectories starting on these manifolds stay on them forever \cite{argyrisbook}.
 Furthermore, the uniqueness of solutions prohibits certain crossings of manifolds: stable manifolds of two distinct equilibria cannot cross, unstable manifolds of two distinct equilibria also cannot, and the same manifold cannot cross itself - otherwise, where the crossing points would have to obey two distinct paths! Meanwhile, stable and unstable manifolds, either of the same equilibrium or of two different equilibria can cross. 
 
-As mentioned before, these manifolds usually play a big role in organizing state space. As we will see in Chapter \ref{chap:multistability}, they can organize the transient dynamics of systems. There, we study a dynamical system wherein certain trajectories are forced to go on long excursions before converging to the stable equilibrium, the only attractor in state space (see Fig.\ref{fig:multistability:excitable}). As explained there, this long excursion is generated by the arrangement of the invariant manifolds of the saddle-point that exists in state space. The invariant manifolds can also organize the long-term behavior of systems: the next section briefly shows how stable manifolds of unstable equilibria can act as the boundary separating two basins of attraction.
+As mentioned before, these manifolds usually play a big role in organizing state space. As we will see in Chapter \ref{chap:multistability}, they can organize the transient dynamics of systems. There, we study a dynamical system wherein certain trajectories are forced to go on long excursions before converging to the stable equilibrium, the only attractor in state space (see Figs.\ref{fig:method:attractors-nonlinear}A-B). As explained there, this long excursion is generated by the arrangement of the invariant manifolds of the saddle-point that exists in state space. The invariant manifolds can also organize the long-term behavior of systems: the next section briefly shows how stable manifolds of unstable equilibria can act as the boundary separating two basins of attraction.
 
 
-\begin{figure*}
+\begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{global-manifolds/global-manifolds.png}
-    \caption{Invariant manifolds of saddle point $x^\star$. The local stable $\mathbb{W}^s_\mathrm{loc}(x^\star)$ and unstable $\mathbb{W}^u_\mathrm{loc}(x^\star)$ manifolds of the saddle point $x^\star$ respectively can be associated with the stable $\mathbb{E}^s$ and unstable $\mathbb{E}^u$ subspaces and become tangent to them near the saddle. This follows from the Hartman-Grobman and the stable manifold theorems. The global stable $\mathbb{W}^s(x^\star)$ and unstable $\mathbb{W}^u(x^\star)$ manifolds extend the definition of the local manifolds beyond the neigborhood $U$.  Figure is inspired by Fig.~6.2.4 from Ref. \cite{argyris}.}
-\end{figure*}
+    \includegraphics[width=0.6\textwidth]{global-manifolds/global-manifolds.png}
+    \caption{Invariant manifolds of saddle point $x^\star$. The local stable $\mathbb{W}^s_\mathrm{loc}(x^\star)$ and unstable $\mathbb{W}^u_\mathrm{loc}(x^\star)$ manifolds of the saddle point $x^\star$ respectively can be associated with the stable $\mathbb{E}^s$ and unstable $\mathbb{E}^u$ subspaces and become tangent to them near the saddle. This follows from the Hartman-Grobman and the stable manifold theorems. The global stable $\mathbb{W}^s(x^\star)$ and unstable $\mathbb{W}^u(x^\star)$ manifolds extend the definition of the local manifolds beyond the neigborhood $U$.  Figure is inspired by Fig.~6.2.4 from Ref.~\cite{argyrisbook}.}
+    \label{fig:method:invariantmanifolds}
+\end{figure}
 
-\subsection{The fate of nonlinear systems II: multistability and basins of attraction}
+\subsection{The fate of nonlinear dynamical systems II: multistability and basins of attraction}
 % Linear system are monostable: they can have only one attractor. If we now move to nonlinear systems, the situation is different. Now, trajectories can have multiple distinct fates, multiple attractors. To which attractor a trajectory goes to depends on where it starts. In a multistable system, the state space is then divided into distinct regions, wherein trajectories starting on each region go to their corresponding attractor. A simple and intuitive example is that of a ball on a certain landscape with hills and valleys. The ball of course rolls downhill and, due to friction, it eventually stops at one of the valleys.
-In Sec.~\ref{sec:fate-nonlinear-I} we saw that the ultimate fate of nonlinear systems, their attractors, can be much more complicated than that of linear ones. Not only are the attractors themselves complicated, but they can also coexist in state space. If there are two coexisting attractors, this means that the state space will be separated into three regions: the basin of attraction of attractor one, the basin of attractor two, and the boundary between them. Usually, the basin boundary is formed by stable manifolds of saddle-type objects: saddle-points, saddle-limit-cycles, and even chaotic saddles! \cite{pisarchik}. Figure \ref{fig:bistability-duffing} illustrates this for a relatively simple system with two stable equilibria, where the basin boundary is the stable manifold of the saddle-point in the middle. This system is known as the Duffing oscillator: 
+In Sec.~\ref{method:nonlinear-I} we saw that the ultimate fate of nonlinear systems, their attractors, can be much more complicated than that of linear ones. Not only are the attractors themselves complicated, but they can also coexist in state space. If there are two coexisting attractors, this means that the state space will be separated into three regions: the basin of attraction of attractor one, the basin of attractor two, and the boundary between them. Usually, the basin boundary is formed by stable manifolds of saddle-type objects: saddle-points, saddle-limit-cycles, and even chaotic saddles! \cite{pisarchik}. Figure~\ref{fig:bistability-duffing} illustrates this for a relatively simple system with two stable equilibria, where the basin boundary is the stable manifold of the saddle-point in the middle. This system is known as the Duffing oscillator: 
 
 \begin{align}
     &\dot{x} = v\\
@@ -246,7 +238,7 @@ with $k = 1$, $c=0.5$, $l=1$, $m=1$. This system represents a ball of mass $m$ r
 \begin{figure}[htb!]
     \centering 
     \includegraphics[width=0.6\columnwidth]{duffing-bistability.png}
-    \caption{Bistability in Duffing model. Two stable equilibria (light and dark purple) are shown with their respective basins of attraction. The global stable and unstable manifolds of the saddle-point in the middle are also shown, with the stable manifold coinciding with the boundary between the basins.}
+    \caption{Bistability in Duffing model. Two stable equilibria (white square and circle) are shown with their respective basins of attraction in two shades of purple. The global stable and unstable manifolds of the saddle-point (black point) in the middle are also shown as green and red lines respectively. The global stable manifold of the saddle coincides with the boundary between the basins.}
     \label{fig:bistability-duffing}
 \end{figure}
 

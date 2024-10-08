@@ -1,8 +1,60 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{argyrisbook}
+John~H. Argyris, Gunter Faust, Maria Haase, and Rudolf Friedrich.
+\newblock {\em {An Exploration of Dynamical Systems and Chaos}}.
+\newblock Springer Berlin, Heidelberg, 2 edition, 2015.
+
+\bibitem{broer2011dynamical}
+Henk Broer and Floris Takens.
+\newblock {\em {Dynamical Systems and Chaos}}.
+\newblock Applied Mathematical Sciences. 2011.
+
+\bibitem{glendinning}
+Paul Glendinning.
+\newblock {\em {Stability, Instability And Chaos: An Introduction To The Theory
+  Of Nonlinear Differential Equations (cambridge Texts In Applied
+  Mathematics)}}.
+\newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
+  Cambridge [England], 1 edition, 1994.
+
+\bibitem{izhikevichbook}
+Eugene~M Izhikevich.
+\newblock {\em {Dynamical systems in neuroscience}}.
+\newblock MIT press, 2007.
+
+\bibitem{saletan}
+Jorge~V. José and Eugene~J. Saletan.
+\newblock {\em {Classical Dynamics: A Contemporary Approach}}.
+\newblock Cambridge University Press, Cambridge, 1998.
+
+\bibitem{milnor1985on}
+John Milnor.
+\newblock {On the concept of attractor}.
+\newblock {\em Communications in Mathematical Physics}, 99(2):177--195, 1985.
+
+\bibitem{pisarchik}
+Alexander~N. Pisarchik and Alexander~E. Hramov.
+\newblock {Multistability in Physical and Living Systems, Characterization and
+  Applications}.
+\newblock {\em Springer Series in Synergetics}, 2022.
+
+\bibitem{shukla2014a}
+Anant~Kant Shukla, T~R Ramamohan, and S~Srinivas.
+\newblock {A new analytical approach for limit cycles and quasi-periodic
+  solutions of nonlinear oscillators: the example of the forced Van der Pol
+  Duffing oscillator}.
+\newblock {\em Physica Scripta}, 89(7):075202, 2014.
 
 \bibitem{strogatz2002nonlinear}
 Strogatz.
 \newblock {\em {Nonlinear Dynamics and Chaos}}.
 \newblock Studies in nonlinearity. Westview, 2002.
+
+\bibitem{taylor2011attractors}
+Robert~L.V. Taylor.
+\newblock {Attractors: Nonstrange to Chaotic}.
+\newblock {\em SIAM Undergraduate Research Online}, 4:72--80, 2011.
+\newblock Publisher: Society for Industrial \& Applied Mathematics (SIAM).
 
 \end{thebibliography}

@@ -1,33 +1,7 @@
 using GLMakie, Attractors, DrWatson
 using OrdinaryDiffEq, LinearAlgebra
 
-set_theme!(theme_latexfonts())
-update_theme!(fontsize=16, 
-    Axis = (
-        rightspinevisible = false,
-        topspinevisible = false,
-        xgridvisible=false,
-        ygridvisible=false,
-        spinewidth=1.5,
-        xtickwidth=2.0,
-        ytickwidth=2.0,
-        xtickalign=1,
-        ytickalign=1,
-        xticklabelsize=18,
-        yticklabelsize=18,
-        xlabelsize=20,
-        ylabelsize=20,
-    ))
-
-function supertitle(fig, title)
-    Label(fig[0, :], title, valign = :bottom,
-        # padding = (0, 0, 5, 0), tellheight = true, tellwidth = false,
-        tellheight = true, tellwidth = false,
-        font = "TeX Gyre Heros Bold", # same font as Axis titles
-    )
-    return
-end
-
+include("../vis-code.jl")
 
 activationfunc(V, Vh, k) = 1 / (1 + exp((Vh - V)/k))
 
@@ -165,9 +139,15 @@ end
 
 axs[1].xticks = -60:20:-0
 axs[3].xticks = -60:20:-0
-axs[2].yticks = -60:20:-0
-axs[4].yticks = -60:20:-0
+axs[2].yticks = -60:20:10
+axs[4].yticks = -60:20:10
+for ax in [axs[2], axs[4]] ylims!(ax, -68, 15) end
 
 supertitle(fig, "Basic types of attractors in nonlinear systems")
 
+
+label_axes!(axs; halign=:left)
 save("attractors-nonlinear.png", fig; px_per_unit=4)
+
+# Display the figure
+fig

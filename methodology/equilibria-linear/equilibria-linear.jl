@@ -2,6 +2,7 @@ using GLMakie, Attractors, DrWatson
 
 using OrdinaryDiffEq, LinearAlgebra
 
+include("../vis-code.jl")
 set_theme!(theme_latexfonts())
 update_theme!(fontsize=16, 
     Axis = (
@@ -362,14 +363,28 @@ pvals_linear_all = Dict(
 # 
 # makiesave("$(plotsdir())/thesis/duffing-bistability.png", fig; px_per_unit=4)
 
-size_fig = (600, 400)
+size_fig = (600, 500)
 pixel_per_unit(out_size, dpi, res) = (out_size.*dpi./res)[1]
 dpi = 600
 out_width = 3.54 #inches 
 px_per_unit = pixel_per_unit(out_width, dpi, size_fig)
 
+
+function arrow_on_curve!(ax, xs, ys, idxs_points)
+    for idx in idxs_points 
+        dx = (xs[idx+1] - xs[idx])
+        dy = (ys[idx+1] - ys[idx])
+        arrow_x, arrow_y = xs[idx], ys[idx]
+        arrows!(ax, [arrow_x], [arrow_y], [dx * 0.1], [dy * 0.1], arrowsize = 20, linewidth = 2, color=:black)
+    end 
+end
+
+
 fig = Figure(; size=size_fig)
-As = [[[-1.5 0; 0 -1]], [[-1 1; -1 -1]], [[-2 0; 0 +1]], [[+1.5 0; 0 +1]], [[+1 1; -1 +1]], ]
+As = [[
+    [-1.5 0; 0 -1]],
+    [[-1 1; -1 -1]], [[-2 0; 0 +1]], [[+1.5 0; 0 +1]], [[+1 1; -1 +1]],
+     ]
 idxs_axis = [[1,1], [2,1], [1,2], [1,3], [2,3]]
 axs = []
 # ics = [[1.0, 1.0], [1.0, -1], [-1, 1], [-1, -1]]
@@ -381,6 +396,10 @@ ics = [
         [[0.02, 0.1], [0.02, -0.1], [-0.02, 0.1], [-0.02, -0.1]],
         [[0.002, 0.002], [0.002, -0.002], [-0.002, 0.002], [-0.002, -0.002]],
     ]
+    
+idxs_arrowheads = [
+    80, 80, 80, 250, 625
+]
 for (idx, A) in enumerate(As)
     pvals = deepcopy(pvals_linear)
     pvals[:p] = A
@@ -394,8 +413,13 @@ for (idx, A) in enumerate(As)
     
     for ic in ics[idx]
         @unpack ds = extra 
-        tr, ts = trajectory(ds, 10.0, ic)
+        tr, ts = trajectory(ds, 10.0, ic; Δt=0.01)
         lines!(ax, tr[:,1], tr[:,2], color=:black)
+        # arrow_x = 1.0
+        # idx_arrow_x = findfirst(x->x==arrow_x, tr[:,1])
+        # idx_arrow_y = findfirst(x->x==arrow_y, tr[:,2])
+        arrow_on_curve!(ax, tr[:,1], tr[:,2], idxs_arrowheads[idx])
+        
         # scatter!(ax, tr[1:10:end-2][:,1], tr[1:10:end-2][:,2], color=:black, marker=:utriangle)
     end
     
@@ -404,6 +428,7 @@ for (idx, A) in enumerate(As)
     # ax.xlabel = "x"
     # ax.ylabel = "y"
 end
+
 
 for ax in [axs[1], axs[2], axs[5]]
     ax.xlabel = "x"
@@ -420,5 +445,6 @@ push!(elems, MarkerElement(color=:black, marker=:circle))
 elems_str = ["Stable manifold", "Unstable manifold", "Typical trajectories", "Equilibrium"]
 Legend(fig[2,2], elems, elems_str,  tellwidth=false, tellheight=false, halign=:center, valign=:center, labelsize=14)
 
+label_axes!(axs; halign=:left)
 
 save("hyperbolic-eq-2d.png", fig; px_per_unit=4)
