@@ -10,6 +10,23 @@ Henk Broer and Floris Takens.
 \newblock {\em {Dynamical Systems and Chaos}}.
 \newblock Applied Mathematical Sciences. 2011.
 
+\bibitem{datseris2023framework}
+George Datseris, Kalel~Luiz Rossi, and Alexandre Wagemakers.
+\newblock {Framework for global stability analysis of dynamical systems}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  33(7):073151, 2023.
+
+\bibitem{datseris2022effortless}
+George Datseris and Alexandre Wagemakers.
+\newblock {Effortless estimation of basins of attraction}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  32(2):023104, 2022.
+
+\bibitem{gelbrecht2020monte}
+Maximilian Gelbrecht, Jürgen Kurths, and Frank Hellmann.
+\newblock {Monte Carlo basin bifurcation analysis}.
+\newblock {\em New Journal of Physics}, 22(3):033032, 2020.
+
 \bibitem{glendinning}
 Paul Glendinning.
 \newblock {\em {Stability, Instability And Chaos: An Introduction To The Theory
@@ -45,6 +62,12 @@ Anant~Kant Shukla, T~R Ramamohan, and S~Srinivas.
   solutions of nonlinear oscillators: the example of the forced Van der Pol
   Duffing oscillator}.
 \newblock {\em Physica Scripta}, 89(7):075202, 2014.
+
+\bibitem{stender2021bstab}
+Merten Stender and Norbert Hoffmann.
+\newblock {bSTAB: an open-source software for computing the basin stability of
+  multi-stable dynamical systems}.
+\newblock {\em Nonlinear Dynamics}, pages 1--18, 2021.
 
 \bibitem{strogatz2002nonlinear}
 Strogatz.

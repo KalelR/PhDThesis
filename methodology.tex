@@ -138,7 +138,7 @@ Furthermore, the Milnor attractor does not have to attract all the points in its
     \item There are arbitrarily small neighborhoods $U$ of $A$ such that $\forall x \in U$ one has $\Phi^t(x) \subset U  \; \forall t>0$ and such that $\forall y \in U$ one has $\omega(y) \subset \omega(x)$. That is, there are arbitrarily small neighborhoods around the attractor in which points inside stay inside and converge to $A$. This criterion is given in Ref.~\cite{broer2011dynamical}.
 \end{enumerate}
 
-\subsection{Invariant manifolds: structures that organize state space}
+\subsection{Invariant manifolds: structures that organize state space}\label{method:invariant-manifolds}
 
 In Sec.~\ref{method:linear-system} we only considered the case when all the eigenvalues of the matrix $A$ in the linear system $\dot{x} = A x$ were positive. If one eigenvalue $\lambda_k$ is positive, then trajectories will diverge to infinity following the corresponding eigenvector $v_k$. When some eigenvalues are positive, and some are negative, the origin is a saddle-point. If all eigenvalues are positive, it is called a repeller.
 Figure \ref{fig:method:equilibria-linear} shows examples of equilibria in 2D linear systems. Note that typical trajectories approach the saddle-point along the $y$-axis and then diverge along the $x$-axis. That is, for $t \to -\infty$, trajectories converge to the $y$-axis and for $t \to \infty$ they converge to the $x$-axis. The $y$-axis is called the stable manifold $\mathbb{W}^s(o)$ of the origin $o$ and the $x$-axis is the unstable manifold $\mathbb{W}^u(o)$ of the origin. We can define these manifolds
@@ -177,7 +177,7 @@ where $J_g(y) = \frac{\partial g_i(y)}{\partial y_j}$ is the Jacobian of $g$. It
 
 That is, the behavior of the nonlinear system sufficiently close to the equilibrium is linear, with the constant matrix function being the Jacobian evaluated at the equilibrium! 
 
-But the good news don't stop here! There is the Hartman-Grobman theorem, which basically shows that the state space near a hyperbolic equilibrium to the state space of the linearization. An equilibrium is hyperbolic if the eigenvalues of the Jacobian evaluated on it are all nonzero, i.e., if $\lambda_i \neq 0 \forall i=1,\ldots,n$. Topologically equivalent means that the linearized state space and the local state space near the equilibrium are distorted versions of each other. They can be bended and warped, but not ripped. In particular, closed orbits have to remain closed, and connections between saddle points have to remain \cite{strogatz2002nonlinear}. Mathematically, topologically equivalent means there is a homeomorphism (continuous deformation with continuous inverse) from one state space into the other; trajectories can be mapped from one to the other, and the direction of time is the same \cite{strogatz2002nonlinear}. 
+But the good news don't stop here! There is the Hartman-Grobman theorem, which basically shows that the state space near a hyperbolic equilibrium to the state space of the linearization. An equilibrium is hyperbolic if the eigenvalues of the Jacobian evaluated on it are all nonzero, i.e., if $\lambda_i \neq 0 \forall i=1,\ldots,n$. \textit{Topologically equivalent} means that the linearized state space and the local state space near the equilibrium are distorted versions of each other. They can be bended and warped, but not ripped. In particular, closed orbits have to remain closed, and connections between saddle points have to remain \cite{strogatz2002nonlinear}. Mathematically, topologically equivalent means there is a \textit{homeomorphism} (continuous deformation with continuous inverse) from one state space into the other; trajectories can be mapped from one to the other, and the direction of time is the same \cite{strogatz2002nonlinear}. 
 
 Stating the theorem more formally, suppose a hyperbolic equilibrium $x^\star \in M$ such that $f(x^\star) = 0$ and such that all its eigenvalues are nonzero. Then, there is a neighborhood $N$ of $x^\star$ and a homeomorphism $h: N\to M$ such that \cite{argyrisbook}
 \begin{itemize}
@@ -246,37 +246,34 @@ with $k = 1$, $c=0.5$, $l=1$, $m=1$. This system represents a ball of mass $m$ r
 In this thesis we study two examples of multistability occuring in networked systems. In Chapter \ref{chap:malleability} we study networks of Kuramoto units, and see there the coexistence of multiple attractors depending on how strongly the units are interacting. We also see how this multistability impacts the sensitivity of the system to small changes in parameters of the units. Later, in Chapter \ref{chap:multistability} we study how multistability arises when two excitable neurons are coupled together diffusively. Both studies require that we find the attractors in the systems. This is what we deal with in the next section.
 
 \subsection{How to find attractors}
+Finding all the attractors of a given dynamical system is not necessarily a trivial task. For equilibria, one can find all the roots of the system function, i.e., $f(x^\star) = 0$ and then check their stability through the eigenvalues of the Jacobian evaluated on them. However, for more complicated attractors the problem becomes more complicated.
+To start off, simply proving that a set is an attractor, following the criteria given in \secref{method:attractors-formal}, is usually not possible. Instead, in practice we use the looser definition of an attractor as the long-term dynamics of trajectories. Numerically, this means a brute-force approach of simulating several trajectories in state space for long integration times and seeing where they converge.
+
+This comes with two problems. First, it does not rule out the possibility that a certain set is just a very long transient. To remedy this, we usually integrate trajectories on the set for very long and check if there is any escape. Second, some attractors might have very small basins of attraction, such that randomly chosen intiial conditions are unlikely to end on them, so it is unlikely that we find those attractors. So far, however, this brute force approach is the best we have for general systems \cite{}. Within this approach, there are two main methods in the literature for finding attractors. They differ in how they check converge to attractors.
+
+The first approach was proposed in \refref{} and implemented with improvements in \refref{datseris2022effortless}. Given a trajectory, it XX.
 
 
-% \section{Bifurcations}
-% Depending on the parameters, a dynamical system may have all three of the above attractors, stable or not, simultaneously or not. When the system changes drastically its qualitative behavior as one parameter is changed, we say a bifurcation has taken place. This can lead, for example, from an equilibrium to a periodic orbit. 
-% 
-% As we have seen from the linear stability analysis, if the stationary point is hyperbolic, then the local behavior is determined by the linearized flow. Following from this is that small perturbations from this point are also hyperbolic.
-% % hyperbolic point, for which all the eigenvalues of the linearized flow have nonzero real parts
-% Therefore, we have bifurcations only for non-hyperbolic points (i.e. points with at least one eigenvalue that is zero or purely imaginary).
-% 
-% Now we describe some bifurcations that are relevant for this dissertation. This is done for equilibria (fixed points), but the general considerations also apply for periodic orbits.
-% 
-% 
-% \subsection{Saddle-node (fold) bifurcation}
+The second approach has been proposed by \refref{gelbrecht2020monte} and soon thereafter also by \refref{stender2021bstab}. Later it was implemented efficiently with improvements in \refref{datseris2023framework}.
+
+Both methods can be applied across a parameter range and used in a continuation fashion. Developing this method, along with implementing, improving, and maintaining the featurizing method, was one of my contributions in my PhD. This led to the publication in \refref{datseris2023framework}. The continuation method works by XX
+
+
+\section{Bifurcations}
+What happens to the attractors - and, in general, to the state space structures - of a dynamical system when we vary its parameters? In terms of the qualitative properties, there are two possibilties: either they stay similar or they change drastically. We can be a bit more rigorosu. Two systems are qualitatively similar if they are topologically equivalent. The notion of topological equivalence was already mentioned in \secref{method:invariant-manifolds}. As a reminder, two systems are topologically equivalent if the state space of one can be obtained by a continuous transformation of the other \cite{kusnetsov}. Mathematically, this means that they are topologically equivalent if there is a homeomorphism $h:M \to M$ mapping orbits of the first system onto orbits of the second, preserving the direction of time. 
+
+As the parameters of a system are varied, we obtain different dynamical systems that are usually topologically equivalent. The attractors, for instance, may move, but they retain their stability. At some point, however, there may be a drastic change, and the new system may no longer be equivalent. The attractor may have disappeared, or lost its stability. Or a new attractor may have emerged. These drastic qualitative changes in the behavior of a dynamical system are called bifurcations. A bit more rigorously, a bifurcation is a change in the topological type of a system as its parameters pass through a critical (bifurcation) value \cite{kusnetsov}.
+There are many different types of bifurcations, and one can literally write a whole book about this \cite{kusnetsov}. For this thesis we focus briefly on just a few bifurcations that will be relevant for later. 
+
+\subsection{Saddle-node bifurcation (or equilibria and limit cycles)}
+
 % In a saddle-node bifurcation two equilibria (one stable and the other unstable) coalesce and annihilate each other. Therefore, this bifurcation deals with the creation (and destruction) of stable and unstable equilibria. In this case, one equilibrium had a negative eigenvalue and the other has a positive eigenvalue before bifurcation. At the bifurcation, these values reach $0$ and later the points are destroyed \cite{strogatz_2018}. 
 % This scenario also occurs for periodic orbits (e.g. limit cycles).
-% 
-% Neurons passing through this bifurcation are of type II excitability (cf. \chapref{chap:neuronal_models}), the exception being if the bifurcation occurs on an invariant circle (a saddle-node on invariant circle bifurcation), where the neuron has type I excitability \cite{izhikevich_2007}.
-% 
-% \subsection{Andronov-Hopf}
+mention ghosts
+\subsection{Hopf bifurcation}
+
 % In an Andronov-Hopf bifurcation, a small-amplitude limit cycle is born from an equilibrium: it appears when the equilibrium disappears. In a supercritical bifurcation, the limit cycle is born stable (and the equilibrium loses its previous stability). In a subcritical, the inverse happens: the limit cycle is born unstable and the equilibrium gains stability. In this case, the Jacobian has a pair of complex eigenvalues whose real part becomes zero at the bifurcation.
-% 
-% Neurons passing through this bifurcation are of type II excitability \cite{izhikevich_2007}.
-% 
-% \subsection{Homoclinic bifurcations}
+\subsection{Homoclinic bifurcation}
 % The homoclinic bifurcations also describe the appearance (or disappearance) of limit cycles (two-dimensional periodic orbits). The bifurcation is supercritical if the limit cycle is stable and supercritical if unstable. In the supercritical case, before the bifurcation there is a saddle and a stable limit cycle. At the bifurcation, these two touch each other, thereby making a homoclinic orbit (connecting the saddle to itself). After the bifurcation, the homoclinic orbit disappears (and the limit cycle already disappeared) and only the saddle remains. 
 % In the subcritical case the behavior is similar, but the limit cycle is unstable.
-% 
-% An important point is that the homoclinic orbit has infinite period (or zero frequency), so neurons passing through this bifurcation are of type I excitability \cite{izhikevich_2007}.
-% 
-% 
-% \subsection{Period-doubling (or flip) bifurcation}
-% This bifurcation deals with the destruction of a periodic orbit of period $T$ and appearance of another of period $2T$.
-% A cascade of period-doublings often occurs, leading to chaotic behavior \cite{ott_2002}. The inverse can also happen, leading from chaos to periodic behavior.
-% 
+

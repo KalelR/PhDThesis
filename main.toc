@@ -17,3 +17,7 @@
 \contentsline {subsection}{\numberline {2.1.5}Invariant manifolds: structures that organize state space}{13}{}%
 \contentsline {subsection}{\numberline {2.1.6}The fate of nonlinear dynamical systems II: multistability and basins of attraction}{15}{}%
 \contentsline {subsection}{\numberline {2.1.7}How to find attractors}{17}{}%
+\contentsline {section}{\numberline {2.2}Bifurcations}{17}{}%
+\contentsline {subsection}{\numberline {2.2.1}Saddle-node bifurcation (or equilibria and limit cycles)}{18}{}%
+\contentsline {subsection}{\numberline {2.2.2}Hopf bifurcation}{18}{}%
+\contentsline {subsection}{\numberline {2.2.3}Homoclinic bifurcation}{18}{}%
