@@ -1,0 +1,3 @@
+- Fix code snippet so that lines of code do not wrap
+- Explain in detail the comparison with the bifurcationkit.jl as a case study of how to choose parameter and/or whatever.
+- 

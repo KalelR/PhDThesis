@@ -1,9 +1,9 @@
 
 
-1. methodology: bifurcations
+1. methodology: bifurcations - homoc tangential??
 2. methodology: attractors.jl
 3. methodology: kuramoto: original description in thermo limit, twisted states ??
-4. methodology: network theory? basic idea of a graph, adjacency matrix, watts-strogatz, distance-dependent
+4. methodology: network theory? watts-strogatz figure  distance-dependent
 5. intro
 6. conclusions
 7. malleability: multistability results

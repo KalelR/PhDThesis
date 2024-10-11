@@ -16,6 +16,7 @@ bib:
 # dessa forma somente os arquivos removidos são listados na saída
 clean:
 	@rm -f paper-malleability/*.aux
+	@rm -f paper-metastability/*.aux
 	@rm -f *.aux
 	@rm -f 'main.synctex(busy)'
 open:

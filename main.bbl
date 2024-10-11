@@ -45,6 +45,17 @@ Jorge~V. José and Eugene~J. Saletan.
 \newblock {\em {Classical Dynamics: A Contemporary Approach}}.
 \newblock Cambridge University Press, Cambridge, 1998.
 
+\bibitem{koch2024ghost}
+D.~Koch, A.~Nandan, G.~Ramesan, I.~Tyukin, A.~Gorban, and A.~Koseska.
+\newblock {Ghost Channels and Ghost Cycles Guiding Long Transients in Dynamical
+  Systems}.
+\newblock {\em Physical Review Letters}, 133(4):047202, 2024.
+
+\bibitem{kuznetsov}
+Yuri~A. Kuznetsov.
+\newblock {Elements of Applied Bifurcation Theory}.
+\newblock {\em Applied Mathematical Sciences}, 2004.
+
 \bibitem{milnor1985on}
 John Milnor.
 \newblock {On the concept of attractor}.
@@ -55,6 +66,13 @@ Alexander~N. Pisarchik and Alexander~E. Hramov.
 \newblock {Multistability in Physical and Living Systems, Characterization and
   Applications}.
 \newblock {\em Springer Series in Synergetics}, 2022.
+
+\bibitem{sandstede1997constructing}
+Björn Sandstede.
+\newblock {Constructing dynamical systems having homoclinic bifurcation points
+  of codimension two}.
+\newblock {\em Journal of Dynamics and Differential Equations}, 9(2):269--288,
+  1997.
 
 \bibitem{shukla2014a}
 Anant~Kant Shukla, T~R Ramamohan, and S~Srinivas.
@@ -79,5 +97,10 @@ Robert~L.V. Taylor.
 \newblock {Attractors: Nonstrange to Chaotic}.
 \newblock {\em SIAM Undergraduate Research Online}, 4:72--80, 2011.
 \newblock Publisher: Society for Industrial \& Applied Mathematics (SIAM).
+
+\bibitem{watts1998collective}
+D~J Watts and S~H Strogatz.
+\newblock {Collective dynamics of 'small-world' networks}.
+\newblock {\em Nature}, 393(6684):440--442, 1998.
 
 \end{thebibliography}

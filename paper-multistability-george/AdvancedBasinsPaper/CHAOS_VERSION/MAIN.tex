@@ -1,0 +1,544 @@
+\documentclass[%
+ aip,
+ amsmath,amssymb,
+ reprint,%
+]{revtex4-1}
+% Use the lineno option to display guide line numbers if required.
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+%\usepackage{colortbl}
+\usepackage[table]{xcolor}
+%\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+%\linenumbers\relax % Commence numbering lines
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Our packages
+\usepackage{amsmath}
+\graphicspath{{figures/}}
+\usepackage{makecell}
+\renewcommand{\cellalign}{tl}
+\newcommand{\george}[1]{\textcolor{red}{#1}}
+\newcommand{\alex}[1]{\textcolor{blue}{#1}}
+\newcommand{\kalel}[1]{\textcolor{orange}{#1}}
+\usepackage{listings} % For listing code
+\usepackage{mathptmx}
+\usepackage{etoolbox}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.975,0.95,1.0}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    numbers=left,
+    numbersep=5pt,
+}
+
+\lstset{style=mystyle}
+
+
+
+\makeatletter
+\def\@email#1#2{%
+\endgroup
+\patchcmd{\titleblock@produce}
+   {\frontmatter@RRAPformat}
+   {\frontmatter@RRAPformat{\produce@RRAP{*#1\href{mailto:#2}{#2}}}\frontmatter@RRAPformat}
+   {}{}
+ }%
+\makeatother
+
+\begin{document}
+ \preprint{AIP/123-QED}
+ 
+\title{Framework for global stability analysis of dynamical systems}
+
+\author{George Datseris}
+\email{g.datseris@exeter.ac.uk}
+\affiliation{Department of Mathematics and Statistics, University of Exeter, North Park Road,
+Exeter EX4 4QF, United Kingdom}
+\author{Kalel Luiz Rossi} 
+\affiliation{Theoretical Physics/Complex Systems, ICBM, Carl von Ossietzky University of Oldenburg, Carl-von-Ossietzky-Straße 9-11, 26111 Oldenburg, Germany}
+\author{Alexandre Wagemakers}
+\affiliation{Nonlinear Dynamics, Chaos and Complex Systems Group, Departamento de F\'isica, Universidad Rey Juan Carlos, 28933 M\óstoles, Madrid, Spain}
+
+% \leadauthor{Datseris} 
+
+% \keywords{critical transitions $|$ multistability $|$ tipping $|$ continuation $|$ global stability}
+
+\date{\today}
+
+\begin{abstract}
+Dynamical systems, that are used to model power grids, the brain, and other physical systems, can exhibit coexisting stable states known as attractors. A powerful tool to understand such systems, as well as to better predict when they may ``tip'' from one stable state to the other, is global stability analysis. It involves identifying the initial conditions that converge to each attractor, known as the basins of attraction, measuring the relative volume of these basins in state space, and quantifying how these fractions change as a system parameter evolves. By improving existing approaches, we present a comprehensive framework that allows for global stability analysis of dynamical systems. Notably, our framework enables the analysis to be made efficiently and conveniently over a parameter range. As such, it becomes an essential tool for stability analysis of dynamical systems that goes beyond local stability analysis offered by alternative frameworks. We demonstrate the effectiveness of our approach on a variety of models, including climate, power grids, ecosystems, and more. Our framework is available as simple-to-use open-source code as part of the DynamicalSystems.jl library.
+\end{abstract}
+
+
+
+\maketitle
+
+\begin{quotation}
+Dynamical systems are ubiquitous to model natural phenomena ranging from climate, ecosystems, and more. Global stability analysis is the study of their attracting states over the full state space. It goes beyond local bifurcation analysis and provides insight on the resilience of the states, i.e., how close they are to ``tip’’ to a different, perhaps undesirable stable state such as population death in ecosystems or circulation shutdown in climate. In this work we develop an accurate and flexible framework for global stability analysis of dynamical systems, that we believe will accelerate multistability and tipping point research in many fields. We also provide a software implementation that is fast and easy to use in the open source DynamicalSystems.jl library.
+\end{quotation}
+
+
+
+Multistable dynamical systems exhibit two or more co-existing stable states, formally called \emph{attractors}. Multistability is ubiquitous in nature and in mathematical models \cite{feudel2018multistability, Pisarchik2022}, with examples ranging from power grids \cite{hellmann2020network, kim2018multistability, halekotte2021transient}, the climate \cite{marotzke2016instability, lenton2013environmental}, ecosystems like the Amazon rain forest \cite{hirota2011global, dakos2019ecosystem}, the brain and neuronal circuits therein \cite{schwartz2012multistability, kelso2012multistability, kleinschmidt2012variability}, or metabolic systems \cite{zhu2022synthetic, khazaei2022metabolic, geiss2022multistability}. Some attractors of these systems can be desirable, such as synchronized oscillations in power grids, crucial for their proper functioning~\cite{padiyar1999power}. But they can also be undesirable, as for example the extinction of a certain species in ecological models or the collapse of circulation in climate models~\cite{Lohmann2021-wh}. 
+In a multistable system, the attractor at which the system ends up depends on the initial conditions, but perturbations of the state may enforce switching between attractors, a phenomenon called ``tipping'' ~\cite{Ashwin2012, feudel2018multistability, dakos2019ecosystem}. Alterations in the parameters of a dynamical system can trigger tipping. Hence, it becomes important to evaluate how ``resilient'' attractors are to perturbations, either to parameters or to the system's variables. This is a crucial problem of practical importance in several areas of research \cite{dakos2019ecosystem, halekotte2020minimal}.
+
+A traditional solution to this problem is the \emph{continuation-based bifurcation analysis} (CBA). It identifies fixed points and (under some requirements) limit cycles, and describes their \emph{linear} (also called \emph{exponential}) stability dependence on a system parameter via the eigenvalues of the the Jacobian~\cite{DatserisBook}. One major downside is that, by definition, it cannot be applied to chaotic attractors~\cite{DatserisBook}. In the majority of cases, this analysis must be done numerically via one of several software, e.g., AUTO~\cite{doedel1981auto}, MATCONT~\cite{dhooge2003matcont}, CoCo~\cite{Dankowicz2013}, or Bifurcationkit.jl~\cite{veltz:hal-02902346}. Continuation tools can be combined with other numerical technique to enrich the exploration of the parameter space as shown in~\cite{PUSULURI2021105503}. The information provided by these frameworks is useful, but incomplete: rigorously speaking, local stability only conveys information about the system's response to infinitesimally small perturbations. It cannot yield insight on the response to finite perturbations in the state space, which are predominant in practice.
+
+For such responses, it is necessary to study the \emph{global stability}~\cite{Menck2013} of the system's attractors, which involves the nonlinear dynamics over the full state space of the system\footnote{The term ``global stability'' is also used when a dynamical system has a single global attractor, which is different from our use of the term here.}. A proxy for global stability of an attractor is the portion of all possible initial conditions ending up at this attractor, i.e., the \emph{fraction} of the state space that is in the \emph{basin} of said attractor. When the state space is infinite, the concept of the state space fraction becomes a pragmatic one: we need to define a finite-volume box of \emph{physically plausible} initial conditions for the system under study, and we are concerned about the fractions of these plausible initial conditions. In this analysis, attractors with larger basins fractions are globally more stable because stronger perturbations are typically needed to switch the system to another attractor~\cite{Menck2013}. Frequently, this measure is also a much better indicator of the loss of stability as a system parameter is varied, when compared to the local stability analysis of the system (see e.g.~\cite{Menck2013} or~\cite[Chap. 12]{DatserisBook}).
+
+Analyzing global stability as a function of a parameter demands extensive effort from researchers, as it requires the creation of algorithms that can find system attractors and their global stability, ``continue'' them across a parameter, and also perform the expensive numerical simulations required for such algorithms. In the literature, the only framework so far that can aid this analysis is the \emph{featurizing and grouping} approach, proposed first by Gelbrecht et al~\cite{Gelbrecht2020} as MCBB (Monte Carlo Basin Bifurcation Analysis) and then later very similarly by Stender et al~\cite{Stender2021} as bSTAB (basin stability). The method integrates randomly sampled initial conditions (ICs) of a dynamical system for a preset time span. The trajectories of these ICs are then mapped onto \emph{features}, numbers describing the trajectories, such as the mean or standard deviation of some of the system variables. All the feature vectors are clustered using the DBSCAN algorithm~\cite{Ester1996} so that ideally each cluster corresponds to an attractor of the system. The fractions of ICs in each cluster approximate the basin fractions and hence the global stability of each attractor. More details on the method in the Materials and Methods Sec.~\ref{sec:methods}.
+
+This method works well in a variety of circumstances and can also be applied across a parameter range. However, it comes with significant downsides. One is that it is not clear a-priori which features should be chosen to correctly separate the attractors into clusters, requiring a lot of trial and error. Another downside is that the method cannot guarantee that the clusters of features really correspond to unique attractors, and that it is not mixing two or more attractors together.
+An alternative method for finding attractors and their basins of attraction is the \emph{recurrence-based} approach recently proposed~\cite{DatserisWagemakers2022}. The method locates attractors by finding recurrences in the system's state space, assuming the Poincar\'e recurrence theorem holds for the system attractors. The input to this method is a state space box, and its tessellation, defining a grid to search for recurrences. Hence, the method will only find attractors within the given box, although the box can initially be arbitrarily large.
+We describe the method in more detail in Sec.~\ref{mat:recurrences_summary} and provide a comparison between the two techniques in Sec.~\ref{sec:compmeth}. The main advantage of the recurrences method is that it locates the actual system attractors and only requires as an input a state space box that may contain the attractors. So far however it has not been clear how to ``continue'' attractors across a parameter range with this method.
+
+In this work, in Sec.~\ref{sec:results}\ref{sec:recurrences_continuation}, we present a novel global stability analysis and \emph{continuation} algorithm that utilizes the recurrences-based method for finding attractors~\cite{DatserisWagemakers2022}. In Sec.~\ref{sec:results}\ref{sec:applications} we apply it to exemplary models of climate, ecosystem dynamics, and more. As detailed in Sec.~\ref{sec:discussion}, this novel continuation algorithm is the most accurate in finding the actual attractors of a dynamical system, the most transparent in matching attractors across parameter values, and requires the least amount of guesswork from the researcher. 
+We believe that this novel continuation of global stability, much like global stability analysis itself \cite{Menck2013}, is a crucial new tool for the analysis of dynamical systems. In some cases it supersedes CBA, and in others it can be complemented by CBA, as we discuss in Sec.~\ref{sec:compare_linear}.
+
+This continuation method is part of a novel automated framework that performs global stability analysis and continuation, which we present in Sec.~\ref{sec:results}\ref{sec:framework}. Our framework significantly advances existing methodology, including the featurizing methods, thereby including all upsides of current literature while addressing most downsides (Sec.~\ref{sec:methods} C and D describe the improvements in detail). Its design is based on modular components that can be configured or extended independently. This allows researchers to simply compose the methodology that is best suited to their problem, and then let an automated algorithm execute the process. The framework is accompanied by an extensively tested, well documented, and highly optimized open source software implementation, part of the DynamicalSystems.jl~\cite{DynamicalSystems.jl} general purpose library for nonlinear dynamics (see Sec.~\ref{sec:methods} for code example and documentation). 
+
+\section{Results}
+\label{sec:results}
+
+\begin{figure*}[!t]
+\centering 
+\includegraphics[width=\textwidth]{overview_figure}
+\caption{\textbf{A}: The recurrences-based find-and-match (RAFM) algorithm for global stability continuation described in Sec.~\ref{sec:results}\ref{sec:recurrences_continuation}.
+\textbf{B}: Schematic illustration of the modular framework for global stability analysis and continuation described in Sec.~\ref{sec:results}\ref{sec:framework}.}
+\label{fig:continuation_algorithm}
+\end{figure*}
+
+\subsection{Novel global stability continuation algorithm}
+\label{sec:recurrences_continuation}
+A major contribution of our framework is the novel algorithm for global stability analysis and continuation that we name \emph{recurrences-based attractor find-and-match continuation}, RAFM for short. This algorithm can be applied to any system whose attractors satisfy the Poincar\'e recurrence theorem. As illustrated in Fig.~\ref{fig:continuation_algorithm}\textbf{A}, it works as follows.
+
+Step 0: the starting point of the algorithm. Attractors and their basins, or basins fractions, are already known at a parameter $p=p_1$ using the recurrences-based algorithm~\cite{DatserisWagemakers2022}. 
+
+Step 1: new initial conditions are seeded from the existing attractors. Then, we set the system parameter to $p=p_2$. 
+
+Step 2: evolve the seeded initial conditions according to the dynamic rule of the system. The seeds are evolved until they converge to an attractor using the recurrences-based method (the grid reflects the tessellation of the state space that is decided by the user; the finer the grid, the more accurate the results~\cite{DatserisWagemakers2022}). 
+The main performance bottleneck of the recurrences-based method is finding the attractors. Once found, convergence of other initial conditions is generally much faster~\cite{DatserisWagemakers2022}. To address this in the continuation, we use the observation that, unless a bifurcation is occurring, attractor size, shape, and position, typically depend smoothly on $p$. Hence, the seeded initial conditions at each new parameter will most likely converge the fastest to the new attractors.
+
+Step 3: with the main bottleneck of the algorithm (finding the attractors) being taken care of, now compute the basins fractions by formally applying the recurrence-based algorithm~\cite{DatserisWagemakers2022} to randomly sampled initial conditions. It can be arbitrarily configured how to randomly sample initial conditions, but typically the samples are drawn uniformly from a state space box. Importantly, the algorithm may still find new attractors during this step (here the ``dark green'' one) that didn't exist before. 
+
+Step 4: match attractors in current parameter $p_2$ to those in parameter $p_1$. Matching is arguably the most sophisticated part of the algorithm. Attractors are matched by their ``distance'' in state space, with distance any arbitrary metric on the space of state space sets, see Sec.~\ref{sec:results}\ref{sec:matching} for more details. In this illustration the ``red'' attractor is matched to the ``purple'' one of Step 0, while neither the ``yellow'' or ``dark green'' attractors match to the previous ``teal'' one, because their state space distance is beyond a pre-defined threshold.
+
+The end result is the (matched) system attractors, and their basins fractions (or full basins if computationally feasible), as functions of the parameter. The attractors and basins are labelled with the positive integers (enumerating the different attractors), and the basins always sum to 1.
+Note that because RAFM works on a parameter-by-parameter basis, it can be used to perform continuation across any number of parameters, not just one (we present one here as the simplest conceptual example).
+
+
+\subsection{Global stability continuation framework}
+\label{sec:framework}
+To perform global stability analysis, several tasks need to be taken in sequence, see Fig.~\ref{fig:continuation_algorithm}\textbf{B} for an overview. We have abstracted and generalized the tasks to allow researchers different possibilities of how to achieve them. 
+
+
+The first task is the creation of a dynamical system for the global stability analysis. For our framework, this is achieved for free simply by making the implementation part of the DynamicalSystems.jl library~\cite{DynamicalSystems.jl} (see Sec.~\ref{sec:methods} E).
+
+The second task is the creation of a mechanism to find attractors and map initial conditions to them. Possibilities for this mechanism are: (1) \emph{featurizing and grouping} initial conditions into attractors (as discussed in the introduction), (2) finding attractors using the \emph{recurrences algorithm} \cite{DatserisWagemakers2022}, or (3) mapping initial conditions to \emph{previously known attractors by proximity}: once the evolution of an initial condition comes close enough to a pre-determined attractor, the initial condition is mapped to that attractor. Note that in (1) or (2) attractors are found via random sampling in the state space. For the typically used uniform sampling, the probability to find an attractor with basin fraction $f$ after $n$ samples is $1 - (1 - f)^n$. However, users may use system-specific knowledge to adjust the sampling into something that may find attractors with better scaling with respect to sample number $n$.
+
+Mechanism (1) is paired with instructions on how to group features. Currently, the possibilities are: (a) \emph{clustering} features into groups using DBSCAN (as done in MCBB or bSTAB), (b) grouping features by \emph{histograms in the feature space}, so that features that end up in the same histogram bin belong to the same group (novel grouping approach), or (c) mapping features to their \emph{nearest feature} in feature space, from a set of pre-defined features (as done in bSTAB). Having more grouping possibilities than only clustering can be useful, as discussed in Sec.~\ref{sec:results}\ref{sec:matching}.
+
+At this point one can analyze global stability at a given parameter, and also analyze the basin boundaries of attractors for fractal properties. From here, the third task is to ``continue'' the attractors and basins across a parameter range. Our framework currently has two continuation algorithms, however, due to an extendable design, more may be added in the future. The first continuation algorithm is what has been employed so far by the MCBB or bSTAB algorithms, but with significantly increased accuracy (see MatMeth), and extended to allow any kind of instructions for how to group features. We will call this ``Featurize and Group Across Parameter'' (FGAP). In this approach, trajectories from the dynamical system are generated by sampling random ICs across all parameter values of interest. All these trajectories are mapped to features, and all these feature vectors are then grouped using one of currently three grouping instructions (clustering, histogram, nearest feature). Each group is representing an attractor. The grouped ICs are then re-distributed into the parameter slices they came from, providing the fractions of each group at each parameter value. The second continuation algorithm is the RAFM algorithm that we described in Sec.~\ref{sec:recurrences_continuation}. These two approaches are compared in detail in Sec.~\ref{sec:compmeth}.
+
+\subsection{Application on exemplary systems}
+\label{sec:applications}
+In Fig.~\ref{fig:exemplary_fractions} we apply RAFM on some exemplary systems. We stress that we could characterize the different attractors in accurate detail because RAFM finds the actual system attractors, not some incomplete representation of them (i.e., features used in the featurizing-and-grouping approach).
+
+
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[width=\columnwidth]{figure2_fractions}
+    \caption{Basins fraction continuation for exemplary dynamical systems using the novel recurrences-based continuation algorithm. The fractions of the basins of attraction are plotted as stacked band plots (hence, summing to 1). Each color corresponds to a unique attractor that is found and continued (but not plotted here). Each simulation scanned 101 parameter values, and in each it sampled randomly 100 initial conditions. The fractions fluctuate strongly versus parameter not due to lack of convergence, but because the basin boundaries are fractal in all systems considered.
+    The systems used are: 
+    a) 3-dimensional paradigmatic chaotic model by Lorenz (Lorenz84~\cite{Lorenz84}) with a co-existence of a fixed point, limit cycle, and chaotic attractor, undergoing a crisis with the chaotic attractor merging into the limit cycle; 
+    b) 33-dimensional climate toy model~\cite{Gelbrecht2021} featuring bistability of chaotic attractors;
+    c) 3-dimensional multistable cell-division model~\cite{huang2006multistability} where each cell type is considered to be a distinct attractor in the gene activity state space;
+    d) 9-dimensional model for turbulent shear flow model in which the fluid between two walls experiences sinusoidal body forces~\cite{moehlis2004low};
+    e) 8-dimensional ecosystem competition dynamics model~\cite{huisman2001fundamental} featuring extreme multistability (due to the number of attractors, we made no effort to label them further).
+    }
+    \label{fig:exemplary_fractions}
+\end{figure}
+
+To illustrate a concrete application of the method, we discuss how the example of the Lorenz 84 dynamical system in Fig.~\ref{fig:exemplary_fractions}(a) was generated. Along with the following step by step ``tutorial'', we provide the computer code for this example in the Listing~\ref{lst:code}. First, a continuous time dynamical system object \texttt{ds} (whose equations are provided in Sec. \ref{sec:systems}) is created, and we choose the ODE integrator according to the system specifics (here we use the Verner 9th order solver~\cite{verner2010numerically}). Next, we choose the state space box, and its tessellation, that will be used both for the recurrences-algorithm~\cite{DatserisWagemakers2022} as well as for sampling random initial conditions when estimating the basin fractions. For this example, the box ranges from -3 to +3 divided into 600 points along each dimension.
+
+With the grid and the dynamical system, we construct a \texttt{mapper} object that maps initial conditions to attractors using the recurrences method~\cite{DatserisWagemakers2022}. To deciding the meta-parameters of this algorithm we consult our previous publication specifically about the algorithm~\cite{DatserisWagemakers2022}. For this example, the presence of a chaotic attractor involves longer recurrence times, so we set high values for the parameters \texttt{mx\_chk\_fnd\_att} and \texttt{mx\_chk\_loc\_att} to improve the precision of the characterization of the attractors. Sometimes, transient trajectories may spend some time outside the defined grid. In this case we can either provide a larger state space box, or set the parameter \texttt{mx\_chk\_lost} to a higher value. Very small time steps may lead to identification of false attractors if the orbit stays too long in a grid cell. To prevent these artifacts we specify that during time integration a non-adaptive method with a fixed time step of \texttt{Dt} should be used (note that the value of \texttt{Dt} will depend on the system's internal timescale.
+
+We chose 100 values of the parameter $G$ in the range $[1.34; 1.37]$ and construct a continuation object \texttt{rsc} which instructs how to perform the continuation (in this case this corresponds to using the RAFM algorithm). During the construction of \texttt{rsc} we could also specify how to match attractors (which is something we only discuss in Sec.~\ref{sec:matching} and in this example we used the default matching). We also specify how to sample random initial conditions via the \texttt{sampler} object, which in this case is randomly drawn initial conditions within the limits of the provided state space box. The continuation output is obtained after the call of the \texttt{continuation} function. This workflow is identical for the other examples used, besides the obvious changes of the dynamical system, state space box, parameter range, and possible tuning of meta-parameters. We also stress that the best place to learn how to choose optimal meta-parameters of all these algorithms is the documentation of the associated software which is constantly updated with best practices~\cite{Attractors.jl}.
+
+\subsection{Matching and grouping attractors}
+\label{sec:matching}
+Traditional CBA has a rigid ``matching'' procedure: it always matches the next point found along a ``continuation curve'' to the previous point. This is often correct for infinitesimal perturbations of fixed points, but becomes problematic for global stability analysis, which attempts to find all attractors in a state space box and then continue them. In this case, matching attractors from one parameter to the next becomes a crucial part of the algorithm. For instance, the analysis presented in Fig.~\ref{fig:exemplary_fractions} is only coherent because of the powerful matching procedure implemented in our framework. Without it, the colors would alternate arbitrarily at each parameter value.
+
+In the featurize-and-group algorithm, matching and grouping are the same process. In RAFM, matching is rather sophisticated and operates on a parameter-by-parameter basis. Each time the parameter is incremented, and the new attractors are found, a matching sub-routine is launched. The distance between attractors before and after the parameter change is estimated, with ``distance'' being any symmetric positive-definite function defined on the space of state space sets. By default the Euclidean distance of the attractor centroids is used because it is extremely fast and in the majority of cases it works very well. A more rigorous metric is the Hausdorff distance~\cite{Hausdorff1949-nn}, which is also provided out of the box. Additionally, ``distance'' is not limited to state space distances. It could be distance across dynamic invariants. For example, one can track the Lyapunov spectrum or the fractal dimension~\cite{DatserisBook} of each attractor and define a distance in terms of their absolute difference. This is easily possible in our code implementation because it is part of DynamicalSystems.jl, which offers algorithms for computing Lyapunov spectra or fractal dimensions out of the box.
+
+After the distance is computed between all new-old attractor pairs, the new attractor labels are matched to the previous attractor labels that have the smallest distance to them, prioritizing pairs with smallest distance. The matching respects uniqueness, so that once an attractor from the previous parameter has been matched, this attractor is removed from the matching pool and cannot be matching to an additional new attractor. Additionally, a distance threshold value can be provided, so that old-new pairs of attractors whose distance is larger than this threshold are guaranteed to get assigned different IDs. Note that in principle finding the attractors and matching them are two completely independent processes. If after the continuation process is finished the user decides that the chosen matching procedure was unsuitable, they can launch a ``re-matching'' algorithm with different matching ``distance'' function, without having to re-do any computations for finding the attractors or their fractions (i.e., matching only renames attractor labels but leaves the attractors themselves untouched).
+
+The last thing to highlight in this section is the desirable post-processing of grouping similar enough attractors. This happens automatically if one uses the featurize-and-group continuation method. However, taking as an example Fig.~\ref{fig:exemplary_fractions}(e), the RAFM method finds countless individual attractors. For the researcher, the individual attractors may be useful for careful analysis, but it is sometimes desirable to group similar enough attractors. In our framework it is possible to use exactly the same grouping infrastructure utilized by the featurizing-and-grouping continuation, but now applied to the outcome of RAFM as a post-processing step. In Fig.~\ref{fig:matching} we highlight examples that utilize the powerful matching and/or grouping components offered by our framework.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\columnwidth]{figure3_matching}
+    \caption{Highlights of the matching or grouping components of the framework. a) Matching attractors of the H\'enon map based on their period. In the chosen parameter range, an attractor is transformed from chaotic, to period 3, 7, and 14. The attractor stays in approximately the same state space location, so whether we consider the centroid distance or the Hausdorff distance, the attractor would be matched to itself in all parameter values due to the very small distance evaluation. Here however we use as distance $f(A,B) = |\log_2(\mathrm{len}(A)) - \log_2(\mathrm{len}(B))|$, with $\mathrm{len}$ measuring the amount of cells (of the state space tessellation) the attractor covers, and threshold $t=0.9\bar{9}$. This effectively means that matched attractors must have periods with ratio less than 2. b) Grouping attractors of Fig.~\ref{fig:exemplary_fractions}(e) so that attractors are grouped into those whose 3rd species has population less than 0.01, or more. (c) A replication of the MCBB~\cite{Gelbrecht2020} results for a 2nd-order Kuramoto oscillator network representing a power grid, using the featurize-and-group continuation implementation from our framework. Features extracted from sampled trajectories are the means of the frequencies. (d) Same system as (c), but using the recurrence continuation and matching attractors by their centroid distance (i.e., as in Fig.~\ref{fig:exemplary_fractions}). The only extra step was to post-process the results so that all attractors with basins fractions less than 4\% are aggregated (as was done in~\cite{Gelbrecht2020} and in panel (c)). (e) Attractor basin fractions for a network of 1st order Kuramoto oscillators; the attractors here are found and matched using the recurrences continuation, and then grouped via a histogram of their synchronization order parameter $R$~\cite[Chap. 9]{DatserisBook}. Attractors whose order parameter $R$ falls in the same histogram bin are aggregated.
+    }
+    \label{fig:matching}
+\end{figure}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Comparison with traditional continuation-based bifurcation analysis}
+\label{sec:compare_linear}
+In Table~\ref{tab:comparison} and Fig.~\ref{fig:comparison_with_bifkit} we provide a careful comparison between CBA and RAFM. A direct comparison of the two approaches is difficult, since their operational basis, main output, and even the way stability is quantified, are fundamentally different. On one hand, CBA finds and continues the curves of individual fixed points or limit cycles across the joint state-parameter space on the basis of Newton's method. The stability is quantified in terms of local stability (also called exponential stability via the Jacobian eigenvalues). On the other hand, RAFM first finds attractors at all parameter values using the original system equations, and then \emph{matches} appropriately similar attractors across different parameters, giving the illusion of continuing them individually. Additionally, the curves of stable fixed points in the joint parameter space (Fig.~\ref{fig:comparison_with_bifkit}) are only a small part of the information our framework provides. Important provided information are the basin fractions and how they change, which is completely absent in CBA. 
+
+Based on this comparison, we argue that the RAFM algorithm and the global stability framework we provide is an essential tool for stability analysis of dynamical systems. We further believe that in some application scenarios RAFM will supersede CBA, especially given the difference in required user expertise, required interventions, and steepness of the learning curve that CBA has over RAFM. In other scenarios, we envision that RAFM can be used as the default analysis method, providing the majority of information, and CBA then becomes a more in-depth analysis of fixed points, limit cycles,  bifurcations, and even stable/unstable manifolds, if such analysis is required.
+
+\newcounter{tablecounter} % Create a dedicated counter for the table, so that it is easy to comment out rows
+
+\begin{table*}[]
+    \centering
+    \begin{tabular}{p{.5cm}p{8cm}p{9cm}}\toprule
+    %\begin{tabularx}{\columnwidth}{ll}
+    \textbf{\#} & \textbf{Traditional continuation-based bifurcation analysis (CBA)} & \textbf{Recurrences-based attractor find-and-match continuation (RAFM)} \\ \hline
+    \rowcolor{blue!20} \refstepcounter{tablecounter}\arabic{tablecounter} & Provides curves of unstable fixed points / limit cycles. & Only finds attracting sets in the formal attractor sense (i.e., saddles, stable/unstable manifolds are excluded). \\
+    \rowcolor{blue!20} \refstepcounter{tablecounter}\arabic{tablecounter} & Several possibilities for how to continue bifurcation curves. & Does not explicitly detect bifurcation points. \\
+    \rowcolor{blue!20} \refstepcounter{tablecounter}\arabic{tablecounter} & Does not put limits on state space extent. & Needs as an input a state space box that may contain attractors. \\
+    \rowcolor{blue!20} \refstepcounter{tablecounter}\arabic{tablecounter}$^\diamond$ & Likely to find fixed points / limit cycles with small or even zero basins. & Probability to find attractor is proportional to its basins fraction. \\
+    \rowcolor{blue!20} \refstepcounter{tablecounter}\arabic{tablecounter} & Detects and classifies local bifurcation points. & Does not compute Jacobian eigenvalues at all. \\
+    \hline
+    \rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter}$^\odot$ & Finds and continues fixed points and periodic orbits. & Finds and continues any kind of attractors, including quasiperiodic or chaotic. \\
+    %\rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter} & Requires a computable Jacobian of the dynamic rule. & Does not utilize a Jacobian and can be used straightforwardly for transformed systems like Poincar\'e maps or projections. \\ 
+    \rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter}$^\mathparagraph$ & User must manually search for multistability. & Different attractors are automatically detected (via random sampling). \\ 
+    \rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter} & Does not compute the basins of attraction or their fractions. & Computes the fractions and, if computationally feasible, also the full basins. \\
+    % \rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter} & Uses the local, linearized dynamics. & Uses the full nonlinear dynamics. \\
+    \rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter}$^\ddagger$ & Limited use in indicating loss of stability. & More likely to indicate loss of stability as the basin fraction approaches 0. \\
+    \rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter}$^*$ & Parameter change may not affect linear stability of all fixed points. & Parameter change is more likely to affect global stability of all attractors. \\
+    \rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter} & No sophistication on matching fixed points. & Sophisticated, user-configurable matching of attractors. \\
+    \rowcolor{green!20} \refstepcounter{tablecounter}\arabic{tablecounter}$^\dagger$ & Requires expertise and constant interventions.  & Conceptually straightforward even in advanced use-cases. \\    
+    \hline\end{tabular}
+    %\end{tabularx}
+    \caption{A comparison between CBA and RAFM as tools for analyzing the stability of a dynamical system versus a parameter. Entries are colored blue when they contain advantages of CBA over RAFM, and green when they contain advantages of RAFM over CBA.\\ 
+    %\addtabletext{
+    $^\diamond$Newton's method transforms the dynamical system into a discrete time system with different basins, making attractors with very small or zero basin sizes have much larger ones instead.
+    $^\odot$ The CBA method may also find tori but this scenario is highly specific to the exact system and bifurcations it undergoes and not applicable in the general sense. Additionally, the word ``finds'' should be taken with a grain of salt. The user needs to provide an initial condition that would be in the Newton's-method-transformed basin of attraction of e.g., the limit cycle the method has to find. This basin cannot be related with the real system dynamics in any obvious way, requiring an arbitrary degree of trial-and-error to find an initial condition leading to a limit cycle. Alternatively, the user must find the limit cycle prior to using CBA, and provide a point on the cycle for the continuation.
+    $^\mathparagraph$In RAFM, attractors that are not being continued from a previously found one, are found via random sampling of initial conditions in the given state space box. The probability to find an attractor is equal to $1 - (1 - f)^n$ with $f$ the basins fraction of the attractor and $n$ the amount of sampled initial conditions.
+    $^\ddagger$Changing a parameter often does not meaningfully increase the unstable eigenvalues of the Jacobian matrix, which would indicate loss of stability ~\cite[Chap. 12]{DatserisBook}. On the other hand, basin fractions typically decrease smoothly towards zero as an attractor loses stability~\cite{Menck2013}, although this is not guaranteed to be the case~\cite{Schultz2017}, in which scenario, neither method indicates loss of stability.
+    $^*$Change of a parameter may affect the local (exponential) stability of a single fixed point, not all, providing flat lines in the bifurcation diagram for the unaffected fixed points. On the contrary, loss of global stability of any attractor affects (typically increases) the global stability of all other attractors. 
+    $^\dagger$Advanced applications of traditional bifurcation analysis software require several manual interventions during the process, and tuning of several configuration options, many of which do not have an immediately transparent role, requiring an expert user to make several decisions. The simplicity of our approach comes in part because of the brute-force nature of mapping individual initial conditions to attractors to collect the fractions, the intuitive nature of how attractors are matched (which is also user configurable), and the lack of necessity of interventions: after the configuration is decided, the framework runs automatically.}
+    \label{tab:comparison}
+\end{table*}
+
+
+\begin{figure*}%[tbhp]
+\centering 
+\includegraphics[width=\textwidth]{figure4_comparison}
+\caption{Stability analysis of a 3-dimensional neural dynamics model~\cite{Cortes2013}, plotting as information the maximum of the first variable of the dynamical system. For the parameters used, the model undergoes saddle-node and Hopf bifurcations and features bistability of a limit cycle and a fixed point. Left: analysis using the BifurcationKit.jl~\cite{BifurcationKit.jl} Julia package for CBA. The analysis must happen in two steps; first the branch of a fixed point is found and continued, and then, using a different algorithm, the branch of the limit cycle is continued from the Hopf bifurcation. We scatter-plot special points found and labelled by the process. The computation required $\sim$19 seconds on an average laptop. Right: analysis of the same model using our framework. The analysis happens in one fully automated step, after deciding the state space box and other meta-parameters. For the analysis, we purposefully demanded unnecessarily high accuracy, using a 9-th order ODE solver~\cite{Verner2010, DifferentialEquations.jl-2017} with tolerances of 10\textsuperscript{-9}, and requiring 1000 recurrences before claiming convergence in the recurrence algorithm~\cite{DatserisWagemakers2022}. The process integrated in total 101,000 initial conditions, yet required $\sim$16 seconds on the same laptop. Attractor matching utilized a threshold: attractors whose distance in terms of their maximum value of the first variable (i.e., same information plotted in figure) exceeding 3.0 are not matched.}
+\label{fig:comparison_with_bifkit}
+\end{figure*}
+
+
+\subsection{Comparison between attractor-finding methods} 
+\label{sec:compmeth}
+Our framework provides two radically different methods for finding attractors: the recurrence-based and the featurize-and-group approach. Generally speaking, the recurrence-based method should be preferred when possible, because of its accuracy (finding the actual attractors), and the possibility for follow-up analysis of found attractors. However, the featurize-and-group method should be preferred when the recurrence-based method fails, because e.g., the provided state space tessellation is ill-defined, or because computational demands exceed what is available, such as in higher-dimensional systems with chaotic attractors. In Table~\ref{tab:comparison_attractors} we provide a comprehensive comparison between the two methods.
+
+
+ \begin{table*}[!t]
+     \centering
+     \begin{tabular}{p{1.5cm}p{7.5cm}p{7.5cm}}\toprule
+     %\begin{tabularx}{\columnwidth}{ll}
+     \textbf{Aspect} & \textbf{Recurrences-based attractors find and match (RAFM)} & \textbf{Featurize and group across parameter (FGAP)} \\ \hline
+
+    Valid systems & Dynamical systems whose attractors satisfy the Poincar\'e recurrence theorem, irrespectively of their basin structure. & Anything, including stochastic systems, provided the user has found features that can distinguish different ``attractors'' (which could be actual attractors or something similar in the case of stochastic systems). \\ 
+     
+     Accuracy & Highly accurate: finds actual attractors using their unique property of their state space location. & 
+     Less accurate, as trajectories are transformed into features, and attractors correspond to groups of features. The correspondence is not guaranteed to be unique or reversible. \\ 
+     
+     Info stored & Stores samples of points on the found attractors. & Stores a user-provided function of the group of features (by default: the centroid of the group). \\
+     
+     Speed & Very fast for low dimensional systems and for systems whose attractors are fixed points or periodic orbits. Becomes slow for attractors with long recurrence times, such as high-dimensional systems ($\gtrsim 80$-D) with chaotic attractors or very fine state space tessellations. & Performance is independent of system attractors. It linearly scales with the number of features, the amount of initial conditions, the transient integration time, and the total integration time. Parallelizable. In addition is the cost of the grouping process, which is huge for clustering but trivial for histograms or nearest-feature. See also the benchmark comparison in the Appendix. \\ 
+     
+     Memory & Memory allocation scales as $(1/\varepsilon)^\Delta$, with $\varepsilon$ the state space tessellation size and $\Delta$ the capacity dimension of the attractor, which is often much lower than the state space dimension~\cite{DatserisBook}. & Memory allocation of the trajectories scales linearly with integration time and sampling rate. Additionally, specifically for clustering used as the grouping mechanism, the total memory allocated is proportional to the square of [initial conditions $\times$ parameter values] which, if one attempts to obtain accurate results, is often beyond the available memory on a typical computer (in the software implementation, we offer the possibility of an on-disk allocation in this case).\\
+     
+     Necessary input (guesswork) & A state space box that may contain the attractors, and a state space tesselation that is fine enough to differentiate the location of attractors. & A state space box that may contain the attractors; a function mapping attractors to features, such that different attractors produce different features; how much transient time to discard from time evolution; how much time to evolve and record the trajectory for, after transient. \\
+     
+     Meta-parameters & The parameters of the finite state machine of the recurrences algorithm~\cite{DatserisWagemakers2022}, and the time stepping $\Delta t$. All are crucial, but all are conceptually straightforward. & The integration time, sampling rate, and all parameters of the grouping procedure (such as those for DBSCAN or the histogram bin in feature space). Integration parameters are straightforward, but optimal parameters related to the grouping are much harder to guess.\\
+     
+     Trouble-shooting & Easy to troubleshoot. At any point the actual trajectories and attractors are accessible and why a failure occurs is typically easy to find out. Matching of attractors happens parameter-by-parameter, hence, individual parameter slices can be isolated and analyzed to identify where matching has failed and why (distances between attractors is also provided information). & Difficult to troubleshoot. It does not find the actual system attractors, so the user must always reason in terms of features. When grouping using clustering (DBSCAN), the grouping process essentially operates as a black box after the features have been computed, making it harder to comprehend failures. Matching of attractors happens at the same time as grouping, making it nearly impossible to understand why an expected matching failed during the continuation process. \\
+     
+     Failures & Algorithm may fail if state space tessellation is not fine enough and a grid cell may contain points from different attractors. Chaotic saddles and other sticky sets generate very long transients \cite{lai2009transient} and the algorithm can interpret them as attractors. Additionally, the algorithm is sensitive to the time step $\Delta t$ and the used integrator. For limit cycles it is often the case that a non-adaptive integrator needs to be used. & Sticky sets that are formally not attractors will be interpreted as attractors. Additionally, for ill-defined features, any group of trajectories could be interpreted as an attractor, which is not desirable in the context of this paper. Clustering via DBSCAN may fail unexpectedly, or, finding the optimal radius for the clustering may yield incorrect results. \\
+     %\bottomrule 
+     \hline
+     \end{tabular}
+    %\end{tabularx}
+     \caption{Comparison the two main methods of finding and continuing attractors.}
+     \label{tab:comparison_attractors}
+ \end{table*}
+
+%\matmethods{
+%Please describe your materials and methods here. This can be more than one paragraph, and may contain subsections and equations as required. 
+
+%\newcounter{matmethcounter}
+\section{Appendices}
+\label{sec:methods}
+\subsection{Featurizing methods for finding attractors}
+\label{mat:featurizing_summary}
+We group together two similar methods that have been recently proposed in the literature for finding attractors. One is called Monte Carlo basin bifurcation analysis (MCBB) \cite{Gelbrecht2020}, the other is basin stability analysis (bSTAB) \cite{Stender2021}. Both methods work by identifying attractors as clusters of user-defined-features of trajectories. Their first step is to integrate $N$ randomly chosen initial conditions inside a certain box in state space. The integration is done for some time $T$, after a transient $T_\mathrm{tr}$. Both $T$ needs to be sufficiently large so that the trajectories correspond to the systems' long-term behavior and also $T_\mathrm{tr}$ needs to be large to avoid the transient regime. Each trajectory $\vec{x}(t)$ is then transformed into a vector of $K$ features $\vec{F}$, specified by some featurizer function $\vec{f}$ such that $\vec{f}(\vec{x}(t)) = \vec{F}$ that has to be defined by the user. Each vector of features $\vec{F}$ describes a point in the $K$-dimensional space of features $f_1 \times f_2 \times \cdots \times f_K$. The key idea is that features belonging to the same attractor cluster together in state space, so that each attractor forms a distinct cluster (a cloud of points) in feature space. The final step in the method is to therefore cluster the features. The clustering algorithm chosen for this is the Density-based Spatial Clustering of Applications with Noise (DBSCAN) \cite{Ester1996}. It first classifies two points as neighbors if their distance if smaller than a radius $\epsilon$. Then, it clusters together points with many neighbors (equal or more than a parameter minPts), and leave as outliers points with too few neighbors (less than minPts). The radius $\epsilon$ is a crucial parameter for the algorithm, and often needs fine tuning for proper clustering. The methods by \cite{Gelbrecht2020} and \cite{Stender2021} use two different ways to identify a value for $\epsilon$. Authors in \cite{Gelbrecht2020} use a method that looks at the ordered distance of the $k$ nearest neighbors to each point in the dataset, and finds the first knee (high derivative point) \cite{Ester1996, Hahsler2019}. Authors in \cite{Stender2021} iteratively search for the $\epsilon$ that maximizes a criterion of clustering quality. To calculate this criterion, they evaluate the silhouette of the each cluster, which measures how similar each point is to the cluster it currently belongs to, compared to the other clusters, and ranges from $-1$ (worst matching) to $+1$ (ideal matching). This leads to one silhouette value per feature; the authors then take the minimum value as the representative for the clustering quality for each radius. The chosen radius is thus the value that leads to the highest minimum silhouette. In both methods, the clusters found by DBSCAN are considered then as attractors. 
+
+
+\subsection{Recurrences-based method for finding attractors}
+\label{mat:recurrences_summary}
+The inputs to this method are a dynamical system, a state space box that may contain the attractors (although initially it may be arbitrarily large), and a tessellation of the given box into cells. An initial condition of the system is evolved step-by-step with time step $\Delta t$. At each step, the location of the trajectory in state space is mapped to its cell, and that cell is labelled as visited. If the dynamical system has attractors, and they satisfy the Poincar\'e recurrence theorem~\cite[Chap. 9]{DatserisBook}, the trajectory is guaranteed to revisit cells it has visited before. Once a pre-decided number of recurrences $n_f$ have been accumulated consecutively (i.e., enough previously-visited cells are visited again), the method claims to have found an attractor. It then proceeds to locate the attractor accurately, by collecting a pre-decided number $n_l$ of points on the attractor (Figure 1 of Datseris et al.~\cite{DatserisWagemakers2022} and panel (3) of Fig.~\ref{fig:continuation_algorithm}). A finite state machine formulation keeps track of coexisting attractors, so that each attractor is unique. It also keeps track of divergence to infinity by counting steps $n_d$ outside the box, ensures algorithm termination by setting a total $n_m$ of max amount of $\Delta t$ iterations, and makes convergence faster by utilizing information already encoded in the grid: if the trajectory visits consecutively a relatively small number $n_r$ of cells already labelled as an attractor, convergence is already eagerly decided. I.e., converging to an already found attractor is much faster than finding that attractor for the first time. Hence, $\Delta t, n_f, n_l, n_d, n_m, n_r$ are the meta-parameters of the algorithm and have sensible default values that work in most cases. More information on the method can be found in Datseris et al.~\cite{DatserisWagemakers2022}. Notice that the recurrence method is different at a fundamental level from GAIO~\cite{gerlach2020set} and other cell mapping techniques~\cite{sun2018cell}. We expand more on this in the Appendix. Also note that the method is not perfect; it may identify two attractors when only one exists due to e.g., choosing too low convergence criteria $n_l, n_f$, or due to a commensurate period of attractor and integrator time step. However, once again the importance of finding the ``actual'' attractors becomes apparent: further analysis, by e.g., plotting the attractors, immediately highlights such a failure and how to deal with it, and we also provide several tips in the documentation of our method in the code implementation~\cite{Attractors.jl}.
+
+
+\subsection{Improvements to the recurrences method}
+
+A large drawback of the recurrences method was that it scaled poorly with the dimension $D$ of the dynamical system. If an $\epsilon$-sized tessellation of the state space is chosen, then memory allocated scaled as $1/\epsilon^D$. We now use sparse arrays to store accessed grid locations. This changes the memory scaling to $1/\epsilon^\Delta$, with $\Delta$ the capacity dimension~\cite{DatserisBook} of the attractor, which is typically much smaller than $D$ (and is only $1$ for limit cycles).
+
+\subsection{Improvements to the featurizing methods}
+First, we have changed the criterion used for finding the optimal radius in the clustering method. We have found the knee method consistently more unreliable than the iterative search. We have also found that the mean, instead of the minimum, silhouette value as the measure of clustering quality leads to better clustering. For instance, this lead to correct clustering in the Lorenz86 system, whereas the minimum value criterion did not. Furthermore, our method searches for the optimal radius with a bisection method, instead of the linear method used by authors in \cite{Stender2021}. This significantly speeds up the code. 
+Another simple modification we introduced is to rescale the features in each dimension ($f_1, f_2, \cdots, f_K$) into the same interval, for instance $[0,1]$. We noticed that the clustering method performs poorly if the features span different ranges of values, and this simple modification proved to be a very powerful solution.
+Third, we allow the integration of all initial conditions to be done in parallel, using several computer cores, which speeds up the solution.
+Lastly, grouping in our framework can also happen based on a histogram in feature space.
+
+\subsection{Code implementation}
+
+The code implementation of our framework is part of the DynamicalSystems.jl library~\cite{DynamicalSystems.jl} as the Attractors.jl package~\cite{Attractors.jl}. The code is open source code for the Julia language, has been developed following best practices in scientific code~\cite{goodscientificcode}, is tested extensively, and is accompanied by a high quality documentation. An example code snippet is shown in Listing~\ref{lst:code}.
+
+Besides the quality of the implementation, three more features of the code are noteworthy. First, that it is part of DynamicalSystems.jl instead of an isolated piece of code. This integration makes the simplicity and high-levelness of Listing~\ref{lst:code} possible, and makes the input for the code easy to set up. Moreover, the direct output of the code can be used with the rest of the library to further analyze attractors in terms of e.g., Lyapunov exponents or fractal dimensions. Indeed, in the provided code example Listing~\ref{lst:code} we compute the Lyapunov spectra of all found attractors, across all parameter values, in only two additional lines of code. Second, utilizing the Julia language's multiple dispatch system~\cite{bezanson2017julia}, the code is extendable. It establishes one interface for how to map initial conditions to attractors, and one for how to group features, both of which can be extended, and yet readily be usable by the rest of the library such as the continuation methods. Third, a lot of attention has been put into user experience, by establishing a short learning curve via a minimal user interface, by carefully considering how to provide the output in an intuitive format, as well as providing easy-to-use plotting functions that utilize the code output. More overview and information on the code or its design can be found in its online documentation or source code~\cite{Attractors.jl}.
+
+\subsection{Simulated systems}\label{sec:systems}
+In this section we state the dynamic rules (equations of motion), parameter values, and state space boxes, used for all systems in the main text.
+
+\subsubsection*{Chaotic Lorenz84} This model due to Lorenz~\cite{Lorenz84} is an extremely simplified representation of atmospheric flow as a low dimensional dynamical system with equations
+\begin{align*}
+\dot x &= - y^2 - z^2 - ax + aF, \\
+\dot y &= xy - y - bxz + G, \\
+\dot z &= bxy + xz - z
+\end{align*}
+and parameters $F=6.846, a=0.25, b=4.0$ and $G$ ranging from 1.34 to 1.37. The state space box and tessellation was from -3 to +3 discretized into 600 points in each dimension.
+
+\subsubsection*{Climate toy model} The high-dimensional toy model of global climate is due to Gelbrecht et al.~\cite{Gelbrecht2021}. 
+\begin{align*}
+    \dot{X}_n &= (X_{n+1} - X_{n-2})X_{n-1} - X_n + F \left(1 + \beta \frac{T - \bar{T}}{\Delta_T}\right) ,  \\ &  n = 1, \dots, N; \;  n\pm N \equiv i \\ 
+    \dot{T} &= S\left(1 - a_0 + \frac{a_1}{2}\tanh \left( T - \bar{T}\right)\right) - \sigma T^4 - \alpha\left( \frac{\mathcal{E} (\mathbf{X})}{0.6 F^{\tfrac{4}{3}}} - 1 \right) \\
+    \mathcal{E}(X) &= \frac{1}{2N}\sum_{n=1}^{N}X_n^2
+\end{align*}
+with parameter values identical to those in Table 1 of Ref.~\cite{Gelbrecht2021}, however we used $N=32$ $X$ variables. The parameter we varied was the solar constant $S$ from 5 to 19. The initial dynamical system above was transformed to a projected dynamical system to the space of $T$, $\mathcal{E}$ and $M = \sum_n X_{n}/N$, as also done in Ref.~\cite{Gelbrecht2021}. In this projected space the box and tessellation we used was from -2 to 10 for $M$, 0 to 50 for $\mathcal{E}$ and 230 to 350 for $T$ with 101 points in each dimension.
+
+
+
+\subsubsection*{Cell genotypes}
+The cell differentiation model MultiFate proposed in \cite{zhu2022synthetic} is given by 
+\begin{align*}
+    \dot{A_i} = \alpha + \beta \frac{ B_i^n }{ 1 + B_i^n } - A_i, \quad i = 1, 2, 3, 
+\end{align*}
+
+with, for each $i$,
+
+\begin{align*}
+    B_i = \frac{2A_i^2}{ K_d + 4(A_1 + A_2 + A_3) + \sqrt{ K_d^2 + 8(A_1 + A_2 + A_3) K_d } }, 
+\end{align*}
+
+with parameters $\alpha = 0.8$, $\beta = 20$, $K_d = 1$, $n = 1.5$. 
+The state space grid ranged the interval $[0, 100]$ for all $3$ dimensions, with $100$ grid cells per dimensions.
+
+\subsubsection*{Turbulent flow}
+
+We reproduce here the equations resulting of a Galerkin projection of a the stream function of a fluid limited to a finite cell volume, describing a low dimensional turbulent shear flow model, by~\cite{moehlis2004low}:
+\begin{widetext}
+\begin{align*}
+\frac{da_1}{dt} &= \frac{\beta^2}{Re} - \frac{\beta^2}{Re} a_1 - \sqrt{\frac{3}{2}} \frac{\beta \gamma}{\kappa_{\alpha\beta\gamma}}a_6 a_8 + \sqrt{\frac{3}{2}}\frac{\beta \gamma}{\kappa_{\beta\gamma}}a_2 a_3\\
+\frac{da_2}{dt} &= -\left( \frac{4\beta^2}{3} + \gamma^2\right) \frac{a_2}{Re} + \frac{5\sqrt{2} \gamma^2}{3\sqrt{3} \kappa_{\alpha\gamma}}a_4 a_6 - \frac{\gamma^2}{\sqrt{6} \kappa_{\alpha \gamma}} a_5 a_7 - \frac{\alpha \beta \gamma}{\sqrt{6}\kappa_{\alpha \gamma} \kappa_{\alpha\beta\gamma}}a_5 a_8 - \sqrt{\frac{3}{2}}\frac{\beta\gamma}{\kappa_{\beta\gamma}}a_1 a_3 - \sqrt{\frac{3}{2}}\frac{\beta\gamma}{\kappa_{\beta\gamma}}a_3 a_9\\
+\frac{da_3}{dt} &= -\frac{\beta^2 +\gamma^2}{Re} a_3 + \frac{2}{\sqrt{6}} \frac{\alpha \beta \gamma}{\kappa_{\alpha\gamma}\kappa_{\beta\gamma}}(a_4 a_7 + a_5 a_6) + \frac{\beta^2(3\alpha^2 +\gamma^2) - 3\gamma^2(\alpha^2 +\gamma^2)}{\sqrt{6} \kappa_{\alpha\gamma}\kappa_{\beta\gamma}\kappa_{\alpha\beta\gamma}} a_4 a_8\\
+\frac{da_4}{dt} &= - \frac{3\alpha^2 + 4\beta^2}{3Re} a_4 - \frac{\alpha}{\sqrt{6}} a_1 a_5 -\frac{10\alpha^2}{3\sqrt{6}\kappa_{\alpha\gamma}}a_2 a_6 -\sqrt{\frac{3}{2}}\frac{\alpha\beta\gamma}{\kappa_{\alpha\gamma}\kappa_{\beta\gamma}}a_3 a_7 -\sqrt{\frac{3}{2}}\frac{\alpha^2\beta^2}{\kappa_{\alpha\gamma}\kappa_{\beta\gamma}\kappa_{\alpha\beta\gamma}}a_3 a_8 -\frac{\alpha}{\sqrt{6}} a_5 a_6\\
+\frac{da_5}{dt} &= -  \frac{\alpha^2 + \beta^2}{Re} a_5 + \frac{\alpha}{\sqrt{6}} a_1 a_4 + \frac{\alpha^2}{\sqrt{6}\kappa_{\alpha\gamma}}a_2 a_7 -  \frac{\alpha\beta\gamma}{\sqrt{6}\kappa_{\alpha\gamma}\kappa_{\alpha\beta\gamma}}a_2 a_8 + \frac{\alpha}{\sqrt{6}} a_4 a_9 + \frac{2\alpha\beta\gamma}{\sqrt{6}\kappa_{\alpha\gamma}\kappa_{\beta\gamma}}a_3 a_6\\
+\frac{da_6}{dt} &= -\frac{3\alpha^2 + 4\beta^2 + 3\gamma^2}{3 Re}a_6 + \frac{\alpha}{\sqrt{6}} a_1 a_7 + \sqrt{\frac{3}{2}}\frac{\beta\gamma}{\kappa_{\alpha\beta\gamma}}a_1 a_8 + \frac{10(\alpha^2 - \gamma^2)}{3\sqrt{6} \kappa_{\alpha\gamma}} a_2 a_4 - 2 \sqrt{\frac{2}{3}} \frac{\alpha\beta\gamma}{\kappa_{\alpha\gamma}\kappa_{\beta\gamma}}a_3 a_5 + \frac{\alpha}{\sqrt{6}}a_7 a_9 + \sqrt{\frac{3}{2}} \frac{\beta\gamma}{\kappa_{\alpha\beta\gamma}}a_8 a_9\\
+\frac{da_7}{dt} &= -\frac{\alpha^2 + \beta^2 + \gamma^2}{Re} a_7 - \frac{\alpha}{\sqrt{6}}(a_1 a_6 + a_6 a_9) + \frac{\gamma^2 - \alpha^2}{\sqrt{6}\kappa_{\alpha\gamma}}a_2 a_5 + \frac{\alpha\beta\gamma}{\sqrt{6}\kappa_{\alpha\gamma}\kappa_{\beta\gamma}}a_3 a_4\\
+\frac{da_8}{dt} &= -\frac{\alpha^2 + \beta^2 + \gamma^2}{Re} a_8 + \frac{2\alpha\beta\gamma}{\sqrt{6}\kappa_{\alpha\gamma}\kappa_{\alpha\beta\gamma}} a_2 a_5  + \frac{\gamma^2(3\alpha^2 - \beta^2 + 3\gamma^2)}{\sqrt{6} \kappa_{\alpha\gamma}\kappa_{\beta\gamma}\kappa_{\alpha\beta\gamma}}a_3 a_4\\
+\frac{da_9}{dt} &= -\frac{9\beta^2}{Re} a_9 + \sqrt{\frac{3}{2}}\frac{\beta \gamma}{\kappa_{\beta\gamma}}a_2 a_3 - \sqrt{\frac{3}{2}}\frac{\beta\gamma}{\kappa_{\alpha\beta\gamma}}a_6 a_8\\
+\kappa_{\alpha\gamma} &= \sqrt{\alpha^2 + \gamma^2}\\
+\kappa_{\beta\gamma} &= \sqrt{\beta^2 + \gamma^2}\\
+\kappa_{\alpha\beta\gamma} &= \sqrt{\alpha^2+ \beta^2 + \gamma^2}
+\end{align*}
+
+Global parameters are    $L_x = 1.75\pi$, $L_z = 1.2\pi$, $\alpha = 2\pi/L_x$; $\beta = \pi/2$,  $\gamma = 2\pi/L_z$ 
+
+\end{widetext}
+
+\subsubsection*{Ecosystem dynamics}
+The population dynamics model of competing species is described by the following equations \cite{huisman2001fundamental}, for $n$ species and $3$ resources:
+\begin{align*}
+    \dot{N_i} &= N_i [\mu_i(R_1, R_2, R_3) - m ], \quad i = 1, \cdots, n, \\
+    \dot{R_j} &= D (S - R_j) - \sum_{i=1}^n c_{ji} \mu_i(R_1, R_2, R_3) N_i, \quad j = 1, 2, 3.
+\end{align*}
+
+The term $\mu_i(R_1, R_2, R_3)$ is given by, for each $i = 1, \cdots, n$,
+\begin{align*}
+    \mu_i(R_1, R_2, R_3) = \min\left( \frac{r R_1}{K_{1i} + R_1}, \frac{r R_2}{K_{2i} + R_2}, \frac{r R_3}{K_{3i} + R_3} \right).
+\end{align*}
+
+The parameters used in the figure are: $n = 5$, $m = 0.25$, $S = 10$, $r = 1.0$, 
+\begin{align*}
+        K &= \begin{bmatrix}
+        0.20 & 0.05 & 1.00 & 0.05 & 1.20 \\
+        0.25 & 0.10 & 0.05 & 1.00 & 0.40 \\ 
+        0.15 & 0.95 & 0.35 & 0.10 & 0.05 \\
+        \end{bmatrix}, \\
+        c &= \begin{bmatrix}
+        0.20 &0.10 &0.10 &0.10 &0.10\\
+        0.10 &0.20 &0.10 &0.10 &0.20\\
+        0.10 &0.10 &0.20 &0.20 &0.10 \\
+    \end{bmatrix},
+\end{align*}
+
+and $D$ is given in the axis of the figure. The grid in state space was defined in the interval $[0, 60]$ for all dimensions, and discretized to include $300$ grid squares. The initial conditions in a grid in the same interval, but with only $2$ grid squares to dimension, rendering $2^8$ initial conditions for the $8$-dimensional state space. 
+
+
+\subsubsection*{Hénon map}
+A simple yet famous 2-dimensional discrete time map with constant Jacobian due to H\'enon
+\begin{align*}
+    x_{n+1} &= 1 - ax^2_n+y_n \\\\
+    y_{n+1} & = bx_n
+\end{align*}
+with $b = 0.3$ and $a$ ranging from 1.2 to 1.25. We used the state space box from -2.5 to 2.5 with 500 cell points in each dimension.
+
+\subsubsection*{Second order Kuramoto oscillators on networks}
+
+This model of coupled oscillators reproduces the dynamics of synchronous generators coupled over a power grid. The equations of the nodes are: 
+\begin{align*}
+\dot \phi_n &=  \omega_n\\
+\dot \omega_n &= \pm 1 - 0.1\omega - K \sum_j A_{ij}sin(\Phi_i - \Phi_j),
+\end{align*}
+where $\phi_n$ and $\omega_n$ are the phase and the frequency of the oscillator $n$. The adjacency matrix $A_{ij}$ contains all the information about the coupling of the system and is taken from a random regular graph of degree 3. The leading coefficient of the second equation is 1 when $n$ is odd and -1 otherwise. K is the coupling coefficient between oscillators that is used as a parameter for the study of the basins fractions. The panel (d) Figure 3 of the article has been processed such that basins with less than 4\% of the basins fractions are aggregated into the cluster called ``outliers''. 
+
+\subsubsection*{Kuramoto coupled oscillators on networks}
+This is the classical network of $N$ phase oscillator with a global coupling: 
+\begin{align*}
+\dot \phi_n &= \omega_n - \frac{K}{N} \sum_j sin(\phi_i - \phi_j),
+\end{align*}
+Frequencies of the individual oscillators $\omega_n$ are spread evenly within the interval $[-1, 1]$. 
+
+%} % End of Materials & Methods section
+
+
+%\showmatmethods{} % Display the Materials and Methods section
+
+
+\begin{lstlisting}[language=Python, label = {lst:code},basicstyle=\scriptsize\ttfamily, caption = {Julia code snippet showcasing the usage of the DynamicalSystems.jl implementation of our framework. The code produces panel (a) of Fig. 2. The main output of the code are two vectors, containing the basins fractions and attractors at each parameter value respectively. The fractions and attractors are formulated as dictionaries, mapping attractor labels (the integers) to basin fractions and sets of points on the attractor, respectively. At its end, the code snippet computes the Lyapunov spectra of all found attractors, by using the first point on each attractor as initial condition for the computation of the Lyapunov spectrum.}]
+using DynamicalSystems # our framework implementation
+using OrdinaryDiffEq   # high-accuracy ODE solvers
+
+# create Lorenz84 within DynamicalSystems.jl
+function lorenz84_rule(u, p, t)
+    F, G, a, b = p
+    x, y, z = u
+    dx = -y^2 -z^2 -a*x + a*F
+    dy = x*y - y - b*x*z + G
+    dz = b*x*y + x*z - z
+    return SVector(dx, dy, dz)
+end
+u0 = ones(3) # init. state
+p0 = [6.886, 1.347, 0.255, 4.0] # init. parameters
+# ODE solver:
+diffeq = (alg = Vern9(), )
+# Main object of the library: a `DynamicalSystem`
+ds = CoupledODEs(lorenz84_rule, u0, p0; diffeq)
+
+# Provide state space box tessellation to search in
+xg = yg = zg = range(-3, 3; length = 600)
+grid = (xg, yg, zg)
+# initialize recurrences-based algorithm
+# and choose its metaparameters
+mapper = AttractorsViaRecurrences(ds, grid;
+    mx_chk_fnd_att = 1000, mx_chk_loc_att = 2000,
+    mx_chk_lost = 100, mx_chk_safety = 1e8,
+    Dt = 0.05, force_non_adaptive = true,
+)
+
+# find and continue attractors across a given
+# parameter range for the `pidx`-th parameter
+prange = range(1.34, 1.37; length = 101)
+pidx = 2 # index of parameter
+sampler = statespace_sampler(grid)[1]
+rsc = RAFM(mapper)
+# main output:
+fractions_cont, attractors_cont = continuation(
+    rsc, prange, pidx, sampler
+)
+
+# Estimate Lyapunov spectra for all attractors
+# by looping over the parameter range
+lyapunovs_curves = map(eachindex(prange)) do index
+    set_parameter!(ds, pidx, prange[index])
+    attractor_dict = attractors_info[index]
+    exponents = Dict(
+        id => lyapunovspectrum(ds, 10000; u0 = A[1])
+        for (id, A) in attractor_dict
+    )
+end
+\end{lstlisting}
+
+\subsection{Computational performance comparison}
+The benchmarks presented in Fig. \ref{fig:benchmarks} provide a comparison between techniques for finding attractors for a discrete and continuous dynamical system.
+\begin{figure*}[!h]
+    \centering
+    \includegraphics[width = 14cm]{mappers}
+    \caption{Benchmark comparison between all methods for finding attractors and their basins in DynamicalSystems.jl. Note that the featurizing method scales quadratically with the number of initial conditions, because the DBSCAN algorithm scales quadratically.}
+    \label{fig:benchmarks}
+\end{figure*}
+
+
+\subsection{Comparison with GAIO and cell mapping techniques}
+
+The numerical approximations of the attractors and their basins of attraction can be achieved with other well known numerical tools. The cell mapping and the GAIO algorithms rely both on a subdivision of the state space. In its simplest form \cite{sun2018cell}, the cell mapping technique transforms the dynamical system into a discrete mapping. Each cell of the state space is mapped to another cell following the dynamics during a fixed time $T$. The new representation of the dynamical system is a directed graph where each node represents an initial condition on the tessellated phase space and a single edge starts from this node to another one in the graph. Once the full mapping has been obtained, efficient search algorithms inspired from graph theory approximate the basins and the attractors. The computational effort is centered around the construction of the mapping and depends directly on the discretization of the state space. The computational complexity explodes with the system dimension and hence limits its practical use to low dimensional systems.
+
+The Global Analysis of Invariant Objects (GAIO) algorithm \cite{dellnitz2001algorithms} is also based on the discretization on a region but only a subset of cells is subdivided following the dynamics of the system. An iterative process allows to approximate accurately the attractor manifold and also other invariant sets embedded in the state space. The complexity only depends on the dimension of the manifold not on the dimension of the state space, which is a considerable gain over the cell mapping. Since the method is focused on global attracting sets, it is not usable for multistable systems, which are the main focus of our work. 
+
+These two techniques are hard to apply in estimating the basins fractions across a parameter value. The cell mapping technique requires a full description of the state space for each parameter, making the random sampling of the phase space impossible. The GAIO technique can continue a global attractor but will fail if two or more exist at any parameter value~\cite{gerlach2020set}.
+
+We should mention another algorithm using interval arithmetic for continuation of the dynamics \cite{arai2009database}. The continuation is performed in a database space using Conley indices and Morse decomposition. Although very effective for low-dimensional maps, it lacks the flexibility and ease of use of our proposed method. 
+
+
+\section*{Acknowledgments}
+The authors would like to thank Ulrike Feudel, Peter Ashwin, Ulrich Parlitz, and Harry Dankowicz for helpful discussions.
+G.D. was supported by the Royal Society International Newton Fellowship. 
+K.L.R. was supported by the German Academic Exchange Service (DAAD).
+A.W. was supported by the Spanish State Research Agency (AEI) and the European Regional Development Fund (ERDF) under Project No. PID2019-105554GB-I00 (MCIN/AEI/10.13039/501100011033).
+
+\section*{Authors declarations}
+\subsection*{Conflict of interest}
+The authors have no conflicts to disclose.
+
+\subsection*{Data availability}
+
+The code we used to create the figures of this article is fully reproducible and available online \cite{codebase}.
+
+
+\subsection*{Authors contribution}
+G.D. coordinated the project. All authors contributed in compiling the results, creating the code, writing and revising the manuscript.
+
+\bibliography{REFERENCES}
+
+\end{document}
+

@@ -1,0 +1,156 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=violet]{hyperref}
+\graphicspath{{figures/}}
+\usepackage[dvipsnames]{xcolor}
+
+\newcommand{\george}[1]{\textcolor{red}{#1}}
+\newcommand{\alex}[1]{\textcolor{blue}{#1}}
+\newcommand{\kalel}[1]{\textcolor{OliveGreen}{#1}}
+
+
+\title{Accurate and fast basins fraction continuation for arbitrarily high dimensional systems}
+\author{The bad boys}
+
+\begin{document}
+\maketitle
+
+Tasks color coding: \george{George}, \alex{Alex}, \kalel{Kalel}.
+
+\tableofcontents
+
+\section{Letter to Editor}
+Dear Editor(s),
+
+Please find attached our manuscript ``Framework for global stability of dynamical systems''. In the last couple of decades, the important role of considering global, rather than local, stability analysis of dynamical systems has become apparent in a broad community of researchers working with applications of dynamical systems. Especially within the research direction of tipping points, which have become a crucial consideration for ecosystem dynamics, climate, power grids, and other type of models, being able to estimate the relative size of basins of attraction of attractors is important because it indicates the relatively stability of an attractor to finite-sized perturbations which are predominant in practice. Yet, we have no real framework and computational tool that allows such an analysis in a relatively straightforward manner. In our manuscript we present such a framework, and with it, we present a completely novel approach to the concept of ``continuation'' in dynamical systems, i.e., analyzing the stability of a dynamical system versus a parameter axis.
+
+We understand that the manuscript does not fit the traditional scope of a research letter, as it deals more with practically performing analysis that may be used by a rather large gambit of research fields. However, we argue that such a style is typical for computational nonlinear dynamics, the field of research that our manuscript is part of. Additionally, we have reasons to believe that our manuscript will be highly cited in the years to come, because of: (1) offering a framework that applies directly to scientific topics currently under intense research (such as multistabilily and tipping points), (2) offering a straightforward, easy to learn and use software implementation that is much simpler that competing alternatives that implement traditional continuation-based stability analysis, and (3) because the software implementation of our framework has had already more than 800 downloads, even though we have not made any formal announcement of it yet.
+
+For these reasons we sincerely believe that our manuscript would make a great contribution to the PNAS body of work.
+
+with best regards,
+the authors
+
+\section{Agenda}
+\begin{enumerate}
+
+\item I'm trying to find a paper: the paper was analyzing kuramoto oscillators in networks. It showed that basin stability doesn't smoothly go to zero as an attractor dissapears. We need to cite this paper as a limitation of our method. But I can't find it anymore... :(
+\end{enumerate}
+
+
+\section{High Priority TODOs}
+\begin{itemize}
+    \item \alex{Figure 4 (benchmark comparisons)}
+    \item \alex{Alex write in the paper that MCBB runs out of memory for ``accurate'' calculations. Without the mmap arrays, the memory blows up for 20000 features (2000 features and 10 parameters). With the mmap I managed to process 9000*20 features on a machine with 150Gb of RAM.}
+    \item \alex{[Alex] In the benchmark comparison file of George, add information for power grid system: initial conditions going to different attractors, whether grid is correct, and the featurizing function for clustering. (All those at a specific parameter combination, this doesn't do continuation yet)}
+    \item \kalel{Add "original" basin clustering in the benchmark code. This is the code that produces the benchmarks. The code is self explanatory. Modify file basin\_fractions\_benchmarks\_generate by adding a new method.}
+    \item \alex{We must compare our recurrence method with the cell-to-cell mapping method. We must have a section in the supplement. Too many people has told us that our method is similar to that method. To get an idea, either have a look at the book \url{https://books.google.co.uk/books?hl=en&lr=&id=CwHqBwAAQBAJ} or the references in section 4 of the paper \url{https://doi.org/10.1142/S021812740902283X}}
+    \item (For appendix) Figure that shows difficulties of clustering. E.g., Figures with subplots with different measures used for clustering, or perhaps some kind of table with different measure combinations...
+\end{itemize}
+
+\section{Low priority TODOs}
+\begin{itemize}
+    \item Make a Supplementary Information file as well using PNAS template.
+    \item \kalel{Summary of deficiencies of clustering/bSTAB. You have this here.}
+    \item \george{Check out GAIO, and how it connects or compares to our method.}
+    \item Find high dimensional systems that used in e.g., pharmaco stuff, e.g., what Chris uses in Pumas.AI. We can make a good selling case that our algorithm finds attractors with minute differences and clusters them together.  \george{Chris said: The non-stochastic version of this should have 3 steady states if I recall correctly: \url{https://github.com/SciML/DiffEqProblemLibrary.jl/blob/master/src/sde_premade_problems.jl#L166-L312}}.
+    \item \alex{Alex has a bunch of systems that he applied the recurrences method. Could put this in the supplementary material.}
+\end{itemize}
+
+\section{Systems to highlight as a comparison baseline}
+
+\begin{itemize}
+    \item Lorenz84: chaotic and periodic are very close to each other.
+    \item Slow fast system (what Kalel showed in the issue).
+    \item high dimensional system with identical components: kuramoto
+    \item high dimensional system with NONIDENTICAL components
+    \item Divergence to infinity + convergence to some attractors
+    \item ...?
+\end{itemize}
+
+
+\section{highlight in the new paper}
+\begin{itemize}
+    \item basin stability of synchronized states using our fancy user-defined function that maps together synchronized states. This will make our method very good for network analysis.
+    \item sparse structures allow searching efficiently for recurrences in much higher dimensional spaces; maybe we can now actually find attractors for coupled kuramato oscillators
+    \item sparse method is SO MUCH FASTER THAN ANYTHING ELSE
+    \item Finding attractors accurately in high dim, and finding their fraction, are separate tasks
+    \item on-the-fly final state sensitivity estimation without knowing full basins; also allows targeted sensitivity of state space regions of interest
+    \item Comparison with bSTAB: our new method can instantly map a single initial conditon to attractors; bSTAB needs to first evolve an unknown number of initial conditions to get the clustering right. This is besides all other benefits like e.g. you don't need to define a featurizer.
+    \item find a way to quantify the ``sensitivity'' of the methods versus their parameters. If I change X parameter slightly, how bad is it for the method...?
+    \item bSTAB really has a lot of problems. Finding ``good'' features is hard. It took us days to find some for Lorenz84. Clustering algorithm doesn't work well and often does not successfully separate clusters. Needs ultra long integration times to separate clusters. Another problem is that the way the authors created bSTAB, it cannot find attractors.
+    \item The basin fractions continuation method with arbitrary user function for distance and threshold can lead to some pretty powerful classification.
+\end{itemize}
+
+\begin{verbatim}
+When compared with featurizing+clustering approach, we have:
++ Rigorous method, validity guaranteed in the limit to 0
++ Finds the actual, exact attractors, not a description of them
++ Straightforward way to increase accuracy: decrease epsilon
++ Easier to understand what went wrong (we are “just” following trajectories)
++ Auto-terminating algorithm, no guessing of total integration time
++ No need to guess attractor properties beforehand (for good features)
+- Do need to guess the box containing “all” attractors
+- high-dimensional state spaces are computationally impossible; Solved with our new sparse array data structure method! ChaosTools/PR#269
+- really high dimensional state spaces are computationally impossible due to scaling of return times in state space.
+- Multiple meta-parameters for algorithm, and “optimizing” is non-trivial
++ Much higher performance (finding optimal cluster = slow)
+\end{verbatim}
+
+\section{Selling points}
+EVERYONE: Think of how to give good selling points for PNAS.
+Selling point for ``it matters to find individual attractors''. Power grid. Different attractors = different fluctuation in different city, and groupping them together is not optimal. Or in the brain. Or concentrations of different chemicals when making a medicine. But it would be nice if we can find actually concrete systems.
+
+\begin{enumerate} 
+\item \kalel{Metabolical rates possible selling point.}
+\item \kalel{UP/DOWN states or alive/dead cases as possible important examples of matching}
+\item \kalel{Community model something separation in two attractors with custom metric.}
+\item \kalel{Performance of clustering has now become important, as we need to compare versus it to sell our paper well, and we can't compare versus a really unoptimized implementation.}
+\item for powergrids, we can talk about the ``sync basin'', see e.g., \url{https://aip.scitation.org/doi/full/10.1063/1.4986156}.
+\item the nice ways we can match attractors and the flexibility it gives.
+    \item Lorenz63 sticky regime, integration time depends on parameter but our algorithm is self-terminating. Kalel results. So the selling point is ``the algorithm is self-terminating''.
+\end{enumerate}
+
+\section{bSTAB deficits}
+\subsection{Description of the algorithm}
+The bSTAB (basin stability) \cite{stender2021bstab} algorithm proposes a simple and intuitive way to identify attractors and calculate the stability of their basins of attraction. For this, the key idea is to look at \textit{features} (quantifiers) of trajectories. If they are chosen appropriately, trajectories belonging to the same basin will have similar feature values and will thus cluster together in a feature space. In this feature space, each trajectory becomes a single point, with coordinates equal to the values of the features extracted from it. By therefore choosing random initial conditions, integrating the trajectories, extracting their features, and applying an appropriate clustering algorithm to points in feature space we can get the attractors of the system as the clusters of points.
+
+\subsection{Strengths and weaknesses}
+An advantage of this method is that it is not limited by the dimensionality of the system (what can slow down the code is the dimensionality of the feature space, i.e. how many features are used, but this often can be very small). It can thus work well for systems of very high dimensionality, where current alternatives fail.
+
+The simplicity of the method can also bring drawbacks. First, there is the obvious issue of identifying appropriate features, which requires some knowledge about the system being used and whose solution may not always be immediately clear. Second, by using the features space as a proxy for the state space properly, clusters of points in feature space can not be guaranteed to correspond to real attractors of the system; conversely, different attractors might have the same, or at least very similar features, and may be clustered together. Third, it lacks an appropriate termination technique to stop the integration of trajectories, such that long integration times have to be preferred, leading to the code slowing down.
+
+
+\subsection{Difficulties with the original implementation and solution}
+Furthermore, the original implementation of the unsupervised version of bSTAB, as reported by the authors as in the source code they made available, failed to correctly identify attractors in some harder cases, when systems had more complex state space structures than the ones tested in the original paper.
+We identified two problems arising with the original implementation.
+The first problem occurred when the features spanned different orders of magnitude (for instance, one feature ranging from $0$ to $1$ and another ranging from $0$ to $100$). In this case, points in feature space become spread very unevenly along the dimensions: in one dimension, they go from $0$ to $1$; in another, from $0$ to $100$. For the clustering, the distances between the points needs to be compared to a single threshold value (the radius of the neighborhood). If the distance metric is Euclidean (the default choice), then the dimension spanning more orders of magnitude will dominate the distance values, and the points can be well clustered along the dimension spanning more orders of magnitude, but not on the other dimension, where they are considered to be compressed together.  To solve this, simply rescaling the features into the same $[0,1]$ interval worked well.
+The second problem we encountered was with the algorithm used to determine the optimal radius of the neighborhood for the dBSCAN clustering. This value is crucial for a correct clustering of the points: if it is too big, different clusters may be grouped together; if it is too small, clusters may not be identified. To choose the optimal value, the algorithm judges the quality of clustering by using a common measure called a silhouette value. This value measures how similar a point is to the cluster it currently belongs, compared to the other clusters \cite{}. In the original implementation, the optimal value chosen is the one that maximizes the minimum silhouette values across all points. For some points, this only occurs by making the radius very big, and grouping different clusters together. We avoided this problem by instead maximizing the \textit{average} silhouette values for the clusters. This leads to smaller values of the optimal radius, and to the correct clustering.
+
+
+\section{Rogue notes}
+
+Another huge selling point. Some user asked:
+\textit{Is there a good way to detect periodic orbits in a dynamic system?
+I have created a bifurcation diagram using BifurcationKit (image, blue lines stable steady states, red dotted unstable ones. purple lines stable periodic orbits, dashed purple unstable periodic orbits). In it I find a region in parameter space where a stable steady state coexists with a stable limit cycle. I want to make a more general scan to find out how common this is across parameter space.
+Is there an easy way to do this without computing bifurcation diagrams (i.e. taking a parameter set, find the steady states, and then determine whenever there's a limit cycle)? The only idea I have is to simple simulate the system, but maybe there's something more elegant...
+} and provided figure:
+
+\includegraphics[width = 0.5\columnwidth]{bifurcation_with_periodic_orbits.png}
+
+and I said: \textit{We are currently working on a basins fraction continuation method that is supposed to be ultra fast and also allow the possibility of classifying attractors by "their nature". In this method the state space is scanned versus a parameter, and the user gets a vector of the fraction of each atttractor for each parameter. Thus, you check if the fraction of "limit cycles" is greater than zero for a given parameter. We believe our method is ultra fast (to be proven), faster than bifurcation based approaches or clustering approaches.}
+
+\bibliography{REFERENCES}
+
+\end{document}

@@ -1,39 +1,55 @@
 \chapter{Introduction}
-
-\section[networks]{Networks}
-
-Several natural and artificial systems are composed of separate entities that interact together, forming networks - or, at least, they can be approximately modelled as networks. Often, these interactions generate complex behaviors, which would not exist without the interactions. For instance, neural circuits blabla.
-
-A major area of research today is to understand precisely how this large-scale complex dynamics emerges from the interactions between units in networks. This ranges from setting up experiments XX, modelling to a high precision, and also building the basic theory that aims to describe the fundamental aspects of these networks. For this thesis we have focused on the latter case, aiming to study the fundamental behavior of simple, non-specific, networks. To do this, we have relied on a second layer of abstraction: often, networks can be modelled as dynamical systems following ODEs of the general form: 
+Consider the unfortunate situation of falling down a mountain. Subject to the inexorable effect of gravity and friction, the hiker will roll down until they reach a certain valley, a spot at which they will finally terminate their unlucky dynamics. This final state is called an attractor of this system's dynamics. Now, consider a landscape like the one in \figref{fig:intro:landscape}. The mountain here has several valleys, separated by peaks. Consider then the even more unfortunate situation of two people falling down a mountain. If they start very close together, on the same side of a peak, they will fall down to the same valley. If, however, they were separated by a peak when the fall started, then they will fall into distinct valleys. Again, each valley is an attrator of the dynamics. The valley of the accident is chosen by the initial condition, where the person was - and how fast they were moving - when they started to fall. All of the initial conditions that lead to the same attractor form a set called the basin of attraction of that attractor. Basins of attraction are typically separated by peaks in the landscape.
 %
-\begin{align}
-    \dot{x}_i = f(x_i) + g(x)
-\end{align}
-
-where XX. Introduce topology, connections. Examples? power grids and neural networks and kuramoto?
-
-This abstraction is quite helpful, because systems of this form can be studied using techniques from dynamical systems theory. XX?
-
-Among the plethora of important dynamics arising in networks, we have in this thesis focused on three particular behaviors: malleability, multistability and metastability. Although separate, they are intrisically related, as we will see. For the first two, we have focused on how they are controlled by the network's topology.
-
-% \section[malleability]{Malleability}
-
-The first behavior we have studied is \textit{dynamical malleability}, which refers to the capacity of a network to change its dynamics when the individual parameters of units or connections are changed. We studied this behavior in Kuramoto oscillator networks of the form 
-
-\begin{align}
-    \dot{\theta} ...
-\end{align}
-
-These networks serve as paradigmatic models to understand emergent behavior - in particular, synchronization - in complex networks. They can be derived as an approximation for generic coupled limit cycle oscillators under weak coupling \cite{}. Although it does not model a particular real-world system, it has been used as a simple model for large-scale brain networks \cite{} and power grids \cite{} ?. Originally used to describe chemical oscillations XX.
+\begin{figure}
+    \centering
+    \label{Landscape with valleys and peaks constitutes an example of multistability for an unfortunate falling person.}
+\end{figure}
 
 
+The example of the hiking disaster serves as a good introduction to the notion of multistability - the simultaneous coexistence of different ending states, different attractors, in a dynamical system with constant parameters (note: the mountain landscape does not change in time in the example). This phenomenon is present in a wide variety of notable systems, with potentially important real-world consequences \cite{}. Examples.
+
+The examples in neural networks, epilepsy and power grids highlight the ubiquitous presence of multistability in networked systems - systems formed by the interactions of smaller subunits, such as neurons or electric generators.  Another phenomenon that can coexist with multistability is synchronization \cite{}. In a synchronized network, the different subunits have similar activity. A famous spectacle is that of synchronized butterflies (or whatever XX). A perhaps more technically relevant example occurs in power grids, in which all the units must have their frequencies synchronized at the same level, such as 50 Hz. Synchronization has also been proposed as an important mechanism in brain circuits, such as for XX. Another example can be found in the flight pattern of fruit flies XX. 
+
+The real-world relevance of such systems has stimulated a lot of research into their dynamics, including multistability and synchronization \cite{}. An approach taken by lots of works has been to study simple models that capture some essential properties of real world systems. A particularly important example, which has become paradigmatic in the synchronization literature, is that of Kuramoto oscillators (see Sec.\ref{method:kuramoto}). They constitute quite a beautiful example of how units with very simple dynamics can generate complex behavior when interacting together. The Kuramoto model was initially proposed to model XX.
+
+Extending the initial assumptions of the Kuramoto, the literature has also studied Kuramoto oscillators under different topologies. An important example occurs in regular networks, in which units are coupled to their $k$-nearest neighbors (see Sec.\ref{method:networks}). In this case, one finds multistability of twisted-states, solutions which are offset by a constant phase difference between adjacent units (\figref{fig:method:twisted-states}). Extending the assumptions even further towards more realistic cases, some studies have looked at Kuramoto networks with heterogeneous frequencies and complex topologies. Gelbrecht, who else? Introduce our malleability. Cite our paper on Chialvo neurons.
+During my PhD, we have started to also study the mechanism that gives rise to this large multistability. XX.
 
 
-\section[multistability]{Multistability}
+Multistability is also present in other types of networks. In particular, during my PhD we started to study multistability in a network of coupled bursting neurons. Hindmarsh-rose, chaotic saddle. With this, we boiled the behavior down to a simpler system of excitable neurons coupled diffusively. To this line of investigation on multistability there is also a confluence of another line of research, into diffusive coupling in excitable systems. Starting with Turing XX. Then go to explain our results on . These types of studies require efficient and reliable algorithms to  identify the coexisting attractors of a system. To this end, I teamed up with XX to multistability chaos paper.
 
 
-\section[metastability]{Metastability}
+The multistability in excitable neurons is remarkable because stable states arise from the interaction with transient behavior (the excitations). Often in the literature we are too preocupied with the final state of the system - usually justifiably so - but anyone who asks the falling hikers in our initial example will probably find out that transients are not so easy to disregard. The excitability case is one example of this, but there are more. Trapping in chaotic saddle. Transients for computations. Multistable perception, binocular rivalry: transients in multistable system. An example of a phenomenon known as metastability. Highly studied, poor conceptual framework. Mechanisms important but sparse in literature. General conceptual framework lacking. To address this, we have organized metastability paper. 
+
+
+
+
+% Several natural and artificial systems are composed of separate entities that interact together, forming networks - or, at least, they can be approximately modelled as networks. Often, these interactions generate complex behaviors, which would not exist without the interactions. For instance, neural circuits blabla.
+% 
+% A major area of research today is to understand precisely how this large-scale complex dynamics emerges from the interactions between units in networks. This ranges from setting up experiments XX, modelling to a high precision, and also building the basic theory that aims to describe the fundamental aspects of these networks. For this thesis we have focused on the latter case, aiming to study the fundamental behavior of simple, non-specific, networks. To do this, we have relied on a second layer of abstraction: often, networks can be modelled as dynamical systems following ODEs of the general form: 
+% %
+% \begin{align}
+%     \dot{x}_i = f(x_i) + g(x)
+% \end{align}
+% 
+% where XX. Introduce topology, connections. Examples? power grids and neural networks and kuramoto?
+% 
+% This abstraction is quite helpful, because systems of this form can be studied using techniques from dynamical systems theory. XX?
+% 
+% Among the plethora of important dynamics arising in networks, we have in this thesis focused on three particular behaviors: malleability, multistability and metastability. Although separate, they are intrisically related, as we will see. For the first two, we have focused on how they are controlled by the network's topology.
+% 
+% % \section[malleability]{Malleability}
+% 
+% The first behavior we have studied is \textit{dynamical malleability}, which refers to the capacity of a network to change its dynamics when the individual parameters of units or connections are changed. We studied this behavior in Kuramoto oscillator networks of the form 
+% 
+% \begin{align}
+%     \dot{\theta} ...
+% \end{align}
+% 
+% These networks serve as paradigmatic models to understand emergent behavior - in particular, synchronization - in complex networks. They can be derived as an approximation for generic coupled limit cycle oscillators under weak coupling \cite{}. Although it does not model a particular real-world system, it has been used as a simple model for large-scale brain networks \cite{} and power grids \cite{} ?. Originally used to describe chemical oscillations XX.
+% 
+
 
 
 % Moving now beyond the concrete research that we have done, and into a bit of speculation and plans for the future...
-usefulness for computations?
