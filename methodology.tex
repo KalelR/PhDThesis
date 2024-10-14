@@ -368,9 +368,81 @@ with $d_{ij} = \min(|i-j|, N-|i-j|)$ is the edge distance along the ring, and $\
 
 
 \section{Basics of Kuramoto oscillators}
+\subsection{Derivation of the model}
+The Kuramoto model, written in general as 
+\begin{align}
+    \dot{\theta}_i = \omega_i + \epsilon \sum_{j=1}^N A_{ij} \sin(\theta_j-\theta_i)
+    \label{eq:kuramoto-general}
+\end{align}
+
+serves as a paradigm for studies on synchronization phenomena \cite{bocalettisyncbook}. Its usefullness comes it being simple enough to be mathematically tractable, sufficiently generic, and also complex enough to display interesting dynamics. To reach it, Kuramoto started from generic oscillators near supercritical Hopf bifurcations. Each unit $i$ follows 
+\begin{align}
+    \dot{Q}_i = (i\omega + \alpha) Q_i - \beta|Q_i|^2 Q_i,
+\end{align}
+
+where $\omega$ is the natural frequency of the oscillator, $\alpha>0$ and $\beta>0$ are parameters and $Q \in \mathbb{C}$. This is the normal form of the Hopf bifurcation we saw in Sec.\ref{} but written in complex numbers. Kuramoto chose a simple and natural way to coupled these oscillators: via a common coupling term, that is proportional to the value $Q_i$ of each oscillator: 
+%
+\begin{align}
+    \dot{Q}_i = (i\omega + \alpha) Q_i - \beta|Q_i|^2 Q_i + \frac{K}{N} \sum_{j=1}^{N} Q_j
+    \label{eq:stuartlandaucoupled}
+\end{align}
+
+which corresponds to an all-to-all topology, with $K$ being the coupling strength. Here the natural frequencies are assumed to be drawn from a certain distribution $g(\omega)$, usually unimodal.
+
+One can then rewrite \eqref{eq:stuartlandaucoupled} in polar coordinates by using $Q_i = e^{i \theta_i} \rho_i$. Substituting it one gets the equations 
+\begin{align}
+    &\dot{\rho}_i = (\alpha - \beta \rho_i^2) + \frac{K}{N} \sum_{j=1}^{N} \rho_j \cos(\theta_j - \theta_k) \\
+    &\dot{\theta}_i = \omega_i + \frac{K}{N}\sum_{j=1}^{N} \frac{\rho_j}{\rho_k} \sin(\theta_j - \theta_k)
+\end{align}
+
+Kuramoto studied these equations in the limit of $\alpha\to\infty$ and $\beta\to\infty$ with $\alpha/\beta$ constant. Then, one gets that the radial variables $\rho_i$ approach a stable fixed point in arbitrarily fast. The radial variable is therefore just a constant and one just needs to consider the phase variables: 
+%
+\begin{align}
+    \theta_i = \omega_i + \frac{K}{N} \sum_{j=1}^{N}\sin(\theta_j-\theta_i).
+\end{align}
+
+A very useful way to quantify the spread of the phases $\theta_i$ is through the complex order parameter:
+\begin{align}
+    r e^{i\psi} = \frac{1}{N} \sum_{j=1}^{N} e^{i \theta_j},
+\end{align}
+
+which corresponds to the centroid of the phases and therefore characterizes well the collective behavior of the system. The radius $r$ measures the phase synchronization of the system: $r$ is close to $0$ if the phases are uniformly spread or clustered in anti-phase clusters and $r$ is close to $1$ if the phases are aligned together. The angle $\psi$ corresponds to the average phase of the units. Using this order parameter, the Kuramoto model can be rewritten as
+\begin{align}
+    \dot{\theta}_i = \omega_i + Kr\sin(\phi - \theta_i), \; i=1,\ldots,N.
+\end{align} 
+
+This form highlights the mean-field character of the model \cite{strogtaz2000from}. The oscillators now interact through the mean-field quantities $r$ and $\psi$. The phase $\theta_i$ is pulled towards the mean phase $\psi$. And the effective coupling strength becomes $Kr$, so it is modulated by the degree of phase synchronization $r$. This creates a positive feedback loop, wherein as the system synchronizes more, the coupling becomes stronger and so the system tends to synchronize even more. This is a very clear mechanism for spontaneous synchronization \cite{strogtaz2000from}. 
+
+
+\subsection{Transition to synchronization in original Kuramoto}
+These equations always have a solution for $\theta_i = 0, \; \forall i$. What about others? Kuramoto considered these equations in the infinite size limit $N\to\infty$. By seeking steady-state solutions, with $r$ constant noted that oscillators will distribute into two groups: (i) with $|\omega_i| < Kr$ which phase-lock together and (ii) with $|\omega_i| > Kr$ which keep rotating with nonuniform velocity $\dot{\theta}_i$.  He then showed that a branch continuously bifurcaties from $r=0$ at $K=K_c$, a critical coupling strength, given by:
+\begin{align}
+    K_c = \frac{2}{\pi g(0)}
+\end{align}
+
+Near $K=K_c$, this branch has a square-root behavior: $r \propto \sqrt{K-K_c}$. Many open questions remained, such as the stability of these branches. There have been many extensions made to this model \cite{acebron, rodrigues}. In the context of multistability, some basic results come from studying an even simpler configuration, where the units are identical and coupled in a $k$-nearest-neighbor ring.
+
+\subsection{Multistability in homogeneous case: twisted states}
+In the case of homogeneous oscillators coupled in a $k$-nearest-neighbor topology, the equations reduce to 
+%
+\begin{align}
+    \dot{\theta}_i = \sum_{j=i-k}^{j=i+k} \sin(\theta_j - \theta_i).
+\end{align}
+
+This is a gradient system \cite{wiley} - i.e., it can be written as $\dot{\theta} = - \grad U(\theta)$, where $U(\theta)$ is a scalar function of $\theta \in \mathbb{R}^n$. A basic property of gradient systems is that their only attractors are equilibria. Therefore to find all the attractors in the system one can first find the equilibria and then determine their linear stability. By doing this this, we first find that the equilibria in the system obey the relation:
+\begin{align}
+    \theta_i = \omega t + \frac{2\pi q}{N} i + C
+\end{align}
+
+where $C \in mathbb{R}$ is a constant and $q \in \mathbb{Z}$ is the twisting number. If one looks at the phase difference between two adjancey units one sees that it is constant across the ring: $\theta_{i+1} - \theta_i = \frac{2\pi q}{N}$. In particular, the completely synchronized is included here in the $q=0$ case. Some important stability results we then get are:
+
+For small values of $K>0$ many twisted states can be stable. As the coupling is increased, these twisted states start to lose stability, with higher $q$ values starting earlier.  Eventually, the completely sync state ($q=0$) becomes globally stable when $K>K_c \pparox 0.34 N$ \cite{wiley}. If we look at an estimate of the the size of the sync basin for the comp synced states increases as fig. If we fix the coupling strength and look at the size of the basins of all stable twisted states we find a gaussian curve. The shape of the basins is still a debated topic, but they appear to form an octopus-like structure, in which the twisted state itself forms the head of the octopus, with a smaller volume around it. THe majorirt of the volume of the basin is concentrated on the tentacles, which are structures that spread around in state space \cite{zhang2021basins}.
+
+Studies have also been made changing the topology of these networks slightly. Some important results have been that XX.
 
 
 \begin{figure}
     \caption{twisted states}
     \label{fig:method:twisted-states}
 \end{figure}
+
