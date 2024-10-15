@@ -103,4 +103,9 @@ D~J Watts and S~H Strogatz.
 \newblock {Collective dynamics of 'small-world' networks}.
 \newblock {\em Nature}, 393(6684):440--442, 1998.
 
+\bibitem{zhang2021basins}
+Yuanzhao Zhang and Steven~H. Strogatz.
+\newblock {Basins with Tentacles}.
+\newblock {\em Physical Review Letters}, 127(19):194101, 2021.
+
 \end{thebibliography}

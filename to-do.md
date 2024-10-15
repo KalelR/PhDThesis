@@ -8,3 +8,7 @@
 6. conclusions
 7. malleability: multistability results
 8. list of publications: explain briefly the smaller publications
+
+# optional to-do
+## methodology
+1. Kuramoto: twisted states, basin size & eigenvalues in Mihara 2022
