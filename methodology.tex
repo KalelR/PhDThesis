@@ -345,9 +345,17 @@ An incredibly powerful abstraction about real-world systems can be achieved thro
 %
 \begin{align}
     \dot{x}_i = f(x_i) + \sum_{j=1}^N A_{ij} g(x_j, x_i),\; i=1,\ldots,N
+    \label{eq:network-general}
 \end{align} 
 
-with $N$ units, whose interactions are described by the function $g$. The adjacency matrix $A_{ij}$ describes the strength of interactions between the units. Typically it is a binary matrix, such that $A_{ij} = 1$ if unit $i$ receives a connection from unit $j$ and $A_{ij} = 0$ otherwise. It can also be weighted, in which case the entry $A_{ij} \in \mathbb{R}$ represents the strength of interactions.
+with $N$ units, whose interactions are described by the function $g$. The adjacency matrix $A_{ij}$ describes the strength of interactions between the units. Typically it is a binary matrix, such that $A_{ij} = 1$ if unit $i$ receives a connection from unit $j$ and $A_{ij} = 0$ otherwise. It can also be weighted, in which case the entry $A_{ij} \in \mathbb{R}$ represents the strength of interactions. Usually for binary matrices, we rewrite \eqnref{eq:network-general} as 
+%
+\begin{align}
+    \dot{x}_i = f(x_i) + \sum_{j \in \Omega_i} g(x_j, x_i),\; i=1,\ldots,N
+    \label{eq:network-general-neighborhood}
+\end{align} 
+
+where $\Omega_i = \{j \in [1, N]: A_{ij} = 1\}$ is called the neighborhood of unit i. The number of elements in $\Omega_i$, i.e., the number of connections of unit i, is called the unit's degree.
 
 The adjacency matrix $A$ describes the topology of the network, meaning the architecture of the connections. There are many different types of topologies, which describe well different types of systems. One type of topology is the regular, also called $k$-nearest-neighbors topology. As the name suggests, one can think of all nodes arranged on a ring, with each node connected to the $k$ nearest nodes on each side. Another type of topology is the random topology, in which connections are chosen at random between the nodes. One consider the regular and random topologies as two extremes, and interpolate between them in what is called the Watts-Strogatz algorithm \cite{watts1998collective}. In this case, one starts with a $k$-nearest neighbor ring of nodes. Then, choose connections with a probability $p$. For each chosen connection $(i,j)$, keep the source node $i$, randomly choose a new node $j^\prime$ in the network, and switch $(i,j)$ to $(i,j^\prime)$. This effectively switches short-range connections (between nearest nodes) to long range connections (between nodes that are potentially far away). For this rewiring probability $p$ at $p=0$ one has the regular topology; for $p=1$ one has the random topology. 
 
@@ -359,7 +367,7 @@ In \chapref{chap:malleability} we also study distance-dependent networks. The ad
     A_{ij} = \frac{1}{\eta(\alpha)(d_{ij})^\alpha},
 \end{align}
 
-with $d_{ij} = \min(|i-j|, N-|i-j|)$ is the edge distance along the ring, and $\eta(\alpha) = \sum_{j=1}^{N^\prime} \frac{2}{j^\alpha}$ is a normalization term. All units are thus connected, but the weigth of the connections decays with the distance following the $\alpha$ parameter.
+with $d_{ij} = \min(|i-j|, N-|i-j|)$ is the edge distance along the ring, and $\eta(\alpha) = \sum_{j=1}^{N^\prime} \frac{2}{j^\alpha}$ is a normalization term. All units are thus connected, but the weight of the connections decays with the distance following the $\alpha$ parameter. This parameter can also be called the locality parameter, since $\alpha=0$ leads to an all-to-all equally connected network and $\alpha\to\infty$ leads to a first-nearest-neighbor topology ($k=1$). In between we get distance-dependent weights.
 %
 \begin{figure}
     
@@ -368,14 +376,14 @@ with $d_{ij} = \min(|i-j|, N-|i-j|)$ is the edge distance along the ring, and $\
 
 
 \section{Basics of Kuramoto oscillators}
-\subsection{Derivation of the model}
+\subsection{Derivation of the model and transition to synchronization}
 The Kuramoto model, written in general as 
 \begin{align}
     \dot{\theta}_i = \omega_i + \epsilon \sum_{j=1}^N A_{ij} \sin(\theta_j-\theta_i)
     \label{eq:kuramoto-general}
 \end{align}
 
-serves as a paradigm for studies on synchronization phenomena \cite{bocalettisyncbook}. Its usefullness comes it being simple enough to be mathematically tractable, sufficiently generic, and also complex enough to display interesting dynamics. To reach it, Kuramoto started from generic oscillators near supercritical Hopf bifurcations. Each unit $i$ follows 
+serves as a paradigm for studies on synchronization phenomena \cite{bocalettisyncbook}. Its usefulness comes it being simple enough to be mathematically tractable, sufficiently generic, and also complex enough to display interesting dynamics. To reach it, Kuramoto started from generic oscillators near supercritical Hopf bifurcations. Each unit $i$ follows 
 \begin{align}
     \dot{Q}_i = (i\omega + \alpha) Q_i - \beta|Q_i|^2 Q_i,
 \end{align}
@@ -399,28 +407,41 @@ Kuramoto studied these equations in the limit of $\alpha\to\infty$ and $\beta\to
 %
 \begin{align}
     \theta_i = \omega_i + \frac{K}{N} \sum_{j=1}^{N}\sin(\theta_j-\theta_i).
+    \label{eq:kuramoto-og}
 \end{align}
 
 A very useful way to quantify the spread of the phases $\theta_i$ is through the complex order parameter:
 \begin{align}
-    r e^{i\psi} = \frac{1}{N} \sum_{j=1}^{N} e^{i \theta_j},
+    Z = r e^{i\psi} = \frac{1}{N} \sum_{j=1}^{N} e^{i \theta_j},
+    \label{eq:kuramoto-order-parameter}
 \end{align}
 
-which corresponds to the centroid of the phases and therefore characterizes well the collective behavior of the system. The radius $r$ measures the phase synchronization of the system: $r$ is close to $0$ if the phases are uniformly spread or clustered in anti-phase clusters and $r$ is close to $1$ if the phases are aligned together. The angle $\psi$ corresponds to the average phase of the units. Using this order parameter, the Kuramoto model can be rewritten as
+which corresponds to the centroid of the phases and therefore characterizes well the collective behavior of the system. The radius $r$ measures the phase synchronization of the system: $r$ is close to $0$ if the phases are uniformly spread or clustered in anti-phase clusters and $r$ is close to $1$ if the phases are aligned together. Here we should clarify that phase synchronization denotes the alignment of phases of oscillations - complete phase synchronization corresponds to $r=1$, meaning that the phases are the same (up to a $2\pi$ offsets). On the other hand, frequency synchronization denotes the alignment of the frequencies of oscillations - complete frequency synchronization corresponds to $\dot{\theta_i} = \Omega, \; \quad \forall i=1,\ldots, N$. Networks that are frequency synchronized are also said to be phase-locked - the phase differences are constant. But it does not imply phase synchronization, as the phase differences may be non-zero. Figures \ref{fig:method:kuramoto}A-B exemplify the behavior of $r$ for weak and strong phase synchronization.
+
+The angle $\psi$ corresponds to the average phase of the units. Using this order parameter, the Kuramoto model can be rewritten as
 \begin{align}
     \dot{\theta}_i = \omega_i + Kr\sin(\phi - \theta_i), \; i=1,\ldots,N.
 \end{align} 
 
-This form highlights the mean-field character of the model \cite{strogtaz2000from}. The oscillators now interact through the mean-field quantities $r$ and $\psi$. The phase $\theta_i$ is pulled towards the mean phase $\psi$. And the effective coupling strength becomes $Kr$, so it is modulated by the degree of phase synchronization $r$. This creates a positive feedback loop, wherein as the system synchronizes more, the coupling becomes stronger and so the system tends to synchronize even more. This is a very clear mechanism for spontaneous synchronization \cite{strogtaz2000from}. 
+This form highlights the mean-field character of the model \cite{strogatz2000from}. The oscillators now interact through the mean-field quantities $r$ and $\psi$. The phase $\theta_i$ is pulled towards the mean phase $\psi$. And the effective coupling strength becomes $Kr$, so it is modulated by the degree of phase synchronization $r$. This creates a positive feedback loop, wherein as the system phase synchronizes more, the coupling becomes stronger and so the system tends to phase synchronize even more. This is a very clear mechanism for spontaneous synchronization \cite{strogatz2000from}. 
 
 
-\subsection{Transition to synchronization in original Kuramoto}
+% \subsection{Transition to synchronization in original Kuramoto}
 These equations always have a solution for $\theta_i = 0, \; \forall i$. What about others? Kuramoto considered these equations in the infinite size limit $N\to\infty$. By seeking steady-state solutions, with $r$ constant noted that oscillators will distribute into two groups: (i) with $|\omega_i| < Kr$ which phase-lock together and (ii) with $|\omega_i| > Kr$ which keep rotating with nonuniform velocity $\dot{\theta}_i$.  He then showed that a branch continuously bifurcaties from $r=0$ at $K=K_c$, a critical coupling strength, given by:
+%
 \begin{align}
     K_c = \frac{2}{\pi g(0)}
 \end{align}
 
-Near $K=K_c$, this branch has a square-root behavior: $r \propto \sqrt{K-K_c}$. Many open questions remained, such as the stability of these branches. There have been many extensions made to this model \cite{acebron, rodrigues}. In the context of multistability, some basic results come from studying an even simpler configuration, where the units are identical and coupled in a $k$-nearest-neighbor ring.
+Near $K=K_c$, this branch has a square-root behavior: $r \propto \sqrt{K-K_c}$. In particular for $\omega_i$ following a Lorentzian distribution, one can show that \cite{kuramoto1984chemical, strogatz2000from}
+\begin{align}
+    r = \sqrt{1 - \frac{K_c}{K}},
+    \label{eq:kuramoto-lorentzian}
+\end{align}
+
+as illustrated in \figref{fig:method:kuramoto}C. One can verify this behavior numerically: \figref{fig:method:kuramoto}D illustrates the results of simulations for a network of $N=1000$ oscillators under a Gaussian distribution with zero mean and unitary standard deviation. The $y$-axis denotes the time-averaged behavior of $r(t)$, which oscillates in time.
+
+Many open questions remain from the treatment just shown, such as the stability of these branches. There have been many extensions made to this model \cite{acebron2005kuramoto, rodrigues2016the}. In the context of multistability, some basic results come from studying an even simpler configuration, where the units are identical and coupled in a $k$-nearest-neighbor ring.
 
 \subsection{Multistability in homogeneous case: twisted states}
 In the case of homogeneous oscillators with $\omega_i = \omega$ coupled in a $k$-nearest-neighbor topology, the equations become 
@@ -435,27 +456,27 @@ One can switch to a corotating frame with angular velocity $\omega$ to get rid o
     \dot{\theta}_i = \sum_{j=i-k}^{j=i+k} \sin(\theta_j - \theta_i).
 \end{align}
 
-Note therefore that changing the coupling strength in this system only rescales time, and does not change the state space significantly!  This can be written as a gradient system $\dot{\theta} = - \nabla U(\theta)$, where $U(\theta)$ is a scalar differentiable function of $\theta \in \mathbb{R}^n$ \cite{wiley, strogatz2002nonlinear}. As a consequence, the only attractors in this system are equilibria \cite{wiley}. Therefore to find all the attractors in the system one can first find the equilibria and then determine their linear stability. By doing this this, one finds that the equilibria obey the relation:
+Note therefore that changing the coupling strength in this system only rescales time, and does not change the state space significantly! This can be written as a gradient system $\dot{\theta} = - \nabla U(\theta)$, where $U(\theta)$ is a scalar differentiable function of $\theta \in \mathbb{R}^n$ \cite{wiley2006the, strogatz2002nonlinear}. As a consequence, the only attractors in this system are equilibria \cite{wiley2006the}. Therefore to find all the attractors in the system one can first find the equilibria and then determine their linear stability. By doing this this, one finds that the equilibria obey the relation:
 %
 \begin{align}
     \theta_i = \omega t + \frac{2\pi q}{N} i + C
 \end{align}
 
-where $C \in mathbb{R}$ is a constant and $q \in \mathbb{Z}$ is the twisting number. If one looks at the phase difference between two adjancent units one sees that it is constant across the ring: $\theta_{i+1} - \theta_i = \frac{2\pi q}{N}$. In particular, the completely synchronized is included here in the $q=0$ case. Some important stability results are:
+where $C \in \mathbb{R}$ is a constant and $q \in \mathbb{Z}$ is the twisting number. If one looks at the phase difference between two adjancent units one sees that it is constant across the ring: $\theta_{i+1} - \theta_i = \frac{2\pi q}{N}$. In particular, the completely synchronized is included here in the $q=0$ case. Some important stability results are:
 %
 \begin{itemize}
-    \item For small values of $k$ many twisted states can be stable. As $k$ increased, these twisted states start to lose stability, with higher $q$ values starting earlier.  Eventually, the completely synchronized state ($q=0$) becomes globally stable at $k>k_c \approx 0.34 N$ \cite{wiley}. 
-    \item Estimates of the size of the basin of attraction for $q=0$ increase monotonically with $k$ (\figref{}): the completely synchronized state starts to dominate the state space for denser networks \cite{wiley}. 
-    \item If we fix $k$ and look at estimates of the size of the basins of all stable twisted states we find that they can be parametrized by a Gaussian curve \cite{wiley, zhang2021basins}.
+    \item For small values of $k$ many twisted states can be stable. As $k$ is increased, these twisted states start to lose stability, with higher $q$ values starting earlier.  Eventually, the completely synchronized state ($q=0$) becomes globally stable at $k>k_c \approx 0.34 N$ \cite{wiley2006the}. 
+    \item If we fix $k$ and look at estimates of the size of the basins of all stable twisted states we find that they can be parametrized by a Gaussian curve \cite{wiley2006the, zhang2021basins} (\figref{fig:method:kuramoto}E).
+    \item Estimates of the size of the basin of attraction for $q=0$ increase monotonically with $k$ (\figref{fig:method:kuramoto}F): the completely synchronized state starts to dominate the state space for denser networks \cite{wiley2006the}. 
     \item The shape of the basins is still a topic under research, but they appear to form octopus-like structures. The twisted state itself (a point) is on the head of the octopus, which a small volume around it. The majority of the volume of the basin is concentrated on the tentacles, which are structures that spread around in state space \cite{zhang2021basins}.
 \end{itemize}
 
 
-Studies have also been made changing the topology of these networks slightly. Some important results have been that XX.
-
-
+Studies have also been made for other topologies. Some important results have accumulated to show that networks with homogeneous frequencies are guaranteed to globally synchronize if the nodes are sufficiently well connected (if the networks are sufficiently dense). Taking the least connected node, with degree $k_\mathrm{min}$, and comparing it with the maximum possible degree of the network, $N-1$, one can define the network's connectivity $\mu$ as the ratio $\mu = k_\mathrm{min}/(N-1)$. Then, in networks with $\mu > \mu_c$, the only attractor is the fully synchronized state. Estimates have that $\mu \in [0.6818, 0.7889]$ \cite{taylor2012there, townsend2020dense}. 
+%
 \begin{figure}
-    \caption{twisted states}
-    \label{fig:method:twisted-states}
+    \includegraphics[width=\textwidth]{kuramoto/kuramoto-thesis-figure.png}
+    \caption{Basics of Kuramoto oscillators. Panels A and B respectively illustrate the concept of weak and strong phase synchronization (PS), captured by the complex order parameter $Z$ (\eqnref{eq:kuramoto-order-parameter}). The radius $r$ denotes the degree of PS and the angle $\psi$ denotes the controid of the phases - respectively, they correspond to the magnitude and direction of the arrow in the figure. Panel C illustrates the behavior of the order parameter $r$ as a function of coupling strength $K$ (see \eqnref{eq:kuramoto-og}) for a Lorentzian distribution of the frequencies (\eqnref{eq:kuramoto-lorentzian}). The blue line denotes the critical coupling strength for the transition to synchronization. Panel D illustrates a similar behavior obtained from numerical simulations in a network of size $N=1000$ under a Gaussian distribution of the natural frequencies. Only one attractor is ever observed in the simulations. Going now to homogeneous frequencies, panel E illustrates the fraction fs of randomly chosen initial conditions that converge to each $q$ twisted state, in a network with $k=2$ nearest neighbors. Panel F looks at this fraction for the completely synchronized state ($q=0$) only, under different values of $k$. Panels E and F replicate results from \cite{wiley2006the}. }
+    \label{fig:method:kuramoto}
 \end{figure}
 

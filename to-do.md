@@ -1,12 +1,10 @@
 
 
 1. methodology: bifurcations - homoc tangential??
-2. methodology: attractors.jl
-3. methodology: kuramoto: original description in thermo limit, twisted states ??
-4. methodology: network theory? watts-strogatz figure  distance-dependent
-5. intro
+4. methodology: network theory: figure for watts strogatz and distance dependent
+5. intro: cite COMPLEX DYNAMICS IN MULTISTABLE SYSTEMS 
 6. conclusions
-7. malleability: multistability results
+7. malleability: multistability results; check for sure the dynamics in the diff topologies - any chaos ever? for random tops? why does all-to-all have this chaotic, non phase locked, behavior??
 8. list of publications: explain briefly the smaller publications
 
 # optional to-do

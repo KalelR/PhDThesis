@@ -20,6 +20,5 @@
 \contentsline {subsection}{\numberline {2.2.3}Homoclinic bifurcation}{21}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}Basics of network theory}{22}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Basics of Kuramoto oscillators}{23}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Derivation of the model}{23}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Transition to synchronization in original Kuramoto}{24}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Multistability in homogeneous case: twisted states}{24}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.1}Derivation of the model and transition to synchronization}{23}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Multistability in homogeneous case: twisted states}{25}{subsection.2.4.2}%

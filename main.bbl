@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{acebron2005kuramoto}
+Juan~A. Acebrón, L.~L. Bonilla, Conrad~J.Pérez Vicente, Félix Ritort, and
+  Renato Spigler.
+\newblock {The Kuramoto model: A simple paradigm for synchronization
+  phenomena}.
+\newblock {\em Reviews of Modern Physics}, 77(1):137--185, 2005.
+
 \bibitem{argyrisbook}
 John~H. Argyris, Gunter Faust, Maria Haase, and Rudolf Friedrich.
 \newblock {\em {An Exploration of Dynamical Systems and Chaos}}.
@@ -9,6 +16,18 @@ John~H. Argyris, Gunter Faust, Maria Haase, and Rudolf Friedrich.
 Henk Broer and Floris Takens.
 \newblock {\em {Dynamical Systems and Chaos}}.
 \newblock Applied Mathematical Sciences. 2011.
+
+\bibitem{budzinski2020synchronization}
+R.~C. Budzinski, K.~L. Rossi, B.~R.~R. Boaretto, T.~L. Prado, and S.~R. Lopes.
+\newblock {Synchronization malleability in neural networks under a
+  distance-dependent coupling}.
+\newblock {\em Physical Review Research}, 2(4):043309, 2020.
+
+\bibitem{bullmore2009complex}
+Ed~Bullmore and Olaf Sporns.
+\newblock {Complex brain networks: graph theoretical analysis of structural and
+  functional systems}.
+\newblock {\em Nature Reviews Neuroscience}, 10(3):186--198, 2009.
 
 \bibitem{datseris2023framework}
 George Datseris, Kalel~Luiz Rossi, and Alexandre Wagemakers.
@@ -35,6 +54,24 @@ Paul Glendinning.
 \newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
   Cambridge [England], 1 edition, 1994.
 
+\bibitem{halekotte2021transient}
+Lukas Halekotte, Anna Vanselow, and Ulrike Feudel.
+\newblock {Transient chaos enforces uncertainty in the British power grid}.
+\newblock {\em Journal of Physics: Complexity}, 2(3):035015, 2021.
+
+\bibitem{hellmann2020network}
+Frank Hellmann, Paul Schultz, Patrycja Jaros, Roman Levchenko, Tomasz
+  Kapitaniak, Jürgen Kurths, and Yuri Maistrenko.
+\newblock {Network-induced multistability through lossy coupling and exotic
+  solitary states}.
+\newblock {\em Nature Communications}, 11(1):592, 2020.
+
+\bibitem{hong2007entrainment}
+Hyunsuk Hong, Hugues Chaté, Hyunggyu Park, and Lei~Han Tang.
+\newblock {Entrainment transition in populations of random frequency
+  oscillators}.
+\newblock {\em Physical Review Letters}, 99(18):1--4, 2007.
+
 \bibitem{izhikevichbook}
 Eugene~M Izhikevich.
 \newblock {\em {Dynamical systems in neuroscience}}.
@@ -51,21 +88,50 @@ D.~Koch, A.~Nandan, G.~Ramesan, I.~Tyukin, A.~Gorban, and A.~Koseska.
   Systems}.
 \newblock {\em Physical Review Letters}, 133(4):047202, 2024.
 
+\bibitem{kuramoto1984chemical}
+Yoshiki Kuramoto.
+\newblock {\em {Chemical Oscillations, Waves, and Turbulence}}, volume~19 of
+  {\em Springer Series in Synergetics}.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1984.
+
 \bibitem{kuznetsov}
 Yuri~A. Kuznetsov.
 \newblock {Elements of Applied Bifurcation Theory}.
 \newblock {\em Applied Mathematical Sciences}, 2004.
+
+\bibitem{landi2018complexity}
+Pietro Landi, Henintsoa~O. Minoarivelo, Åke Brännström, Cang Hui, and Ulf
+  Dieckmann.
+\newblock {Complexity and stability of ecological networks: a review of the
+  theory}.
+\newblock {\em Population Ecology}, 60(4):319--345, 2018.
 
 \bibitem{milnor1985on}
 John Milnor.
 \newblock {On the concept of attractor}.
 \newblock {\em Communications in Mathematical Physics}, 99(2):177--195, 1985.
 
+\bibitem{peter2018transition}
+Franziska Peter and Arkady Pikovsky.
+\newblock {Transition to collective oscillations in finite Kuramoto ensembles}.
+\newblock {\em Physical Review E}, 97(3):032310, 2018.
+
 \bibitem{pisarchik}
 Alexander~N. Pisarchik and Alexander~E. Hramov.
 \newblock {Multistability in Physical and Living Systems, Characterization and
   Applications}.
 \newblock {\em Springer Series in Synergetics}, 2022.
+
+\bibitem{potratzki2024synchronization}
+Max Potratzki, Timo Bröhl, Thorsten Rings, and Klaus Lehnertz.
+\newblock {Synchronization dynamics of phase oscillators on power grid models}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  34(4):043131, 2024.
+
+\bibitem{rodrigues2016the}
+Francisco~A. Rodrigues, Thomas~K.D.M. Peron, Peng Ji, and Jürgen Kurths.
+\newblock {The Kuramoto model in complex networks}.
+\newblock {\em Physics Reports}, 610:1--98, 2016.
 
 \bibitem{sandstede1997constructing}
 Björn Sandstede.
@@ -92,16 +158,41 @@ Strogatz.
 \newblock {\em {Nonlinear Dynamics and Chaos}}.
 \newblock Studies in nonlinearity. Westview, 2002.
 
+\bibitem{strogatz2000from}
+Steven~H. Strogatz.
+\newblock {From Kuramoto to Crawford: exploring the onset of synchronization in
+  populations of coupled oscillators}.
+\newblock {\em Physica D: Nonlinear Phenomena}, 143(1-4):1--20, 2000.
+
+\bibitem{taylor2012there}
+Richard Taylor.
+\newblock {There is no non-zero stable fixed point for dense networks in the
+  homogeneous Kuramoto model}.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  45(5):055102, 2012.
+
 \bibitem{taylor2011attractors}
 Robert~L.V. Taylor.
 \newblock {Attractors: Nonstrange to Chaotic}.
 \newblock {\em SIAM Undergraduate Research Online}, 4:72--80, 2011.
 \newblock Publisher: Society for Industrial \& Applied Mathematics (SIAM).
 
+\bibitem{townsend2020dense}
+Alex Townsend, Michael Stillman, and Steven~H. Strogatz.
+\newblock {Dense networks that do not synchronize and sparse ones that do}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  30(8):083142, 2020.
+
 \bibitem{watts1998collective}
 D~J Watts and S~H Strogatz.
 \newblock {Collective dynamics of 'small-world' networks}.
 \newblock {\em Nature}, 393(6684):440--442, 1998.
+
+\bibitem{wiley2006the}
+Daniel~A. Wiley, Steven~H. Strogatz, and Michelle Girvan.
+\newblock {The size of the sync basin}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  16(1):015103, 2006.
 
 \bibitem{zhang2021basins}
 Yuanzhao Zhang and Steven~H. Strogatz.

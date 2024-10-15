@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.13)  15 OCT 2024 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.13)  15 OCT 2024 15:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -508,7 +508,7 @@ LaTeX Info: Redefining \nameref on input line 40.
 \openout2 = `title.aux'.
 
 (./title.tex
-<title/uni-oldenburg-logo.png, id=92, 770.94023pt x 431.4519pt>
+<title/uni-oldenburg-logo.png, id=88, 770.94023pt x 431.4519pt>
 File: title/uni-oldenburg-logo.png Graphic file (type png)
 <use title/uni-oldenburg-logo.png>
 Package pdftex.def Info: title/uni-oldenburg-logo.png  used on input line 5.
@@ -525,7 +525,7 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 6.
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-<title/icbm-logo.png, id=94, 225.84375pt x 225.84375pt>
+<title/icbm-logo.png, id=90, 225.84375pt x 225.84375pt>
 File: title/icbm-logo.png Graphic file (type png)
 <use title/icbm-logo.png>
 Package pdftex.def Info: title/icbm-logo.png  used on input line 10.
@@ -569,9 +569,6 @@ Chapter 1.
 LaTeX Warning: Reference `fig:intro:landscape' on page 7 undefined on input line 2.
 
 
-LaTeX Warning: Citation `strogtaz2000from' on page 7 undefined on input line 12.
-
-
 LaTeX Warning: Reference `method:kuramoto' on page 7 undefined on input line 14.
 
 
@@ -582,31 +579,12 @@ LaTeX Warning: Reference `eq:kuramoto' on page 7 undefined on input line 14.
 
 
 
-]
+] [8]
 
-LaTeX Warning: Citation `budzinski2023malleability' on page 8 undefined on input line 18.
-
-
-LaTeX Warning: Citation `peter' on page 8 undefined on input line 20.
+LaTeX Warning: Reference `chap:methodology' on page 9 undefined on input line 37.
 
 
-LaTeX Warning: Citation `hong2007prl' on page 8 undefined on input line 20.
-
-
-LaTeX Warning: Citation `wiley' on page 8 undefined on input line 22.
-
-
-LaTeX Warning: Citation `sparseonesthatdo' on page 8 undefined on input line 24.
-
-
-LaTeX Warning: Citation `multistabilitythorughlossycouplinghellman' on page 8 undefined on input line 24.
-
-[8]
-
-LaTeX Warning: Reference `chap:methodology' on page 9 undefined on input line 35.
-
-
-LaTeX Warning: Reference `chap:conclusions' on page 9 undefined on input line 35.
+LaTeX Warning: Reference `chap:conclusions' on page 9 undefined on input line 37.
 
 ) [9]
 \openout2 = `methodology.aux'.
@@ -619,7 +597,7 @@ Chapter 2.
 
 
 ]
-<methodology//equilibria-linear/hyperbolic-eq-2d.png, id=195, 2409.0pt x 2007.5pt>
+<methodology//equilibria-linear/hyperbolic-eq-2d.png, id=216, 2409.0pt x 2007.5pt>
 File: methodology//equilibria-linear/hyperbolic-eq-2d.png Graphic file (type png)
 <use methodology//equilibria-linear/hyperbolic-eq-2d.png>
 Package pdftex.def Info: methodology//equilibria-linear/hyperbolic-eq-2d.png  used on input line 49.
@@ -636,7 +614,7 @@ LaTeX Warning: Reference `chap:multistability' on page 11 undefined on input lin
                                                   \__shipout_drop_firstpage_...
 l.79 \end{align}
                  <./methodology//equilibria-linear/hyperbolic-eq-2d.png>]
-<methodology//attractors-nonlinear/attractors-nonlinear.png, id=222, 4015.0pt x 2007.5pt>
+<methodology//attractors-nonlinear/attractors-nonlinear.png, id=243, 4015.0pt x 2007.5pt>
 File: methodology//attractors-nonlinear/attractors-nonlinear.png Graphic file (type png)
 <use methodology//attractors-nonlinear/attractors-nonlinear.png>
 Package pdftex.def Info: methodology//attractors-nonlinear/attractors-nonlinear.png  used on input line 101.
@@ -654,12 +632,12 @@ Overfull \hbox (7.13156pt too wide) in paragraph at lines 151--153
 
 LaTeX Warning: Reference `chap:multistability' on page 16 undefined on input line 218.
 
-<methodology//global-manifolds/global-manifolds.png, id=288, 415.01047pt x 297.57173pt>
+<methodology//global-manifolds/global-manifolds.png, id=310, 415.01047pt x 297.57173pt>
 File: methodology//global-manifolds/global-manifolds.png Graphic file (type png)
 <use methodology//global-manifolds/global-manifolds.png>
 Package pdftex.def Info: methodology//global-manifolds/global-manifolds.png  used on input line 223.
 (pdftex.def)             Requested size: 250.95476pt x 179.9429pt.
-<methodology//duffing-bistability.png, id=295, 2131.965pt x 1705.37125pt>
+<methodology//duffing-bistability.png, id=317, 2131.965pt x 1705.37125pt>
 File: methodology//duffing-bistability.png Graphic file (type png)
 <use methodology//duffing-bistability.png>
 Package pdftex.def Info: methodology//duffing-bistability.png  used on input line 241.
@@ -683,7 +661,7 @@ l.248
 
 LaTeX Warning: Reference `method:attractors-formal' on page 18 undefined on input line 251.
 
-<paper-multistability-george/overview_figure.png, id=319, 918.705pt x 197.538pt>
+<paper-multistability-george/overview_figure.png, id=340, 918.705pt x 197.538pt>
 File: paper-multistability-george/overview_figure.png Graphic file (type png)
 <use paper-multistability-george/overview_figure.png>
 Package pdftex.def Info: paper-multistability-george/overview_figure.png  used on input line 263.
@@ -696,100 +674,67 @@ l.284 \begin{align}
 
 LaTeX Warning: Reference `chap:metastability' on page 20 undefined on input line 292.
 
-<methodology/bifurcations/bifurcations.png, id=355, 3212.0pt x 3212.0pt>
+<methodology/bifurcations/bifurcations.png, id=376, 3212.0pt x 3212.0pt>
 File: methodology/bifurcations/bifurcations.png Graphic file (type png)
 <use methodology/bifurcations/bifurcations.png>
 Package pdftex.def Info: methodology/bifurcations/bifurcations.png  used on input line 319.
 (pdftex.def)             Requested size: 418.25368pt x 418.2118pt.
-[20] [21 <./methodology/bifurcations/bifurcations.png>]
+[20] [21 <./methodology/bifurcations/bifurcations.png>] [22]
 
-LaTeX Warning: Citation `bullmore2009complex' on page 22 undefined on input line 344.
-
-
-LaTeX Warning: Citation `landi2018complexity' on page 22 undefined on input line 344.
-
-[22]
-
-LaTeX Warning: Reference `chap:malleability' on page 23 undefined on input line 356.
+LaTeX Warning: Reference `chap:malleability' on page 23 undefined on input line 364.
 
 
-LaTeX Warning: Citation `bocalettisyncbook' on page 23 undefined on input line 378.
+LaTeX Warning: Citation `bocalettisyncbook' on page 23 undefined on input line 386.
 
 
-LaTeX Warning: Reference `' on page 23 undefined on input line 383.
+LaTeX Warning: Reference `' on page 23 undefined on input line 391.
 
 [23pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.402 \end{align}
-                 ]
-
-LaTeX Warning: Citation `strogtaz2000from' on page 24 undefined on input line 414.
-
-
-LaTeX Warning: Citation `strogtaz2000from' on page 24 undefined on input line 414.
-
-
-LaTeX Warning: Citation `acebron' on page 24 undefined on input line 423.
-
-
-LaTeX Warning: Citation `rodrigues' on page 24 undefined on input line 423.
-
-
-LaTeX Warning: Citation `wiley' on page 24 undefined on input line 438.
-
-
-LaTeX Warning: Citation `wiley' on page 24 undefined on input line 438.
-
-[24]
-
-LaTeX Warning: Citation `wiley' on page 25 undefined on input line 447.
-
-
-LaTeX Warning: Reference `' on page 25 undefined on input line 448.
-
-
-LaTeX Warning: Citation `wiley' on page 25 undefined on input line 448.
-
-
-LaTeX Warning: Citation `wiley' on page 25 undefined on input line 449.
-
-) [25pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7}) has been already used, duplicate ignored
+l.404 \end{align}
+                 ] [24]
+<methodology//kuramoto/kuramoto-thesis-figure.png, id=457, 2131.965pt x 1895.08pt>
+File: methodology//kuramoto/kuramoto-thesis-figure.png Graphic file (type png)
+<use methodology//kuramoto/kuramoto-thesis-figure.png>
+Package pdftex.def Info: methodology//kuramoto/kuramoto-thesis-figure.png  used on input line 478.
+(pdftex.def)             Requested size: 418.25368pt x 371.78015pt.
+ [25]) [26] [27pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.52 \include{methodology}
-                           %2]
+                           %2 <./methodology//kuramoto/kuramoto-thesis-figure.png>]
 \openout2 = `acknowledgments.aux'.
 
- (./acknowledgments.tex) [26
+ (./acknowledgments.tex) [28
 
 
 
 
-] (./main.bbl [27
+] (./main.bbl [29
 
 
 
-]) [28] (./main.aux (./title.aux) (./publications.aux) (./abstract.aux) (./abstract-german.aux) (./intro.aux) (./methodology.aux) (./acknowledgments.aux))
+]) [30] (./main.aux (./title.aux) (./publications.aux) (./abstract.aux) (./abstract-german.aux) (./intro.aux) (./methodology.aux) (./acknowledgments.aux))
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8DA87B9E98C2FC5EAE3AFF30596CEF48;5166.
+(rerunfilecheck)             Checksum: 3B1ABE87F1D9401BD29763D66D3B34FE;5021.
  ) 
 Here is how much of TeX's memory you used:
- 16924 strings out of 478287
- 324055 string characters out of 5849289
- 603966 words of memory out of 5000000
- 34710 multiletter control sequences out of 15000+600000
+ 16971 strings out of 478287
+ 325284 string characters out of 5849289
+ 606304 words of memory out of 5000000
+ 34737 multiletter control sequences out of 15000+600000
  475542 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,79p,1721b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,79p,1737b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (28 pages, 2364839 bytes).
+Output written on main.pdf (30 pages, 2687687 bytes).
 PDF statistics:
- 529 PDF objects out of 1000 (max. 8388607)
- 446 compressed objects within 5 object streams
- 132 named destinations out of 1000 (max. 500000)
- 217 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 599 PDF objects out of 1000 (max. 8388607)
+ 508 compressed objects within 6 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 
