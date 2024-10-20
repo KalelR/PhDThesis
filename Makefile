@@ -19,6 +19,7 @@ clean:
 	@rm -f paper-metastability/*.aux
 	@rm -f *.aux
 	@rm -f 'main.synctex(busy)'
+	@rm -f main.bbl
 open:
 	@xdg-open $(OUTPUT)&
 

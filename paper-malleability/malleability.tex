@@ -1,4 +1,4 @@
-\chapter{Small changes at single nodes can shift global network dynamics}
+\chapter{Small changes at single nodes can shift global network dynamics} \label{chap:malleability}
 
 \begin{center}
     % {\Large \textbf{Small changes at single nodes can shift global network dynamic}} \\[1em]
@@ -48,7 +48,7 @@ In the Kuramoto model \cite{kuramoto1975self, kuramoto1984chemical}, each oscill
     \label{eq:main_kuramoto}
 \end{equation}
 %
-where $\theta_{i}(t)$ is the phase of the $i$-th oscillator at time $t$, $\omega_{i}$ is its natural frequency, $\epsilon$ is the coupling strength, $N$ is the number of oscillators, and $A_{ij}$ is the $(i,j)$-th element of the adjacency matrix $\bm{A}$. Throughout this work, we initially draw each frequency randomly from a Gaussian distribution with mean $\mu = 0.0$ and standard deviation $\sigma = 1.0$, generating a sequence $\{\omega_{i}\}, i=1,\cdots,N$. Then, different realizations can (i) shuffle these frequencies, generating another sequence $\{\omega_{i}\}_{\mathrm{shuffled}} = \mathrm{shuffle}(\{\omega_{i}\})$; or (ii) switch the frequency of one selected unit to another value $\omega_{\mathrm{new}}$. 
+where $\theta_{i}(t)$ is the phase of the $i$-th oscillator at time $t$, $\omega_{i}$ is its natural frequency, $\epsilon$ is the coupling strength, $N$ is the number of oscillators, and $A_{ij}$ is the $(i,j)$-th element of the adjacency matrix $\mathbf{A}$. Throughout this work, we initially draw each frequency randomly from a Gaussian distribution with mean $\mu = 0.0$ and standard deviation $\sigma = 1.0$, generating a sequence $\{\omega_{i}\}, i=1,\cdots,N$. Then, different realizations can (i) shuffle these frequencies, generating another sequence $\{\omega_{i}\}_{\mathrm{shuffled}} = \mathrm{shuffle}(\{\omega_{i}\})$; or (ii) switch the frequency of one selected unit to another value $\omega_{\mathrm{new}}$. 
 
 The networks in this work are coupled in a ring lattice of $N=501$ units with periodic boundary conditions, and follow one of two classes of topology. 
 The first class is the Watts-Strogatz (WS) \cite{watts1998collective}, which interpolates between regular and random topologies with a parameter $p$, the rewiring probability: at one extreme ($p = 0$), the topology is a $k$-nearest-neighbor lattice. From it, connections are randomly chosen according to the probability $p$ and rewired to another randomly chosen connection. In doing this, the networks have a significant decrease in the mean distance between nodes, but remain very clustered, generating small-world topologies. The other extreme ($p = 1$) is then a random topology. These networks are unweighted, so their adjacency matrix's elements are $A_{ij} = 1$ if $i$ and $j$ are connected, and $0$ otherwise.
