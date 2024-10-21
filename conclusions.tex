@@ -1,18 +1,48 @@
 \chapter{Conclusions}\label{chap:conclusions}
 
-%Along the way I also collaborated to provide open-source code to the community. And also have left several possible paths to be explored in the future, the most salient of which are:
-%
-\begin{itemize}
-    \item Malleability: 
-        \subitem how multistability arises in Kuramoto networks with heterogeneous frequencies.
-        \subitem how attractors in multistable systems can be buried by adding noise.
-    \item Multistability in excitable systems
-        \subitem what is the effect of changing the topology in the excitable networks, which attractors may or may not arise depending on these changes.   
-        \subitem using the knowledge gained from the coupled excitable systems, go back to the bursting neuron attractors and elucidate in detail the mechanism generating multistability there.
-    \item Metastability
-        \subitem what are the advantages of using metastability to perform computations? What are the mechanisms underlying observations of metastability in the literature?   
-\end{itemize}
+Strogatz's idea: science is typically reductionist: break everything into small parts and understand them individually. The field of complex systems arises from the need to do go back, to do the inverse problem: construct the full system's behavior from its parts. As we have found out, interactions between even simple units can generate complicated behavior. A major challenge still today is to develop tools that allows us to characterize and figure out this behavior.
+
+One such complicated behavior is the coexistence of multiple stable solutions to the same equation with the same parameters - multistability! How do these solutions come about, how are they organized in state space, how they are they separated in state space - these are all questions under active research. 
+
+Some of these stable solutions may correspond to synchronized regimes, which brings into light another important phenomenon: synchronization. Here again the field of complex systems has to contend with how individually distinct units can cooperate and start to operate in unison, in a beautiful example of an emerging phenomena. The study of synchronization - both frequency and phase synchronization - has important practical motivations, for instance in the study of power grids. Understanding the robustness of solutions in a complex network, in particular synchronized solutions has been an object of active research. 
+
+% ------------------------------- malleability ------------------------------- %
+
+Combining these two research areas, Chapter \ref{chap:malleability} investigated the robustness of solutions in a complex network. For the study we chose the Kuramoto model, a paradigm for studies on synchronization phenomena and complex networks in general. The idea was to investigate how the network behaves, how the solutions change, when we change the parameter of a single unit in the network. We found that the dynamical malleability of the network depends on how strongly coupled the units are, and the topology of the connections. XX. We show that the mechanism driving this malleability are two: increased sample-to-sample fluctuations XX and multistability. We show that the number of attractors varies similarly to the dynamical malleability XX.
+
+Contribution to understanding of both sync and multistability. Practical importance. 
+
+Open questions: malleability is very general; how is the multistability? Regardless, how does it emerge? How do the basins behave? One future work: burying under noise.
+
+% ------------------------------ excitable units ----------------------------- %
+In a similar vein, we also investigated how multistability comes about when excitable neurons are coupled diffusively. 
+powerful mechanism for generating multiple attractors.
+studied mainly coupling in x and y, but just in x is already enough. 
+
+based on the mechanism and preliminary results, we conjecture that topology plays a key role in dictating which attrators emerge. this is similar to kuramoto, and a more in depth comparison is definitely warranted.
+
+didnt focus on sync, but we couldve: for I=3.1 XX.
+came into this problem when trying to figure out THE LOMBA. found out chaotic saddle was important but also slow region of LC generating multistability. Now we understand how slowness can help generate attractors in a simpler system, we can also go back to the original problem. 
+generality of results is still a question.
+
+% ------------------------------- Attractors.jl ------------------------------ %
+XX
 
 
-Besides allowing for a clearer understanding of works, it can also help in future studies looking into the mechanisms behind observations and into why metastability is so ubiquitous - is there any advantage of using long transients for doing computations, as opposed to using attractors \cite{koch2024XX}?  
-We believe this conceptual framework is an important step toward a general understanding of transient dynamics. 
+% ------------------------------- metastability ------------------------------ %
+everything is a matter of time scales. if your observation time is long enough, compared to the relaxation time to the attractors, then you see attractors. if it is not long enough, you dont have time to reach the attractors; you thus see transients. the former is a common case, but so is the latter, for instance in the brain where a lot of stuff is going on fast FAST I SAY. this is made more complicated due to the fact there are many mechanisms that can generate long transients. we saw one example of this in chap 3 with the excitability 
+
+to illustrate the importance of transients allow us to do a quick detour into TURING MACHINES. computation is done on the transient. 
+plethora of observations in the literature. important works, lots of definitions, some proposals of mechanisms. lack of conceptual framework. 
+
+
+% Besides allowing for a clearer understanding of works, it can also help in future studies looking into the mechanisms behind observations and into why metastability is so ubiquitous - is there any advantage of using long transients for doing computations, as opposed to using attractors \cite{koch2024XX}?  
+despite the initial motivation being to provide a nice definition, the work outgrew this and became a conceptual framework to think about metatsability, in what we believe is an important step toward a general understanding of transient dynamics. 
+
+computations, advantages
+
+% ------------------------------------ END ----------------------------------- %
+complex networks, topology, sync (harken back to daad proposal)
+toward complete understanding of the behavior of the system, on the attractors, and before 
+trying to put all those pieces together
+

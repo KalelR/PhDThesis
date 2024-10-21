@@ -1,5 +1,5 @@
 1. methodology: bifurcations - homoc tangential??
-2. intro: discuss the drosophyla paper?
+2. intro: discuss the drosophyla paper?; maybe go back and write more about metastability? introduce ghost from kelso? 
 6. conclusions
 7. malleability: multistability results; check for sure the dynamics in the diff topologies - any chaos ever? for random tops? why does all-to-all have this chaotic, non phase locked, behavior??
 8. list of publications: explain briefly the smaller publications
