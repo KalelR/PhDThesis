@@ -60,6 +60,13 @@ Giancarlo~La Camera, Alfredo Fontanini, and Luca Mazzucato.
 \newblock {Cortical computations via metastable activity}.
 \newblock {\em Current Opinion in Neurobiology}, 58:37--45, 2019.
 
+\bibitem{datseris2018dynamical}
+George Datseris.
+\newblock {DynamicalSystems.jl: A Julia software library for chaos and
+  nonlinear dynamics}.
+\newblock {\em Journal of Open Source Software}, 3(23):598, 2018.
+\newblock Publisher: The Open Journal.
+
 \bibitem{datseris2023framework}
 George Datseris, Kalel~Luiz Rossi, and Alexandre Wagemakers.
 \newblock {Framework for global stability analysis of dynamical systems}.
@@ -212,6 +219,11 @@ Daniel Koch, Akhilesh Nandan, Gayathri Ramesan, and Aneta Koseska.
 \newblock {\em Biochemical and Biophysical Research Communications},
   720:150069, 2024.
 
+\bibitem{krakovska2023resilience}
+Hana Krakovská, Christian Kuehn, and Iacopo~P Longo.
+\newblock {Resilience of dynamical systems}.
+\newblock {\em European Journal of Applied Mathematics}, pages 1--46, 2023.
+
 \bibitem{kuramoto1984chemical}
 Yoshiki Kuramoto.
 \newblock {\em {Chemical Oscillations, Waves, and Turbulence}}, volume~19 of
@@ -241,6 +253,11 @@ Everton~S. Medeiros, Rene~O. Medrano-T, Iberê~L. Caldas, Tamás Tél, and
 \newblock {State-dependent vulnerability of synchronization}.
 \newblock {\em Physical Review E}, 100(5):052201, 2019.
 \newblock Publisher: American Physical Society.
+
+\bibitem{menck2013how}
+Peter~J. Menck, Jobst Heitzig, Norbert Marwan, and Jürgen Kurths.
+\newblock {How basin stability complements the linear-stability paradigm}.
+\newblock {\em Nature Physics}, 9(2):89--92, 2013.
 
 \bibitem{milnor1985on}
 John Milnor.
@@ -343,6 +360,12 @@ S.~Smale.
 \newblock In {\em The Hopf Bifurcation and Its Applications}, pages 354--367.
   Springer New York, 1976.
 
+\bibitem{sornette2006critical}
+Didier Sornette.
+\newblock {\em {Critical Phenomena in Natural Sciences, Chaos, Fractals,
+  Selforganization and Disorder: Concepts and Tools}}.
+\newblock Springer Series in Synergetics. 2006.
+
 \bibitem{stender2021bstab}
 Merten Stender and Norbert Hoffmann.
 \newblock {bSTAB: an open-source software for computing the basin stability of
@@ -353,6 +376,11 @@ Merten Stender and Norbert Hoffmann.
 Strogatz.
 \newblock {\em {Nonlinear Dynamics and Chaos}}.
 \newblock Studies in nonlinearity. Westview, 2002.
+
+\bibitem{strogatzsyncbook}
+Steven Strogatz.
+\newblock {\em {Sync: The Emerging Science of Spontaneous Order}}.
+\newblock Hyperion Press, 2003.
 
 \bibitem{strogatz2000from}
 Steven~H. Strogatz.
