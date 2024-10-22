@@ -35,10 +35,14 @@ One solution to this is to create a unified library that implements efficient co
 
 
 % ------------------------------- metastability ------------------------------ %
-everything is a matter of time scales. if your observation time is long enough, compared to the relaxation time to the attractors, then you see attractors. if it is not long enough, you dont have time to reach the attractors; you thus see transients. the former is a common case, but so is the latter, for instance in the brain where a lot of stuff is going on fast FAST I SAY. this is made more complicated due to the fact there are many mechanisms that can generate long transients. we saw one example of this in chap 3 with the excitability 
+So far on the study of dynamical systems we have mostly focused on their long-term dynamics, looking at their attractors. The motivation for this is that attractors represent a system's long-term dynamics: after some transient time, one just observes the attractors. There is, however, a key assumption here: that the period of time during which we observe the system $T_\mathrm{obs}$ is longer than the convergence time $T_\mathrm{conv}$ to the attractor. It is a matter of time scales: of the observation versus the relaxation to the attractor. Whether this can be guaranteed or not depends on the application. In power grids, for instance, one is generally interested in the long-term dynamics of the system. In the brain, however, changes may be occurring too fast, and there may not be enough time to wait for convergence to an attractor. The time scales can also vary within the same system: as we saw in the excitable units, trajectories starting on one side of the state space converge rapidly to the attractor, whereas trajectories starting on the excitability region spend a relatively long time performing an excursion in space before reaching the attractor.
 
-to illustrate the importance of transients allow us to do a quick detour into TURING MACHINES. computation is done on the transient. 
-plethora of observations in the literature. important works, lots of definitions, some proposals of mechanisms. lack of conceptual framework. 
+This problem is made more complicated due to the fact that there are many mechanisms that can generate long - sometimes arbitrarily long - transients. An example is chaotic saddles, wherein trajectories can stay indefinitely long \cite{}.
+Therefore, in some case studies the behavior that is actually observed may be a transient. 
+
+There is a lot of evidence towards pointing that transients can indeed play important roles. One example that illustrates this is the Turing machine. XX. computation is done on the transient. 
+
+In the brain, transients have been shown to play important roles. plethora of observations in the literature. important works, lots of definitions, some proposals of mechanisms. lack of conceptual framework. 
 
 
 % Besides allowing for a clearer understanding of works, it can also help in future studies looking into the mechanisms behind observations and into why metastability is so ubiquitous - is there any advantage of using long transients for doing computations, as opposed to using attractors \cite{koch2024XX}?  
