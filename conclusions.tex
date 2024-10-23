@@ -35,14 +35,18 @@ One solution to this is to create a unified library that implements efficient co
 
 
 % ------------------------------- metastability ------------------------------ %
-So far on the study of dynamical systems we have mostly focused on their long-term dynamics, looking at their attractors. The motivation for this is that attractors represent a system's long-term dynamics: after some transient time, one just observes the attractors. There is, however, a key assumption here: that the period of time during which we observe the system $T_\mathrm{obs}$ is longer than the convergence time $T_\mathrm{conv}$ to the attractor. It is a matter of time scales: of the observation versus the relaxation to the attractor. Whether this can be guaranteed or not depends on the application. In power grids, for instance, one is generally interested in the long-term dynamics of the system. In the brain, however, changes may be occurring too fast, and there may not be enough time to wait for convergence to an attractor. The time scales can also vary within the same system: as we saw in the excitable units, trajectories starting on one side of the state space converge rapidly to the attractor, whereas trajectories starting on the excitability region spend a relatively long time performing an excursion in space before reaching the attractor.
+So far on the study of dynamical systems we have mostly focused on attractors. The motivation for this is that attractors represent a system's long-term dynamics: after some transient time, one just observes the attractors. There is, however, a key assumption here: that the period of time during which we observe the system $T_\mathrm{obs}$ is longer than the convergence time $T_\mathrm{conv}$ to the attractor. It is a matter of time scales: of the observation versus the relaxation to the attractor. Whether this can be guaranteed or not depends on the application. In power grids, for instance, one is generally interested in the long-term dynamics of the system. In the brain, however, changes may be occurring too fast, and there may not be enough time to wait for convergence to an attractor. The time scales can also vary within the same system: as we saw in the excitable units, trajectories starting on one side of the state space converge rapidly to the attractor, whereas trajectories starting on the excitability region spend a relatively long time performing an excursion in space before reaching the attractor.
 
-This problem is made more complicated due to the fact that there are many mechanisms that can generate long - sometimes arbitrarily long - transients. An example is chaotic saddles, wherein trajectories can stay indefinitely long \cite{}.
-Therefore, in some case studies the behavior that is actually observed may be a transient. 
+This problem is made more complicated due to the fact that there are many mechanisms that can generate long - potentially arbitrarily long - transients. An example is chaotic saddles, wherein trajectories can stay indefinitely long \cite{lai2009transient}. Therefore, the behavior that is actually observed in some studies may be a transient. 
 
-There is a lot of evidence towards pointing that transients can indeed play important roles. One example that illustrates this is the Turing machine. XX. computation is done on the transient. 
+Transients can indeed play important roles. One example that illustrates this is the Turing machine, the paradigmatic model for computations. It is a simple finite state machine with a head that stores a certain state and can read, write, and move along a tape. The tape is subvided into squares containing symbols (e.g., 0's and 1's). The head represent's a modern computers's central processing unit. Accordingly, it follows a set of instructions that take the current state, currently read symbol on the tape and outputs the new state, new symbol it writes on the tape, and the direction it moves. Computations are done by traversing a sequence of such state-symbol combinations. The machine may run forever - it is said to not halt -, in which case the computation is not completed. If the machine does halt, the computation is finished. From this point of view, therefore, the computation is only complete once the machine terminates the previous sequence of states. This sequence can therefore be seen as a transient, which is thus crucial for the computation of the machine. This remark is not just an analogy - dynamical systems can be constructed that implement Turing machines \cite{postlethwaite2024a}.
 
-In the brain, transients have been shown to play important roles. plethora of observations in the literature. important works, lots of definitions, some proposals of mechanisms. lack of conceptual framework. 
+More concretely, in the brain, transients have been shown to play important roles. There is a plethora of observations of neural activity that goes through sequences of distinct states, which are all therefore transient \cite{tognoli2014metastable, brinkman2022metastable}. In several cases, these states are long-lived, compared to intrinsic timescales of the system, for instance. An important example is seen in XX.
+
+
+Modelling of this behavior may use ideas from excitable networks by Ashwin \cite{ashwin2021excitable, ashwin2024network}.
+
+important works, lots of definitions, some proposals of mechanisms. lack of conceptual framework. 
 
 
 % Besides allowing for a clearer understanding of works, it can also help in future studies looking into the mechanisms behind observations and into why metastability is so ubiquitous - is there any advantage of using long transients for doing computations, as opposed to using attractors \cite{koch2024XX}?  
@@ -51,7 +55,6 @@ despite the initial motivation being to provide a nice definition, the work outg
 computations, advantages
 
 % ------------------------------------ END ----------------------------------- %
-complex networks, topology, sync (hearken back to daad proposal)
-toward complete understanding of the behavior of the system, on the attractors, and before 
-trying to put all those pieces together
+The field of complex systems is still under active research, with lots of us aiming to develop theory and tools to understand emergent dynamical phenomena like synchronization, the coexistence of multiple long-term solutions and the (transient) path to them. I believe that during my PhD we managed to provide some timely contributions in these directions, but there is still much to be done - with applications being very significant. In particular for biology an technology, I am very excited to see how all the pieces will fit together.
+
 

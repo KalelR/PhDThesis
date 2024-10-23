@@ -235,6 +235,11 @@ Yuri~A. Kuznetsov.
 \newblock {Elements of Applied Bifurcation Theory}.
 \newblock {\em Applied Mathematical Sciences}, 2004.
 
+\bibitem{lai2009transient}
+Ying-Cheng Lai and Tamás Tél.
+\newblock {\em {Transient Chaos: Complex Dynamics on Finite-TIme Scales}}.
+\newblock Applied Mathematical Sciences. Springer New York, NY, 2009.
+
 \bibitem{landi2018complexity}
 Pietro Landi, Henintsoa~O. Minoarivelo, Åke Brännström, Cang Hui, and Ulf
   Dieckmann.
@@ -297,6 +302,12 @@ Alexander~N. Pisarchik and Alexander~E. Hramov.
 \newblock {Multistability in Physical and Living Systems, Characterization and
   Applications}.
 \newblock {\em Springer Series in Synergetics}, 2022.
+
+\bibitem{postlethwaite2024a}
+Claire~M. Postlethwaite, Peter Ashwin, and Matthew Egbert.
+\newblock {A Continuous Time Dynamical Turing Machine}.
+\newblock {\em IEEE Transactions on Neural Networks and Learning Systems},
+  PP(99):1--13, 2024.
 
 \bibitem{potratzki2024synchronization}
 Max Potratzki, Timo Bröhl, Thorsten Rings, and Klaus Lehnertz.
