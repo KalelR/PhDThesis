@@ -8,7 +8,6 @@ main: $(MAIN).tex
 	@bibtex   $(MAIN)
 	@pdflatex $(MAIN)
 	@pdflatex $(MAIN)
-	@mv $(MAIN).pdf $(OUTPUT)
 
 bib:
 	@bibtex $(MAIN)
