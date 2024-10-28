@@ -19,6 +19,7 @@ clean:
 	@rm -f *.aux
 	@rm -f 'main.synctex(busy)'
 	@rm -f main.bbl
+	@rm -f *.out
 open:
 	@xdg-open $(OUTPUT)&
 
