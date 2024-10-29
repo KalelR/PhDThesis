@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.13)  29 OCT 2024 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.13)  29 OCT 2024 15:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -620,13 +620,13 @@ Underfull \vbox (badness 7081) has occurred while \output is active []
 
  [13]
 
-LaTeX Warning: Reference `chap:malleability' on page 14 undefined on input line 43.
+LaTeX Warning: Reference `chap:malleability' on page 14 undefined on input line 44.
 
 
-LaTeX Warning: Reference `chap:multistability' on page 14 undefined on input line 43.
+LaTeX Warning: Reference `chap:multistability' on page 14 undefined on input line 44.
 
 
-LaTeX Warning: Reference `chap:metastability' on page 14 undefined on input line 43.
+LaTeX Warning: Reference `chap:metastability' on page 14 undefined on input line 44.
 
 ) [14]
 \openout2 = `methodology.aux'.
@@ -773,29 +773,29 @@ LaTeX Warning: Reference `chap:malleability' on page 38 undefined on input line 
 
 
 ]
-Underfull \vbox (badness 2096) has occurred while \output is active []
+Underfull \vbox (badness 7081) has occurred while \output is active []
 
- [39]
-Underfull \vbox (badness 2096) has occurred while \output is active []
-
- [40]
+ [39] [40]
 Underfull \vbox (badness 2096) has occurred while \output is active []
 
  [41]
 
-LaTeX Warning: Reference `chap:metastability' on page 42 undefined on input line 39.
+LaTeX Warning: Reference `chap:metastability' on page 42 undefined on input line 40.
 
 
 Underfull \vbox (badness 7081) has occurred while \output is active []
 
  [42]
 
-LaTeX Warning: Reference `chap:metastability' on page 43 undefined on input line 45.
+LaTeX Warning: Reference `chap:metastability' on page 43 undefined on input line 46.
 
 
-LaTeX Warning: Reference `chap:metastability' on page 43 undefined on input line 47.
+LaTeX Warning: Reference `chap:metastability' on page 43 undefined on input line 48.
 
-[43]) [44]
+
+Underfull \vbox (badness 2096) has occurred while \output is active []
+
+ [43]) [44]
 \openout2 = `acknowledgments.aux'.
 
  (./acknowledgments.tex) [45
@@ -820,18 +820,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CFE71D07178E365765068C18468A2621;5120.
  ) 
 Here is how much of TeX's memory you used:
- 17170 strings out of 478287
- 329409 string characters out of 5849289
- 608422 words of memory out of 5000000
- 34839 multiletter control sequences out of 15000+600000
+ 17172 strings out of 478287
+ 329458 string characters out of 5849289
+ 608466 words of memory out of 5000000
+ 34840 multiletter control sequences out of 15000+600000
  477883 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,12n,79p,2518b,889s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (53 pages, 5166105 bytes).
+Output written on main.pdf (53 pages, 5166811 bytes).
 PDF statistics:
- 906 PDF objects out of 1000 (max. 8388607)
- 791 compressed objects within 8 object streams
- 232 named destinations out of 1000 (max. 500000)
+ 908 PDF objects out of 1000 (max. 8388607)
+ 793 compressed objects within 8 object streams
+ 233 named destinations out of 1000 (max. 500000)
  232 words of extra memory for PDF output out of 10000 (max. 10000000)
 
