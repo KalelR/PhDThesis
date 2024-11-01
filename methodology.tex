@@ -1,8 +1,8 @@
 \chapter{Methodology}\label{chap:methodology}
 
-\section{Some fundamental aspects of dynamical systems theory}
+\section{Basics of dynamical systems theory}
 
-\subsection{Our dynamical systems and the uniqueness and existence of their solutions}
+\subsection{Dynamical systems and the uniqueness and existence of their solutions}
 In this thesis we study dynamical systems described by a state variable $x = (x_1, x_2, \ldots, x_n)^T \in M $, where $M \subseteq \mathbb{R}^n$ is the state space, and $T$ denotes the transpose operation. The state variable is a point in this n-dimensional state space. In a continuous-time dynamical system, the state evolves according to the equation:
 %
 \begin{align}
@@ -265,7 +265,7 @@ Both methods can be applied across a parameter range and used in a continuation 
 \end{figure}
 
 
-\section{Bifurcations}\label{method:bifurcations}
+\section{Basics of bifurcations}\label{method:bifurcations}
 What happens to the attractors - and, in general, to the state space structures - of a dynamical system when we vary its parameters? In terms of the qualitative properties, there are two possibilties: either they stay similar or they change drastically. We can be a bit more rigorous. Two systems are qualitatively similar if they are topologically equivalent. The notion of topological equivalence was already mentioned in \secref{method:invariant-manifolds}. As a reminder, two systems are topologically equivalent if the state space of one can be obtained by a continuous transformation of the other \cite{kuznetsov}. Mathematically, this means that they are topologically equivalent if there is a homeomorphism $h:M \to M$ mapping orbits of the first system onto orbits of the second, preserving the direction of time. 
 
 As the parameters of a system are varied, we obtain different dynamical systems that are usually topologically equivalent. The attractors, for instance, may move, but they retain their stability. At some point, however, there may be a drastic change, and the new system may no longer be equivalent. The attractor may have disappeared, or lost its stability. Or a new attractor may have emerged. These drastic qualitative changes in the behavior of a dynamical system are called bifurcations. A bit more rigorously, a bifurcation is a change in the topological type of a system as its parameters pass through a critical (bifurcation) value \cite{kuznetsov}.

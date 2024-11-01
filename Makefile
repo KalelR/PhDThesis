@@ -16,6 +16,8 @@ bib:
 clean:
 	@rm -f paper-malleability/*.aux
 	@rm -f paper-metastability/*.aux
+	@rm -f paper-multistability/*.aux
+	@rm -f paper-multistability/30oct/*.aux
 	@rm -f *.aux
 	@rm -f 'main.synctex(busy)'
 	@rm -f main.bbl

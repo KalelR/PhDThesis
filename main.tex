@@ -1,4 +1,4 @@
-\documentclass[twoside, 12pt]{report} %,fontset=libertine, fontset=newtx-sans-text, fontset=heros-stix2, fontset=stix2
+\documentclass[twoside, 11pt]{report} %,fontset=libertine, fontset=newtx-sans-text, fontset=heros-stix2, fontset=stix2
 % option [lineno]	 	provides line numbers, as for editing
 
 \usepackage{listings}
@@ -33,8 +33,20 @@
 \newcommand{\eqnref}[1]{Eq.~\ref{#1}}
 \newcommand{\secref}[1]{Sec.~\ref{#1}}
 \newcommand{\chapref}[1]{Chap.~\ref{#1}}
+\usepackage{titlesec}
+% \titleformat{\chapter}[hang]
+%     {\normalfont\huge\bfseries} % Troque \Large para outro tamanho se quiser
+%     {Chapter \thechapter \newline}{1em}{}
+    
+\titleformat{\chapter} % Customize \chapter command
+[display]            % Display style, which separates "Chapter X" and title
+{\normalfont\LARGE\bfseries} % Format for "Chapter X" line (large bold font)
+{Chapter \thechapter} % Text for "Chapter X"
+{0pt}                % Spacing between "Chapter X" and title
+{\vspace{0.2em} \Huge} % Format for title line (slightly smaller font), with vertical space
+\titlespacing*{\chapter}{0pt}{-20pt}{20pt} % Adjusts position of chapter title
 
-\graphicspath{ {paper-malleability} {paper-metastability/figures} {methodology/} }
+\graphicspath{ {paper-malleability} {paper-metastability/figures} {methodology/} {paper-multistability/30oct} }
 % \bibliographystyle{plain} 
 \bibliographystyle{unsrt} 
 
@@ -54,13 +66,15 @@
 
 % \include{paper-malleability/malleability.tex} %3 chap:malleability
 % \include{paper-metastability/metastability.tex} %5 chap:metastability
-% \include{paper-multistability/multistability.tex} %call it chap:multistability
+\include{paper-multistability/30oct/multistability.tex} %call it chap:multistability
 
 \include{conclusions}
-\include{acknowledgments}
 
 
 \bibliography{rossi-thesis.bib}
+
+\include{acknowledgments}
+\include{declaration-independence}
 
 \end{document} 
  

@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{feudel2008complex}
 Ulrike Feudel.
@@ -429,6 +429,243 @@ Richard Taylor.
 \newblock {\em Journal of Physics A: Mathematical and Theoretical},
   45(5):055102, 2012.
 
+\bibitem{feudel2018multistability}
+Ulrike Feudel, Alexander~N. Pisarchik, and Kenneth Showalter.
+\newblock {Multistability and tipping: From mathematics and physics to climate
+  and brain - Minireview and preface to the focus issue}.
+\newblock {\em Chaos}, 28(3):33501, 2018.
+
+\bibitem{motter2013spontaneous}
+Adilson~E. Motter, Seth~A. Myers, Marian Anghel, and Takashi Nishikawa.
+\newblock {Spontaneous synchrony in power-grid networks}.
+\newblock {\em Nature Physics}, 9(3):191--197, 2013.
+
+\bibitem{meng2022the}
+Yu~Meng, Ying-Cheng Lai, and Celso Grebogi.
+\newblock {The fundamental benefits of multiplexity in ecological networks}.
+\newblock {\em Journal of the Royal Society Interface}, 19(194):20220438, 2022.
+
+\bibitem{driscoll2024flexible}
+Laura~N. Driscoll, Krishna Shenoy, and David Sussillo.
+\newblock {Flexible multitask computation in recurrent networks utilizes shared
+  dynamical motifs}.
+\newblock {\em Nature Neuroscience}, 27(7):1349--1363, 2024.
+
+\bibitem{pilosof2017the}
+Shai Pilosof, Mason~A. Porter, Mercedes Pascual, and Sonia Kéfi.
+\newblock {The multilayer nature of ecological networks}.
+\newblock {\em Nature Ecology \& Evolution}, 1(4):0101, 2017.
+
+\bibitem{sohl2005expression}
+Goran Söhl, Stephan Maxeiner, and Klaus Willecke.
+\newblock {Expression and functions of neuronal gap junctions}.
+\newblock {\em Nature Reviews Neuroscience}, 6(3):191--200, 2005.
+
+\bibitem{benett2004electrical}
+Michael~V.L Bennett and R.Suzanne Zukin.
+\newblock {Electrical Coupling and Neuronal Synchronization in the Mammalian
+  Brain}.
+\newblock {\em Neuron}, 41(4):495--511, 2004.
+
+\bibitem{stankovski2017coupling}
+Tomislav Stankovski, Tiago Pereira, Peter V.~E. McClintock, and Aneta
+  Stefanovska.
+\newblock {Coupling functions: Universal insights into dynamical interaction
+  mechanisms}.
+\newblock {\em Reviews of Modern Physics}, 89(4):045001, 2017.
+
+\bibitem{loppini2015mathematical}
+Alessandro Loppini, Matthias Braun, Simonetta Filippi, and Morten~Gram
+  Pedersen.
+\newblock {Mathematical modeling of gap junction coupling and electrical
+  activity in human β-cells}.
+\newblock {\em Physical Biology}, 12(6):066002, 2015.
+
+\bibitem{kepler1990the}
+Thomas~B. Kepler, Eve Marder, and L.~F. Abbott.
+\newblock {The Effect of Electrical Coupling on the Frequency of Model Neuronal
+  Oscillators}.
+\newblock {\em Science}, 248(4951):83--85, 1990.
+
+\bibitem{blasius1999complex}
+Bernd Blasius, Amit Huppert, and Lewi Stone.
+\newblock {Complex dynamics and phase synchronization in spatially extended
+  ecological systems}.
+\newblock {\em Nature}, 399(6734):354--359, 1999.
+
+\bibitem{medeiros2021asymmetry}
+Everton~S. Medeiros, Ulrike Feudel, and Anna Zakharova.
+\newblock {Asymmetry-induced order in multilayer networks}.
+\newblock {\em Physical Review E}, 104(2):024302, 2021.
+
+\bibitem{liang2023a}
+Guofu Liang, Hanbo Niu, and Yan Li.
+\newblock {A multi-species approach for protected areas ecological network
+  construction based on landscape connectivity}.
+\newblock {\em Global Ecology and Conservation}, 46:e02569, 2023.
+
+\bibitem{sadykov2021model}
+Alexander Sadykov and Keith~D. Farnsworth.
+\newblock {Model of two competing populations in two habitats with migration:
+  Application to optimal marine protected area size}.
+\newblock {\em Theoretical Population Biology}, 142:114--122, 2021.
+
+\bibitem{mehrabbeik2023synchronization}
+Mahtab Mehrabbeik, Sajad Jafari, Riccardo Meucci, and Matjaž Perc.
+\newblock {Synchronization and multistability in a network of diffusively
+  coupled laser models}.
+\newblock {\em Communications in Nonlinear Science and Numerical Simulation},
+  125:107380, 2023.
+
+\bibitem{ullner2007multistability}
+Ekkehard Ullner, Alexei Zaikin, Evgenii~I. Volkov, and Jordi García-Ojalvo.
+\newblock {Multistability and Clustering in a Population of Synthetic Genetic
+  Oscillators via Phase-Repulsive Cell-to-Cell Communication}.
+\newblock {\em Physical Review Letters}, 99(14):148103, 2007.
+
+\bibitem{ullner2008multistability}
+Ekkehard Ullner, Aneta Koseska, Jürgen Kurths, Evgenii Volkov, Holger Kantz,
+  and Jordi García-Ojalvo.
+\newblock {Multistability of synthetic genetic networks with repressive
+  cell-to-cell communication}.
+\newblock {\em Physical Review E}, 78(3):031904, 2008.
+
+\bibitem{yanagita2005pair}
+T.~Yanagita, T.~Ichinomiya, and Y.~Oyama.
+\newblock {Pair of excitable FitzHugh-Nagumo elements: Synchronization,
+  multistability, and chaos}.
+\newblock {\em Physical Review E}, 72(5):056218, 2005.
+
+\bibitem{koseska2013oscillation}
+Aneta Koseska, Evgeny Volkov, and Jürgen Kurths.
+\newblock {Oscillation quenching mechanisms: Amplitude vs. oscillation death}.
+\newblock {\em Physics Reports}, 531(4):173--199, 2013.
+
+\bibitem{crowley1989experimental}
+Michael~F Crowley and Irving~R Epstein.
+\newblock {Experimental and theoretical studies of a coupled chemical
+  oscillator: phase death, multistability and in-phase and out-of-phase
+  entrainment}.
+\newblock {\em The Journal of Physical Chemistry}, 93(6):2496--2502, 1989.
+
+\bibitem{sporns1987chaotic}
+Olaf Sporns, Siegfried Roth, and Friedrich~Franz Seelig.
+\newblock {Chaotic dynamics of two coupled biochemical oscillators}.
+\newblock {\em Physica D: Nonlinear Phenomena}, 26(1-3):215--224, 1987.
+
+\bibitem{aronson1987an}
+D.G. Aronson, E.J. Doedel, and H.G. Othmer.
+\newblock {An analytical and numerical study of the bifurcations in a system of
+  linearly-coupled oscillators}.
+\newblock {\em Physica D: Nonlinear Phenomena}, 25(1-3):20--104, 1987.
+
+\bibitem{mondal2021spatiotemporal}
+Arnab Mondal, Argha Mondal, Sanjeev~Kumar Sharma, Ranjit~Kumar Upadhyay, and
+  Chris~G. Antonopoulos.
+\newblock {Spatiotemporal characteristics in systems of diffusively coupled
+  excitable slow–fast FitzHugh–Rinzel dynamical neurons}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  31(10):103122, 2021.
+
+\bibitem{ansmann2016selfinduced}
+Gerrit Ansmann, Klaus Lehnertz, and Ulrike Feudel.
+\newblock {Self-induced switchings between multiple space-time patterns on
+  complex networks of excitable units}.
+\newblock {\em Physical Review X}, 6(1):011030, 2016.
+
+\bibitem{pogromsky1999on}
+Alexander Pogromsky, Torkel Glad, and Henk Numeijer.
+\newblock {On diffusion driven oscillations in coupled dynamical systems}.
+\newblock {\em International Journal of Bifurcation and Chaos}, 9(04):629--644,
+  1999.
+
+\bibitem{kocarev1995on}
+L.M. Kocarev and P.A. Janjic.
+\newblock {On Turing instability in two diffusely coupled systems}.
+\newblock {\em IEEE Transactions on Circuits and Systems I: Fundamental Theory
+  and Applications}, 42(10):779--784, 1995.
+
+\bibitem{nijholt2023chaotic}
+Eddie Nijholt, Tiago Pereira, Fernando~C. Queiroz, and Dmitry Turaev.
+\newblock {Chaotic Behavior in Diffusively Coupled Systems}.
+\newblock {\em Communications in Mathematical Physics}, 401(3):2715--2756,
+  2023.
+
+\bibitem{medeiros2021the}
+Everton Medeiros, Rene Medrano-T, Ibere Caldas, and Ulrike Feudel.
+\newblock {The impact of chaotic saddles on the synchronization of complex
+  networks of discrete-time units}.
+\newblock {\em Journal of Physics: Complexity}, 2(3):035002, 2021.
+
+\bibitem{contreras2023scale}
+Max Contreras, Everton~S. Medeiros, Anna Zakharova, Philipp Hövel, and Igor
+  Franović.
+\newblock {Scale-free avalanches in arrays of FitzHugh–Nagumo oscillators}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  33(9):093106, 2023.
+
+\bibitem{medeiros2023transient}
+Everton~S. Medeiros, Oleh Omel’chenko, and Ulrike Feudel.
+\newblock {Transient chimera states emerging from dynamical trapping in chaotic
+  saddles}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  33(9):093130, 2023.
+
+\bibitem{morris1981voltage}
+C.~Morris and H.~Lecar.
+\newblock {Voltage oscillations in the barnacle giant muscle fiber}.
+\newblock {\em Biophysical Journal}, 35(1):193--213, 1981.
+
+\bibitem{bezanson2017julia}
+Jeff Bezanson, Alan Edelman, Stefan Karpinski, and Viral~B Shah.
+\newblock {Julia: A fresh approach to numerical computing}.
+\newblock {\em SIAM Review}, 59(1):65--98, 2017.
+
+\bibitem{ermentrout2002simulating}
+Bard Ermentrout.
+\newblock {\em {Simulating, Analyzing, and Animating Dynamical Systems}}.
+\newblock Society for Industrial and Applied Mathematics, 2002.
+
+\bibitem{rackauckas2016differential}
+Christopher Rackauckas and Qing Nie.
+\newblock {DifferentialEquations.jl – A Performant and Feature-Rich Ecosystem
+  for Solving Differential Equations in Julia}.
+\newblock {\em Journal of Open Research Software}, 5(1):15, 2016.
+
+\bibitem{datseris2018dynamical}
+George Datseris.
+\newblock {DynamicalSystems.jl: A Julia software library for chaos and
+  nonlinear dynamics}.
+\newblock {\em Journal of Open Source Software}, 3(23):598, 2018.
+\newblock Publisher: The Open Journal.
+
+\bibitem{datseris2020drwatson}
+George Datseris, Jonas Isensee, Sebastian Pech, and Tamás Gál.
+\newblock {DrWatson: the perfect sidekick for your scientific inquiries}.
+\newblock {\em Journal of Open Source Software}, 5(54):2673, 2020.
+
+\bibitem{danisch2021makie}
+Simon Danisch and Julius Krumbiegel.
+\newblock {Makie.jl: Flexible high-performance data visualization for Julia}.
+\newblock {\em Journal of Open Source Software}, 6(65):3349, 2021.
+
+\bibitem{schulen2022solitary}
+Leonhard Schülen, Maria Mikhailenko, Everton~S. Medeiros, and Anna Zakharova.
+\newblock {Solitary states in complex networks: impact of topology}.
+\newblock {\em The European Physical Journal Special Topics},
+  231(22-23):4123--4130, 2022.
+
+\bibitem{tyson1975control}
+J.~Tyson and S.~Kauffman.
+\newblock {Control of mitosis by a continuous biochemical oscillation:
+  Synchronization; spatially inhomogeneous oscillations}.
+\newblock {\em Journal of Mathematical Biology}, 1(4):289--310, 1975.
+
+\bibitem{truscott1984ocean}
+J.~E. Truscott and J.~Brindley.
+\newblock {Ocean Plankton Populations As Excitable Media}.
+\newblock {\em Bulletin of Mathematical Biology}, 56(5):981--998, 1994.
+
 \bibitem{strogatzsyncbook}
 Steven Strogatz.
 \newblock {\em {Sync: The Emerging Science of Spontaneous Order}}.
@@ -449,13 +686,6 @@ Didier Sornette.
 \newblock {\em {Critical Phenomena in Natural Sciences, Chaos, Fractals,
   Selforganization and Disorder: Concepts and Tools}}.
 \newblock Springer Series in Synergetics. 2006.
-
-\bibitem{datseris2018dynamical}
-George Datseris.
-\newblock {DynamicalSystems.jl: A Julia software library for chaos and
-  nonlinear dynamics}.
-\newblock {\em Journal of Open Source Software}, 3(23):598, 2018.
-\newblock Publisher: The Open Journal.
 
 \bibitem{lai2009transient}
 Ying-Cheng Lai and Tamás Tél.
@@ -508,12 +738,6 @@ David Sussillo and Omri Barak.
 \newblock {Opening the Black Box: Low-Dimensional Dynamics in High-Dimensional
   Recurrent Neural Networks}.
 \newblock {\em Neural Computation}, 25(3):626--649, 2013.
-
-\bibitem{driscoll2024flexible}
-Laura~N. Driscoll, Krishna Shenoy, and David Sussillo.
-\newblock {Flexible multitask computation in recurrent networks utilizes shared
-  dynamical motifs}.
-\newblock {\em Nature Neuroscience}, 27(7):1349--1363, 2024.
 
 \bibitem{laje2013robust}
 Rodrigo Laje and Dean~V Buonomano.

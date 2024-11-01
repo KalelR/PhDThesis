@@ -1,6 +1,20 @@
 using GLMakie, Random
 
 
+"""
+    lighten(c, f = 1.2)
+
+Lighten given color `c` by multiplying its luminance with `f`.
+If `f` is less than 1, the color is darkened.
+"""
+function lighten(c, f = 1.2)
+    c = to_color(c)
+    hsl = Makie.HSLA(c)
+    neg = Makie.RGBAf(Makie.HSLA(hsl.h, hsl.s, clamp(hsl.l*f, 0.0, 1.0), hsl.alpha))
+    neg = Makie.RGBf(Makie.HSL(hsl.h, hsl.s, clamp(hsl.l*f, 0.0, 1.0)))
+    return neg
+end
+
 # Create a grid of x, y values
 x = range(-8, 8, length=100)
 y = range(-8, 8, length=100)
@@ -17,7 +31,7 @@ function gaussian2D(A, x0, y0, sigma_x, sigma_y, X, Y)
     return A * exp.(-((X .- x0).^2 ./ (2 * sigma_x^2) .+ (Y .- y0).^2 ./ (2 * sigma_y^2)))
 end
 
-using FastNoise2
+# using FastNoise2
 
 
 # function generate_perlin_noise(x, y; scale, amplitude)
