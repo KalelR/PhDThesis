@@ -4,6 +4,7 @@
 3. papers: put the footnote; make sure i dont mention them as papers, but as chapters
 4. updaaet bib file
 6. ABSTRACT!
+7. checar pontuaçao
 7. intro: make intro figure brighter (use georges code that i also used for fig 4 in multataiblity paper)
 
 

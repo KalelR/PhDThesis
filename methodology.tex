@@ -278,6 +278,7 @@ In a saddle-node bifurcation of equilibria we see the emergence, or destruction,
     \dot{x} = f(x) = \alpha + x^2,
     \label{eq:sn-normal-form}
 \end{align}
+%
 with the critical value of the bifurcation being $\alpha = 0$. As shown in Figs.~\ref{fig:method:bifurcations}, for $\alpha < 0$ we see that the parabola $f(x)$ has two roots, so the system has two equilibria, in positions $x^\star = \pm \sqrt{-\alpha}$. From the figure directly we can already see that the equilibrium on the left is stable and the equilibrium on right is unstable. We can confirm this with a linearization analysis - the Jacobian here is simply $df/dx = 2x$, so the eigenvalue of the left and right equilibrium are $-2\sqrt{-\alpha}$ and $+2\sqrt{-\alpha}$.   As $\alpha$ increases towards $0$ the parabola moves up, the equilibria approach each other, their eigenvalues approach zero, and at $\alpha=0$ they all coalesce into one single equilibrium. At this point, the eigenvalue of the system is zero: this equilibrium is non-hyperbolic! For $\alpha > 0$ there are no more equilibria. Equation \ref{eq:sn-normal-form} is called the normal form of the saddle-node bifurcation, because any generic system obeying some conditions will be topologically equivalent to it locally, near the equilibrium. For a system $\dot{x} = f(x,p)$, with $x \in \mathbb{R}$ and $\alpha \in \mathbb{R}$, $\partial f(0,0) / \partial x = 0$, an equilibrium $x = 0$ at the critical parameter $\alpha = 0$, the conditions are \cite{kuznetsov}:
 %
 \begin{align}
