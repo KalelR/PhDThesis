@@ -6,6 +6,7 @@
 6. ABSTRACT!
 7. checar pontuaçao
 7. intro: make intro figure brighter (use georges code that i also used for fig 4 in multataiblity paper)
+8. would be nice to describe the attractors.jl work in more detail
 
 
 # optional to-do
