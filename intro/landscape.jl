@@ -88,10 +88,23 @@ Z_noise = generate_random_noise(X, Y, 0.1)
 # Z_noise = generate_random_noise(X, Y, 0.0)
 Z .+= Z_noise
 
+cmap = ColorSchemes.darkterrain.colors
+# Function to brighten the colormap by a factor
+function brighten_colormap(colormap, factor)
+    # Increase brightness by scaling the RGB components of each color
+    return [RGB(clamp(c.r * factor, 0, 1), clamp(c.g * factor, 0, 1), clamp(c.b * factor, 0, 1)) for c in colormap]
+end
+
+using ColorSchemes
+# Use a factor > 1 to brighten (e.g., 1.2)
+brighter_colormap = brighten_colormap(cmap, 1.2)
+
+
 # Plot the surface
 fig = Figure(;size=(600,500), margins=0); axs=[]
 ax = Axis3(fig[1, 1], azimuth=31.22, elevation=1.13, viewmode=:stretch, protrusions=-5); push!(axs,ax)  # Set initial azimuth and elevation
-surface!(ax, x, y, Z; colormap=:darkterrain)
+# surface!(ax, x, y, Z; colormap=:darkterrain)
+surface!(ax, x, y, Z; colormap=brighter_colormap)
 hidedecorations!(ax)
 hidespines!(ax)
 

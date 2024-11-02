@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.13)  2 NOV 2024 11:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.13)  2 NOV 2024 13:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -402,7 +402,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \titlewidthfirst=\dimen263
 )
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 53.
- (./main.aux (./title.aux) (./publications.aux) (./abstract.aux) (./abstract-german.aux) (./intro.aux) (./conclusions.aux) (./acknowledgments.aux) (./declaration-independence.aux))
+ (./main.aux (./title.aux) (./publications.aux) (./abstract.aux) (./abstract-german.aux) (./methodology.aux) (./paper-malleability/malleability.aux) (./conclusions.aux) (./acknowledgments.aux) (./declaration-independence.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -519,7 +519,7 @@ LaTeX Info: Redefining \nameref on input line 53.
 \openout2 = `title.aux'.
 
 (./title.tex
-<title/uni-oldenburg-logo.png, id=30, 770.94023pt x 431.4519pt>
+<title/uni-oldenburg-logo.png, id=138, 770.94023pt x 431.4519pt>
 File: title/uni-oldenburg-logo.png Graphic file (type png)
 <use title/uni-oldenburg-logo.png>
 Package pdftex.def Info: title/uni-oldenburg-logo.png  used on input line 6.
@@ -536,7 +536,7 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 7.
  (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-<title/icbm-logo.png, id=32, 225.84375pt x 225.84375pt>
+<title/icbm-logo.png, id=140, 225.84375pt x 225.84375pt>
 File: title/icbm-logo.png Graphic file (type png)
 <use title/icbm-logo.png>
 Package pdftex.def Info: title/icbm-logo.png  used on input line 12.
@@ -575,173 +575,306 @@ Underfull \vbox (badness 1281) has occurred while \output is active []
 
 
 ]
-\openout2 = `intro.aux'.
+\openout2 = `methodology.aux'.
 
- (./intro.tex
+ (./methodology.tex
 Chapter 1.
-<intro/landscape.png, id=90, 2409.0pt x 2007.5pt>
-File: intro/landscape.png Graphic file (type png)
-<use intro/landscape.png>
-Package pdftex.def Info: intro/landscape.png  used on input line 6.
-(pdftex.def)             Requested size: 418.25368pt x 348.53026pt.
+
+Overfull \hbox (22.46208pt too wide) in paragraph at lines 6--8
+\OT1/cmr/m/n/10.95 In this the-sis we study dy-nam-i-cal sys-tems de-scribed by a state vari-able $\OML/cmm/m/it/10.95 x \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 x[]; x[]; [] ; x[]\OT1/cmr/m/n/10.95 )[] \OMS/cmsy/m/n/10.95 2
+ []
+
 [9
 
 
 
 
 ]
-Underfull \vbox (badness 6944) has occurred while \output is active []
+<methodology//equilibria-linear/hyperbolic-eq-2d.png, id=247, 2409.0pt x 2007.5pt>
+File: methodology//equilibria-linear/hyperbolic-eq-2d.png Graphic file (type png)
+<use methodology//equilibria-linear/hyperbolic-eq-2d.png>
+Package pdftex.def Info: methodology//equilibria-linear/hyperbolic-eq-2d.png  used on input line 49.
+(pdftex.def)             Requested size: 418.25368pt x 348.53026pt.
 
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
+
+LaTeX Warning: Reference `chap:multistability' on page 10 undefined on input line 68.
+
+
+LaTeX Warning: Reference `chap:multistability' on page 10 undefined on input line 68.
+
+[10] [11pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.15 
-      <./intro/landscape.png>]
+l.72 
+      <./methodology//equilibria-linear/hyperbolic-eq-2d.png>]
+<methodology//attractors-nonlinear/attractors-nonlinear.png, id=275, 4015.0pt x 2007.5pt>
+File: methodology//attractors-nonlinear/attractors-nonlinear.png Graphic file (type png)
+<use methodology//attractors-nonlinear/attractors-nonlinear.png>
+Package pdftex.def Info: methodology//attractors-nonlinear/attractors-nonlinear.png  used on input line 101.
+(pdftex.def)             Requested size: 418.25368pt x 209.12428pt.
+ [12] [13pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.139     \item T
+                 here are arbitrarily small neighborhoods $U$ of $A$ such th... <./methodology//attractors-nonlinear/attractors-nonlinear.png>] [14] [15]
 
-LaTeX Warning: Reference `method:sec:kuramoto' on page 11 undefined on input line 16.
+LaTeX Warning: Reference `chap:multistability' on page 16 undefined on input line 218.
+
+<methodology//global-manifolds/global-manifolds.png, id=346, 415.01047pt x 297.57173pt>
+File: methodology//global-manifolds/global-manifolds.png Graphic file (type png)
+<use methodology//global-manifolds/global-manifolds.png>
+Package pdftex.def Info: methodology//global-manifolds/global-manifolds.png  used on input line 222.
+(pdftex.def)             Requested size: 250.95476pt x 179.9429pt.
+<methodology//duffing-bistability.png, id=353, 2131.965pt x 1705.37125pt>
+File: methodology//duffing-bistability.png Graphic file (type png)
+<use methodology//duffing-bistability.png>
+Package pdftex.def Info: methodology//duffing-bistability.png  used on input line 240.
+(pdftex.def)             Requested size: 250.95476pt x 200.73244pt.
+[16]
+
+LaTeX Warning: Reference `chap:multistability' on page 17 undefined on input line 246.
+
+[17pdfTeX warning (ext4): destination with the same identifier (name{figure.1.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.247 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.1.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.247 
+       <./methodology//global-manifolds/global-manifolds.png> <./methodology//duffing-bistability.png>] [18]
+<paper-multistability-george/overview_figure.png, id=391, 918.705pt x 197.538pt>
+File: paper-multistability-george/overview_figure.png Graphic file (type png)
+<use paper-multistability-george/overview_figure.png>
+Package pdftex.def Info: paper-multistability-george/overview_figure.png  used on input line 268.
+(pdftex.def)             Requested size: 418.25368pt x 89.93117pt.
+ [19] [20pdfTeX warning (ext4): destination with the same identifier (name{figure.1.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.290 \begin{align}
+                    <./paper-multistability-george/overview_figure.png>]
+
+LaTeX Warning: Reference `chap:metastability' on page 21 undefined on input line 298.
+
+[21]
+<methodology/bifurcations/bifurcations.png, id=435, 3212.0pt x 3212.0pt>
+File: methodology/bifurcations/bifurcations.png Graphic file (type png)
+<use methodology/bifurcations/bifurcations.png>
+Package pdftex.def Info: methodology/bifurcations/bifurcations.png  used on input line 325.
+(pdftex.def)             Requested size: 418.25368pt x 418.2118pt.
+ [22] [23pdfTeX warning (ext4): destination with the same identifier (name{figure.1.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.355 \begin{align}
+                    <./methodology/bifurcations/bifurcations.png>]
+<methodology/networks/wattsstrogatz.png, id=463, 2131.965pt x 888.31876pt>
+File: methodology/networks/wattsstrogatz.png Graphic file (type png)
+<use methodology/networks/wattsstrogatz.png>
+Package pdftex.def Info: methodology/networks/wattsstrogatz.png  used on input line 383.
+(pdftex.def)             Requested size: 418.25368pt x 174.27194pt.
+ [24] [25pdfTeX warning (ext4): destination with the same identifier (name{figure.1.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.407 \end{align}
+                  <./methodology/networks/wattsstrogatz.png>] [26] [27]
+<methodology//kuramoto/kuramoto-thesis-figure.png, id=532, 2131.965pt x 1895.08pt>
+File: methodology//kuramoto/kuramoto-thesis-figure.png Graphic file (type png)
+<use methodology//kuramoto/kuramoto-thesis-figure.png>
+Package pdftex.def Info: methodology//kuramoto/kuramoto-thesis-figure.png  used on input line 489.
+(pdftex.def)             Requested size: 418.25368pt x 371.78015pt.
+) [28] [29pdfTeX warning (ext4): destination with the same identifier (name{figure.1.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.65 \include{methodology}
+                           %2 <./methodology//kuramoto/kuramoto-thesis-figure.png>]
+\openout2 = `paper-malleability/malleability.aux'.
+
+ (./paper-malleability/malleability.tex
+Chapter 2.
+[30
 
 
-LaTeX Warning: Reference `eq:kuramoto-general' on page 11 undefined on input line 16.
 
 
-LaTeX Warning: Reference `method:sec:network' on page 11 undefined on input line 20.
+]
+<paper-malleability/figure1.png, id=602, 337.5009pt x 359.9046pt>
+File: paper-malleability/figure1.png Graphic file (type png)
+<use paper-malleability/figure1.png>
+Package pdftex.def Info: paper-malleability/figure1.png  used on input line 38.
+(pdftex.def)             Requested size: 376.42575pt x 401.40994pt.
+ [31]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [32pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.56 \end{equation}
+                    <./paper-malleability/figure1.png>] [33]
+<paper-malleability/figure2.png, id=675, 473.51305pt x 275.63779pt>
+File: paper-malleability/figure2.png Graphic file (type png)
+<use paper-malleability/figure2.png>
+Package pdftex.def Info: paper-malleability/figure2.png  used on input line 97.
+(pdftex.def)             Requested size: 414.07343pt x 241.03946pt.
+ [34] [35pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.105 
+       <./paper-malleability/figure2.png>] [36]
+Overfull \hbox (1.04054pt too wide) in paragraph at lines 118--119
+\OT1/cmr/m/n/10.95 rewired in the Watts-Strogatz net-works, and weights re-dis-tributed for distance-dependent
+ []
 
-LaTeX Warning: Reference `chap:malleability' on page 11 undefined on input line 20.
+[37]
+<paper-malleability/figure3.png, id=728, 534.798pt x 273.03606pt>
+File: paper-malleability/figure3.png Graphic file (type png)
+<use paper-malleability/figure3.png>
+Package pdftex.def Info: paper-malleability/figure3.png  used on input line 133.
+(pdftex.def)             Requested size: 414.07343pt x 211.40494pt.
+ [38pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.142 
+       <./paper-malleability/figure3.png>]
+<paper-malleability/figure4.png, id=742, 511.6716pt x 159.42763pt>
+File: paper-malleability/figure4.png Graphic file (type png)
+<use paper-malleability/figure4.png>
+Package pdftex.def Info: paper-malleability/figure4.png  used on input line 148.
+(pdftex.def)             Requested size: 414.07343pt x 129.02133pt.
 
+Underfull \vbox (badness 4353) has occurred while \output is active []
 
-Underfull \vbox (badness 1953) has occurred while \output is active []
+ [39pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.155 
+       <./paper-malleability/figure4.png>]
+<paper-malleability/figure5.png, id=756, 513.117pt x 177.20604pt>
+File: paper-malleability/figure5.png Graphic file (type png)
+<use paper-malleability/figure5.png>
+Package pdftex.def Info: paper-malleability/figure5.png  used on input line 160.
+(pdftex.def)             Requested size: 414.07343pt x 143.00612pt.
+ [40pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.166 
+       <./paper-malleability/figure5.png>]
+<paper-malleability/figure6.png, id=767, 397.34045pt x 195.56262pt>
+File: paper-malleability/figure6.png Graphic file (type png)
+<use paper-malleability/figure6.png>
+Package pdftex.def Info: paper-malleability/figure6.png  used on input line 192.
+(pdftex.def)             Requested size: 397.33948pt x 195.56213pt.
+ [41]
+<paper-malleability/figure7.png, id=779, 267.83263pt x 252.65591pt>
+File: paper-malleability/figure7.png Graphic file (type png)
+<use paper-malleability/figure7.png>
+Package pdftex.def Info: paper-malleability/figure7.png  used on input line 206.
+(pdftex.def)             Requested size: 418.25368pt x 394.58112pt.
+ [42pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.210 
+       <./paper-malleability/figure6.png>]
+<paper-malleability/multistability-study/continuation-randomnetworks-3shuffles.png, id=789, 3212.0pt x 1204.5pt>
+File: paper-malleability/multistability-study/continuation-randomnetworks-3shuffles.png Graphic file (type png)
+<use paper-malleability/multistability-study/continuation-randomnetworks-3shuffles.png>
+Package pdftex.def Info: paper-malleability/multistability-study/continuation-randomnetworks-3shuffles.png  used on input line 213.
+(pdftex.def)             Requested size: 418.25368pt x 156.82942pt.
+<paper-malleability/multistability-study/continuation-smallworld-singleshuffle.png, id=790, 4015.0pt x 2810.5pt>
+File: paper-malleability/multistability-study/continuation-smallworld-singleshuffle.png Graphic file (type png)
+<use paper-malleability/multistability-study/continuation-smallworld-singleshuffle.png>
+Package pdftex.def Info: paper-malleability/multistability-study/continuation-smallworld-singleshuffle.png  used on input line 221.
+(pdftex.def)             Requested size: 418.25368pt x 292.77399pt.
+<paper-malleability/figure8.png, id=792, 511.6716pt x 255.8358pt>
+File: paper-malleability/figure8.png Graphic file (type png)
+<use paper-malleability/figure8.png>
+Package pdftex.def Info: paper-malleability/figure8.png  used on input line 240.
+(pdftex.def)             Requested size: 414.07343pt x 207.04239pt.
+ [43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-
-LaTeX Warning: Reference `method:linear-system' on page 12 undefined on input line 26.
-
-
-LaTeX Warning: Reference `method:nonlinear-I' on page 12 undefined on input line 26.
-
-
-LaTeX Warning: Reference `method:sec:kuramoto:twisted' on page 12 undefined on input line 26.
-
-
-Underfull \vbox (badness 1953) has occurred while \output is active []
-
- [12]
-
-LaTeX Warning: Reference `chap:multistability' on page 13 undefined on input line 30.
-
-
-LaTeX Warning: Reference `chap:multistability' on page 13 undefined on input line 33.
-
-
-LaTeX Warning: Reference `method:bifurcations' on page 13 undefined on input line 33.
-
-
-Underfull \vbox (badness 6592) has occurred while \output is active []
-
- [13]
-
-LaTeX Warning: Reference `method:sec:finding-atts' on page 14 undefined on input line 35.
-
-
-LaTeX Warning: Reference `method:bifurcations' on page 14 undefined on input line 37.
-
-
-LaTeX Warning: Reference `chap:metastability' on page 14 undefined on input line 40.
-
-
-Underfull \vbox (badness 1953) has occurred while \output is active []
-
- [14]
-
-LaTeX Warning: Reference `chap:methodology' on page 15 undefined on input line 44.
-
-
-LaTeX Warning: Reference `chap:malleability' on page 15 undefined on input line 44.
-
-
-LaTeX Warning: Reference `chap:multistability' on page 15 undefined on input line 44.
-
-
-LaTeX Warning: Reference `chap:metastability' on page 15 undefined on input line 44.
-
-) [15]
+ [44pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.251 
+       <./paper-malleability/figure7.png>] [45pdfTeX warning (ext4): destination with the same identifier (name{figure.2.8}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.251 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.2.9}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.251 
+       <./paper-malleability/multistability-study/continuation-randomnetworks-3shuffles.png> <./paper-malleability/multistability-study/continuation-smallworld-singleshuffle.png>] [46pdfTeX warning (ext4): destination with the same identifier (name{figure.2.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.256 
+       <./paper-malleability/figure8.png>] [47] [48] [49]) [50]
 \openout2 = `conclusions.aux'.
 
  (./conclusions.tex
-Chapter 2.
-
-LaTeX Warning: Reference `chap:malleability' on page 16 undefined on input line 11.
-
-
-LaTeX Warning: Reference `method:sec:kuramoto' on page 16 undefined on input line 12.
-
-[16
+Chapter 3.
+[51
 
 
 
 
-] [17] [18]
+] [52] [53]
 
-LaTeX Warning: Reference `chap:metastability' on page 19 undefined on input line 40.
+LaTeX Warning: Reference `chap:metastability' on page 54 undefined on input line 40.
 
 
 Underfull \vbox (badness 6592) has occurred while \output is active []
 
- [19]
+ [54]
 
-LaTeX Warning: Reference `chap:metastability' on page 20 undefined on input line 46.
-
-
-LaTeX Warning: Reference `chap:metastability' on page 20 undefined on input line 48.
-
-[20]) [21] (./main.bbl [22
+LaTeX Warning: Reference `chap:metastability' on page 55 undefined on input line 46.
 
 
+LaTeX Warning: Reference `chap:metastability' on page 55 undefined on input line 48.
 
-] [23]
-Underfull \hbox (badness 1810) in paragraph at lines 233--236
+[55]) [56] (./main.bbl [57
+
+
+
+] [58] [59] [60] [61] [62]
+Underfull \hbox (badness 1248) in paragraph at lines 574--577
 \OT1/cmr/m/n/10.95 Bound-aries of syn-chro-niza-tion in os-cil-la-tor net-works.  \OT1/cmr/m/it/10.95 Phys-i-cal Re-view E\OT1/cmr/m/n/10.95 ,
  []
 
-[24] [25]
-Underfull \hbox (badness 1043) in paragraph at lines 396--399
-[]\OT1/cmr/m/n/10.95 Peter Ash-win and Marc Timme.  When in-sta-bil-ity makes sense.  \OT1/cmr/m/it/10.95 Na-ture\OT1/cmr/m/n/10.95 ,
- []
-
-[26]) [27]
+[63] [64]) [65]
 \openout2 = `acknowledgments.aux'.
 
- (./acknowledgments.tex) [28
+ (./acknowledgments.tex) [66
 
 
 ]
 \openout2 = `declaration-independence.aux'.
 
- (./declaration-independence.tex) [29
+ (./declaration-independence.tex) [67
 
 
 
 
-] (./main.aux (./title.aux) (./publications.aux) (./abstract.aux) (./abstract-german.aux) (./intro.aux) (./conclusions.aux) (./acknowledgments.aux) (./declaration-independence.aux))
+] (./main.aux (./title.aux) (./publications.aux) (./abstract.aux) (./abstract-german.aux) (./methodology.aux) (./paper-malleability/malleability.aux) (./conclusions.aux) (./acknowledgments.aux) (./declaration-independence.aux))
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2A80E502FB6E510004DDF4B09122CE43;848.
+(rerunfilecheck)             Checksum: 4E0CABBC19ECD46227B6E6B13546DE5D;7579.
  ) 
 Here is how much of TeX's memory you used:
- 17225 strings out of 478287
- 328184 string characters out of 5849289
- 606887 words of memory out of 5000000
- 35023 multiletter control sequences out of 15000+600000
- 479754 words of font info for 66 fonts, out of 8000000 for 9000
+ 17724 strings out of 478287
+ 341055 string characters out of 5849289
+ 626963 words of memory out of 5000000
+ 35295 multiletter control sequences out of 15000+600000
+ 483271 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,7n,79p,2518b,887s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on main.pdf (29 pages, 2776902 bytes).
+ 71i,12n,79p,2208b,892s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on main.pdf (67 pages, 12659087 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 400 compressed objects within 4 object streams
- 112 named destinations out of 1000 (max. 500000)
- 72 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1211 PDF objects out of 1440 (max. 8388607)
+ 1043 compressed objects within 11 object streams
+ 297 named destinations out of 1000 (max. 500000)
+ 373 words of extra memory for PDF output out of 10000 (max. 10000000)
 

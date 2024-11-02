@@ -1,10 +1,55 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
-\bibitem{feudel2008complex}
-Ulrike Feudel.
-\newblock {Complex Dynamics In Multistable Systems}.
-\newblock {\em International Journal of Bifurcation and Chaos},
-  18(06):1607--1626, 2008.
+\bibitem{strogatz2002nonlinear}
+Strogatz.
+\newblock {\em {Nonlinear Dynamics and Chaos}}.
+\newblock Studies in nonlinearity. Westview, 2002.
+
+\bibitem{izhikevichbook}
+Eugene~M Izhikevich.
+\newblock {\em {Dynamical systems in neuroscience}}.
+\newblock MIT press, 2007.
+
+\bibitem{shukla2014a}
+Anant~Kant Shukla, T~R Ramamohan, and S~Srinivas.
+\newblock {A new analytical approach for limit cycles and quasi-periodic
+  solutions of nonlinear oscillators: the example of the forced Van der Pol
+  Duffing oscillator}.
+\newblock {\em Physica Scripta}, 89(7):075202, 2014.
+
+\bibitem{argyrisbook}
+John~H. Argyris, Gunter Faust, Maria Haase, and Rudolf Friedrich.
+\newblock {\em {An Exploration of Dynamical Systems and Chaos}}.
+\newblock Springer Berlin, Heidelberg, 2 edition, 2015.
+
+\bibitem{milnor1985on}
+John Milnor.
+\newblock {On the concept of attractor}.
+\newblock {\em Communications in Mathematical Physics}, 99(2):177--195, 1985.
+
+\bibitem{taylor2011attractors}
+Robert~L.V. Taylor.
+\newblock {Attractors: Nonstrange to Chaotic}.
+\newblock {\em SIAM Undergraduate Research Online}, 4:72--80, 2011.
+\newblock Publisher: Society for Industrial \& Applied Mathematics (SIAM).
+
+\bibitem{broer2011dynamical}
+Henk Broer and Floris Takens.
+\newblock {\em {Dynamical Systems and Chaos}}.
+\newblock Applied Mathematical Sciences. 2011.
+
+\bibitem{saletan}
+Jorge~V. José and Eugene~J. Saletan.
+\newblock {\em {Classical Dynamics: A Contemporary Approach}}.
+\newblock Cambridge University Press, Cambridge, 1998.
+
+\bibitem{glendinning}
+Paul Glendinning.
+\newblock {\em {Stability, Instability And Chaos: An Introduction To The Theory
+  Of Nonlinear Differential Equations (cambridge Texts In Applied
+  Mathematics)}}.
+\newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
+  Cambridge [England], 1 edition, 1994.
 
 \bibitem{pisarchik2022multistability}
 Alexander~N. Pisarchik and Alexander~E. Hramov.
@@ -12,85 +57,70 @@ Alexander~N. Pisarchik and Alexander~E. Hramov.
   Applications}.
 \newblock {\em Springer Series in Synergetics}, 2022.
 
-\bibitem{pisarchik2014control}
-Alexander~N. Pisarchik and Ulrike Feudel.
-\newblock {Control of multistability}.
-\newblock {\em Physics Reports}, 540(4):167--218, 2014.
+\bibitem{datseris2022effortless}
+George Datseris and Alexandre Wagemakers.
+\newblock {Effortless estimation of basins of attraction}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  32(2):023104, 2022.
 
-\bibitem{zhu2022synthetic}
-Ronghui Zhu, Jesus M.~del Rio-Salgado, Jordi Garcia-Ojalvo, and Michael~B.
-  Elowitz.
-\newblock {Synthetic multistability in mammalian cells}.
-\newblock {\em Science}, 375(6578):eabg9765, 2022.
+\bibitem{datseris2023framework}
+George Datseris, Kalel~Luiz Rossi, and Alexandre Wagemakers.
+\newblock {Framework for global stability analysis of dynamical systems}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  33(7):073151, 2023.
 
-\bibitem{regan2012dynamical}
-Erzsébet~Ravasz Regan and William~C. Aird.
-\newblock {Dynamical Systems Approach to Endothelial Heterogeneity}.
-\newblock {\em Circulation Research}, 111(1):110--130, 2012.
+\bibitem{nusse1994dynamics}
+Helena~E. Nusse, James~A. Yorke, and Eric~J. Kostelich.
+\newblock {Dynamics: Numerical Explorations, Accompanying Computer Program
+  Dynamics}.
+\newblock {\em Applied Mathematical Sciences}, 1994.
 
-\bibitem{khazaei2022metabolic}
-Tahmineh Khazaei, Rory~L. Williams, Said~R. Bogatyrev, John~C. Doyle,
-  Christopher~S. Henry, and Rustem~F. Ismagilov.
-\newblock {Metabolic multistability and hysteresis in a model aerobe-anaerobe
-  microbiome community}.
-\newblock {\em Science Advances}, 6(33):eaba0353, 2020.
+\bibitem{gelbrecht2020monte}
+Maximilian Gelbrecht, Jürgen Kurths, and Frank Hellmann.
+\newblock {Monte Carlo basin bifurcation analysis}.
+\newblock {\em New Journal of Physics}, 22(3):033032, 2020.
 
-\bibitem{hellmann2020network}
-Frank Hellmann, Paul Schultz, Patrycja Jaros, Roman Levchenko, Tomasz
-  Kapitaniak, Jürgen Kurths, and Yuri Maistrenko.
-\newblock {Network-induced multistability through lossy coupling and exotic
-  solitary states}.
-\newblock {\em Nature Communications}, 11(1):592, 2020.
+\bibitem{stender2021bstab}
+Merten Stender and Norbert Hoffmann.
+\newblock {bSTAB: an open-source software for computing the basin stability of
+  multi-stable dynamical systems}.
+\newblock {\em Nonlinear Dynamics}, pages 1--18, 2021.
 
-\bibitem{halekotte2021transient}
-Lukas Halekotte, Anna Vanselow, and Ulrike Feudel.
-\newblock {Transient chaos enforces uncertainty in the British power grid}.
-\newblock {\em Journal of Physics: Complexity}, 2(3):035015, 2021.
+\bibitem{kuznetsov}
+Yuri~A. Kuznetsov.
+\newblock {Elements of Applied Bifurcation Theory}.
+\newblock {\em Applied Mathematical Sciences}, 2004.
 
-\bibitem{wilson1972excitatory}
-Hugh~R. Wilson and Jack~D. Cowan.
-\newblock {Excitatory and Inhibitory Interactions in Localized Populations of
-  Model Neurons}.
-\newblock {\em Biophysical Journal}, 12(1):1--24, 1972.
+\bibitem{koch2024ghost}
+D.~Koch, A.~Nandan, G.~Ramesan, I.~Tyukin, A.~Gorban, and A.~Koseska.
+\newblock {Ghost Channels and Ghost Cycles Guiding Long Transients in Dynamical
+  Systems}.
+\newblock {\em Physical Review Letters}, 133(4):047202, 2024.
 
-\bibitem{foss1996multistability}
-Jennifer Foss, André Longtin, Boualem Mensour, and John Milton.
-\newblock {Multistability and Delayed Recurrent Loops}.
-\newblock {\em Physical Review Letters}, 76(4):708--711, 1996.
+\bibitem{sandstede1997constructing}
+Björn Sandstede.
+\newblock {Constructing dynamical systems having homoclinic bifurcation points
+  of codimension two}.
+\newblock {\em Journal of Dynamics and Differential Equations}, 9(2):269--288,
+  1997.
 
-\bibitem{golos2015multistability}
-Mathieu Golos, Viktor Jirsa, and Emmanuel Daucé.
-\newblock {Multistability in Large Scale Models of Brain Activity}.
-\newblock {\em PLoS Comput Biol}, 11(12):1004644, 2015.
+\bibitem{bullmore2009complex}
+Ed~Bullmore and Olaf Sporns.
+\newblock {Complex brain networks: graph theoretical analysis of structural and
+  functional systems}.
+\newblock {\em Nature Reviews Neuroscience}, 10(3):186--198, 2009.
 
-\bibitem{flynn2024exploring}
-Andrew Flynn and Andreas Amann.
-\newblock {Exploring the origins of switching dynamics in a multifunctional
-  reservoir computer}.
-\newblock {\em Frontiers in Network Physiology}, 4:1451812, 2024.
+\bibitem{landi2018complexity}
+Pietro Landi, Henintsoa~O. Minoarivelo, Åke Brännström, Cang Hui, and Ulf
+  Dieckmann.
+\newblock {Complexity and stability of ecological networks: a review of the
+  theory}.
+\newblock {\em Population Ecology}, 60(4):319--345, 2018.
 
-\bibitem{robinson2012multistability}
-Alexander Robinson, Reinhard Calov, and Andrey Ganopolski.
-\newblock {Multistability and critical thresholds of the Greenland ice sheet}.
-\newblock {\em Nature Climate Change}, 2(6):429--432, 2012.
-
-\bibitem{feudel1998dynamical}
-Ulrike Feudel, Celso Grebogi, Leon Poon, and James~A. Yorke.
-\newblock {Dynamical properties of a simple mechanical system with a large
-  number of coexisting periodic attractors}.
-\newblock {\em Chaos, Solitons \& Fractals}, 9(1-2):171--180, 1998.
-
-\bibitem{adler2020principles}
-Miri Adler, Avi Mayo, Xu~Zhou, Ruth~A. Franklin, Matthew~L. Meizlish, Ruslan
-  Medzhitov, Stefan~M. Kallenberger, and Uri Alon.
-\newblock {Principles of Cell Circuits for Tissue Repair and Fibrosis}.
-\newblock {\em iScience}, 23(2):100841, 2020.
-
-\bibitem{pikovsky2001synchronization}
-Arkady Pikovsky, Michael Rosenblum, and Jürgen Kurths.
-\newblock {\em {Synchronization: A Universal Concept in Nonlinear Science}},
-  volume~70.
-\newblock Cambridge University Press, 2001.
+\bibitem{watts1998collective}
+D~J Watts and S~H Strogatz.
+\newblock {Collective dynamics of 'small-world' networks}.
+\newblock {\em Nature}, 393(6684):440--442, 1998.
 
 \bibitem{boccaletti2018synchronization}
 Stefano Boccaletti, Alexander~N. Pisarchik, Charo I.~del Genio, and Andreas
@@ -98,40 +128,17 @@ Stefano Boccaletti, Alexander~N. Pisarchik, Charo I.~del Genio, and Andreas
 \newblock {\em {Synchronization: From Coupled Systems to Complex Networks}}.
 \newblock Cambridge University Press, 2018.
 
-\bibitem{arenas2008synchronization}
-Alex Arenas, Albert Díaz-Guilera, Jurgen Kurths, Yamir Moreno, and Changsong
-  Zhou.
-\newblock {Synchronization in complex networks}.
-\newblock {\em Physics Reports}, 469(3):93--153, 2008.
-
 \bibitem{strogatz2000from}
 Steven~H. Strogatz.
 \newblock {From Kuramoto to Crawford: exploring the onset of synchronization in
   populations of coupled oscillators}.
 \newblock {\em Physica D: Nonlinear Phenomena}, 143(1-4):1--20, 2000.
 
-\bibitem{singer1999neuronal}
-W~Singer.
-\newblock {Neuronal synchrony: a versatile code for the definition of
-  relations?}
-\newblock {\em Neuron}, 24(1):49--65,111, 1999.
-
-\bibitem{fries2015rhythms}
-Pascal Fries.
-\newblock {Rhythms for Cognition: Communication through Coherence.}
-\newblock {\em Neuron}, 88(1):220--235, 2015.
-
-\bibitem{womelsdorf2007the}
-Thilo Womelsdorf and Pascal Fries.
-\newblock {The role of neuronal synchronization in selective attention.}
-\newblock {\em Current Opinion in Neurobiology}, 17(2):154--160, 2007.
-
-\bibitem{hurkey2023gap}
-Silvan Hürkey, Nelson Niemeyer, Jan-Hendrik Schleimer, Stefanie Ryglewski,
-  Susanne Schreiber, and Carsten Duch.
-\newblock {Gap junctions desynchronize a neural circuit to stabilize insect
-  flight}.
-\newblock {\em Nature}, 618(7963):118--125, 2023.
+\bibitem{kuramoto1984chemical}
+Yoshiki Kuramoto.
+\newblock {\em {Chemical Oscillations, Waves, and Turbulence}}, volume~19 of
+  {\em Springer Series in Synergetics}.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1984.
 
 \bibitem{acebron2005kuramoto}
 Juan~A. Acebrón, L.~L. Bonilla, Conrad~J.Pérez Vicente, Félix Ritort, and
@@ -145,58 +152,23 @@ Francisco~A. Rodrigues, Thomas~K.D.M. Peron, Peng Ji, and Jürgen Kurths.
 \newblock {The Kuramoto model in complex networks}.
 \newblock {\em Physics Reports}, 610:1--98, 2016.
 
-\bibitem{budzinski2020synchronization}
-R.~C. Budzinski, K.~L. Rossi, B.~R.~R. Boaretto, T.~L. Prado, and S.~R. Lopes.
-\newblock {Synchronization malleability in neural networks under a
-  distance-dependent coupling}.
-\newblock {\em Physical Review Research}, 2(4):043309, 2020.
-
-\bibitem{rossi2022shifts}
-Kalel~L. Rossi, Roberto~C. Budzinski, Bruno R.~R. Boaretto, Lyle~E. Muller, and
-  Ulrike Feudel.
-\newblock {Shifts in global network dynamics due to small changes at single
-  nodes}.
-\newblock {\em Physical Review Research}, 5(1):013220, 2023.
-
-\bibitem{hong2007entrainment}
-Hyunsuk Hong, Hugues Chaté, Hyunggyu Park, and Lei~Han Tang.
-\newblock {Entrainment transition in populations of random frequency
-  oscillators}.
-\newblock {\em Physical Review Letters}, 99(18):1--4, 2007.
-
-\bibitem{hong2007finitesizescalingpre}
-Hyunsuk Hong, Hyunggyu Park, and Lei~Han Tang.
-\newblock {Finite-size scaling of synchronized oscillation on complex
-  networks}.
-\newblock {\em Physical Review E}, 76(6):1--7, 2007.
-
-\bibitem{peter2018transition}
-Franziska Peter and Arkady Pikovsky.
-\newblock {Transition to collective oscillations in finite Kuramoto ensembles}.
-\newblock {\em Physical Review E}, 97(3):032310, 2018.
-
-\bibitem{tilles2011multistable}
-Paulo F.~C. Tilles, Fernando~F. Ferreira, and Hilda~A. Cerdeira.
-\newblock {Multistable behavior above synchronization in a locally coupled
-  Kuramoto model}.
-\newblock {\em Physical Review E}, 83(6):066206, 2011.
-
-\bibitem{gelbrecht2020monte}
-Maximilian Gelbrecht, Jürgen Kurths, and Frank Hellmann.
-\newblock {Monte Carlo basin bifurcation analysis}.
-\newblock {\em New Journal of Physics}, 22(3):033032, 2020.
-
-\bibitem{potratzki2024synchronization}
-Max Potratzki, Timo Bröhl, Thorsten Rings, and Klaus Lehnertz.
-\newblock {Synchronization dynamics of phase oscillators on power grid models}.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
-  34(4):043131, 2024.
-
 \bibitem{wiley2006the}
 Daniel~A. Wiley, Steven~H. Strogatz, and Michelle Girvan.
 \newblock {The size of the sync basin}.
 \newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
   16(1):015103, 2006.
+
+\bibitem{zhang2021basins}
+Yuanzhao Zhang and Steven~H. Strogatz.
+\newblock {Basins with Tentacles}.
+\newblock {\em Physical Review Letters}, 127(19):194101, 2021.
+
+\bibitem{taylor2012there}
+Richard Taylor.
+\newblock {There is no non-zero stable fixed point for dense networks in the
+  homogeneous Kuramoto model}.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  45(5):055102, 2012.
 
 \bibitem{townsend2020dense}
 Alex Townsend, Michael Stillman, and Steven~H. Strogatz.
@@ -204,140 +176,374 @@ Alex Townsend, Michael Stillman, and Steven~H. Strogatz.
 \newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
   30(8):083142, 2020.
 
-\bibitem{zhang2021basins}
-Yuanzhao Zhang and Steven~H. Strogatz.
-\newblock {Basins with Tentacles}.
-\newblock {\em Physical Review Letters}, 127(19):194101, 2021.
+\bibitem{motter2013spontaneous}
+Adilson~E. Motter, Seth~A. Myers, Marian Anghel, and Takashi Nishikawa.
+\newblock {Spontaneous synchrony in power-grid networks}.
+\newblock {\em Nature Physics}, 9(3):191--197, 2013.
 
-\bibitem{rossi2021phase}
-K.~L. Rossi, R.~C. Budzinski, B.~R.~R. Boaretto, T.~L. Prado, U.~Feudel, and
-  S.~R. Lopes.
-\newblock {Phase-locking intermittency induced by dynamical heterogeneity in
-  networks of thermosensitive neurons}.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
-  31(8):083121, 2021.
-
-\bibitem{hindmarsh1984a}
-J~L Hindmarsh and R~M Rose.
-\newblock {A model of neuronal bursting using three coupled first order
-  differential equations}.
-\newblock {\em Proceedings of the royal society of London B: biological
-  sciences}, 221(1222):87--102, 1984.
-
-\bibitem{izhikevichbook}
-Eugene~M Izhikevich.
-\newblock {\em {Dynamical systems in neuroscience}}.
-\newblock MIT press, 2007.
-
-\bibitem{medeiros2018boundaries}
-Everton~S. Medeiros, Rene~O. Medrano-T, Iberê~L. Caldas, and Ulrike Feudel.
-\newblock {Boundaries of synchronization in oscillator networks}.
-\newblock {\em Physical Review E}, 98(3):030201, 2018.
-
-\bibitem{medeiros2019state}
-Everton~S. Medeiros, Rene~O. Medrano-T, Iberê~L. Caldas, Tamás Tél, and
-  Ulrike Feudel.
-\newblock {State-dependent vulnerability of synchronization}.
-\newblock {\em Physical Review E}, 100(5):052201, 2019.
-\newblock Publisher: American Physical Society.
-
-\bibitem{smale1976a}
-S.~Smale.
-\newblock {A Mathematical Model of Two Cells Via Turing's Equation}.
-\newblock In {\em The Hopf Bifurcation and Its Applications}, pages 354--367.
-  Springer New York, 1976.
-
-\bibitem{datseris2022effortless}
-George Datseris and Alexandre Wagemakers.
-\newblock {Effortless estimation of basins of attraction}.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
-  32(2):023104, 2022.
-
-\bibitem{nusse1994dynamics}
-Helena~E. Nusse, James~A. Yorke, and Eric~J. Kostelich.
-\newblock {Dynamics: Numerical Explorations, Accompanying Computer Program
-  Dynamics}.
-\newblock {\em Applied Mathematical Sciences}, 1994.
-
-\bibitem{stender2021bstab}
-Merten Stender and Norbert Hoffmann.
-\newblock {bSTAB: an open-source software for computing the basin stability of
-  multi-stable dynamical systems}.
-\newblock {\em Nonlinear Dynamics}, pages 1--18, 2021.
-
-\bibitem{datseris2023framework}
-George Datseris, Kalel~Luiz Rossi, and Alexandre Wagemakers.
-\newblock {Framework for global stability analysis of dynamical systems}.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
-  33(7):073151, 2023.
-
-\bibitem{budzinski2023an}
-Roberto~C Budzinski, Alexandra~N Busch, Samuel Mestern, Erwan Martin, Luisa H~B
-  Liboni, Federico~W Pasini, Ján Mináč, Todd Coleman, Wataru Inoue, and
-  Lyle~E Muller.
-\newblock {An exact mathematical description of computation with transient
-  spatiotemporal dynamics in a complex-valued neural network}.
-\newblock {\em arXiv}, 2023.
-
-\bibitem{koch2024biological}
-Daniel Koch, Akhilesh Nandan, Gayathri Ramesan, and Aneta Koseska.
-\newblock {Biological computations: Limitations of attractor-based formalisms
-  and the need for transients}.
-\newblock {\em Biochemical and Biophysical Research Communications},
-  720:150069, 2024.
-
-\bibitem{nandan2022cells}
-Akhilesh Nandan, Abhishek Das, Robert Lott, and Aneta Koseska.
-\newblock {Cells use molecular working memory to navigate in changing
-  chemoattractant fields}.
-\newblock {\em eLife}, 11:e76825, 2022.
-
-\bibitem{tognoli2014metastable}
-Emmanuelle Tognoli and J.~A.Scott Kelso.
-\newblock {The Metastable Brain}.
-\newblock {\em Neuron}, 81(1):35--48, 2014.
-
-\bibitem{brinkman2022metastable}
-B.~A.~W. Brinkman, H.~Yan, A.~Maffei, I.~M. Park, A.~Fontanini, J.~Wang, and
-  G.~La Camera.
-\newblock {Metastable dynamics of neural circuits and networks}.
-\newblock {\em Applied Physics Reviews}, 9(1):011313, 2022.
-
-\bibitem{jones2007natural}
-Lauren~M. Jones, Alfredo Fontanini, Brian~F. Sadacca, Paul Miller, and
-  Donald~B. Katz.
-\newblock {Natural stimuli evoke dynamic sequences of states in sensory
-  cortical ensembles}.
+\bibitem{dunne2002foodweb}
+Jennifer~A. Dunne, Richard~J. Williams, and Neo~D. Martinez.
+\newblock {Food-web structure and network theory: The role of connectance and
+  size}.
 \newblock {\em Proceedings of the National Academy of Sciences},
-  104(47):18772--18777, 2007.
+  99(20):12917--12922, 2002.
 
-\bibitem{lacamera2019cortical}
-Giancarlo~La Camera, Alfredo Fontanini, and Luca Mazzucato.
-\newblock {Cortical computations via metastable activity}.
-\newblock {\em Current Opinion in Neurobiology}, 58:37--45, 2019.
+\bibitem{crotty2010josephson}
+Patrick Crotty, Dan Schult, and Ken Segall.
+\newblock {Josephson junction simulation of neurons}.
+\newblock {\em Physical Review E}, 82(1):011914, 2010.
 
-\bibitem{graben2019metastable}
-Peter~beim Graben, Antonio Jimenez-Marin, Ibai Diez, Jesus~M. Cortes, Mathieu
-  Desroches, and Serafim Rodrigues.
-\newblock {Metastable Resting State Brain Dynamics}.
-\newblock {\em Frontiers in Computational Neuroscience}, 13:62, 2019.
+\bibitem{nixon2011synchronized}
+Micha Nixon, Moti Friedman, Eitan Ronen, Asher~A. Friesem, Nir Davidson, and
+  Ido Kanter.
+\newblock {Synchronized Cluster Formation in Coupled Laser Networks}.
+\newblock {\em Physical Review Letters}, 106(22):223901, 2011.
 
-\bibitem{dellnitz2003congestion}
-Michael Dellnitz and Robert Preis.
-\newblock {Symbolic and Numerical Scientific Computation, Second International
-  Conference, SNSC 2001, Hagenberg, Austria, September 12–14, 2001. Revised
-  Papers}.
-\newblock {\em Lecture Notes in Computer Science}, pages 183--209, 2003.
+\bibitem{varela2001brainweb}
+F~Varela, J~P Lachaux, E~Rodriguez, and J~Martinerie.
+\newblock {The brainweb: phase synchronization and large-scale integration.}
+\newblock {\em Nature Reviews. Neuroscience}, 2(4):229--239, 2001.
 
-\bibitem{froyland2005statistically}
-Gary Froyland.
-\newblock {Statistically optimal almost-invariant sets}.
-\newblock {\em Physica D: Nonlinear Phenomena}, 200(3-4):205--219, 2005.
+\bibitem{witthaut2022collective}
+Dirk Witthaut, Frank Hellmann, Jürgen Kurths, Stefan Kettemann, Hildegard
+  Meyer-Ortmanns, and Marc Timme.
+\newblock {Collective nonlinear dynamics and self-organization in decentralized
+  power grids}.
+\newblock {\em Reviews of Modern Physics}, 94(1):015005, 2022.
+
+\bibitem{fries2015rhythms}
+Pascal Fries.
+\newblock {Rhythms for Cognition: Communication through Coherence.}
+\newblock {\em Neuron}, 88(1):220--235, 2015.
+
+\bibitem{singer1999neuronal}
+W~Singer.
+\newblock {Neuronal synchrony: a versatile code for the definition of
+  relations?}
+\newblock {\em Neuron}, 24(1):49--65,111, 1999.
+
+\bibitem{pikovsky2001synchronization}
+Arkady Pikovsky, Michael Rosenblum, and Jürgen Kurths.
+\newblock {\em {Synchronization: A Universal Concept in Nonlinear Science}},
+  volume~70.
+\newblock Cambridge University Press, 2001.
+
+\bibitem{arenas2008synchronization}
+Alex Arenas, Albert Díaz-Guilera, Jurgen Kurths, Yamir Moreno, and Changsong
+  Zhou.
+\newblock {Synchronization in complex networks}.
+\newblock {\em Physics Reports}, 469(3):93--153, 2008.
+
+\bibitem{budzinski2020synchronization}
+R.~C. Budzinski, K.~L. Rossi, B.~R.~R. Boaretto, T.~L. Prado, and S.~R. Lopes.
+\newblock {Synchronization malleability in neural networks under a
+  distance-dependent coupling}.
+\newblock {\em Physical Review Research}, 2(4):043309, 2020.
+
+\bibitem{kuramoto1975self}
+Yoshiki Kuramoto.
+\newblock {Self-entrainment of a population of coupled non-linear oscillators}.
+\newblock {\em International Symposium on Mathematical Problems in Theoretical
+  Physics. Lecture Notes in Physics}, 39:420--422, 1975.
+
+\bibitem{poncealvarez2015restingstate}
+Adrián Ponce-Alvarez, Gustavo Deco, Patric Hagmann, Gian~Luca Romani, Dante
+  Mantini, and Maurizio Corbetta.
+\newblock {Resting-State Temporal Synchronization Networks Emerge from
+  Connectivity Topology and Heterogeneity}.
+\newblock {\em PLOS Computational Biology}, 11(2):e1004100, 2015.
+
+\bibitem{cabral2011role}
+Joana Cabral, Etienne Hugues, Olaf Sporns, and Gustavo Deco.
+\newblock {Role of local network oscillations in resting-state functional
+  connectivity.}
+\newblock {\em Neuroimage}, 57(1):130--139, 2011.
+
+\bibitem{josephson1964coupled}
+B.~D. Josephson.
+\newblock {Coupled Superconductors}.
+\newblock {\em Reviews of Modern Physics}, 36(1):216--220, 1964.
+
+\bibitem{marek1975synchronization}
+Milos Marek and Ivan Stuchl.
+\newblock {Synchronization in two interacting oscillatory systems}.
+\newblock {\em Biophysical Chemistry}, 3(3):241--248, 1975.
+
+\bibitem{neu1979chemical}
+John~C. Neu.
+\newblock {Chemical Waves and the Diffusive Coupling of Limit Cycle
+  Oscillators}.
+\newblock {\em SIAM Journal on Applied Mathematics}, 36(3):509--515, 1979.
+
+\bibitem{rosenblum1996phase}
+M~G Rosenblum, A~S Pikovsky, and J~Kurths.
+\newblock {Phase synchronization of chaotic oscillators.}
+\newblock {\em Physical Review Letters}, 76(11):1804--1807, 1996.
+
+\bibitem{albert2002statistical}
+Réka Albert and Albert-László Barabási.
+\newblock {Statistical mechanics of complex networks}.
+\newblock {\em Reviews of Modern Physics}, 74(1):47--97, 2002.
+
+\bibitem{humphries2008network}
+Mark~D. Humphries and Kevin Gurney.
+\newblock {Network ‘Small-World-Ness’: A Quantitative Method for
+  Determining Canonical Network Equivalence}.
+\newblock {\em PLoS ONE}, 3(4):e2051, 2008.
+
+\bibitem{telesford2011the}
+Qawi~K. Telesford, Karen~E. Joyce, Satoru Hayasaka, Jonathan~H. Burdette, and
+  Paul~J. Laurienti.
+\newblock {The Ubiquity of Small-World Networks}.
+\newblock {\em Brain Connectivity}, 1(5):367--375, 2011.
+
+\bibitem{rogers1996phasetransitions}
+Jeffrey~L. Rogers and Luc~T. Wille.
+\newblock {Phase transitions in nonlinear oscillator chains}.
+\newblock {\em Physical Review E}, 54(3):R2193--R2196, 1996.
+
+\bibitem{rubinov2015wiring}
+Mikail Rubinov, Rolf J~F Ypma, Charles Watson, and Edward~T Bullmore.
+\newblock {Wiring cost and topological participation of the mouse brain
+  connectome.}
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 112(32):10032--10037, 2015.
+
+\bibitem{hong2002synchronization}
+H.~Hong, M.~Y. Choi, and Beom~Jun Kim.
+\newblock {Synchronization on small-world networks}.
+\newblock {\em Physical Review E}, 65(2):1--5, 2002.
+
+\bibitem{peter2018transition}
+Franziska Peter and Arkady Pikovsky.
+\newblock {Transition to collective oscillations in finite Kuramoto ensembles}.
+\newblock {\em Physical Review E}, 97(3):032310, 2018.
+
+\bibitem{taylor2016synchronization}
+Dane Taylor, Per~Sebastian Skardal, and Jie Sun.
+\newblock {Synchronization of Heterogeneous Oscillators Under Network
+  Modifications: Perturbation and Optimization of the Synchrony Alignment
+  Function}.
+\newblock {\em SIAM Journal on Applied Mathematics}, 76(5):1984--2008, 2016.
+
+\bibitem{fernandez2022emergence}
+Lluís Arola-Fernández, Sergio Faci-Lázaro, Per~Sebastian Skardal,
+  Emanuel-Cristian Boghiu, Jesús Gómez-Gardeñes, and Alex Arenas.
+\newblock {Emergence of explosive synchronization bombs in networks of
+  oscillators}.
+\newblock {\em Communications Physics}, 5(1):264, 2022.
+
+\bibitem{budzinski2019synchronous}
+R.~C. Budzinski, B.~R.~R. Boaretto, T.~L. Prado, R.~L. Viana, and S.~R. Lopes.
+\newblock {Synchronous patterns and intermittency in a network induced by the
+  rewiring of connections and coupling}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  29(12):123132, 2019.
+
+\bibitem{skardal2020higher}
+Per~Sebastian Skardal and Alex Arenas.
+\newblock {Higher order interactions in complex networks of phase oscillators
+  promote abrupt synchronization switching}.
+\newblock {\em Communications Physics}, 3(1):218, 2020.
+
+\bibitem{hong2013link}
+Hyunsuk Hong, Jaegon Um, and Hyunggyu Park.
+\newblock {Link-disorder fluctuation effects on synchronization in random
+  networks}.
+\newblock {\em Physical Review E - Statistical, Nonlinear, and Soft Matter
+  Physics}, 87(4):1--5, 2013.
+
+\bibitem{rackauckas2016differential}
+Christopher Rackauckas and Qing Nie.
+\newblock {DifferentialEquations.jl – A Performant and Feature-Rich Ecosystem
+  for Solving Differential Equations in Julia}.
+\newblock {\em Journal of Open Research Software}, 5(1):15, 2016.
+
+\bibitem{bezanson2017julia}
+Jeff Bezanson, Alan Edelman, Stefan Karpinski, and Viral~B Shah.
+\newblock {Julia: A fresh approach to numerical computing}.
+\newblock {\em SIAM Review}, 59(1):65--98, 2017.
+
+\bibitem{hunter2007matplotlib}
+John~D Hunter.
+\newblock {Matplotlib: A 2D Graphics Environment}.
+\newblock {\em Computing in science \& engineering}, 9(3):90--95, 2007.
+
+\bibitem{datseris2020drwatson}
+George Datseris, Jonas Isensee, Sebastian Pech, and Tamás Gál.
+\newblock {DrWatson: the perfect sidekick for your scientific inquiries}.
+\newblock {\em Journal of Open Source Software}, 5(54):2673, 2020.
+
+\bibitem{rossi2022github}
+Kalel Rossi.
+\newblock {Repository for dynamical malleability code}.
+\newblock {\em Github Repository}, 2022.
+
+\bibitem{medvedev2014small}
+Georgi~S. Medvedev.
+\newblock {Small-world networks of Kuramoto oscillators}.
+\newblock {\em Physica D: Nonlinear Phenomena}, 266:13--22, 2014.
+
+\bibitem{carlson2011sample}
+Nicole Carlson, Dong-Hee Kim, and Adilson~E. Motter.
+\newblock {Sample-to-sample fluctuations in real-network ensembles}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  21(2):025105, 2011.
+
+\bibitem{hong2007entrainment}
+Hyunsuk Hong, Hugues Chaté, Hyunggyu Park, and Lei~Han Tang.
+\newblock {Entrainment transition in populations of random frequency
+  oscillators}.
+\newblock {\em Physical Review Letters}, 99(18):1--4, 2007.
+
+\bibitem{hong2006anomalous}
+Hyunsuk Hong, Hyunggyu Park, and Lei-Han Tang.
+\newblock {Anomalous Binder Cumulant and Lack of Self-Averageness in Systems
+  with Quenched Disorder}.
+\newblock {\em Journal of the Korean Physical Society}, 49(5):L1885--L1889,
+  2006.
+
+\bibitem{strogatz1988phase}
+Steven~H. Strogatz and Renato~E. Mirollo.
+\newblock {Phase-locking and critical phenomena in lattices of coupled
+  nonlinear oscillators with random intrinsic frequencies}.
+\newblock {\em Physica D: Nonlinear Phenomena}, 31(2):143--168, 1988.
+
+\bibitem{brankov2000theory}
+Jordan~G Brankov, Daniel~M Danchev, and Nicholai~S Tonchev.
+\newblock {\em {Theory of Critical Phenomena in Finite-Size Systems}}.
+\newblock World Scientific, 2000.
+
+\bibitem{hildebrand2007kinetic}
+Eric~J. Hildebrand, Michael~A. Buice, and Carson~C. Chow.
+\newblock {Kinetic Theory of Coupled Oscillators}.
+\newblock {\em Physical Review Letters}, 98(5):054101, 2007.
+
+\bibitem{tilles2011multistable}
+Paulo F.~C. Tilles, Fernando~F. Ferreira, and Hilda~A. Cerdeira.
+\newblock {Multistable behavior above synchronization in a locally coupled
+  Kuramoto model}.
+\newblock {\em Physical Review E}, 83(6):066206, 2011.
+
+\bibitem{binder1987finite}
+K.~Binder.
+\newblock {Finite size effects on phase transitions}.
+\newblock {\em Ferroelectrics}, 73(1):43--67, 1987.
+
+\bibitem{skardal2014optimal}
+Per~Sebastian Skardal, Dane Taylor, and Jie Sun.
+\newblock {Optimal Synchronization of Complex Networks}.
+\newblock {\em Physical Review Letters}, 113(14):144101, 2014.
+
+\bibitem{brede2008synchrony}
+Markus Brede.
+\newblock {Synchrony-optimized networks of non-identical Kuramoto oscillators}.
+\newblock {\em Physics Letters, Section A: General, Atomic and Solid State
+  Physics}, 372(15):2618--2622, 2008.
+
+\bibitem{carareto2009optimized}
+R.~Carareto, F.~M. Orsatti, and J.~R.C. Piqueira.
+\newblock {Optimized network structure for full-synchronization}.
+\newblock {\em Communications in Nonlinear Science and Numerical Simulation},
+  14(6):2536--2541, 2009.
+
+\bibitem{buzna2009synchronization}
+Lubos Buzna, Sergi Lozano, and Albert Díaz-Guilera.
+\newblock {Synchronization in symmetric bipolar population networks}.
+\newblock {\em Physical Review E}, 80(6):066120, 2009.
+
+\bibitem{sornette2006critical}
+Didier Sornette.
+\newblock {\em {Critical Phenomena in Natural Sciences, Chaos, Fractals,
+  Selforganization and Disorder: Concepts and Tools}}.
+\newblock Springer Series in Synergetics. 2006.
+
+\bibitem{hong2007finitesizescalingpre}
+Hyunsuk Hong, Hyunggyu Park, and Lei~Han Tang.
+\newblock {Finite-size scaling of synchronized oscillation on complex
+  networks}.
+\newblock {\em Physical Review E}, 76(6):1--7, 2007.
+
+\bibitem{wiseman1995lack}
+Shai Wiseman and Eytan Domany.
+\newblock {Lack of self-averaging in critical disordered systems}.
+\newblock {\em Physical Review E}, 52(4):3469--3484, 1995.
+
+\bibitem{newman1999scaling}
+M~E Newman and D~J Watts.
+\newblock {Scaling and percolation in the small-world network model.}
+\newblock {\em Physical Review E}, 60(6 Pt B):7332--7342, 1999.
+
+\bibitem{buendia2022the}
+Victor Buenda, Pablo Villegas, Raffaella Burioni, and Miguel~A. Muoz.
+\newblock {The broad edge of synchronization: Griffiths effects and collective
+  phenomena in brain networks}.
+\newblock {\em Philosophical Transactions of the Royal Society A},
+  380(2227):20200424, 2022.
+
+\bibitem{villegas2014frustrated}
+Pablo Villegas, Paolo Moretti, and Miguel~A. Muñoz.
+\newblock {Frustrated hierarchical synchronization and emergent complexity in
+  the human connectome network}.
+\newblock {\em Scientific Reports}, 4(1):5990, 2014.
+
+\bibitem{tononi1994a}
+G~Tononi, O~Sporns, and G~M Edelman.
+\newblock {A measure for brain complexity: relating functional segregation and
+  integration in the nervous system.}
+\newblock {\em Proceedings of the National Academy of Sciences},
+  91(11):5033--5037, 1994.
+
+\bibitem{tononi1998consciousness}
+Giulio Tononi and Gerald~M. Edelman.
+\newblock {Consciousness and Complexity}.
+\newblock {\em Science}, 282(5395):1846--1851, 1998.
+
+\bibitem{deco2015rethinking}
+Gustavo Deco, Giulio Tononi, Melanie Boly, and Morten~L. Kringelbach.
+\newblock {Rethinking segregation and integration: contributions of whole-brain
+  modelling}.
+\newblock {\em Nature Reviews Neuroscience}, 16(7):430--439, 2015.
+
+\bibitem{fingelkurts2006timing}
+Andrew~A Fingelkurts and Alexander~A Fingelkurts.
+\newblock {Timing in cognition and EEG brain dynamics: discreteness versus
+  continuity.}
+\newblock {\em Cognitive Processing}, 7(3):135--162, 2006.
+
+\bibitem{li2009burst}
+Cheng-yu~T. Li, Mu-ming Poo, and Yang Dan.
+\newblock {Burst Spiking of a Single Cortical Neuron Modifies Global Brain
+  State}.
+\newblock {\em Science}, 324(5927):643--646, 2009.
+
+\bibitem{muller2021algebraic}
+Lyle Muller, Ján Mináč, and Tung~T. Nguyen.
+\newblock {Algebraic approach to the Kuramoto model}.
+\newblock {\em Physical Review E}, 104(2):L022201, 2021.
+
+\bibitem{budzinski2022geometry}
+Roberto~C. Budzinski, Tung~T. Nguyen, Jacqueline Doàn, Ján Mináč,
+  Terrence~J. Sejnowski, and Lyle~E. Muller.
+\newblock {Geometry unites synchrony, chimeras, and waves in nonlinear
+  oscillator networks}.
+\newblock {\em Chaos}, 32(3):031104, 2022.
+
+\bibitem{hancock2018model}
+Edward~J. Hancock and Georg~A. Gottwald.
+\newblock {Model reduction for Kuramoto models with complex topologies}.
+\newblock {\em Physical Review E}, 98(1):012307, 2018.
 
 \bibitem{strogatzsyncbook}
 Steven Strogatz.
 \newblock {\em {Sync: The Emerging Science of Spontaneous Order}}.
 \newblock Hyperion Press, 2003.
+
+\bibitem{feudel2008complex}
+Ulrike Feudel.
+\newblock {Complex Dynamics In Multistable Systems}.
+\newblock {\em International Journal of Bifurcation and Chaos},
+  18(06):1607--1626, 2008.
 
 \bibitem{menck2013how}
 Peter~J. Menck, Jobst Heitzig, Norbert Marwan, and Jürgen Kurths.
@@ -349,11 +555,25 @@ Hana Krakovská, Christian Kuehn, and Iacopo~P Longo.
 \newblock {Resilience of dynamical systems}.
 \newblock {\em European Journal of Applied Mathematics}, pages 1--46, 2023.
 
-\bibitem{sornette2006critical}
-Didier Sornette.
-\newblock {\em {Critical Phenomena in Natural Sciences, Chaos, Fractals,
-  Selforganization and Disorder: Concepts and Tools}}.
-\newblock Springer Series in Synergetics. 2006.
+\bibitem{hurkey2023gap}
+Silvan Hürkey, Nelson Niemeyer, Jan-Hendrik Schleimer, Stefanie Ryglewski,
+  Susanne Schreiber, and Carsten Duch.
+\newblock {Gap junctions desynchronize a neural circuit to stabilize insect
+  flight}.
+\newblock {\em Nature}, 618(7963):118--125, 2023.
+
+\bibitem{rossi2021phase}
+K.~L. Rossi, R.~C. Budzinski, B.~R.~R. Boaretto, T.~L. Prado, U.~Feudel, and
+  S.~R. Lopes.
+\newblock {Phase-locking intermittency induced by dynamical heterogeneity in
+  networks of thermosensitive neurons}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  31(8):083121, 2021.
+
+\bibitem{medeiros2018boundaries}
+Everton~S. Medeiros, Rene~O. Medrano-T, Iberê~L. Caldas, and Ulrike Feudel.
+\newblock {Boundaries of synchronization in oscillator networks}.
+\newblock {\em Physical Review E}, 98(3):030201, 2018.
 
 \bibitem{datseris2018dynamical}
 George Datseris.
@@ -403,6 +623,24 @@ Ofer Mazor and Gilles Laurent.
   Locust Antennal Lobe Projection Neurons}.
 \newblock {\em Neuron}, 48(4):661--673, 2005.
 
+\bibitem{tognoli2014metastable}
+Emmanuelle Tognoli and J.~A.Scott Kelso.
+\newblock {The Metastable Brain}.
+\newblock {\em Neuron}, 81(1):35--48, 2014.
+
+\bibitem{brinkman2022metastable}
+B.~A.~W. Brinkman, H.~Yan, A.~Maffei, I.~M. Park, A.~Fontanini, J.~Wang, and
+  G.~La Camera.
+\newblock {Metastable dynamics of neural circuits and networks}.
+\newblock {\em Applied Physics Reviews}, 9(1):011313, 2022.
+
+\bibitem{koch2024biological}
+Daniel Koch, Akhilesh Nandan, Gayathri Ramesan, and Aneta Koseska.
+\newblock {Biological computations: Limitations of attractor-based formalisms
+  and the need for transients}.
+\newblock {\em Biochemical and Biophysical Research Communications},
+  720:150069, 2024.
+
 \bibitem{vyas2020computation}
 Saurabh Vyas, Matthew~D. Golub, David Sussillo, and Krishna~V. Shenoy.
 \newblock {Computation Through Neural Population Dynamics}.
@@ -414,11 +652,11 @@ David Sussillo and Omri Barak.
   Recurrent Neural Networks}.
 \newblock {\em Neural Computation}, 25(3):626--649, 2013.
 
-\bibitem{koch2024ghost}
-D.~Koch, A.~Nandan, G.~Ramesan, I.~Tyukin, A.~Gorban, and A.~Koseska.
-\newblock {Ghost Channels and Ghost Cycles Guiding Long Transients in Dynamical
-  Systems}.
-\newblock {\em Physical Review Letters}, 133(4):047202, 2024.
+\bibitem{nandan2022cells}
+Akhilesh Nandan, Abhishek Das, Robert Lott, and Aneta Koseska.
+\newblock {Cells use molecular working memory to navigate in changing
+  chemoattractant fields}.
+\newblock {\em eLife}, 11:e76825, 2022.
 
 \bibitem{driscoll2024flexible}
 Laura~N. Driscoll, Krishna Shenoy, and David Sussillo.
@@ -431,6 +669,19 @@ Rodrigo Laje and Dean~V Buonomano.
 \newblock {Robust timing and motor patterns by taming chaos in recurrent neural
   networks}.
 \newblock {\em Nature Neuroscience}, 16(7):925--933, 2013.
+
+\bibitem{jones2007natural}
+Lauren~M. Jones, Alfredo Fontanini, Brian~F. Sadacca, Paul Miller, and
+  Donald~B. Katz.
+\newblock {Natural stimuli evoke dynamic sequences of states in sensory
+  cortical ensembles}.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  104(47):18772--18777, 2007.
+
+\bibitem{lacamera2019cortical}
+Giancarlo~La Camera, Alfredo Fontanini, and Luca Mazzucato.
+\newblock {Cortical computations via metastable activity}.
+\newblock {\em Current Opinion in Neurobiology}, 58:37--45, 2019.
 
 \bibitem{ashwin2021excitable}
 Peter Ashwin and Claire Postlethwaite.
