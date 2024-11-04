@@ -34,9 +34,6 @@
 \newcommand{\secref}[1]{Sec.~\ref{#1}}
 \newcommand{\chapref}[1]{Chap.~\ref{#1}}
 \usepackage{titlesec}
-% \titleformat{\chapter}[hang]
-%     {\normalfont\huge\bfseries} % Troque \Large para outro tamanho se quiser
-%     {Chapter \thechapter \newline}{1em}{}
     
 \titleformat{\chapter} % Customize \chapter command
 [display]            % Display style, which separates "Chapter X" and title
@@ -51,18 +48,19 @@
 \bibliographystyle{unsrt} 
 
 \begin{document}
-\include{title.tex}
+% \include{title.tex}
+\include{title-submission.tex}
 
 \tableofcontents
 
 \include{publications.tex}
 
-\include{abstract.tex}
-\include{abstract-german.tex}
+% \include{abstract.tex}
+% \include{abstract-german.tex}
 
 
 % \include{intro} %1
-\include{methodology} %2
+% \include{methodology} %2
 
 \include{paper-malleability/malleability.tex} %3 chap:malleability
 % \include{paper-multistability/30oct/multistability.tex} %call it chap:multistability

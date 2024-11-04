@@ -1,181 +1,5 @@
 \begin{thebibliography}{100}
 
-\bibitem{strogatz2002nonlinear}
-Strogatz.
-\newblock {\em {Nonlinear Dynamics and Chaos}}.
-\newblock Studies in nonlinearity. Westview, 2002.
-
-\bibitem{izhikevichbook}
-Eugene~M Izhikevich.
-\newblock {\em {Dynamical systems in neuroscience}}.
-\newblock MIT press, 2007.
-
-\bibitem{shukla2014a}
-Anant~Kant Shukla, T~R Ramamohan, and S~Srinivas.
-\newblock {A new analytical approach for limit cycles and quasi-periodic
-  solutions of nonlinear oscillators: the example of the forced Van der Pol
-  Duffing oscillator}.
-\newblock {\em Physica Scripta}, 89(7):075202, 2014.
-
-\bibitem{argyrisbook}
-John~H. Argyris, Gunter Faust, Maria Haase, and Rudolf Friedrich.
-\newblock {\em {An Exploration of Dynamical Systems and Chaos}}.
-\newblock Springer Berlin, Heidelberg, 2 edition, 2015.
-
-\bibitem{milnor1985on}
-John Milnor.
-\newblock {On the concept of attractor}.
-\newblock {\em Communications in Mathematical Physics}, 99(2):177--195, 1985.
-
-\bibitem{taylor2011attractors}
-Robert~L.V. Taylor.
-\newblock {Attractors: Nonstrange to Chaotic}.
-\newblock {\em SIAM Undergraduate Research Online}, 4:72--80, 2011.
-\newblock Publisher: Society for Industrial \& Applied Mathematics (SIAM).
-
-\bibitem{broer2011dynamical}
-Henk Broer and Floris Takens.
-\newblock {\em {Dynamical Systems and Chaos}}.
-\newblock Applied Mathematical Sciences. 2011.
-
-\bibitem{saletan}
-Jorge~V. José and Eugene~J. Saletan.
-\newblock {\em {Classical Dynamics: A Contemporary Approach}}.
-\newblock Cambridge University Press, Cambridge, 1998.
-
-\bibitem{glendinning}
-Paul Glendinning.
-\newblock {\em {Stability, Instability And Chaos: An Introduction To The Theory
-  Of Nonlinear Differential Equations (cambridge Texts In Applied
-  Mathematics)}}.
-\newblock Cambridge Texts in Applied Mathematics. Cambridge University Press,
-  Cambridge [England], 1 edition, 1994.
-
-\bibitem{pisarchik2022multistability}
-Alexander~N. Pisarchik and Alexander~E. Hramov.
-\newblock {Multistability in Physical and Living Systems, Characterization and
-  Applications}.
-\newblock {\em Springer Series in Synergetics}, 2022.
-
-\bibitem{datseris2022effortless}
-George Datseris and Alexandre Wagemakers.
-\newblock {Effortless estimation of basins of attraction}.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
-  32(2):023104, 2022.
-
-\bibitem{datseris2023framework}
-George Datseris, Kalel~Luiz Rossi, and Alexandre Wagemakers.
-\newblock {Framework for global stability analysis of dynamical systems}.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
-  33(7):073151, 2023.
-
-\bibitem{nusse1994dynamics}
-Helena~E. Nusse, James~A. Yorke, and Eric~J. Kostelich.
-\newblock {Dynamics: Numerical Explorations, Accompanying Computer Program
-  Dynamics}.
-\newblock {\em Applied Mathematical Sciences}, 1994.
-
-\bibitem{gelbrecht2020monte}
-Maximilian Gelbrecht, Jürgen Kurths, and Frank Hellmann.
-\newblock {Monte Carlo basin bifurcation analysis}.
-\newblock {\em New Journal of Physics}, 22(3):033032, 2020.
-
-\bibitem{stender2021bstab}
-Merten Stender and Norbert Hoffmann.
-\newblock {bSTAB: an open-source software for computing the basin stability of
-  multi-stable dynamical systems}.
-\newblock {\em Nonlinear Dynamics}, pages 1--18, 2021.
-
-\bibitem{kuznetsov}
-Yuri~A. Kuznetsov.
-\newblock {Elements of Applied Bifurcation Theory}.
-\newblock {\em Applied Mathematical Sciences}, 2004.
-
-\bibitem{koch2024ghost}
-D.~Koch, A.~Nandan, G.~Ramesan, I.~Tyukin, A.~Gorban, and A.~Koseska.
-\newblock {Ghost Channels and Ghost Cycles Guiding Long Transients in Dynamical
-  Systems}.
-\newblock {\em Physical Review Letters}, 133(4):047202, 2024.
-
-\bibitem{sandstede1997constructing}
-Björn Sandstede.
-\newblock {Constructing dynamical systems having homoclinic bifurcation points
-  of codimension two}.
-\newblock {\em Journal of Dynamics and Differential Equations}, 9(2):269--288,
-  1997.
-
-\bibitem{bullmore2009complex}
-Ed~Bullmore and Olaf Sporns.
-\newblock {Complex brain networks: graph theoretical analysis of structural and
-  functional systems}.
-\newblock {\em Nature Reviews Neuroscience}, 10(3):186--198, 2009.
-
-\bibitem{landi2018complexity}
-Pietro Landi, Henintsoa~O. Minoarivelo, Åke Brännström, Cang Hui, and Ulf
-  Dieckmann.
-\newblock {Complexity and stability of ecological networks: a review of the
-  theory}.
-\newblock {\em Population Ecology}, 60(4):319--345, 2018.
-
-\bibitem{watts1998collective}
-D~J Watts and S~H Strogatz.
-\newblock {Collective dynamics of 'small-world' networks}.
-\newblock {\em Nature}, 393(6684):440--442, 1998.
-
-\bibitem{boccaletti2018synchronization}
-Stefano Boccaletti, Alexander~N. Pisarchik, Charo I.~del Genio, and Andreas
-  Amann.
-\newblock {\em {Synchronization: From Coupled Systems to Complex Networks}}.
-\newblock Cambridge University Press, 2018.
-
-\bibitem{strogatz2000from}
-Steven~H. Strogatz.
-\newblock {From Kuramoto to Crawford: exploring the onset of synchronization in
-  populations of coupled oscillators}.
-\newblock {\em Physica D: Nonlinear Phenomena}, 143(1-4):1--20, 2000.
-
-\bibitem{kuramoto1984chemical}
-Yoshiki Kuramoto.
-\newblock {\em {Chemical Oscillations, Waves, and Turbulence}}, volume~19 of
-  {\em Springer Series in Synergetics}.
-\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1984.
-
-\bibitem{acebron2005kuramoto}
-Juan~A. Acebrón, L.~L. Bonilla, Conrad~J.Pérez Vicente, Félix Ritort, and
-  Renato Spigler.
-\newblock {The Kuramoto model: A simple paradigm for synchronization
-  phenomena}.
-\newblock {\em Reviews of Modern Physics}, 77(1):137--185, 2005.
-
-\bibitem{rodrigues2016the}
-Francisco~A. Rodrigues, Thomas~K.D.M. Peron, Peng Ji, and Jürgen Kurths.
-\newblock {The Kuramoto model in complex networks}.
-\newblock {\em Physics Reports}, 610:1--98, 2016.
-
-\bibitem{wiley2006the}
-Daniel~A. Wiley, Steven~H. Strogatz, and Michelle Girvan.
-\newblock {The size of the sync basin}.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
-  16(1):015103, 2006.
-
-\bibitem{zhang2021basins}
-Yuanzhao Zhang and Steven~H. Strogatz.
-\newblock {Basins with Tentacles}.
-\newblock {\em Physical Review Letters}, 127(19):194101, 2021.
-
-\bibitem{taylor2012there}
-Richard Taylor.
-\newblock {There is no non-zero stable fixed point for dense networks in the
-  homogeneous Kuramoto model}.
-\newblock {\em Journal of Physics A: Mathematical and Theoretical},
-  45(5):055102, 2012.
-
-\bibitem{townsend2020dense}
-Alex Townsend, Michael Stillman, and Steven~H. Strogatz.
-\newblock {Dense networks that do not synchronize and sparse ones that do}.
-\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
-  30(8):083142, 2020.
-
 \bibitem{motter2013spontaneous}
 Adilson~E. Motter, Seth~A. Myers, Marian Anghel, and Takashi Nishikawa.
 \newblock {Spontaneous synchrony in power-grid networks}.
@@ -246,6 +70,18 @@ Yoshiki Kuramoto.
 \newblock {\em International Symposium on Mathematical Problems in Theoretical
   Physics. Lecture Notes in Physics}, 39:420--422, 1975.
 
+\bibitem{acebron2005kuramoto}
+Juan~A. Acebrón, L.~L. Bonilla, Conrad~J.Pérez Vicente, Félix Ritort, and
+  Renato Spigler.
+\newblock {The Kuramoto model: A simple paradigm for synchronization
+  phenomena}.
+\newblock {\em Reviews of Modern Physics}, 77(1):137--185, 2005.
+
+\bibitem{rodrigues2016the}
+Francisco~A. Rodrigues, Thomas~K.D.M. Peron, Peng Ji, and Jürgen Kurths.
+\newblock {The Kuramoto model in complex networks}.
+\newblock {\em Physics Reports}, 610:1--98, 2016.
+
 \bibitem{poncealvarez2015restingstate}
 Adrián Ponce-Alvarez, Gustavo Deco, Patric Hagmann, Gian~Luca Romani, Dante
   Mantini, and Maurizio Corbetta.
@@ -285,6 +121,11 @@ Réka Albert and Albert-László Barabási.
 \newblock {Statistical mechanics of complex networks}.
 \newblock {\em Reviews of Modern Physics}, 74(1):47--97, 2002.
 
+\bibitem{watts1998collective}
+D~J Watts and S~H Strogatz.
+\newblock {Collective dynamics of 'small-world' networks}.
+\newblock {\em Nature}, 393(6684):440--442, 1998.
+
 \bibitem{humphries2008network}
 Mark~D. Humphries and Kevin Gurney.
 \newblock {Network ‘Small-World-Ness’: A Quantitative Method for
@@ -314,6 +155,29 @@ H.~Hong, M.~Y. Choi, and Beom~Jun Kim.
 \newblock {Synchronization on small-world networks}.
 \newblock {\em Physical Review E}, 65(2):1--5, 2002.
 
+\bibitem{taylor2012there}
+Richard Taylor.
+\newblock {There is no non-zero stable fixed point for dense networks in the
+  homogeneous Kuramoto model}.
+\newblock {\em Journal of Physics A: Mathematical and Theoretical},
+  45(5):055102, 2012.
+
+\bibitem{zhang2021basins}
+Yuanzhao Zhang and Steven~H. Strogatz.
+\newblock {Basins with Tentacles}.
+\newblock {\em Physical Review Letters}, 127(19):194101, 2021.
+
+\bibitem{townsend2020dense}
+Alex Townsend, Michael Stillman, and Steven~H. Strogatz.
+\newblock {Dense networks that do not synchronize and sparse ones that do}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  30(8):083142, 2020.
+
+\bibitem{gelbrecht2020monte}
+Maximilian Gelbrecht, Jürgen Kurths, and Frank Hellmann.
+\newblock {Monte Carlo basin bifurcation analysis}.
+\newblock {\em New Journal of Physics}, 22(3):033032, 2020.
+
 \bibitem{peter2018transition}
 Franziska Peter and Arkady Pikovsky.
 \newblock {Transition to collective oscillations in finite Kuramoto ensembles}.
@@ -339,6 +203,12 @@ R.~C. Budzinski, B.~R.~R. Boaretto, T.~L. Prado, R.~L. Viana, and S.~R. Lopes.
   rewiring of connections and coupling}.
 \newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
   29(12):123132, 2019.
+
+\bibitem{kuramoto1984chemical}
+Yoshiki Kuramoto.
+\newblock {\em {Chemical Oscillations, Waves, and Turbulence}}, volume~19 of
+  {\em Springer Series in Synergetics}.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 1984.
 
 \bibitem{skardal2020higher}
 Per~Sebastian Skardal and Alex Arenas.
@@ -545,6 +415,12 @@ Ulrike Feudel.
 \newblock {\em International Journal of Bifurcation and Chaos},
   18(06):1607--1626, 2008.
 
+\bibitem{pisarchik2022multistability}
+Alexander~N. Pisarchik and Alexander~E. Hramov.
+\newblock {Multistability in Physical and Living Systems, Characterization and
+  Applications}.
+\newblock {\em Springer Series in Synergetics}, 2022.
+
 \bibitem{menck2013how}
 Peter~J. Menck, Jobst Heitzig, Norbert Marwan, and Jürgen Kurths.
 \newblock {How basin stability complements the linear-stability paradigm}.
@@ -581,6 +457,18 @@ George Datseris.
   nonlinear dynamics}.
 \newblock {\em Journal of Open Source Software}, 3(23):598, 2018.
 \newblock Publisher: The Open Journal.
+
+\bibitem{stender2021bstab}
+Merten Stender and Norbert Hoffmann.
+\newblock {bSTAB: an open-source software for computing the basin stability of
+  multi-stable dynamical systems}.
+\newblock {\em Nonlinear Dynamics}, pages 1--18, 2021.
+
+\bibitem{datseris2023framework}
+George Datseris, Kalel~Luiz Rossi, and Alexandre Wagemakers.
+\newblock {Framework for global stability analysis of dynamical systems}.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  33(7):073151, 2023.
 
 \bibitem{lai2009transient}
 Ying-Cheng Lai and Tamás Tél.
@@ -651,6 +539,12 @@ David Sussillo and Omri Barak.
 \newblock {Opening the Black Box: Low-Dimensional Dynamics in High-Dimensional
   Recurrent Neural Networks}.
 \newblock {\em Neural Computation}, 25(3):626--649, 2013.
+
+\bibitem{koch2024ghost}
+D.~Koch, A.~Nandan, G.~Ramesan, I.~Tyukin, A.~Gorban, and A.~Koseska.
+\newblock {Ghost Channels and Ghost Cycles Guiding Long Transients in Dynamical
+  Systems}.
+\newblock {\em Physical Review Letters}, 133(4):047202, 2024.
 
 \bibitem{nandan2022cells}
 Akhilesh Nandan, Abhishek Das, Robert Lott, and Aneta Koseska.

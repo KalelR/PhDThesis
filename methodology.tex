@@ -6,42 +6,40 @@
 In this thesis we study dynamical systems described by a state variable $x = (x_1, x_2, \ldots, x_n)^T \in M $, where $M \subseteq \mathbb{R}^n$ is the state space, and $T$ denotes the transpose operation. The state variable is a point in this n-dimensional state space. In a continuous-time dynamical system, the state evolves according to the equation:
 %
 \begin{align}
-    \dot{x}(t) = f(x(t))
+    \dot{x}(t) = f(x(t)),
     \label{eq:general-ds}
 \end{align}
-
+%
 % where $f:M\to M$. Systems obeying Eq.~\ref{eq:general-ds} are deterministic: there is no randomness, no stochasticity, no noise. This means that, starting from one single state at time $t$, we can in principle describe the whole past and future evolution of the system. Furthermore, there is a lack of an explicit time dependence in $f$ - i.e., $\frac{\partial f_i}{\partial x_j} = 0 \; i,j=1, \ldots, n$. In this case, the dynamical system is said to be autonomous. 
 where $f:M\to M$. Systems obeying Eq.~\ref{eq:general-ds} are deterministic: there is no randomness, no stochasticity, no noise. This means that, starting from one single state at time $t$, we can in principle describe the whole past and future evolution of the system. Furthermore, there is a lack of an explicit time dependence in $f$ - i.e., ${\partial f_i}/{\partial t} = 0$ for $i=1, \ldots, n$. In this case, the dynamical system is said to be autonomous. 
 
-To obtain solutions to system \ref{eq:general-ds} we need to provide one state, which we typically call an initial condition $x_0 = x(0) \in \mathbb{R}^n$. The combination of $\dot{x} = f(x)$ with $x(0) = x_0$ defines an initial value problem. A fundamental theorem makes our lives studying this problem much easier. This is the theorem of existence and uniqueness of solutions. For $x \in \mathbb{R}^n$ and $f:\mathbb{R}^n\to\mathbb{R}^n$, it requires that $f$ is continuous and that all of its partial derivatives $\frac{\partial f_i}{\partial x_j}$, for $i, j = 1\ldots n$ are continuous in some open connected set $D \subset \mathbb{R}^n$. This basically means that it requires our function $f$ to be sufficiently smooth. Then, for initial conditions $x_0 \in D$, the initial value problem has a solution $x(t)$ on some time interval $(-\tau, \tau)$ about $t=0$, and the solution is unique! \cite{strogatz2002nonlinear} 
+To obtain solutions to system \ref{eq:general-ds} we need to provide one state, which we typically call an initial condition $x_0 = x(0) \in M$. The combination of $\dot{x} = f(x)$ with $x(0) = x_0$ defines an initial value problem. A fundamental theorem makes our lives studying this problem much easier. This is the theorem of existence and uniqueness of solutions. For $x \in \mathbb{R}^n$ and $f:\mathbb{R}^n\to\mathbb{R}^n$, it requires that $f$ is continuous and that all of its partial derivatives $\partial f_i / \partial x_j$, for $i, j = 1\ldots n$ are continuous in some open connected set $D \subset \mathbb{R}^n$. This basically means that it requires our function $f$ to be sufficiently smooth. Then, for initial conditions $x_0 \in D$, the initial value problem has a solution $x(t)$ on some time interval $(-\tau, \tau)$ about $t=0$, and the solution is unique! \cite{strogatz2002nonlinear} 
 
 In state space, each solution describes a trajectory, a path, that goes through its initial condition $x_0$. The uniqueness of solutions implies that, within this time interval $(-\tau, \tau)$, different trajectories do not intersect in state space. This is a crucial property underlying all systems we study. 
 
 A useful notation for the evolution of a continuous dynamical system is through the evolution operator $\Phi^t(x)$, which, informally defined, evolves the point $x$ forward $t$ time units. That is, $\Phi^t(x(0)) = x(t)$.
 
 \subsection{The fate of linear dynamical systems}\label{method:linear-system}
-Although trajectories do not cross, they can share the same fate, meaning they can converge to the region in state space. We can introduce this notion with a very simple mathematical example of a linear system. It has the form
+Although trajectories do not cross, they can share the same fate, meaning they can converge to the same region in state space. We can introduce this notion with a very simple mathematical example of a linear system. It has the form
 % 
 \begin{align}
-    \dot{x}(t) = A x(t)
+    \dot{x}(t) = A x(t),
     \label{eq:linear}
 \end{align}
-
-where $A$ is a constant $(n \times n)$ matrix. %An example of a linear system if a simple harmonic oscillator, which is composed of a spring with constant $k$ connected to a body of mass $m$, whose position then changes according to $m\ddot{x} + kx = 0$. has to have friction here  
-
-If the eigenvalues $\lambda_i \in \mathbb{C}$ of $A$ are all unique, its eigenvectors $v_i \in \mathbb{R}^n$ are linearly independent. Then, the general solution to this system can be written as Ref.~\cite{strogatz2002nonlinear}:
+%
+with $A$ a constant $(n \times n)$ matrix. If the eigenvalues $\lambda_i \in \mathbb{C}$ of $A$ are all unique ($i = 1, \cdots, n$), its eigenvectors $v_i \in \mathbb{R}^n$ are linearly independent. Then, the general solution to this system can be written as Ref.~\cite{strogatz2002nonlinear}:
 %
 \begin{align}\label{eq:solution-linear}
     x(t) = \sum_{i=1}^n C_i e^{\lambda_i t} v_i.
 \end{align}
+%
+Each initial condition determines the constant coefficients $C_i \in \mathbb{R}$. 
+From Eq.~\ref{eq:solution-linear} we can already notice that the origin of the system, $ o = (0, \ldots, 0)^T$, is a solution. In fact, it is an equilibrium: $\dot{x} = f(o) = o$. A trajectory on the origin does not change over time.
 
-Then, each initial condition determines the constant coefficients $C_i \in \mathbb{R}$. 
-From Eq.~\ref{eq:solution-linear} we can already notice that the origin of the system, $ o = (0, \ldots, 0)^T$, is a solution. In fact, it is an equilibrium: $\dot{x} = f(o) = 0$. A trajectory on the origin does not change over time.
-
-As we see from Eq. \ref{eq:solution-linear}, the behavior of trajectories depends on the eigenvalues $\lambda_i$ of the matrix $A$. We can classify the equilibrium at the origin based on these eigenvalues, as shown in Fig.~\ref{fig:method:equilibria-linear}. If the real parts of all the eigenvalues are negative, then all trajectories in state space converge to the origin as $t \to \infty$. In this case, the origin is said to be a stable equilibrium (Figs. \ref{fig:method:equilibria-linear}A-B). If at least one eigenvalue is negative, the trajectories diverge from the origin, which is then an unstable equilibrium (Figs.~\ref{fig:method:equilibria-linear}C-E). Stability here refers to the behavior of trajectories near the equilibrium. If it stable, nearby trajectories converge to the equilibrium - or, equivalently, small perturbations that take a trajectory away from the equilibrium will eventually go back to the equilibrium. If it is unstable, then nearby trajectories diverge from it.
+As we see from Eq. \ref{eq:solution-linear}, the behavior of trajectories depends on the eigenvalues $\lambda_i$ of the matrix $A$. We can classify the equilibrium at the origin based on these eigenvalues, as shown in Fig.~\ref{fig:method:equilibria-linear}. If the real parts of all the eigenvalues are negative, then all trajectories in state space converge to the origin as $t \to \infty$. In this case, the origin is said to be a stable equilibrium (Figs. \ref{fig:method:equilibria-linear}A-B). If at least one eigenvalue is positive, the trajectories diverge from the origin, which is then an unstable equilibrium (Figs.~\ref{fig:method:equilibria-linear}C-E). Stability here refers to the behavior of trajectories near the equilibrium. If it stable, nearby trajectories converge to the equilibrium - or, equivalently, small perturbations that take a trajectory away from the equilibrium will eventually go back to the equilibrium. If it is unstable, then nearby trajectories diverge from it.
 
 
-Stable equilibria are the only attracting solution, or attractor, of linear systems. In this case, although different trajectories cannot not intersect, they all converge to the origin as $t \to \infty$. %This origin itself has no dynamics: the trajectory starting at the origin does not move. For this reason we say that the origin, the attractor in this system, is invariant: the set $\{o\}$ flows onto itself.  
+Stable equilibria are the only attracting solutions, or attractors, of linear systems. In this case, although different trajectories cannot not intersect, they all converge to the origin as $t \to \infty$. %This origin itself has no dynamics: the trajectory starting at the origin does not move. For this reason we say that the origin, the attractor in this system, is invariant: the set $\{o\}$ flows onto itself.  
 In summary, the ultimate fate of linear systems is kind of boring: either trajectories end up at the origin or they diverge off to infinity. But the journey, the path that trajectories take before before the end, the \textit{transient dynamics}, is more interesting. As shown in Fig. \ref{fig:method:equilibria-linear}, this is dictated by the constellation of eigenvalues $\lambda_i$. For more details, the reader can refer to standard books on linear/nonlinear dynamics, such as Ref.~\cite{strogatz2002nonlinear}. 
 %
 \begin{figure*}
@@ -55,7 +53,7 @@ In summary, the ultimate fate of linear systems is kind of boring: either trajec
 
 
 \subsection{The fate of nonlinear dynamical systems I: attractors}\label{method:nonlinear-I}
-As just seen, stable equilibria are the only possible attractors in linear systems. Going beyond Eq.\ref{eq:linear}, nonlinear systems can have more interesting and complicated long-term dynamics (Fig.~\ref{fig:method:attractors-nonlinear}). Stable equilibria are still possible, as shown in Figs.\ref{fig:method:attractors-nonlinear}A-B. The system here is a conductance-based neuronal model following equations \cite{izhikevichbook}
+As just seen, stable equilibria are the only possible attractors in linear systems. Going beyond \eqnref{eq:linear}, nonlinear systems can have more interesting and complicated long-term dynamics (Fig.~\ref{fig:method:attractors-nonlinear}). Stable equilibria are still possible, as shown in Figs.~\ref{fig:method:attractors-nonlinear}A-B. The system for those figures is a conductance-based neuronal model following equations \cite{izhikevichbook}
 %
 \begin{align}
     &\dot{x} = \big(I - g_L (x_i - E_L)  
@@ -64,68 +62,62 @@ As just seen, stable equilibria are the only possible attractors in linear syste
     &\dot{y} = (n_\infty(x) - y_i) / \tau,
     \label{eq:inapk}
 \end{align}
-
-with all parameters and functions defined in detail in Chapter \ref{chap:multistability}. The input current $I$ is chosen to be $I=2.0$ so the system has excitable dynamics. Its state space is composed of a stable equilibrium, the only attractor, and two unstable equilibria, which create excitable dynamics. Excitability is a type of transient different than seen for linear systems. Some trajectories are forced to go on long excursions (excitations) before converging to the stable equilibrium. We study more about this again in Chapter \ref{chap:multistability}.
-
-Besides equilibria, nonlinear systems can also have periodic solutions. These orbits vary in time with a certain period $T$ (Fig.~\ref{fig:method:attractors-nonlinear}C) and correspond to closed curves in state space (Fig.~ \ref{fig:method:attractors-nonlinear}). In several cases these periodic solutions are isolated, in the sense that there are no other periodic orbits in some neighborhood around them. In that case, they are called limit cycles.
-The system used in this example is still the neuronal model of Eq.\ref{eq:inapk}, but with a different parameter $I=6$, which leads to the system now having a stable limit cycle. We see in this figure again an example of a long transient, with the trajectory initially going on a long excursion before converging to the limit cycle.
-
-Not all curves in state space are closed, however. One can have quasiperiodic dynamics, in which trajectories never repeat exactly, although they might almost repeat. This is seen in Figs.~\ref{fig:method:attractors-nonlinear}E-F. Simulating the trajectory for longer times would fill up the figure more and more. Further, note the varying amplitude of the time series. The system in this example is the forced Van der Pol oscillator, 
 %
-\begin{align}
-    &\dot{x} = v \\
-    &\dot{v} = \mu (1-x^2)v - \alpha x + g \cos(\omega_f t),
-    \label{eq:vanderpol},
-\end{align}
-with parameters $\mu=0.1$, $\alpha=1.0$, $g=0.5$, $\omega_f=\sqrt{3}$ taken from Ref.\cite{shukla2014a}.
+with all parameters and functions defined in detail in Chapter \ref{chap:multistability}. The input current $I$ is chosen to be $I=2.0$ so the system has excitable dynamics. Its state space is composed of a stable equilibrium, the only attractor, and two unstable equilibria, which create the excitability in this case. Excitability is a type of transient different than seen for linear systems. Some trajectories are forced to go on long excursions (excitations) before converging to the stable equilibrium. We study more about this again in Chapter \ref{chap:multistability}.
 
-
-Finally, one can also have chaotic attractors (Figs.\ref{fig:method:attractors-nonlinear}G-H). These solutions have a wild behavior that nearby trajectories tend to diverge at an exponential rate \cite{argyrisbook}. Despite this local divergence, however, the solutions remain bounded in space. 
-In other words, systems with chaotic attractors are very sensitive to the initial conditions - small changes in initial conditions lead to trajectories that can look very different.  
-% % Moreover, a chaotic attractor typically has a dense set of unstable periodic orbits embedded within it. These periodic orbits form the skeleton of the chaotic dynamics \cite{scholarppedia}
-% The geometric structure of the solutions is very complicated, so proper rigorous analysis are often too difficult to perform. One important result, following the Poincaré-Bendixon Theorem, is that chaos is only possible in flows of dimension $3$ upwards (for maps, dimension $1$ already suffices) \cite{glendinning_1994, strogatz_2018}.
-The system used to generate is shown as the Lorenz system, with equations 
+Besides equilibria, nonlinear systems can also have periodic solutions. These orbits oscillate in time and repeat after a certain period $T$ (Fig.~\ref{fig:method:attractors-nonlinear}D) and correspond to closed curves in state space (Fig.~ \ref{fig:method:attractors-nonlinear}C). In several cases these periodic solutions are isolated, in the sense that there are no other periodic orbits in some neighborhood around them. In that case, they are called limit cycles.
+The system used in this example is still the neuronal model of \eqnref{eq:inapk}, but with a different parameter $I=6.0$, which leads to the system now having a stable limit cycle. We see in this figure again an example of a long transient, with the trajectory initially going on a long excursion before converging to the limit cycle.
 %
-\begin{align}
-    &\dot{x} = \sigma. (y-x) \\ 
-    &\dot{y} = x(\rho-z) - y \\ 
-    &\dot{z} = x*y -\beta*z,
-    \label{eq:lorenz}
-\end{align}
-and $\sigma = 10$, $\rho = 28$, $\beta = 8/3$. This chaotic attractor in particular has a shape that resembles a butterfly, with trajectories spending some time on one wing before switching to the other wing \cite{argyrisbook}. 
-
-
-
 \begin{figure*}[htb!]
     \centering 
     \includegraphics[width=\textwidth]{attractors-nonlinear/attractors-nonlinear.png}
-    \caption{\textbf{Basic types of attractors in nonlinear dynamical systems}. Each column shows respectively the state space and a time-series of a typical trajectory converging to a type of attractor. The first column corresponds to the neuronal model of Eq.\ref{eq:inapk} with $I=2.0$, which has excitable dynamics, converging to a stable equilibrium. The second column shows again the neuronal system of Eq.\ref{eq:inapk} but with $I=6.0$, when the attractor is now a stable limit cycle. The third column shows the system defined in Eqs.\ref{eq:vanderpol}, with a quasiperiodic attractor Finally, column four has an example of a chaotic trajectory on the Lorenz system (Eq.~\ref{eq:lorenz}).}
+    \caption{\textbf{Basic types of attractors in nonlinear dynamical systems}. Each column shows respectively the state space and a time-series of a typical trajectory converging to a type of attractor. The first column corresponds to the neuronal model of \eqnref{eq:inapk} with $I=2.0$, which has excitable dynamics, converging to a stable equilibrium. The second column shows again the neuronal system of \eqnref{eq:inapk} but with $I=6.0$, when the attractor is now a stable limit cycle. The third column shows the system defined in Eqs.~\ref{eq:vanderpol}, with a quasiperiodic attractor. Finally, column four has an example of a chaotic trajectory on the Lorenz system (\eqnref{eq:lorenz}).}
     \label{fig:method:attractors-nonlinear}    
 \end{figure*}
 
+Not all curves in state space are closed, however. One can have quasiperiodic dynamics, in which trajectories never repeat exactly, although they might almost repeat. This is seen in Figs.~\ref{fig:method:attractors-nonlinear}E-F. Simulating the trajectory for longer times would fill up the figure more and more. Further, note the varying amplitude of the time series. The system in this example is the forced Van der Pol oscillator
+%
+\begin{align}
+    &\dot{x} = v \notag\\ 
+    &\dot{v} = \mu (1-x^2)v - \alpha x + g \cos(\omega_f t),
+    \label{eq:vanderpol}
+\end{align}
+with parameters $\mu=0.1$, $\alpha=1.0$, $g=0.5$, $\omega_f=\sqrt{3}$ taken from \refref{shukla2014a}.
 
+Finally, one can also have chaotic attractors (Figs.~\ref{fig:method:attractors-nonlinear}G-H). These solutions have a wild behavior that nearby trajectories tend to diverge at an exponential rate \cite{argyrisbook}. Despite this local divergence, however, the solutions remain bounded in space. 
+In other words, systems with chaotic attractors are very sensitive to the initial conditions - small changes in initial conditions lead to trajectories that can look very different.  
+% % Moreover, a chaotic attractor typically has a dense set of unstable periodic orbits embedded within it. These periodic orbits form the skeleton of the chaotic dynamics \cite{scholarppedia}
+% The geometric structure of the solutions is very complicated, so proper rigorous analysis are often too difficult to perform. One important result, following the Poincaré-Bendixon Theorem, is that chaos is only possible in flows of dimension $3$ upwards (for maps, dimension $1$ already suffices) \cite{glendinning_1994, strogatz_2018}.
+The system used to generate the example is known as the Lorenz system, with equations 
+%
+\begin{align}
+    &\dot{x} = \sigma (y-x) \notag\\ 
+    &\dot{y} = x(\rho-z) - y  \label{eq:lorenz} \\
+    &\dot{z} = xy -\beta z, \notag
+\end{align}
+and $\sigma = 10$, $\rho = 28$, $\beta = 8/3$. This chaotic attractor in particular has a shape that resembles a butterfly, with trajectories spending some time on one wing before switching to the other wing \cite{argyrisbook}. 
 
 Given now these examples, let us now define the terms we have used a bit more properly. 
 
 % 
 \subsection{Formalizing attractors and basins}\label{method:attractors-formal}
-We have just presented examples of attractors, sets of points in state space to which trajectories eventually converge, and their basins of attraction, the regions containing those converging trajectories. Since in this thesis we will deal a lot with these concepts, we provide now an attempt at formalizing. The idea is to have the concepts clear in mind for later. In practice, we will only use the informal definition we just gave. In particular, the definition of attractor can vary considerably in the literature. Without attempting to claim any superiority, we attempt here to provide a definition that suits our studies.  
+We have just presented examples of attractors, sets of points in state space to which trajectories eventually converge, and their basins of attraction, the regions containing those converging trajectories. Since in this thesis we will deal a lot with these concepts, we formalize them better. The idea is to have the concepts clear in mind for later. In particular, the definition of an attractor can vary considerably in the literature. Without attempting to claim any superiority, we attempt here to provide a definition that suits our studies.  
 
 % As mentioned before, there are regions in state space wherein trajectories converge to a single common attractor. These are known as the basin of attraction $\mathcal{B}(A)$ of that attractor $A$. A common and intuitive mathematical definition of a basin is given in Ref.~\cite{milnor1985on}, which depends on the concept of the omega limit set $w(x)$ of a point $x$. The $\omega$-limit set of a point $x_0 \in M$ is defined as 
-First, we define an omega limit set $w(x)$ of a point $x_0 \in M$ as \cite{milnor1985on}: 
+First, we define an $\omega$-limit set $\omega(x)$ of a point $x_0 \in M$ as \cite{milnor1985on}: 
 % 
 \begin{equation}
-    \omega(x_0) = \{x: \forall\,T \;\forall \epsilon > 0\; \text{there exists } t > T \text{ such that } |f(x_0, t) - x| < \epsilon    \}.
+    \omega(x_0) = \{x: \forall\,T \;\forall \epsilon > 0\; \text{there exists } t > T \text{ such that } |\Phi^t(x_0) - x| < \epsilon    \}.
 \end{equation}
 
-Consider a point $x \in\omega(x_0)$ in the $\omega$ limit set of $x_0$. Then, by definition, a trajectory that passes through $x_0$ comes arbitrarily close to $x$ infinitely often as $t$ increases. 
+Consider a point $x \in\omega(x_0)$ in the $\omega$-limit set of $x_0$. Then, by definition, a trajectory that passes through $x_0$ comes arbitrarily close to $x$ infinitely often as $t$ increases. 
 
-From this, we can define the \textit{basin of attraction} of a set $A$ as $\mathcal{B}(A) = \{x \in M: \omega(x) \subset A\}$. This only looks at the long-term behavior of trajectories; the transient dynamics could be anything, including the case that trajectories go very far from $A$, as long as they go back to it and stay there eventually. 
+From this, we can define the \textit{basin of attraction} of a set $A$ as $\mathcal{B}(A) = \{x \in M: \omega(x) \subset A\}$. This only looks at the long-term behavior of trajectories; the transient dynamics could be anything, including the case that trajectories go very far from $A$, as long as they go back to it. 
 % If $\rho(A)$ is a smooth manifold but its dimension is smaller than the dimension of the state space $M$, then it simply the stable manifold of $A$ \cite{milnor1985on}.
 
 
 % \subsection{Milnor attractor}\label{fundam:ssec:milnor-attractor}
-Now to define an attractor, we first define a weaker (or, on the more optimistic side, a more general) version, called the \textit{Milnor attractor}. It is a useful concept when dealing with metastability. A set $A$ is a Milnor attractor if:
+Now to define an attractor, we first define a weaker (or, on the more optimistic side, a more general) version, called the \textit{Milnor attractor}. A set $A$ is a Milnor attractor if:
 \begin{enumerate}
     \item Its basin of attraction $\mathcal{B}(A)$ has strictly positive measure (i.e., if $m(\mathcal{B}(A)) > 0$ ), where $m(S)$ denotes a measure equivalent to the Lebesgue measure of set $S$ \cite{milnor1985on}. This condition says that there is some probability that a randomly chosen point will be attracted to $A$ \cite{milnor1985on}.
     \item For any closed proper subset $A^\prime \subset A$, the set difference $\mathcal{B}(A) \setminus \mathcal{B}(A^\prime)$ also has strictly positive measure. This ensures that every part of $A$ plays an essential role - one cannot decompose $A$ into an attracting part and another part that does not attract \cite{milnor1985on, taylor2011attractors}. A closed set here means that it contains all its limit points. And proper means its non-empty.
@@ -136,13 +128,13 @@ Furthermore, the Milnor attractor does not have to attract all the points in its
 \begin{enumerate}
     \item $A$ is a Milnor attractor.
     \item $A$ contains an orbit that is dense in $A$. Basically, this means that the there is an orbit in $A$ that passes arbitrarily close to every point in $A$. This condition ensures that the attractor is not the union of two smaller attracting sets \cite{taylor2011attractors}. %It also ensures that orbits cannot escape from the attractor once they are in.
-    \item There are arbitrarily small neighborhoods $U$ of $A$ such that $\forall x \in U$ one has $\Phi^t(x) \subset U  \; \forall t>0$ and such that $\forall y \in U$ one has $\omega(y) \subset \omega(x)$. That is, there are arbitrarily small neighborhoods around the attractor in which points inside stay inside and converge to $A$. This criterion is given in Ref.~\cite{broer2011dynamical}.
+    \item There are arbitrarily small neighborhoods $U$ of $A$ such that $\forall x \in U$ one has $\Phi^t(x) \subset U  \; \forall t>0$ and such that $\forall y \in U$ one has $\omega(y) \subset A$. That is, there are arbitrarily small neighborhoods around the attractor in which points inside stay inside and converge to $A$. This criterion is given in Ref.~\cite{broer2011dynamical}.
 \end{enumerate}
 
 \subsection{Invariant manifolds: structures that organize state space}\label{method:invariant-manifolds}
 
-In Sec.~\ref{method:linear-system} we only considered the case when all the eigenvalues of the matrix $A$ in the linear system $\dot{x} = A x$ were positive. If one eigenvalue $\lambda_k$ is positive, then trajectories will diverge to infinity following the corresponding eigenvector $v_k$. When some eigenvalues are positive, and some are negative, the origin is a saddle-point. If all eigenvalues are positive, it is called a repeller.
-Figure \ref{fig:method:equilibria-linear} shows examples of equilibria in 2D linear systems. Note that typical trajectories approach the saddle-point along the $y$-axis and then diverge along the $x$-axis. That is, for $t \to -\infty$, trajectories converge to the $y$-axis and for $t \to \infty$ they converge to the $x$-axis. The $y$-axis is called the stable manifold $\mathbb{W}^s(o)$ of the origin $o$ and the $x$-axis is the unstable manifold $\mathbb{W}^u(o)$ of the origin. We can define these manifolds
+In Sec.~\ref{method:linear-system} we only saw how the eigenvalues of the matrix $A$ in the linear system $\dot{x} = A x$ shape the dynamics of the system. If one eigenvalue $\lambda_k$ is positive, then trajectories will diverge to infinity following the corresponding eigenvector $v_k$. When some eigenvalues are positive and some are negative, the origin is a saddle-point. If all eigenvalues are positive, it is called a repeller.
+Figure \ref{fig:method:equilibria-linear} shows examples of equilibria in 2D linear systems. Note how, in panel C, typical trajectories approach the saddle-point along the $x$-axis and then diverge along the $y$-axis. That is, for $t \to -\infty$, trajectories converge to the $x$-axis and for $t \to \infty$ they converge to the $y$-axis. The $x$-axis is called the stable manifold $\mathbb{W}^s(o)$ of the origin $o$ and the $y$-axis is the unstable manifold $\mathbb{W}^u(o)$ of the origin. We can define these manifolds
 \begin{align}
 &\mathbb{W}^s(o) = \{x \in M: \Phi^t(x) \to o \;\mathrm{as}\; t\to\infty\}, 
 &\mathbb{W}^u(o) = \{x \in M: \Phi^t(x) \to o \;\mathrm{as }\; t\to -\infty\}.
@@ -152,7 +144,7 @@ Let us separate the eigenvectors $v_i$ into two parts: the ones with negative ei
 %
 \begin{align}
     &\mathbb{E}^s = \mathrm{span}(v^-_1, \ldots, v^-_{n_s})
-    &\mathbb{E}^u = \mathrm{span}(v^+_1, \ldots, v^+_{n_u})
+    &\mathbb{E}^u = \mathrm{span}(v^+_1, \ldots, v^+_{n_u}).
 \end{align}
 
 For a linear system, the stable manifold of the origin coincides with the stable space $\mathbb{E}^s$ and the unstable manifold coincides with the unstable space.  In general, as in the example of the saddle-point, these manifolds act to organize the behavior of trajectories in state space.
@@ -178,12 +170,12 @@ where $J_g(y) = \frac{\partial g_i(y)}{\partial y_j}$ is the Jacobian of $g$. It
 
 That is, the behavior of the nonlinear system sufficiently close to the equilibrium is linear, with the constant matrix function being the Jacobian evaluated at the equilibrium! 
 
-But the good news don't stop here! There is the Hartman-Grobman theorem, which basically shows that the state space near a hyperbolic equilibrium to the state space of the linearization. An equilibrium is hyperbolic if the eigenvalues of the Jacobian evaluated on it are all nonzero, i.e., if $\lambda_i \neq 0 \forall i=1,\ldots,n$. \textit{Topologically equivalent} means that the linearized state space and the local state space near the equilibrium are distorted versions of each other. They can be bended and warped, but not ripped. In particular, closed orbits have to remain closed, and connections between saddle points have to remain \cite{strogatz2002nonlinear}. Mathematically, topologically equivalent means there is a \textit{homeomorphism} (continuous deformation with continuous inverse) from one state space into the other; trajectories can be mapped from one to the other, and the direction of time is the same \cite{strogatz2002nonlinear}. 
+But the good news don't stop here! There is the Hartman-Grobman theorem, which states that the state space near a hyperbolic equilibrium in the nonlinear system is topologically equivalent to the state space of the linearized system. An equilibrium is hyperbolic if the eigenvalues of the Jacobian evaluated on it are all nonzero, i.e., if $\lambda_i \neq 0 \forall i=1,\ldots,n$. \textit{Topologically equivalent} means that the linearized state space and the local state space near the equilibrium are distorted versions of each other. They can be bended and warped, but not ripped. In particular, closed orbits have to remain closed, and connections between saddle points have to remain \cite{strogatz2002nonlinear}. Mathematically, topologically equivalent means there is a \textit{homeomorphism} (continuous deformation with continuous inverse) from one state space into the other; trajectories can be mapped from one to the other, and the direction of time is the same \cite{strogatz2002nonlinear}. 
 
 Stating the theorem more formally, suppose a hyperbolic equilibrium $x^\star \in M$ such that $f(x^\star) = 0$ and such that all its eigenvalues are nonzero. Then, there is a neighborhood $N$ of $x^\star$ and a homeomorphism $h: N\to M$ such that \cite{argyrisbook}
 \begin{itemize}
     \item $h(x^\star) = 0$
-    \item the flow $\dot{x} = f(x)$ in $N$ is topologically conjugate to the flow of the linearization $\dot{y} = A y$ by the continuous map $y = h(x)$. Topologically conjugate basically meaning a change of coordinates in a topological sense.
+    \item the flow $\dot{x} = f(x)$ in $N$ is topologically conjugate to the flow of the linearization $\dot{y} = A y$ by the continuous map $y = h(x)$. Topologically conjugate basically meaning a change of coordinates.
 \end{itemize}
 
 This guarantees that the stability of the equilibrium is the same in both cases, so we can use the linearization to gain important insights about the stability of equilibria in the nonlinear system! 
@@ -191,8 +183,8 @@ This guarantees that the stability of the equilibrium is the same in both cases,
 What about the stable and unstable manifolds? In analogy to the linear case, we can define local stable and unstable sets near a neighborhood $U$ of an equilibrium $x^\star$ for the nonlinear system \cite{argyrisbook}:
 % 
 \begin{align}
-&\mathbb{W}^s_\mathrm{loc}(x^\star) = \{x \in M: \Phi^t(x) \to o \;\mathrm{as}\; t\to+\infty\  \mathrm{and}\; \Phi^t(x) \in U \;\forall t \geq 0\}, \\
-&\mathbb{W}^u_\mathrm{loc}(x^\star) = \{x \in M: \Phi^t(x) \to o \;\mathrm{as }\; t\to -\infty\ \mathrm{and}\; \Phi^t(x) \in U \;\forall t\leq 0 \}.
+&\mathbb{W}^s_\mathrm{loc}(x^\star) = \{x \in M: \Phi^t(x) \to x^\star \;\mathrm{as}\; t\to+\infty\  \mathrm{and}\; \Phi^t(x) \in U \;\forall t \geq 0\}, \\
+&\mathbb{W}^u_\mathrm{loc}(x^\star) = \{x \in M: \Phi^t(x) \to x^\star \;\mathrm{as }\; t\to -\infty\ \mathrm{and}\; \Phi^t(x) \in U \;\forall t\leq 0 \}.
 \end{align}
 
 Herein comes the stable manifold theorem. It states that, for a hyperbolic equilibrium $x^\star$:
@@ -201,21 +193,16 @@ Herein comes the stable manifold theorem. It states that, for a hyperbolic equil
     \item The local unstable set $\mathbb{W}^u_\mathrm{loc}(x^\star)$ is a smooth manifold whose tangent space has the same dimension $n_u$ as the unstable space $\mathbb{E}^u$ of the linearization of $f$ at $x^\star$. $\mathbb{W}^u_\mathrm{loc}(x^\star)$ is also tangent to $\mathbb{E}^u$ at $x^\star$.
 \end{itemize}
 
-The homeomorphism guaranteed by the Hartman-Grobman theorem maps $\mathbb{W}^s_\mathrm{loc}(x^\star)$ into $\mathbb{E}^s$ and $\mathbb{W}^u_\mathrm{loc}(x^\star)$ into $\mathbb{E}^u$ one-to-one, as shown in Fig. XX. Further, the stable manifold theorem guarantees that $\mathbb{E}^s$ and $\mathbb{E}^u$ actually approximate the local manifolds $\mathbb{W}^s_\mathrm{loc}(x^\star)$ and $\mathbb{W}^u_\mathrm{loc}(x^\star)$, respectively \cite{argyrisbook}. As a consequence, we get the behavior illustrated in \figref{fig:method:invariantmanifolds}
+The homeomorphism guaranteed by the Hartman-Grobman theorem maps $\mathbb{W}^s_\mathrm{loc}(x^\star)$ into $\mathbb{E}^s$ and $\mathbb{W}^u_\mathrm{loc}(x^\star)$ into $\mathbb{E}^u$ one-to-one, as shown in \figref{fig:method:invariantmanifolds}. Further, the stable manifold theorem guarantees that $\mathbb{E}^s$ and $\mathbb{E}^u$ actually approximate the local manifolds $\mathbb{W}^s_\mathrm{loc}(x^\star)$ and $\mathbb{W}^u_\mathrm{loc}(x^\star)$, respectively \cite{argyrisbook}. As a consequence, we get the behavior illustrated in \figref{fig:method:invariantmanifolds}
 
 The manifolds we just looked at are defined for a local neighborhood $U$ around the equilibrium. We can extend them towards the whole of state space by defining global manifolds as:
 \begin{align}
     \mathbb{W}^s(x^\star) = \bigcup_{t\leq 0} \Phi^t(\mathbb{W}^s_\mathrm{loc}(x^\star)) \\
-    \mathbb{W}^u(x^\star) = \bigcup_{t\geq 0} \Phi^t(\mathbb{W}^u_\mathrm{loc}(x^\star))
+    \mathbb{W}^u(x^\star) = \bigcup_{t\geq 0} \Phi^t(\mathbb{W}^u_\mathrm{loc}(x^\star)).
     \label{eq:global-manifolds}
 \end{align}
 
 That is, the global stable manifold is obtained by integrating the local stable manifold backwards, looking at where the trajectories on it came from. For the unstable manifold, we integrate the local unstable manifold forwards, to see where it goes to. 
-
-An important fact about the local and global manifolds that follows from their definitions is that they are invariant: trajectories starting on these manifolds stay on them forever \cite{argyrisbook}.
-Furthermore, the uniqueness of solutions prohibits certain crossings of manifolds: stable manifolds of two distinct equilibria cannot cross, unstable manifolds of two distinct equilibria also cannot, and the same manifold cannot cross itself - otherwise, where the crossing points would have to obey two distinct paths! Meanwhile, stable and unstable manifolds, either of the same equilibrium or of two different equilibria can cross. 
-
-As mentioned before, these manifolds usually play a big role in organizing state space. As we will see in Chapter \ref{chap:multistability}, they can organize the transient dynamics of systems. There, we study a dynamical system wherein certain trajectories are forced to go on long excursions before converging to the stable equilibrium, the only attractor in state space (see Figs.\ref{fig:method:attractors-nonlinear}A-B). As explained there, this long excursion is generated by the arrangement of the invariant manifolds of the saddle-point that exists in state space. The invariant manifolds can also organize the long-term behavior of systems: the next section briefly shows how stable manifolds of unstable equilibria can act as the boundary separating two basins of attraction.
 %
 \begin{figure}
     \centering
@@ -224,26 +211,31 @@ As mentioned before, these manifolds usually play a big role in organizing state
     \label{fig:method:invariantmanifolds}
 \end{figure}
 
+An important fact about the local and global manifolds that follows from their definitions is that they are invariant: trajectories starting on these manifolds stay on them forever \cite{argyrisbook}.
+Furthermore, the uniqueness of solutions prohibits certain crossings of manifolds: stable manifolds of two distinct equilibria cannot cross, unstable manifolds of two distinct equilibria also cannot, and the same manifold cannot cross itself - otherwise, where the crossing points would have to obey two distinct paths! Meanwhile, stable and unstable manifolds, either of the same equilibrium or of two different equilibria can cross. 
+
+As mentioned before, these manifolds usually play a big role in organizing state space. As we will see in Chapter \ref{chap:multistability}, they can organize the transient dynamics of systems. There, we study a dynamical system wherein certain trajectories are forced to go on long excursions before converging to the stable equilibrium, the only attractor in state space (see Figs.\ref{fig:method:attractors-nonlinear}A-B). As explained there, this long excursion is generated by the arrangement of the invariant manifolds of the saddle-point that exists in state space. The invariant manifolds can also organize the long-term behavior of systems: the next section briefly shows how stable manifolds of unstable equilibria can act as the boundary separating two basins of attraction.
+
 \subsection{The fate of nonlinear dynamical systems II: multistability and basins of attraction}
 % Linear system are monostable: they can have only one attractor. If we now move to nonlinear systems, the situation is different. Now, trajectories can have multiple distinct fates, multiple attractors. To which attractor a trajectory goes to depends on where it starts. In a multistable system, the state space is then divided into distinct regions, wherein trajectories starting on each region go to their corresponding attractor. A simple and intuitive example is that of a ball on a certain landscape with hills and valleys. The ball of course rolls downhill and, due to friction, it eventually stops at one of the valleys.
 In Sec.~\ref{method:nonlinear-I} we saw that the ultimate fate of nonlinear systems, their attractors, can be much more complicated than that of linear ones. Not only are the attractors themselves complicated, but they can also coexist in state space. If there are two coexisting attractors, this means that the state space will be separated into three regions: the basin of attraction of attractor one, the basin of attractor two, and the boundary between them. Usually, the basin boundary is formed by stable manifolds of saddle-type objects: saddle-points, saddle-limit-cycles, and even chaotic saddles! \cite{pisarchik2022multistability}. Figure~\ref{fig:bistability-duffing} illustrates this for a relatively simple system with two stable equilibria, where the basin boundary is the stable manifold of the saddle-point in the middle. This system is known as the Duffing oscillator: 
-
+%
 \begin{align}
     &\dot{x} = v\\
     &\dot{v} = -(-kx + cv + lx^3)/m,
 \end{align}
-
+%
 with $k = 1$, $c=0.5$, $l=1$, $m=1$. This system represents a ball of mass $m$ rolling downhill at position $x$ and velocity $v$ on a quartic potential landscape of the form $U(x) = -lx^4/4 - kx^2/2$ with a friction term $-cv$. Following the definition of global manifolds in Eq.\ref{eq:global-manifolds}, these global manifolds are essentially obtained by integrating trajectories starting on the local manifolds of the saddle-point. 
 %
 \begin{figure}[htb!]
     \centering 
     \includegraphics[width=0.6\columnwidth]{duffing-bistability.png}
-    \caption{\textbf{Bistability in Duffing model}. Two stable equilibria (white square and circle) are shown with their respective basins of attraction in two shades of purple. The global stable and unstable manifolds of the saddle-point (black point) in the middle are also shown as green and red lines respectively. The global stable manifold of the saddle coincides with the boundary between the basins.}
+    \caption{\textbf{Bistability in Duffing model}. Two stable equilibria (white square and circle) are shown with their respective basins of attraction in two shades of purple. The global stable and unstable manifolds of the saddle-point (black point) in the middle are also shown as green and red lines respectively. The global stable manifold of the saddle coincides with the boundary between the basins, obtained independently.}
     \label{fig:bistability-duffing}
 \end{figure}
 
 
-In this thesis we study two examples of multistability occuring in networked systems. In Chapter \ref{chap:malleability} we study networks of Kuramoto units, and see there the coexistence of multiple attractors depending on how strongly the units are interacting. We also see how this multistability impacts the sensitivity of the system to small changes in parameters of the units. Later, in Chapter \ref{chap:multistability} we study how multistability arises when two excitable neurons are coupled together diffusively. Both studies require that we find the attractors in the systems. This is what we deal with in the next section.
+In this thesis we study two examples of multistability occurring in networked systems. In Chapter \ref{chap:malleability} we study networks of Kuramoto units, and see there the coexistence of multiple attractors depending on how strongly the units are interacting. We also see how this multistability impacts the sensitivity of the system to small changes in parameters of the units. Later, in Chapter \ref{chap:multistability} we study how multistability arises when two excitable neurons are coupled together diffusively. Both studies require that we find the attractors in the systems. This is what we deal with in the next section.
 
 \subsection{How to find attractors}\label{method:sec:finding-atts}
 Finding all the attractors of a given dynamical system is not necessarily a trivial task. For equilibria, one can find all the roots of the system function, i.e., $f(x^\star) = 0$ and then check their stability through the eigenvalues of the Jacobian evaluated on them. However, the problem becomes more complicated for other types of attractors.
@@ -256,19 +248,19 @@ The first approach was proposed in \refref{nusse1994dynamics} and implemented wi
 The second method does not rely on discretizing state space, and is designed to work well for high-dimensional systems. In this case, one spreads a number $\mathcal{N}$ of initial conditions in state space and integrates them to obtain $\mathcal{N}$ trajectories. Each trajectory $x(t)$ is then converted to a vector of features $\mathcal{F} \in \mathbb{R}^n$ of $n$ numbers that all collectively describe the trajectory. This is done by the featurizing function $\phi : M \times \mathbb{R} \to \mathbb{R}^n$, such that $\mathcal{F} = \phi(x(t), t)$. Each attractor should correspond to a unique $\mathcal{F}$. Then, the $\mathcal{N}$ vectors of features are grouped together via any of several possible grouping or clustering algorithms, and each grouping corresponds to one attractor. This approach can work very well, but it relies on pre-existing knowledge about the system to find a suitable featurizer function $\phi$. To be confident about the results, one also has to verify that the total integration time is long enough, and that the transients of all trajectories were removed. This relies on experimentation. This method has been proposed in \refref{gelbrecht2020monte} and soon thereafter also in \refref{stender2021bstab}. Together with colleagues, I implemented efficient and open-source code for this method with improvements in the Attractors.jl package \refref{datseris2023framework}.
 
 Both methods can be applied across a parameter range and used in a continuation fashion, as illustrated in \figref{fig:method:continuation}A. For the first parameter, one selects $\mathcal{N}$ initial conditions and identifies from those the attractors of the system using any of the two methods just described. Then, one samples points on these attractors and adds them to the pool of initial conditions for the next parameter value. The originally prescribed initial conditions, together with the original ones, are then used to find attractors in the subsequent parameter value. This process of seeding initial conditions from the previously found attractors is repeated for the whole parameter range. Then, one has all the attractors for each parameter value, and the remaining problem is to link attractors from one parameter to the next.
+%
+\begin{figure}[b!]
+    \centering
+    \includegraphics[width=\textwidth]{paper-multistability-george/overview_figure.png}
+    \label{fig:method:continuation}
+    \caption{\textbf{Schematic illustration of the continuation method used to find and match attractors across a parameter range}. The first row illustrates the single-parameter attractor finding algorithms. The second row illustrates how they can be combined across parameters to perform a continuation analysis. Figure taken from \refref{datseris2023framework}.}
+\end{figure}
 
 The matching procedure between attractors is crucial for a continuation procedure. Often in linear continuation analysis one just matches the next point along a continuation curve to the previous point. This works well for infinitesimal perturbations of fixed points but becomes a problem in global stability analysis, where the steps are not necessarily infinitesimal and the attractors may be spatially extended and chaotic. Matching in our algorithm is designed to be very flexible, and can be adapted to the user's needs \cite{datseris2023framework}. First, the algorithm computes the distances between attractors at some parameter $p_i$ and some subsequent parameter $p_{i+1}$. Distance here is any positive semi-definite function. The default used is the Euclidean distance between the centroids of the attractors. Another good option is the Hausdorff \cite{datseris2023framework}. With the distances, a new attractor is matched to the previous one with the smallest distance, prioritizing pairs with the smallest distance. This matching respects uniqueness, so that once an attractor from the previous parameter has been matched, it is removed from the matching pool. 
 
 After matching, the continuation is done. The user may also decide to group attractors based on some features of interest. For instance, to group attractors with a certain degree of synchronization \cite{datseris2023framework}.
 
 The development and implementation of the attractor-finding algorithms and the continuation procedure in efficient and open-source code led to a joing publication in \refref{datseris2023framework}. 
-%
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{paper-multistability-george/overview_figure.png}
-    \label{fig:method:continuation}
-    \caption{\textbf{Schematic illustration of the continuation method used to find and match attractors across a parameter range}. The first row illustrates the single-parameter attractor finding algorithms. The second row illustrates how they can be combined across parameters to perform a continuation analysis. Figure taken from \refref{datseris2023framework}.}
-\end{figure}
 
 
 \section{Basics of bifurcations}\label{method:bifurcations}
@@ -278,27 +270,35 @@ As the parameters of a system are varied, we obtain different dynamical systems 
 There are many different types of bifurcations, and one can literally write a whole book about this \cite{kuznetsov}. For this thesis we focus briefly on just a few bifurcations that will be relevant for later. For simplicity, we focus also on the simplest version of these bifurcations. 
 
 \subsection{Saddle-node bifurcation of equilibria}
-In a saddle-node bifurcation of equilibria we see the emergence, or destruction, of a stable (node) and an unstable (saddle) equilibrium. Starting from the side of the bifurcation in which the equilibria exist and approaching the bifurcation parameter, we see the equilibria approaching each other, coalescing at the critical parameter, and annihilating each other thereafter. The simplest form of this bifurcation occurs in one dimension in the system 
+In a saddle-node bifurcation of equilibria we see the emergence, or destruction, of a stable (node) and an unstable (saddle) equilibrium. Starting from the side of the bifurcation in which the equilibria exist and approaching the bifurcation parameter, we see the equilibria approaching each other, coalescing at the critical parameter, and annihilating each other thereafter (\figref{fig:method:bifurcations}A-D). The simplest form of this bifurcation occurs in one dimension in the system 
 %
 \begin{align}
     \dot{x} = f(x) = \alpha + x^2,
     \label{eq:sn-normal-form}
 \end{align}
 %
-with the critical value of the bifurcation being $\alpha = 0$. As shown in Figs.~\ref{fig:method:bifurcations}, for $\alpha < 0$ we see that the parabola $f(x)$ has two roots, so the system has two equilibria, in positions $x^\star = \pm \sqrt{-\alpha}$. From the figure directly we can already see that the equilibrium on the left is stable and the equilibrium on right is unstable. We can confirm this with a linearization analysis - the Jacobian here is simply $df/dx = 2x$, so the eigenvalue of the left and right equilibrium are $-2\sqrt{-\alpha}$ and $+2\sqrt{-\alpha}$.   As $\alpha$ increases towards $0$ the parabola moves up, the equilibria approach each other, their eigenvalues approach zero, and at $\alpha=0$ they all coalesce into one single equilibrium. At this point, the eigenvalue of the system is zero: this equilibrium is non-hyperbolic! For $\alpha > 0$ there are no more equilibria. Equation \ref{eq:sn-normal-form} is called the normal form of the saddle-node bifurcation, because any generic system obeying some conditions will be topologically equivalent to it locally, near the equilibrium. For a system $\dot{x} = f(x,p)$, with $x \in \mathbb{R}$ and $\alpha \in \mathbb{R}$, $\partial f(0,0) / \partial x = 0$, an equilibrium $x = 0$ at the critical parameter $\alpha = 0$, the conditions are \cite{kuznetsov}:
-%
-\begin{align}
-    &\frac{\partial^2 f(0, 0)}{\partial x^2} \neq 0 \\ 
-    &\frac{\partial f(0, 0)}{\partial \alpha} \neq 0.
-\end{align}
+with the critical value of the bifurcation being $\alpha = 0$. As shown in Figs.~\ref{fig:method:bifurcations}A, for $\alpha < 0$ we see that the parabola $f(x)$ has two roots, so the system has two equilibria, in positions $x^\star = \pm \sqrt{-\alpha}$. From the figure directly we can already see that the equilibrium on the left is stable and the equilibrium on right is unstable. We can confirm this with a linearization analysis - the Jacobian here is simply $df/dx = 2x$, so the eigenvalue of the left and right equilibrium are $-2\sqrt{-\alpha}$ and $+2\sqrt{-\alpha}$.   As $\alpha$ increases towards $0$ the parabola moves up, the equilibria approach each other, their eigenvalues approach zero, and at $\alpha=0$ they all coalesce into one single equilibrium. At this point, the eigenvalue of the system is zero: this equilibrium is non-hyperbolic! For $\alpha > 0$ there are no more equilibria. Equation \ref{eq:sn-normal-form} is called the normal form of the saddle-node bifurcation, because any generic system obeying some conditions will be topologically equivalent to it locally, near the equilibrium.
+% For a system $\dot{x} = f(x,p)$, with $x \in \mathbb{R}$ and $\alpha \in \mathbb{R}$, $\partial f(0,0) / \partial x = 0$, an equilibrium $x = 0$ at the critical parameter $\alpha = 0$, the conditions are \cite{kuznetsov}:
+% %
+% \begin{align}
+%     &\frac{\partial^2 f(0, 0)}{\partial x^2} \neq 0 \\ 
+%     &\frac{\partial f(0, 0)}{\partial \alpha} \neq 0.
+% \end{align}
+% 
+% They guarantee that the system $\dot{x} = f(x,p)$ can be transformed into \eqnref{eq:sn-normal-form} or into $\dot{x} = \alpha - x^2$, which just inverts the direction of $\alpha$. 
 
-They guarantee that the system $\dot{x} = f(x,p)$ can be transformed into \eqnref{eq:sn-normal-form} or into $\dot{x} = \alpha - x^2$, which just inverts the direction of $\alpha$. 
-
-After the two equilibria are destroyed, the system does not have an
-Just after the bifurcation, the region previously occupied by the two equilibria is still quite slow. Note how $\dot{x}$ is very close to zero near $x=0$ in Fig.\ref{fig:method:bifurcations}. This region of slow flow is called the ghost of the saddle-node \cite{strogatz2002nonlinear}. In a way, it retains properties of the two equilibria - particular, trajectories still flow towards the ghost from the side previously occupied by the stable equilibrium, remain in its neighborhood for a while, but then eventually depart through the side previously occupied by the unstable equilibrium \cite{koch2024ghost}. The ghost is not an invariant set, but is an example of a metastable regime, which we study in greater depth in Chapter \ref{chap:metastability}.
+% After the two equilibria are destroyed, the system does not have an
+Just after the bifurcation, the region previously occupied by the two equilibria is still quite slow. Note how $\dot{x}$ is very close to zero near $x=0$ in \figref{fig:method:bifurcations}C. This region of slow flow is called the ghost of the saddle-node \cite{strogatz2002nonlinear}. In a way, it retains properties of the two equilibria - particular, trajectories still flow towards the ghost from the side previously occupied by the stable equilibrium, remain in its neighborhood for a while, but then eventually depart through the side previously occupied by the unstable equilibrium \cite{koch2024ghost}. The ghost is not an invariant set, but is an example of a metastable regime, which we study in greater depth in Chapter \ref{chap:metastability}.
 
 
 Saddle-node bifurcations can also occur analogously for periodic orbits \cite{kuznetsov} - a stable limit cycle then collides with an unstable limit cycle, and leave behind a ghost of a limit cycle!
+%
+\begin{figure}
+    \centering 
+    \includegraphics[width=\textwidth]{methodology/bifurcations/bifurcations.png}
+    \caption{\textbf{Some important bifurcations}. The saddle-node bifurcation is shown for the normal form $\dot{x} = x^2 + \alpha$ in panels A-D. A stable and an unstable equilibria, represented respectively by green and red circles (panel A), come together as the bifurcation parameter $\alpha$ is changed. Eventually they coalesce (panel B) and are subsequently destroyed (panel C). The position of these equilibria as a function of $\alpha$ is shown in panel D. The supercritical Hopf bifurcation is shown for \eqnref{eq:hopf} in panels E-H. Before and at the bifurcation there is a stable equilibrium in state space (panels E and F respectively), which becomes unstable when a stable limit cycle emerges (panel G). Panel H shows this behavior as a functon of $\alpha$, taking the maximum and minimum values of $x$ to represent the limit cycle. The homoclinic bifurcation to a saddle point is shown in panels I-L. Before the bifurcation there is a saddle point (panel I). At the bifurcation, an orbit homoclinic to this saddle point appears (represented approximately in panel J). After the bifurcation, a stable limit cycle emerges (panel K). This is also summarized in panel L.}
+    \label{fig:method:bifurcations}
+\end{figure}
 
 \subsection{Hopf bifurcation}
 Keeping with the spirit of describing the simplest cases, let us now imagine a system written in polar coordinates $(\rho, \theta)$:
@@ -308,7 +308,7 @@ Keeping with the spirit of describing the simplest cases, let us now imagine a s
     &\dot{\phi} = f_\phi = 1.
 \end{align}
 
-Because the two equations are decoupled, we can analyse the $\rho$ equation separately first. First, note that its Jacobian $\partial f_\rho / \partial \rho = \alpha - 3\rho^2$. For all values of $\alpha$, $f_\rho$ has an equilibrium at $\rho=0$ - with eigenvalue $\lambda = \alpha$. This is linearly stable for $\alpha<0$ and linearly stable for $\alpha>0$. At $\alpha=0$ it is non-hyperbolic! What happens then? The first equation has another root for $\alpha > 0$ at $\rho = \sqrt{\alpha}$ - so the eigenvalue is $\lambda = -2\alpha$. This equilibrium is unstable for $\alpha < 0$ and stable for $\alpha > 0$. Notice the change of stability of the equilibria: when one is unstable, the other is stable, and vice versa. Considered for $f_\rho$ alone, this is an example of a Pitchfork bifurcation \cite{kuznetsov}. Considering the full system, with the rotation induced by $dot{\phi} = 1$, the equilibrium at the origin remains an equilibrium, but the equilibrium at $\sqrt{\alpha}$ becomes a limit cycle with amplitude $\sqrt{\alpha}$. Putting everything together, we have the behavior in \figref{fig:method:bifurcations}G-H. A stable limit cycle becomes unstable at $\alpha = 0$ and from it a stable limit cycle emerges. This is called a supercritical Hopf bifurcation \cite{kuznetsov}.
+Because the two equations are decoupled, we can analyse the $\rho$ equation separately first. First, note that its Jacobian $\partial f_\rho / \partial \rho = \alpha - 3\rho^2$. For all values of $\alpha$, $f_\rho$ has an equilibrium at $\rho=0$ - with eigenvalue $\lambda = \alpha$. This is linearly stable for $\alpha<0$ and linearly stable for $\alpha>0$. At $\alpha=0$ it is non-hyperbolic! What happens then? The first equation has another root for $\alpha > 0$ at $\rho = \sqrt{\alpha}$ - so the eigenvalue is $\lambda = -2\alpha$. This equilibrium is then stable. Considered for $f_\rho$ alone, this is an example of a pitchfork bifurcation \cite{kuznetsov}. Considering the full system, with the rotation induced by $\dot{\phi} = 1$, the equilibrium at the origin remains an equilibrium, but the equilibrium at $\sqrt{\alpha}$ becomes a limit cycle with amplitude $\sqrt{\alpha}$. Putting everything together, we have the behavior in \figref{fig:method:bifurcations}G-H. A stable limit cycle becomes unstable at $\alpha = 0$ and from it a stable limit cycle emerges. This is called a supercritical Hopf bifurcation \cite{kuznetsov}.
 If we write this system in Cartesian coordinates and compute the eigenvalues of the Jacobian at the origin, we see they are $\lambda_{1,2} = \alpha \pm i$. This gives us another general property of this bifurcation: at the critical point, the eigenvalues at the origin cross the imaginary axis.
 
 Now consider the system
@@ -319,13 +319,6 @@ Now consider the system
 \end{align}
 
 Now the Jacobian is $\partial f_\rho / \partial \rho = \alpha + 3\rho^2$. There is still an equilibrium at the origin, in which the eigenvalue is still $\alpha$ - its stability is the same as before. However, the other equilibrium, now $\sqrt{-\alpha}$ has the associated eigenvalue as $-2\alpha$. It therefore exists for $\alpha < 0$ when it is unstable. This thus corresponds to an unstable limit cycle, which coexists with a stable equilibrium for $\alpha < 0$. For $\alpha > 0$, the limit cycle disappears and the system is left with only an unstable equilibrium. This is called a subcritical Hopf bifurcation \cite{kuznetsov}. The eigenvalues of the Cartesian Jacobian at the origin behave in the same way as for the supercritical Hopf.
-%
-\begin{figure}
-    \centering 
-    \includegraphics[width=\textwidth]{methodology/bifurcations/bifurcations.png}
-    \caption{\textbf{Some important bifurcations}. The saddle-node bifurcation is shown for the normal form $\dot{x} = x^2 + \alpha$ in panels A-D. A stable and an unstable equilibria, represented respectively by green and red circles (panel A), come together as the bifurcation parameter $\alpha$ is changed. Eventually they coalesce (panel B) and are subsequently destroyed (panel C). The position of these equilibria as a function of $\alpha$ is shown in panel D. The supercritical Hopf bifurcation is shown for \eqnref{eq:hopf} in panels E-H. Before and at the bifurcation there is a stable equilibrium in state space (panels E and F respectively), which becomes unstable when a stable limit cycle emerges (panel G). Panel H shows this behavior as a functon of $\alpha$, taking the maximum and minimum values of $x$ to represent the limit cycle. The homoclinic bifurcation to a saddle point is shown in panels I-L. Before the bifurcation there is a saddle point (panel I). At the bifurcation, an orbit homoclinic to this saddle point appears (represented approximately in panel J). After the bifurcation, a stable limit cycle emerges (panel K). This is also summarized in panel L.}
-    \label{fig:method:bifurcations}
-\end{figure}
 
 
 
@@ -334,7 +327,7 @@ Now the Jacobian is $\partial f_\rho / \partial \rho = \alpha + 3\rho^2$. There 
 \subsection{Homoclinic bifurcation}
 Both the saddle-node and the Hopf bifurcations happen in the neighborhood of equilibria - for this reason, they are called local bifurcations. Now we move to a bifurcation in which this is no longer the case - the state space beyond only the equilibrium is affected, and it is thus called a global bifurcation \cite{kuznetsov}. The formal description of this bifurcation is consequently more involved, and goes beyond the scope of this thesis. For here it is enough to describe the bifurcation more qualitatively. 
 
-In the homoclinic bifurcation we study here, occurring on the plane, we have the emergence of a limit cycle. Before the bifurcation, there is only a saddle point. At the bifurcation, the unstable manifold of the saddle becomes tangential to its own stable manifold - this constitutes a homoclinic orbit. After the bifurcation, the homoclinic orbit becomes a limit cycle whose stability depends on the eigenvalues of the saddle. Defining the saddle quantity $\sigma = \lambda_1 + \lambda_2$, it can be shown \cite{kuznetsov} that the limit cycle is stable for $\sigma < 0$ and unstable if $\sigma > 0$. 
+In the homoclinic bifurcation we study here, occurring on the plane, we have the emergence of a limit cycle. Before the bifurcation, there is only a saddle point. At the bifurcation, the unstable manifold of the saddle becomes tangential to its own stable manifold - this constitutes a homoclinic orbit. After the bifurcation, the homoclinic orbit becomes a limit cycle whose stability depends on the eigenvalues of the saddle. Defining the saddle quantity $\sigma = \lambda_1 + \lambda_2$, it can be shown that the limit cycle is stable for $\sigma < 0$ and unstable if $\sigma > 0$ \cite{kuznetsov}. 
 
 Varying the bifurcation parameter $\alpha$ close to the homoclinic orbit, the limit cycle approaches more and more the saddle point, and touches it at $\alpha = \alpha_c$. The region of the limit cycle close to the saddle-point has a very slow dynamics, such that the period of the limit cycle diverges to infinity as the critical point is approached. In higher dimensional systems, different types of homoclinic bifurcations are possible, with potentially much more complicated dynamics. The homoclinic bifurcations we deal with in this thesis are always related to simple saddle points, and so are analogous to the planar case shown now. 
 
@@ -356,19 +349,19 @@ An incredibly powerful abstraction about real-world systems can be achieved thro
     \dot{x}_i = f(x_i) + \sum_{j=1}^N A_{ij} g(x_j, x_i),\; i=1,\ldots,N
     \label{eq:network-general}
 \end{align} 
-
+%
 with $N$ units, whose interactions are described by the function $g$. The adjacency matrix $A_{ij}$ describes the strength of interactions between the units. Typically it is a binary matrix, such that $A_{ij} = 1$ if unit $i$ receives a connection from unit $j$ and $A_{ij} = 0$ otherwise. It can also be weighted, in which case the entry $A_{ij} \in \mathbb{R}$ represents the strength of interactions. Usually for binary matrices, we rewrite \eqnref{eq:network-general} as 
 %
 \begin{align}
     \dot{x}_i = f(x_i) + \sum_{j \in \Omega_i} g(x_j, x_i),\; i=1,\ldots,N
     \label{eq:network-general-neighborhood}
 \end{align} 
-
+%
 where $\Omega_i = \{j \in [1, N]: A_{ij} = 1\}$ is called the neighborhood of unit i. The number of elements in $\Omega_i$, i.e., the number of connections of unit i, is called the unit's degree.
 
-The adjacency matrix $A$ describes the topology of the network, meaning the architecture of the connections. There are many different types of topologies, which describe well different types of systems. One type of topology is the regular, also called $k$-nearest-neighbors topology. As the name suggests, one can think of all nodes arranged on a ring, with each node connected to the $k$ nearest nodes on each side. Another type of topology is the random topology, in which connections are chosen at random between the nodes. One consider the regular and random topologies as two extremes, and interpolate between them in what is called the Watts-Strogatz algorithm \cite{watts1998collective}. In this case, one starts with a $k$-nearest neighbor ring of nodes. Then, choose connections with a probability $p$. For each chosen connection $(i,j)$, keep the source node $i$, randomly choose a new node $j^\prime$ in the network, and switch $(i,j)$ to $(i,j^\prime)$. This effectively switches short-range connections (between nearest nodes) to long range connections (between nodes that are potentially far away). For this rewiring probability $p$ at $p=0$ one has the regular topology; for $p=1$ one has the random topology. 
+The adjacency matrix $A$ describes the topology of the network, meaning the architecture of the connections. There are many different types of topologies, which describe well different types of systems. One type of topology is the regular ring, also called $k$-nearest-neighbors topology. As the name suggests, one can think of all nodes arranged on a ring, with each node connected to the $k$ nearest nodes on each side. Another type of topology is the random ring, in which connections are chosen at random between the nodes. One consider the regular and random rings as two extremes, and interpolate between them in what is called the Watts-Strogatz algorithm \cite{watts1998collective}. In this case, one starts with a $k$-nearest neighbor ring of nodes. Then, choose connections with a probability $p$. For each chosen connection $(i,j)$, keep the source node $i$, randomly choose a new node $j^\prime$ in the network, and switch $(i,j)$ to $(i,j^\prime)$. This effectively switches short-range connections (between nearest nodes) to long range connections (between nodes that are potentially far away). For this rewiring probability $p$ at $p=0$ one has the regular topology; for $p=1$ one has the random topology. 
 
-Informally speaking, a regular network is considerably clustered, with its short-range structures. And the average distance (in terms of numbers of edges) in the network is considerably high. In a random network, clustering is very small, but the average distance is small. One can formalize these concepts and show how this transition occurs as $p$ is changed \cite{watts1998collective}. Here, we mention that, when $p$ is relatively small, only a few short-range connections are rewired as long-range. This does not change the clustering characteristics much, but considerably lowers the average distance between nodes - those few long-range connections act as efficient shortcuts between nodes. Networks in this regime are usually called small-world networks \cite{watts1998collective}. 
+Without going into deeper formalizations, a regular network is considerably clustered due to its short-range structures. And the average distance (in terms of numbers of edges) between nodes in the network is considerably high. In a random network, the clustering is very small, and the average distance is also small. One can formalize these concepts and show how this transition occurs as $p$ is changed \cite{watts1998collective}. Here, we mention that, when $p$ is relatively small but nonzero, only a few short-range connections are rewired as long-range. This does not change the clustering characteristics much, but considerably lowers the average distance between nodes - the few long-range connections act as efficient shortcuts between nodes. Networks in this regime are usually called small-world networks \cite{watts1998collective}. 
 
 In \chapref{chap:malleability} we also study distance-dependent networks. The adjacency matrix is then defined as 
 %
@@ -381,7 +374,7 @@ with $d_{ij} = \min(|i-j|, N-|i-j|)$ is the edge distance along the ring, and $\
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{methodology/networks/wattsstrogatz.png}
-    \caption{\textbf{Illustration of networks generated by the Watts-Strogatz procedure}. First, a $k$-nearest neighbor topology is created (Panel A). Then, some connections are randomly rewired, keeping the source node but changing the target node. With a few rewirings, this creates small-world networks (Panel B). With many rewirings, the network becomes randomly connected (Panel C).}
+    \caption{\textbf{Illustration of networks generated by the Watts-Strogatz procedure}. First, a $k$-nearest neighbor topology is created (Panel A). Then, some connections are randomly rewired, keeping the source node but changing the target node. With a few rewirings, this creates small-world networks (Panel B). By rewiring all the initial short-range connections, the network becomes randomly connected (Panel C).}
     \label{method:fig:topology}
 \end{figure}
 
@@ -399,7 +392,7 @@ serves as a paradigm for studies on synchronization phenomena \cite{boccaletti20
     \dot{Q}_i = (i\omega + \alpha) Q_i - \beta|Q_i|^2 Q_i,
 \end{align}
 
-where $\omega$ is the natural frequency of the oscillator, $\alpha>0$ and $\beta>0$ are parameters and $Q \in \mathbb{C}$. This is the normal form of the Hopf bifurcation we saw in Sec.\ref{method:bifurcations} but written in complex numbers. Kuramoto chose a simple and natural way to coupled these oscillators: via a common coupling term, that is proportional to the value $Q_i$ of each oscillator: 
+where $\omega$ is the natural frequency of the oscillator, $\alpha>0$ and $\beta>0$ are parameters and $Q \in \mathbb{C}$. This is the normal form of the Hopf bifurcation we saw in \secref{method:bifurcations} but written in complex numbers. Kuramoto chose a simple and natural way to coupled these oscillators: via a common coupling term, that is proportional to the value $Q_i$ of each oscillator: 
 %
 \begin{align}
     \dot{Q}_i = (i\omega + \alpha) Q_i - \beta|Q_i|^2 Q_i + \frac{K}{N} \sum_{j=1}^{N} Q_j
@@ -414,7 +407,7 @@ One can then rewrite \eqref{eq:stuartlandaucoupled} in polar coordinates by usin
     &\dot{\theta}_i = \omega_i + \frac{K}{N}\sum_{j=1}^{N} \frac{\rho_j}{\rho_k} \sin(\theta_j - \theta_k)
 \end{align}
 
-Kuramoto studied these equations in the limit of $\alpha\to\infty$ and $\beta\to\infty$ with $\alpha/\beta$ constant. Then, one gets that the radial variables $\rho_i$ approach a stable fixed point in arbitrarily fast. The radial variable is therefore just a constant and one just needs to consider the phase variables: 
+Kuramoto studied these equations in the limit of $\alpha\to\infty$ and $\beta\to\infty$ with $\alpha/\beta$ constant. Then, one gets that the radial variables $\rho_i$ approach a stable fixed point arbitrarily fast. The radial variable is therefore just a constant and one just needs to consider the phase variables: 
 %
 \begin{align}
     \theta_i = \omega_i + \frac{K}{N} \sum_{j=1}^{N}\sin(\theta_j-\theta_i).
@@ -427,7 +420,7 @@ A very useful way to quantify the spread of the phases $\theta_i$ is through the
     \label{eq:kuramoto-order-parameter}
 \end{align}
 
-which corresponds to the centroid of the phases and therefore characterizes well the collective behavior of the system. The radius $r$ measures the phase synchronization of the system: $r$ is close to $0$ if the phases are uniformly spread or clustered in anti-phase clusters and $r$ is close to $1$ if the phases are aligned together. Here we should clarify that phase synchronization denotes the alignment of phases of oscillations - complete phase synchronization corresponds to $r=1$, meaning that the phases are the same (up to a $2\pi$ offsets). On the other hand, frequency synchronization denotes the alignment of the frequencies of oscillations - complete frequency synchronization corresponds to $\dot{\theta_i} = \Omega, \; \quad \forall i=1,\ldots, N$. Networks that are frequency synchronized are also said to be phase-locked - the phase differences are constant. But it does not imply phase synchronization, as the phase differences may be non-zero. Figures \ref{fig:method:kuramoto}A-B exemplify the behavior of $r$ for weak and strong phase synchronization.
+which corresponds to the centroid of the phases and therefore characterizes well the collective behavior of the system. The radius $r$ measures the phase synchronization of the system: $r$ is close to $0$ if the phases are uniformly spread or clustered in anti-phase clusters and $r$ is close to $1$ if the phases are aligned together. Here we should clarify that phase synchronization denotes the alignment of phases of oscillations - complete phase synchronization corresponds to $r=1$, meaning that the phases are the same (up to $2\pi$ offsets). On the other hand, frequency synchronization denotes the alignment of the frequencies of oscillations - complete frequency synchronization corresponds to $\dot{\theta_i} = \Omega, \; \quad \forall i=1,\ldots, N$. Networks that are frequency synchronized are also said to be phase-locked - the phase differences are constant. But it does not imply phase synchronization, as the phase differences may be non-zero. Figures \ref{fig:method:kuramoto}A-B exemplify the behavior of $r$ for weak and strong phase synchronization.
 
 The angle $\psi$ corresponds to the average phase of the units. Using this order parameter, the Kuramoto model can be rewritten as
 \begin{align}
@@ -438,19 +431,19 @@ This form highlights the mean-field character of the model \cite{strogatz2000fro
 
 
 % \subsection{Transition to synchronization in original Kuramoto}
-These equations always have a solution for $\theta_i = 0, \; \forall i$. What about others? Kuramoto considered these equations in the infinite size limit $N\to\infty$. By seeking steady-state solutions, with $r$ constant noted that oscillators will distribute into two groups: (i) with $|\omega_i| < Kr$ which phase-lock together and (ii) with $|\omega_i| > Kr$ which keep rotating with nonuniform velocity $\dot{\theta}_i$.  He then showed that a branch continuously bifurcaties from $r=0$ at $K=K_c$, a critical coupling strength, given by:
+These equations always have a solution for $\theta_i = 0, \; \forall i$. What about other solutions? Kuramoto considered these equations in the infinite size limit $N\to\infty$. By seeking steady-state solutions, with $r$ constant, he noted that oscillators the will split into two groups: (i) with $|\omega_i| < Kr$, which phase-lock together and (ii) with $|\omega_i| > Kr$ which keep rotating with nonuniform velocity $\dot{\theta}_i$.  He then showed that a branch continuously bifurcates from $r=0$ at $K=K_c$, a critical coupling strength, given by:
 %
 \begin{align}
     K_c = \frac{2}{\pi g(0)}
 \end{align}
 
-Near $K=K_c$, this branch has a square-root behavior: $r \propto \sqrt{K-K_c}$. In particular for $\omega_i$ following a Lorentzian distribution, one can show that \cite{kuramoto1984chemical, strogatz2000from}
+Near $K=K_c$, this branch has a square-root behavior: $r \propto \sqrt{K-K_c}$. In particular for $\{\omega_i\}$ following a Lorentzian distribution, one can show that \cite{kuramoto1984chemical, strogatz2000from}
 \begin{align}
     r = \sqrt{1 - \frac{K_c}{K}},
     \label{eq:kuramoto-lorentzian}
 \end{align}
-
-as illustrated in \figref{fig:method:kuramoto}C. One can verify this behavior numerically: \figref{fig:method:kuramoto}D illustrates the results of simulations for a network of $N=1000$ oscillators under a Gaussian distribution with zero mean and unitary standard deviation. The $y$-axis denotes the time-averaged behavior of $r(t)$, which oscillates in time.
+%
+as illustrated in \figref{fig:method:kuramoto}C. One can verify this behavior numerically: \figref{fig:method:kuramoto}D illustrates the results of simulations for a network of $N=1000$ oscillators under a Gaussian distribution with zero mean and unitary standard deviation. The $y$-axis denotes the time-averaged behavior of $r(t)$, since $r(t)$ oscillates in time for these finite networks.
 
 Many open questions remain from the treatment just shown, such as the stability of these branches. There have been many extensions made to this model \cite{acebron2005kuramoto, rodrigues2016the}. In the context of multistability, some basic results come from studying an even simpler configuration, where the units are identical and coupled in a $k$-nearest-neighbor ring.
 
@@ -473,13 +466,13 @@ Note therefore that changing the coupling strength in this system only rescales 
     \theta_i = \omega t + \frac{2\pi q}{N} i + C
 \end{align}
 
-where $C \in \mathbb{R}$ is a constant and $q \in \mathbb{Z}$ is the twisting number. If one looks at the phase difference between two adjancent units one sees that it is constant across the ring: $\theta_{i+1} - \theta_i = \frac{2\pi q}{N}$. In particular, the completely synchronized is included here in the $q=0$ case. Some important stability results are:
+where $C \in \mathbb{R}$ is a constant and $q \in \mathbb{Z}$ is the twisting number. If one looks at the phase difference between two adjacent units one sees that it is constant across the ring: $\theta_{i+1} - \theta_i = \frac{2\pi q}{N}$. In particular, the completely synchronized state is included here in the $q=0$ case. Some important stability results are:
 %
 \begin{itemize}
     \item For small values of $k$ many twisted states can be stable. As $k$ is increased, these twisted states start to lose stability, with higher $q$ values starting earlier.  Eventually, the completely synchronized state ($q=0$) becomes globally stable at $k>k_c \approx 0.34 N$ \cite{wiley2006the}. 
     \item If we fix $k$ and look at estimates of the size of the basins of all stable twisted states we find that they can be parametrized by a Gaussian curve \cite{wiley2006the, zhang2021basins} (\figref{fig:method:kuramoto}E).
     \item Estimates of the size of the basin of attraction for $q=0$ increase monotonically with $k$ (\figref{fig:method:kuramoto}F): the completely synchronized state starts to dominate the state space for denser networks \cite{wiley2006the}. 
-    \item The shape of the basins is still a topic under research, but they appear to form octopus-like structures. The twisted state itself (a point) is on the head of the octopus, which a small volume around it. The majority of the volume of the basin is concentrated on the tentacles, which are structures that spread around in state space \cite{zhang2021basins}.
+    \item The shape of the basins is still a topic under research, but they appear to form octopus-like structures. The twisted state itself (a point) is on the head of the octopus, which has a small volume around it. The majority of the volume of the basin is concentrated on the tentacles, which are structures that spread around in state space \cite{zhang2021basins}.
 \end{itemize}
 
 
@@ -487,7 +480,7 @@ Studies have also been made for other topologies. Some important results have ac
 %
 \begin{figure}
     \includegraphics[width=\textwidth]{kuramoto/kuramoto-thesis-figure.png}
-    \caption{\textbf{Basics of Kuramoto oscillators}. Panels A and B respectively illustrate the concept of weak and strong phase synchronization (PS), captured by the complex order parameter $Z$ (\eqnref{eq:kuramoto-order-parameter}). The radius $r$ denotes the degree of PS and the angle $\psi$ denotes the controid of the phases - respectively, they correspond to the magnitude and direction of the arrow in the figure. Panel C illustrates the behavior of the order parameter $r$ as a function of coupling strength $K$ (see \eqnref{eq:kuramoto-og}) for a Lorentzian distribution of the frequencies (\eqnref{eq:kuramoto-lorentzian}). The blue line denotes the critical coupling strength for the transition to synchronization. Panel D illustrates a similar behavior obtained from numerical simulations in a network of size $N=1000$ under a Gaussian distribution of the natural frequencies. Only one attractor is ever observed in the simulations. Going now to homogeneous frequencies, panel E illustrates the fraction fs of randomly chosen initial conditions that converge to each $q$ twisted state, in a network with $k=2$ nearest neighbors. Panel F looks at this fraction for the completely synchronized state ($q=0$) only, under different values of $k$. Panels E and F replicate results from \cite{wiley2006the}. }
+    \caption{\textbf{Basics of Kuramoto oscillators}. Panels A and B respectively illustrate the concept of weak and strong phase synchronization (PS), captured by the complex order parameter $Z$ (\eqnref{eq:kuramoto-order-parameter}). The radius $r$ denotes the degree of PS and the angle $\psi$ denotes the centroid of the phases - respectively, they correspond to the magnitude and direction of the arrow in the figure. Panel C illustrates the behavior of the order parameter $r$ as a function of coupling strength $K$ (see \eqnref{eq:kuramoto-og}) for a Lorentzian distribution of the frequencies (\eqnref{eq:kuramoto-lorentzian}). The blue line denotes the critical coupling strength for the transition to synchronization. Panel D illustrates a similar behavior obtained from numerical simulations in a network of size $N=1000$ under a Gaussian distribution of the natural frequencies. Only one attractor is ever observed in the simulations. Going now to homogeneous frequencies, panel E illustrates the fraction fs of randomly chosen initial conditions that converge to each $q$ twisted state, in a network with $k=2$ nearest neighbors. Panel F looks at this fraction for the completely synchronized state ($q=0$) only, under different values of $k$. Panels E and F replicate results from \cite{wiley2006the}. }
     \label{fig:method:kuramoto}
 \end{figure}
 

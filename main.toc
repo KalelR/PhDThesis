@@ -3,36 +3,17 @@
 \contentsline {paragraph}{Chapter 3:}{4}{chapter*.1}%
 \contentsline {paragraph}{Chapter 4:}{4}{chapter*.1}%
 \contentsline {paragraph}{Chapter 5:}{4}{chapter*.1}%
-\contentsline {section}{Abstract}{6}{chapter*.1}%
-\contentsline {section}{Zusammenfassung}{8}{chapter*.1}%
-\contentsline {chapter}{\numberline {1}Methodology}{9}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Basics of dynamical systems theory}{9}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Dynamical systems and the uniqueness and existence of their solutions}{9}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}The fate of linear dynamical systems}{9}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}The fate of nonlinear dynamical systems I: attractors}{10}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Formalizing attractors and basins}{12}{subsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.1.5}Invariant manifolds: structures that organize state space}{14}{subsection.1.1.5}%
-\contentsline {subsection}{\numberline {1.1.6}The fate of nonlinear dynamical systems II: multistability and basins of attraction}{16}{subsection.1.1.6}%
-\contentsline {subsection}{\numberline {1.1.7}How to find attractors}{18}{subsection.1.1.7}%
-\contentsline {section}{\numberline {1.2}Basics of bifurcations}{19}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Saddle-node bifurcation of equilibria}{20}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Hopf bifurcation}{21}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Homoclinic bifurcation}{22}{subsection.1.2.3}%
-\contentsline {section}{\numberline {1.3}Basics of network theory}{22}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Basics of Kuramoto oscillators}{25}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Derivation of the model and transition to synchronization}{25}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Multistability in homogeneous case: twisted states}{27}{subsection.1.4.2}%
-\contentsline {chapter}{\numberline {2}Small changes at single nodes can shift global network dynamics}{30}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{30}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Methodology}{33}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Results}{34}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Introduction to dynamical malleability}{34}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Comprehensive view of dynamical malleability}{36}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Unpredictability of dynamical malleability}{40}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Ratio of short to long-range connections}{41}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Multistability}{42}{subsection.2.3.5}%
-\contentsline {subsection}{\numberline {2.3.6}Distributions of samples}{43}{subsection.2.3.6}%
-\contentsline {section}{\numberline {2.4}Discussions and conclusions}{45}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Conclusions}{51}{chapter.3}%
-\contentsline {chapter}{Acknowledgments}{66}{chapter*.3}%
-\contentsline {chapter}{Eidesstattliche Erklärung}{67}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Small changes at single nodes can shift global network dynamics}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introduction}{6}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Methodology}{8}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Results}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Introduction to dynamical malleability}{10}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Comprehensive view of dynamical malleability}{12}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Unpredictability of dynamical malleability}{15}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Ratio of short to long-range connections}{16}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Multistability}{17}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Distributions of samples}{22}{subsection.1.3.6}%
+\contentsline {section}{\numberline {1.4}Discussions and conclusions}{22}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Conclusions}{28}{chapter.2}%
+\contentsline {chapter}{Acknowledgments}{42}{chapter*.3}%
+\contentsline {chapter}{Eidesstattliche Erklärung}{43}{chapter*.4}%
