@@ -1,11 +1,3 @@
-Escrever tese
-1. malleability: multistability results; check for sure the dynamics in the diff topologies - any chaos ever? for random tops? why does all-to-all have this chaotic, non phase locked, behavior??
-
-Checar tese:
-1. checar papers em geral!
-
-
-
 
 
 # optional to-do
