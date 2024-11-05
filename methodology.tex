@@ -53,7 +53,7 @@ In summary, the ultimate fate of linear systems is kind of boring: either trajec
 
 
 \subsection{The fate of nonlinear dynamical systems I: attractors}\label{method:nonlinear-I}
-As just seen, stable equilibria are the only possible attractors in linear systems. Going beyond \eqnref{eq:linear}, nonlinear systems can have more interesting and complicated long-term dynamics (Fig.~\ref{fig:method:attractors-nonlinear}). Stable equilibria are still possible, as shown in Figs.~\ref{fig:method:attractors-nonlinear}A-B. The system for those figures is a conductance-based neuronal model following equations \cite{izhikevichbook}
+As just seen, stable equilibria are the only possible attractors in linear systems. Going beyond \eqnref{eq:linear}, nonlinear systems can have more interesting and complicated long-term dynamics (Fig.~\ref{fig:method:attractors-nonlinear}). Stable equilibria are still possible, as shown in Figs.~\ref{fig:method:attractors-nonlinear}A-B. We use for those figures the conductance-based neuronal model we use in \chapref{chap:multistability}, following equations \cite{izhikevichbook}
 %
 \begin{align}
     &\dot{x} = \big(I - g_L (x_i - E_L)  
@@ -63,7 +63,7 @@ As just seen, stable equilibria are the only possible attractors in linear syste
     \label{eq:inapk}
 \end{align}
 %
-with all parameters and functions defined in detail in Chapter \ref{chap:multistability}. The input current $I$ is chosen to be $I=2.0$, so that the system has excitable dynamics. Its state space is composed of a stable equilibrium, the only attractor, and two unstable equilibria, which create the excitability in this case. Excitability is a type of transient different from that seen for linear systems. Some trajectories are forced to go on long excursions (excitations) before converging to the stable equilibrium. We study more about this again in Chapter \ref{chap:multistability}.
+with all parameters and functions defined in detail in \chapref{chap:multistability}. The input current $I$ is chosen to be $I=2.0$, so that the system has excitable dynamics. Its state space is composed of a stable equilibrium, the only attractor, and two unstable equilibria, which create the excitability in this case. Excitability is a type of transient different from that seen for linear systems. Some trajectories are forced to go on long excursions (excitations) before converging to the stable equilibrium. We study more about this again in Chapter \ref{chap:multistability}.
 
 Besides equilibria, nonlinear systems can also have periodic solutions. These orbits oscillate in time and repeat after a certain period $T$ (Fig.~\ref{fig:method:attractors-nonlinear}D) and correspond to closed curves in state space (Fig.~ \ref{fig:method:attractors-nonlinear}C). In several cases these periodic solutions are isolated, in the sense that there are no other periodic orbits in some neighborhood around them. In that case, they are called limit cycles.
 The system used in this example is still the neuronal model of \eqnref{eq:inapk}, but with a different parameter $I=6.0$, which leads to the system now having a stable limit cycle. We see in this figure again an example of a long transient, with the trajectory initially going on a long excursion before converging to the limit cycle.
@@ -174,7 +174,7 @@ But the good news don't stop here! There is the Hartman-Grobman theorem, which s
 
 Stating the theorem more formally, suppose a hyperbolic equilibrium $x^\star \in M$ such that $f(x^\star) = 0$ and such that all its eigenvalues are nonzero. Then, there is a neighborhood $N$ of $x^\star$ and a homeomorphism $h: N\to M$ such that \cite{argyrisbook}
 \begin{itemize}
-    \item $h(x^\star) = 0$
+    \item $h(x^\star) = 0$,
     \item the flow $\dot{x} = f(x)$ in $N$ is topologically conjugate to the flow of the linearization $\dot{y} = A y$ by the continuous map $y = h(x)$. Topologically conjugate basically meaning a change of coordinates.
 \end{itemize}
 
@@ -345,22 +345,22 @@ An example of a planar system with this bifurcation is due to Sandstede \cite{sa
 The origin is a saddle which, at $\alpha=0$, has eigenvalues $\lambda_1 =1$ and $\lambda_2 = -3$ - its saddle quantity is therefore $\sigma = 2 < 0$, so the limit cycle that emerges here is stable \cite{kuznetsov}.
 
 
-\section{Basics of network theory}\label{method:sec:network}
+\section{Basics of Network Theory}\label{method:sec:network}
 An incredibly powerful abstraction about real-world systems can be achieved through the concept of networks, here used as synonyms for graphs, which are composed of nodes that are connected by edges. Networks can represent friendships - with people being the nodes and their friendships being the edges -, brain circuits - neurons are nodes, synapses are edges \cite{bullmore2009complex} -, ecological systems - for instance, ecological regions are nodes, and migrations between them are edges \cite{landi2018complexity}. In this thesis we make use of this abstraction and consider that the nodes are dynamical systems $\dot{x}_i = f(x_i)$, $x_i \in \mathbb{R}^n$ on their own, with certain interactions between them. Together, the whole networked system is a dynamical system of the form:
 %
 \begin{align}
-    \dot{x}_i = f(x_i) + \sum_{j=1}^N A_{ij} g(x_j, x_i),\; i=1,\ldots,N
+    \dot{x}_i = f(x_i) + \sum_{j=1}^N A_{ij} g(x_j, x_i),\; i=1,\ldots,N,
     \label{eq:network-general}
 \end{align} 
 %
 with $N$ units, whose interactions are described by the function $g$. The adjacency matrix $A_{ij}$ describes the strength of interactions between the units. Typically, it is a binary matrix, such that $A_{ij} = 1$ if unit $i$ receives a connection from unit $j$ and $A_{ij} = 0$ otherwise. It can also be weighted, in which case the entry $A_{ij} \in \mathbb{R}$ represents the strength of interactions. Usually for binary matrices, we rewrite \eqnref{eq:network-general} as 
 %
 \begin{align}
-    \dot{x}_i = f(x_i) + \sum_{j \in \Omega_i} g(x_j, x_i),\; i=1,\ldots,N
+    \dot{x}_i = f(x_i) + \sum_{j \in \Omega_i} g(x_j, x_i),\; i=1,\ldots,N,
     \label{eq:network-general-neighborhood}
 \end{align} 
 %
-where $\Omega_i = \{j \in [1, N]: A_{ij} = 1\}$ is called the neighborhood of unit i. The number of elements in $\Omega_i$, i.e., the number of connections of unit i, is called the unit's degree.
+where $\Omega_i = \{j \in [1, N]: A_{ij} = 1\}$ is called the neighborhood of node i. The number of elements in $\Omega_i$, i.e., the number of connections of unit i, is called the unit's degree.
 
 The adjacency matrix $A$ describes the topology of the network, meaning the architecture of the connections. There are many types of topologies, which describe well different types of systems. One type of topology is the regular ring, also called $k$-nearest-neighbors topology. As the name suggests, one can think of all nodes arranged on a ring, with each node connected to the $k$ nearest nodes on each side. Another type of topology is the random ring, in which connections are chosen at random between the nodes. One consider the regular and random rings as two extremes, and interpolate between them in what is called the Watts-Strogatz algorithm \cite{watts1998collective}. In this case, one starts with a $k$-nearest neighbor ring of nodes. Then, choose connections with a probability $p$. For each chosen connection $(i,j)$, keep the source node $i$, randomly choose a new node $j^\prime$ in the network, and switch $(i,j)$ to $(i,j^\prime)$. This effectively switches short-range connections (between nearest nodes) to long range connections (between nodes that are potentially far away). For this rewiring probability $p$ at $p=0$ one has the regular topology; for $p=1$ one has the random topology. 
 
@@ -372,7 +372,7 @@ In \chapref{chap:malleability} we also study distance-dependent networks. The ad
     A_{ij} = \frac{1}{\eta(\alpha)(d_{ij})^\alpha},
 \end{align}
 
-with $d_{ij} = \min(|i-j|, N-|i-j|)$ is the edge distance along the ring, and $\eta(\alpha) = \sum_{j=1}^{N^\prime} \frac{2}{j^\alpha}$ is a normalization term. All units are thus connected, but the weight of the connections decays with the distance following the $\alpha$ parameter. This parameter can also be called the locality parameter, since $\alpha=0$ leads to an all-to-all equally connected network and $\alpha\to\infty$ leads to a first-nearest-neighbor topology ($k=1$). In between we get distance-dependent weights.
+with $d_{ij} = \min(|i-j|, N-|i-j|)$ is the edge distance along the ring, and $\eta(\alpha) = \sum_{j=1}^{N^\prime} \frac{2}{j^\alpha}$ is a normalization term, with $N^\prime = \frac{N-1}{2}$ denoting half the amount of units to which $i$ is connected to (one half of the ring's length, discounting the unit $i$ itself). All units are thus connected, but the weight of the connections decays with the distance following the $\alpha$ parameter. This parameter can also be called the locality parameter, since $\alpha=0$ leads to an all-to-all equally connected network and $\alpha\to\infty$ leads to a first-nearest-neighbor topology ($k=1$). In between we get distance-dependent weights.
 %
 \begin{figure}
     \centering
@@ -390,21 +390,21 @@ The Kuramoto model, written in general as
     \label{eq:kuramoto-general}
 \end{align}
 %
-serves as a paradigm for studies on synchronization phenomena \cite{boccaletti2018synchronization}. Its usefulness comes it being simple enough to be mathematically tractable, sufficiently generic, and also complex enough to display interesting dynamics. To reach it, Kuramoto started from generic oscillators near supercritical Hopf bifurcations. Each unit $i$ follows 
+serves as a paradigm for studies on synchronization phenomena \cite{boccaletti2018synchronization}. Its usefulness comes it being simple enough to be mathematically tractable, sufficiently generic, and also complex enough to display interesting dynamics. To reach it, Kuramoto started from generic oscillators near supercritical Hopf bifurcations (also called Stuart-Landau oscillators). Each unit $i$ follows 
 \begin{align}
-    \dot{Q}_i = (i\omega + \alpha) Q_i - \beta|Q_i|^2 Q_i,
+    \dot{Q}_i = (\imath \omega + \alpha) Q_i - \beta|Q_i|^2 Q_i,
 \end{align}
 %
 where $\omega$ is the natural frequency of the oscillator, $\alpha>0$ and $\beta>0$ are parameters and $Q \in \mathbb{C}$. This is the normal form of the Hopf bifurcation we saw in \secref{method:bifurcations} but written in complex numbers. Kuramoto chose a simple and natural way to couple these oscillators: via a common coupling term, that is proportional to the value $Q_i$ of each oscillator: 
 %
 \begin{align}
-    \dot{Q}_i = (i\omega + \alpha) Q_i - \beta|Q_i|^2 Q_i + \frac{K}{N} \sum_{j=1}^{N} Q_j,
+    \dot{Q}_i = (\imath \omega + \alpha) Q_i - \beta|Q_i|^2 Q_i + \frac{K}{N} \sum_{j=1}^{N} Q_j,
     \label{eq:stuartlandaucoupled}
 \end{align}
 %
 which corresponds to an all-to-all topology, with $K$ being the coupling strength. Here the natural frequencies are assumed to be drawn from a certain distribution $g(\omega)$, usually unimodal.
 
-One can then rewrite \eqnref{eq:stuartlandaucoupled} in polar coordinates by using $Q_i = e^{i \theta_i} \rho_i$. Substituting it one gets the equations 
+One can then rewrite \eqnref{eq:stuartlandaucoupled} in polar coordinates by using $Q_i = e^{\imath \theta_i} \rho_i$. Substituting it one gets the equations 
 \begin{align}
     &\dot{\rho}_i = (\alpha - \beta \rho_i^2) + \frac{K}{N} \sum_{j=1}^{N} \rho_j \cos(\theta_j - \theta_k) \\
     &\dot{\theta}_i = \omega_i + \frac{K}{N}\sum_{j=1}^{N} \frac{\rho_j}{\rho_k} \sin(\theta_j - \theta_k).
@@ -419,7 +419,7 @@ Kuramoto studied these equations in the limit of $\alpha\to\infty$ and $\beta\to
 
 A very useful way to quantify the spread of the phases $\theta_i$ is through the complex order parameter:
 \begin{align}
-    Z = r e^{i\psi} = \frac{1}{N} \sum_{j=1}^{N} e^{i \theta_j},
+    Z = r e^{\imath \psi} = \frac{1}{N} \sum_{j=1}^{N} e^{\imath \theta_j},
     \label{eq:kuramoto-order-parameter}
 \end{align}
 %
@@ -427,7 +427,7 @@ which corresponds to the centroid of the phases and therefore characterizes well
 
 The angle $\psi$ corresponds to the average phase of the units. Using this order parameter, the Kuramoto model can be rewritten as
 \begin{align}
-    \dot{\theta}_i = \omega_i + Kr\sin(\phi - \theta_i), \; i=1,\ldots,N.
+    \dot{\theta}_i = \omega_i + Kr\sin(\psi - \theta_i), \; i=1,\ldots,N.
 \end{align} 
 
 This form highlights the mean-field character of the model \cite{strogatz2000from}. The oscillators now interact through the mean-field quantities $r$ and $\psi$. The phase $\theta_i$ is pulled towards the mean phase $\psi$. And the effective coupling strength becomes $Kr$, so it is modulated by the degree of phase synchronization $r$. This creates a positive feedback loop, wherein as the system phase synchronizes more, the coupling becomes stronger and so the system tends to phase synchronize even more. This is a very clear mechanism for spontaneous synchronization \cite{strogatz2000from}. 
@@ -447,6 +447,13 @@ Near $K=K_c$, this branch has a square-root behavior: $r \propto \sqrt{K-K_c}$. 
 \end{align}
 %
 as illustrated in \figref{fig:method:kuramoto}C. One can verify this behavior numerically: \figref{fig:method:kuramoto}D illustrates the results of simulations for a network of $N=1000$ oscillators under a Gaussian distribution with zero mean and unitary standard deviation. The $y$-axis denotes the time-averaged behavior of $r(t)$, since $r(t)$ oscillates in time for these finite networks.
+%
+\begin{figure}
+    \includegraphics[width=\textwidth]{kuramoto/kuramoto-thesis-figure.png}
+    \caption{\textbf{Basics of Kuramoto oscillators}. Panels A and B respectively illustrate the concept of weak and strong phase synchronization (PS), captured by the complex order parameter $Z$ (\eqnref{eq:kuramoto-order-parameter}). The radius $r$ denotes the degree of PS and the angle $\psi$ denotes the centroid of the phases - respectively, they correspond to the magnitude and direction of the arrow in the figure. Panel C illustrates the behavior of the order parameter $r$ as a function of coupling strength $K$ (see \eqnref{eq:kuramoto-og}) for a Lorentzian distribution of the frequencies (\eqnref{eq:kuramoto-lorentzian}). The blue line denotes the critical coupling strength for the transition to synchronization. Panel D illustrates a similar behavior obtained from numerical simulations in a network of size $N=1000$ under a Gaussian distribution of the natural frequencies. Only one attractor is ever observed in the simulations. Going now to homogeneous frequencies, panel E illustrates the fraction fs of randomly chosen initial conditions that converge to each $q$ twisted state, in a network with $k=2$ nearest neighbors. Panel F looks at this fraction for the completely synchronized state ($q=0$) only, under different values of $k$. Panels E and F replicate results from \cite{wiley2006the}. }
+    \label{fig:method:kuramoto}
+\end{figure}
+
 
 Many open questions remain from the treatment just shown, such as the stability of these branches. There have been many extensions made to this model \cite{acebron2005kuramoto, rodrigues2016the}. In the context of multistability, some basic results come from studying an even simpler configuration, where the units are identical and coupled in a $k$-nearest-neighbor ring.
 
@@ -480,10 +487,3 @@ where $C \in \mathbb{R}$ is a constant and $q \in \mathbb{Z}$ is the twisting nu
 
 
 Studies have also been made for other topologies. Some important results have accumulated to show that networks with homogeneous frequencies are guaranteed to globally synchronize if the nodes are sufficiently well-connected (if the networks are sufficiently dense). Taking the least connected node, with degree $k_\mathrm{min}$, and comparing it with the maximum possible degree of the network, $N-1$, one can define the network's connectivity $\mu$ as the ratio $\mu = k_\mathrm{min}/(N-1)$. Then, in networks with $\mu > \mu_c$, the only attractor is the fully synchronized state. Estimates have that $\mu \in [0.6818, 0.7889]$ \cite{taylor2012there, townsend2020dense}. 
-%
-\begin{figure}
-    \includegraphics[width=\textwidth]{kuramoto/kuramoto-thesis-figure.png}
-    \caption{\textbf{Basics of Kuramoto oscillators}. Panels A and B respectively illustrate the concept of weak and strong phase synchronization (PS), captured by the complex order parameter $Z$ (\eqnref{eq:kuramoto-order-parameter}). The radius $r$ denotes the degree of PS and the angle $\psi$ denotes the centroid of the phases - respectively, they correspond to the magnitude and direction of the arrow in the figure. Panel C illustrates the behavior of the order parameter $r$ as a function of coupling strength $K$ (see \eqnref{eq:kuramoto-og}) for a Lorentzian distribution of the frequencies (\eqnref{eq:kuramoto-lorentzian}). The blue line denotes the critical coupling strength for the transition to synchronization. Panel D illustrates a similar behavior obtained from numerical simulations in a network of size $N=1000$ under a Gaussian distribution of the natural frequencies. Only one attractor is ever observed in the simulations. Going now to homogeneous frequencies, panel E illustrates the fraction fs of randomly chosen initial conditions that converge to each $q$ twisted state, in a network with $k=2$ nearest neighbors. Panel F looks at this fraction for the completely synchronized state ($q=0$) only, under different values of $k$. Panels E and F replicate results from \cite{wiley2006the}. }
-    \label{fig:method:kuramoto}
-\end{figure}
-

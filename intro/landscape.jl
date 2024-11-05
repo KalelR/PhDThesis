@@ -1,4 +1,4 @@
-using GLMakie, Random
+using GLMakie, Random, ColorSchemes, Colors
 
 
 """
@@ -98,6 +98,7 @@ end
 using ColorSchemes
 # Use a factor > 1 to brighten (e.g., 1.2)
 brighter_colormap = brighten_colormap(cmap, 1.2)
+# brighter_colormap = brighten_colormap(cmap, 1.3)
 
 
 # Plot the surface
@@ -127,7 +128,8 @@ function plot_trajectory!(x0, y0, x1, y1; t_values = range(0, 1, length=100), pl
         push!(trajectory_y, y_t)
         push!(trajectory_z, landscape([x_t], [y_t])[1])
     end
-    lift=0.2
+    # lift=0.2
+    lift=0.25
     lines!(trajectory_x, trajectory_y, trajectory_z.+lift, color=color_traj, linewidth=3)
     if plot_ball
     scatter!(x0, y0, landscape([x0], [y0])[1].+lift; color=color_ball, markersize=15)
@@ -139,16 +141,20 @@ plot_trajectory!(2.5, 2.5, 0.5, 3.5; plot_ball=false, color_traj=:green)
 
 
 plot_trajectory!(1.5, 1.5, 2.5, 0.0; plot_ball=true, color_traj=:red)
+# plot_trajectory!(1.5, 1.5, 0.5, 3.5; plot_ball=false, color_traj=:green)
 plot_trajectory!(1.5, 1.5, 0.5, 3.5; plot_ball=false, color_traj=:green)
 
 plot_trajectory!(5.0, -0.5, 2.5, 0.0; plot_ball=true, color_traj=:red)
-plot_trajectory!(5.0, -0.5, 6.3, -0.5; plot_ball=false, color_traj=:green)
+# plot_trajectory!(5.0, -0.5, 6.3, -0.5; plot_ball=false, color_traj=:green)
+plot_trajectory!(5.0, -0.5, 6.3, -0.5; plot_ball=false, color_traj=:magenta)
 
 plot_trajectory!(3.5, -3, 2.5, 0.0; plot_ball=true, color_traj=:red)
-plot_trajectory!(3.5, -3, 3.5, -5; plot_ball=false, color_traj=:green)
+# plot_trajectory!(3.5, -3, 3.5, -5; plot_ball=false, color_traj=:green)
+plot_trajectory!(3.5, -3, 3.5, -5; plot_ball=false, color_traj=:yellow)
 
 plot_trajectory!(1.5, -1.5, 2.5, 0.0; plot_ball=true, color_traj=:red)
-plot_trajectory!(1.5, -1.5, -1.0, -3.0; plot_ball=true, color_traj=:green)
+# plot_trajectory!(1.5, -1.5, -1.0, -3.0; plot_ball=true, color_traj=:green)
+plot_trajectory!(1.5, -1.5, -1.0, -3.0; plot_ball=true, color_traj=:cyan)
 
 
 

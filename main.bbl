@@ -271,13 +271,13 @@ George Datseris, Kalel~Luiz Rossi, and Alexandre Wagemakers.
 \newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
   33(7):073151, 2023.
 
-\bibitem{budzinski2023an}
-Roberto~C Budzinski, Alexandra~N Busch, Samuel Mestern, Erwan Martin, Luisa H~B
-  Liboni, Federico~W Pasini, Ján Mináč, Todd Coleman, Wataru Inoue, and
-  Lyle~E Muller.
+\bibitem{budzinski2024exact}
+Roberto~C. Budzinski, Alexandra~N. Busch, Samuel Mestern, Erwan Martin, Luisa
+  H.~B. Liboni, Federico~W. Pasini, Ján Mináč, Todd Coleman, Wataru Inoue,
+  and Lyle~E. Muller.
 \newblock {An exact mathematical description of computation with transient
   spatiotemporal dynamics in a complex-valued neural network}.
-\newblock {\em arXiv}, 2023.
+\newblock {\em Communications Physics}, 7(1):239, 2024.
 
 \bibitem{koch2024biological}
 Daniel Koch, Akhilesh Nandan, Gayathri Ramesan, and Aneta Koseska.
@@ -779,7 +779,7 @@ Tomislav Stankovski, Tiago Pereira, Peter V.~E. McClintock, and Aneta
 Alessandro Loppini, Matthias Braun, Simonetta Filippi, and Morten~Gram
   Pedersen.
 \newblock {Mathematical modeling of gap junction coupling and electrical
-  activity in human β-cells}.
+  activity in human {\textbeta}-cells}.
 \newblock {\em Physical Biology}, 12(6):066002, 2015.
 
 \bibitem{kepler1990the}
@@ -1755,6 +1755,14 @@ Gabriel~B. Benigno, Roberto~C. Budzinski, Zachary~W. Davis, John~H. Reynolds,
 \newblock {Waves traveling over a map of visual space can ignite short-term
   predictions of sensory input}.
 \newblock {\em Nature Communications}, 14(1):3409, 2023.
+
+\bibitem{budzinski2023an}
+Roberto~C Budzinski, Alexandra~N Busch, Samuel Mestern, Erwan Martin, Luisa H~B
+  Liboni, Federico~W Pasini, Ján Mináč, Todd Coleman, Wataru Inoue, and
+  Lyle~E Muller.
+\newblock {An exact mathematical description of computation with transient
+  spatiotemporal dynamics in a complex-valued neural network}.
+\newblock {\em arXiv}, 2023.
 
 \bibitem{liboni2023image}
 Luisa H~B Liboni, Roberto~C Budzinski, Alexandra~N Busch, Sindy Löwe, Thomas~A

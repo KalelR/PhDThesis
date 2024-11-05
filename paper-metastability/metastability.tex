@@ -262,9 +262,9 @@ Therefore, we believe that the perspective we provide here connects observations
 \section*{Acknowledgments}
 We would like to thank Klaus Lehnertz, James A. Yorke, Niccolò Zagli, Nicolás Rubido, and Péter Koltai for inspiring discussions. In particular we would like to deeply thank Klaus Lehnertz for comments on this manuscript. K.L.R. was supported by the German Academic Exchange Service (DAAD). E.S.M and U.F. acknowledge the support by the Deutsche Forschungsgemeinschaft (DFG) via the project number 454054251. B.R.R.B. acknowledges the support of the São Paulo Research Foundation (FAPESP), Brazil, Proc. 2018/03211-6 and 2021/09839-0. This work was partially supported by BrainsCAN at Western University through the Canada First Research Excellence Fund (CFREF), the NSF through a NeuroNex award (\#2015276), the Natural Sciences and Engineering Research Council of Canada (NSERC) grant R0370A01, and the Western Academy for Advanced Research. R.C.B gratefully acknowledges the Western Institute for Neuroscience Clinical Research Postdoctoral Fellowship.
 
-\section*{Supplementary material}
-\subsection{Models}
-The code used to generate Figure 4 in the main text is available in the GitHub repository \cite{rossi2022repository}. The data used can be made available upon request. All the code is done in the Julia computational language \cite{bezanson2017julia}; integration was done with the package DifferentialEquations.jl \cite{rackauckas2016differential}, with the aid of packages DynamicalSystems.jl \cite{datseris2018dynamical} and DrWatson.jl \cite{datseris2020drwatson}. Plots were made with Makie.jl \cite{danisch2021makie}.
+\section*{Additional information}
+\subsection*{Models}
+The code used to generate Figure 4.4 in the main text is available in the GitHub repository \cite{rossi2022repository}. The data used can be made available upon request. All the code is done in the Julia computational language \cite{bezanson2017julia}; integration was done with the package DifferentialEquations.jl \cite{rackauckas2016differential}, with the aid of packages DynamicalSystems.jl \cite{datseris2018dynamical} and DrWatson.jl \cite{datseris2020drwatson}. Plots were made with Makie.jl \cite{danisch2021makie}.
 
 \subsubsection{Noisy bistable system}
 The noisy bistable system, also known as the noisy Duffing oscillator \cite{strogatz2002nonlinear}, is given by:
@@ -329,7 +329,7 @@ with
 \end{equation}
 The parameters used for the chaotic saddle were $b = 0.9$, $c = 0.4$, $d = 6.0$, $a = 1.003$. The saddle exists due to a boundary crisis, which occurs for a slightly smaller $a$. For reference, the value of $a$ used to obtain a chaotic attractor was $a = 0.997$. The initial condition was $(2.97, 4.15)$. This is the only mechanism in the figure where the initial condition is important: to reproduce the behavior, the trajectories need to be initialized near the chaotic saddle.
 
-\subsection{Brief notion of almost-invariant sets} \label{sec:brief-notion}
+\subsection*{Brief notion of almost-invariant sets} \label{sec:brief-notion}
 Following Ref. \cite{froyland2005statistically}, we provide a brief notion of almost-invariant sets for a mapping $T : X \to X$, with $X$ being the state space, but it can also be formulated for flows \cite{froyland2009almost}. To formalize the notion of almost-invariant sets, we need to first define a natural measure on any set $A$. This corresponds to the fraction of time that typical trajectories, starting in $x \in X$, spend on that set along their evolution:
 \begin{equation}
     \mu (A) = \lim_{N\to\infty} \frac{\# \{i \in [0, N-1] : T^i x \in A \} }{N}

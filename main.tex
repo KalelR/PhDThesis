@@ -34,6 +34,8 @@
 \newcommand{\secref}[1]{Sec.~\ref{#1}}
 \newcommand{\chapref}[1]{Chap.~\ref{#1}}
 \usepackage{titlesec}
+\usepackage{textgreek}
+\usepackage{pdfpages}
     
 \titleformat{\chapter} % Customize \chapter command
 [display]            % Display style, which separates "Chapter X" and title
@@ -44,35 +46,31 @@
 \titlespacing*{\chapter}{0pt}{-20pt}{20pt} % Adjusts position of chapter title
 
 \graphicspath{ {paper-malleability} {paper-metastability/figures} {methodology/} {paper-multistability/30oct} }
-% \bibliographystyle{plain} 
 \bibliographystyle{unsrt} 
 
 \begin{document}
 % \include{title.tex}
 \include{title-submission.tex}
 
+\include{cool-phrase}
 \tableofcontents
 
 \include{publications.tex}
-
 \include{abstract.tex}
 \include{abstract-german.tex}
-
-
 \include{intro} %1
 \include{methodology} %2
-
 \include{paper-malleability/malleability.tex} %3 chap:malleability
 \include{paper-multistability/30oct/multistability.tex} %call it chap:multistability
 \include{paper-metastability/metastability.tex} %5 chap:metastability
-
 \include{conclusions}
 
 
 \bibliography{rossi-thesis.bib}
 
 \include{acknowledgments}
-\include{declaration-independence}
+% \include{declaration-independence-signed.pdf}
+\includepdf[pages=-]{declaration-independence-signed.pdf}
 
 \end{document} 
  

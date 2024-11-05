@@ -1,5 +1,4 @@
 
-
 # optional to-do
 ## methodology
 1. Kuramoto: twisted states, basin size & eigenvalues in Mihara 2022

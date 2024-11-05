@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.13)  4 NOV 2024 15:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.13)  5 NOV 2024 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,69 +472,479 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \titlewidthlast=\dimen262
 \titlewidthfirst=\dimen263
 )
+(/usr/share/texlive/texmf-dist/tex/latex/textgreek/textgreek.sty
+Package: textgreek 2011/10/09 v0.7 Greek symbols in text
+Package textgreek Info: Loading the definitions for the Greek fontencoding. on 
+input line 39.
+
+(/usr/share/texlive/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
+File: lgrenc.def 2020/10/13 2.0 LGR Greek font encoding definitions
+Now handling font encoding LGR ...
+... processing UTF-8 mapping file for font encoding LGR
+
+(/usr/share/texlive/texmf-dist/tex/latex/greek-inputenc/lgrenc.dfu
+File: lgrenc.dfu 2019/07/11 1.7 UTF-8 support for Greek
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+0259 (decimal 601)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+0374 (decimal 884)
+   defining Unicode char U+0375 (decimal 885)
+   defining Unicode char U+037A (decimal 890)
+   defining Unicode char U+037E (decimal 894)
+   defining Unicode char U+0384 (decimal 900)
+   defining Unicode char U+0385 (decimal 901)
+   defining Unicode char U+0386 (decimal 902)
+   defining Unicode char U+0387 (decimal 903)
+   defining Unicode char U+0388 (decimal 904)
+   defining Unicode char U+0389 (decimal 905)
+   defining Unicode char U+038A (decimal 906)
+   defining Unicode char U+038C (decimal 908)
+   defining Unicode char U+038E (decimal 910)
+   defining Unicode char U+038F (decimal 911)
+   defining Unicode char U+0390 (decimal 912)
+   defining Unicode char U+0391 (decimal 913)
+   defining Unicode char U+0392 (decimal 914)
+   defining Unicode char U+0393 (decimal 915)
+   defining Unicode char U+0394 (decimal 916)
+   defining Unicode char U+0395 (decimal 917)
+   defining Unicode char U+0396 (decimal 918)
+   defining Unicode char U+0397 (decimal 919)
+   defining Unicode char U+0398 (decimal 920)
+   defining Unicode char U+0399 (decimal 921)
+   defining Unicode char U+039A (decimal 922)
+   defining Unicode char U+039B (decimal 923)
+   defining Unicode char U+039C (decimal 924)
+   defining Unicode char U+039D (decimal 925)
+   defining Unicode char U+039E (decimal 926)
+   defining Unicode char U+039F (decimal 927)
+   defining Unicode char U+03A0 (decimal 928)
+   defining Unicode char U+03A1 (decimal 929)
+   defining Unicode char U+03A3 (decimal 931)
+   defining Unicode char U+03A4 (decimal 932)
+   defining Unicode char U+03A5 (decimal 933)
+   defining Unicode char U+03A6 (decimal 934)
+   defining Unicode char U+03A7 (decimal 935)
+   defining Unicode char U+03A8 (decimal 936)
+   defining Unicode char U+03A9 (decimal 937)
+   defining Unicode char U+03AA (decimal 938)
+   defining Unicode char U+03AB (decimal 939)
+   defining Unicode char U+03AC (decimal 940)
+   defining Unicode char U+03AD (decimal 941)
+   defining Unicode char U+03AE (decimal 942)
+   defining Unicode char U+03AF (decimal 943)
+   defining Unicode char U+03B0 (decimal 944)
+   defining Unicode char U+03B1 (decimal 945)
+   defining Unicode char U+03B2 (decimal 946)
+   defining Unicode char U+03B3 (decimal 947)
+   defining Unicode char U+03B4 (decimal 948)
+   defining Unicode char U+03B5 (decimal 949)
+   defining Unicode char U+03B6 (decimal 950)
+   defining Unicode char U+03B7 (decimal 951)
+   defining Unicode char U+03B8 (decimal 952)
+   defining Unicode char U+03B9 (decimal 953)
+   defining Unicode char U+03BA (decimal 954)
+   defining Unicode char U+03BB (decimal 955)
+   defining Unicode char U+03BC (decimal 956)
+   defining Unicode char U+03BD (decimal 957)
+   defining Unicode char U+03BE (decimal 958)
+   defining Unicode char U+03BF (decimal 959)
+   defining Unicode char U+03C0 (decimal 960)
+   defining Unicode char U+03C1 (decimal 961)
+   defining Unicode char U+03C2 (decimal 962)
+   defining Unicode char U+03C3 (decimal 963)
+   defining Unicode char U+03C4 (decimal 964)
+   defining Unicode char U+03C5 (decimal 965)
+   defining Unicode char U+03C6 (decimal 966)
+   defining Unicode char U+03C7 (decimal 967)
+   defining Unicode char U+03C8 (decimal 968)
+   defining Unicode char U+03C9 (decimal 969)
+   defining Unicode char U+03CA (decimal 970)
+   defining Unicode char U+03CB (decimal 971)
+   defining Unicode char U+03CC (decimal 972)
+   defining Unicode char U+03CD (decimal 973)
+   defining Unicode char U+03CE (decimal 974)
+   defining Unicode char U+03D0 (decimal 976)
+   defining Unicode char U+03D1 (decimal 977)
+   defining Unicode char U+03D5 (decimal 981)
+   defining Unicode char U+03D6 (decimal 982)
+   defining Unicode char U+03D8 (decimal 984)
+   defining Unicode char U+03D9 (decimal 985)
+   defining Unicode char U+03DA (decimal 986)
+   defining Unicode char U+03DB (decimal 987)
+   defining Unicode char U+03DC (decimal 988)
+   defining Unicode char U+03DD (decimal 989)
+   defining Unicode char U+03DF (decimal 991)
+   defining Unicode char U+03E0 (decimal 992)
+   defining Unicode char U+03E1 (decimal 993)
+   defining Unicode char U+03F0 (decimal 1008)
+   defining Unicode char U+03F1 (decimal 1009)
+   defining Unicode char U+03F4 (decimal 1012)
+   defining Unicode char U+03F5 (decimal 1013)
+   defining Unicode char U+1F00 (decimal 7936)
+   defining Unicode char U+1F01 (decimal 7937)
+   defining Unicode char U+1F02 (decimal 7938)
+   defining Unicode char U+1F03 (decimal 7939)
+   defining Unicode char U+1F04 (decimal 7940)
+   defining Unicode char U+1F05 (decimal 7941)
+   defining Unicode char U+1F06 (decimal 7942)
+   defining Unicode char U+1F07 (decimal 7943)
+   defining Unicode char U+1F08 (decimal 7944)
+   defining Unicode char U+1F09 (decimal 7945)
+   defining Unicode char U+1F0A (decimal 7946)
+   defining Unicode char U+1F0B (decimal 7947)
+   defining Unicode char U+1F0C (decimal 7948)
+   defining Unicode char U+1F0D (decimal 7949)
+   defining Unicode char U+1F0E (decimal 7950)
+   defining Unicode char U+1F0F (decimal 7951)
+   defining Unicode char U+1F10 (decimal 7952)
+   defining Unicode char U+1F11 (decimal 7953)
+   defining Unicode char U+1F12 (decimal 7954)
+   defining Unicode char U+1F13 (decimal 7955)
+   defining Unicode char U+1F14 (decimal 7956)
+   defining Unicode char U+1F15 (decimal 7957)
+   defining Unicode char U+1F18 (decimal 7960)
+   defining Unicode char U+1F19 (decimal 7961)
+   defining Unicode char U+1F1A (decimal 7962)
+   defining Unicode char U+1F1B (decimal 7963)
+   defining Unicode char U+1F1C (decimal 7964)
+   defining Unicode char U+1F1D (decimal 7965)
+   defining Unicode char U+1F20 (decimal 7968)
+   defining Unicode char U+1F21 (decimal 7969)
+   defining Unicode char U+1F22 (decimal 7970)
+   defining Unicode char U+1F23 (decimal 7971)
+   defining Unicode char U+1F24 (decimal 7972)
+   defining Unicode char U+1F25 (decimal 7973)
+   defining Unicode char U+1F26 (decimal 7974)
+   defining Unicode char U+1F27 (decimal 7975)
+   defining Unicode char U+1F28 (decimal 7976)
+   defining Unicode char U+1F29 (decimal 7977)
+   defining Unicode char U+1F2A (decimal 7978)
+   defining Unicode char U+1F2B (decimal 7979)
+   defining Unicode char U+1F2C (decimal 7980)
+   defining Unicode char U+1F2D (decimal 7981)
+   defining Unicode char U+1F2E (decimal 7982)
+   defining Unicode char U+1F2F (decimal 7983)
+   defining Unicode char U+1F30 (decimal 7984)
+   defining Unicode char U+1F31 (decimal 7985)
+   defining Unicode char U+1F32 (decimal 7986)
+   defining Unicode char U+1F33 (decimal 7987)
+   defining Unicode char U+1F34 (decimal 7988)
+   defining Unicode char U+1F35 (decimal 7989)
+   defining Unicode char U+1F36 (decimal 7990)
+   defining Unicode char U+1F37 (decimal 7991)
+   defining Unicode char U+1F38 (decimal 7992)
+   defining Unicode char U+1F39 (decimal 7993)
+   defining Unicode char U+1F3A (decimal 7994)
+   defining Unicode char U+1F3B (decimal 7995)
+   defining Unicode char U+1F3C (decimal 7996)
+   defining Unicode char U+1F3D (decimal 7997)
+   defining Unicode char U+1F3E (decimal 7998)
+   defining Unicode char U+1F3F (decimal 7999)
+   defining Unicode char U+1F40 (decimal 8000)
+   defining Unicode char U+1F41 (decimal 8001)
+   defining Unicode char U+1F42 (decimal 8002)
+   defining Unicode char U+1F43 (decimal 8003)
+   defining Unicode char U+1F44 (decimal 8004)
+   defining Unicode char U+1F45 (decimal 8005)
+   defining Unicode char U+1F48 (decimal 8008)
+   defining Unicode char U+1F49 (decimal 8009)
+   defining Unicode char U+1F4A (decimal 8010)
+   defining Unicode char U+1F4B (decimal 8011)
+   defining Unicode char U+1F4C (decimal 8012)
+   defining Unicode char U+1F4D (decimal 8013)
+   defining Unicode char U+1F50 (decimal 8016)
+   defining Unicode char U+1F51 (decimal 8017)
+   defining Unicode char U+1F52 (decimal 8018)
+   defining Unicode char U+1F53 (decimal 8019)
+   defining Unicode char U+1F54 (decimal 8020)
+   defining Unicode char U+1F55 (decimal 8021)
+   defining Unicode char U+1F56 (decimal 8022)
+   defining Unicode char U+1F57 (decimal 8023)
+   defining Unicode char U+1F59 (decimal 8025)
+   defining Unicode char U+1F5B (decimal 8027)
+   defining Unicode char U+1F5D (decimal 8029)
+   defining Unicode char U+1F5F (decimal 8031)
+   defining Unicode char U+1F60 (decimal 8032)
+   defining Unicode char U+1F61 (decimal 8033)
+   defining Unicode char U+1F62 (decimal 8034)
+   defining Unicode char U+1F63 (decimal 8035)
+   defining Unicode char U+1F64 (decimal 8036)
+   defining Unicode char U+1F65 (decimal 8037)
+   defining Unicode char U+1F66 (decimal 8038)
+   defining Unicode char U+1F67 (decimal 8039)
+   defining Unicode char U+1F68 (decimal 8040)
+   defining Unicode char U+1F69 (decimal 8041)
+   defining Unicode char U+1F6A (decimal 8042)
+   defining Unicode char U+1F6B (decimal 8043)
+   defining Unicode char U+1F6C (decimal 8044)
+   defining Unicode char U+1F6D (decimal 8045)
+   defining Unicode char U+1F6E (decimal 8046)
+   defining Unicode char U+1F6F (decimal 8047)
+   defining Unicode char U+1F70 (decimal 8048)
+   defining Unicode char U+1F71 (decimal 8049)
+   defining Unicode char U+1F72 (decimal 8050)
+   defining Unicode char U+1F73 (decimal 8051)
+   defining Unicode char U+1F74 (decimal 8052)
+   defining Unicode char U+1F75 (decimal 8053)
+   defining Unicode char U+1F76 (decimal 8054)
+   defining Unicode char U+1F77 (decimal 8055)
+   defining Unicode char U+1F78 (decimal 8056)
+   defining Unicode char U+1F79 (decimal 8057)
+   defining Unicode char U+1F7A (decimal 8058)
+   defining Unicode char U+1F7B (decimal 8059)
+   defining Unicode char U+1F7C (decimal 8060)
+   defining Unicode char U+1F7D (decimal 8061)
+   defining Unicode char U+1F80 (decimal 8064)
+   defining Unicode char U+1F81 (decimal 8065)
+   defining Unicode char U+1F82 (decimal 8066)
+   defining Unicode char U+1F83 (decimal 8067)
+   defining Unicode char U+1F84 (decimal 8068)
+   defining Unicode char U+1F85 (decimal 8069)
+   defining Unicode char U+1F86 (decimal 8070)
+   defining Unicode char U+1F87 (decimal 8071)
+   defining Unicode char U+1F88 (decimal 8072)
+   defining Unicode char U+1F89 (decimal 8073)
+   defining Unicode char U+1F8A (decimal 8074)
+   defining Unicode char U+1F8B (decimal 8075)
+   defining Unicode char U+1F8C (decimal 8076)
+   defining Unicode char U+1F8D (decimal 8077)
+   defining Unicode char U+1F8E (decimal 8078)
+   defining Unicode char U+1F8F (decimal 8079)
+   defining Unicode char U+1F90 (decimal 8080)
+   defining Unicode char U+1F91 (decimal 8081)
+   defining Unicode char U+1F92 (decimal 8082)
+   defining Unicode char U+1F93 (decimal 8083)
+   defining Unicode char U+1F94 (decimal 8084)
+   defining Unicode char U+1F95 (decimal 8085)
+   defining Unicode char U+1F96 (decimal 8086)
+   defining Unicode char U+1F97 (decimal 8087)
+   defining Unicode char U+1F98 (decimal 8088)
+   defining Unicode char U+1F99 (decimal 8089)
+   defining Unicode char U+1F9A (decimal 8090)
+   defining Unicode char U+1F9B (decimal 8091)
+   defining Unicode char U+1F9C (decimal 8092)
+   defining Unicode char U+1F9D (decimal 8093)
+   defining Unicode char U+1F9E (decimal 8094)
+   defining Unicode char U+1F9F (decimal 8095)
+   defining Unicode char U+1FA0 (decimal 8096)
+   defining Unicode char U+1FA1 (decimal 8097)
+   defining Unicode char U+1FA2 (decimal 8098)
+   defining Unicode char U+1FA3 (decimal 8099)
+   defining Unicode char U+1FA4 (decimal 8100)
+   defining Unicode char U+1FA5 (decimal 8101)
+   defining Unicode char U+1FA6 (decimal 8102)
+   defining Unicode char U+1FA7 (decimal 8103)
+   defining Unicode char U+1FA8 (decimal 8104)
+   defining Unicode char U+1FA9 (decimal 8105)
+   defining Unicode char U+1FAA (decimal 8106)
+   defining Unicode char U+1FAB (decimal 8107)
+   defining Unicode char U+1FAC (decimal 8108)
+   defining Unicode char U+1FAD (decimal 8109)
+   defining Unicode char U+1FAE (decimal 8110)
+   defining Unicode char U+1FAF (decimal 8111)
+   defining Unicode char U+1FB0 (decimal 8112)
+   defining Unicode char U+1FB1 (decimal 8113)
+   defining Unicode char U+1FB2 (decimal 8114)
+   defining Unicode char U+1FB3 (decimal 8115)
+   defining Unicode char U+1FB4 (decimal 8116)
+   defining Unicode char U+1FB6 (decimal 8118)
+   defining Unicode char U+1FB7 (decimal 8119)
+   defining Unicode char U+1FB8 (decimal 8120)
+   defining Unicode char U+1FB9 (decimal 8121)
+   defining Unicode char U+1FBA (decimal 8122)
+   defining Unicode char U+1FBB (decimal 8123)
+   defining Unicode char U+1FBC (decimal 8124)
+   defining Unicode char U+1FBD (decimal 8125)
+   defining Unicode char U+1FBE (decimal 8126)
+   defining Unicode char U+1FBF (decimal 8127)
+   defining Unicode char U+1FC0 (decimal 8128)
+   defining Unicode char U+1FC1 (decimal 8129)
+   defining Unicode char U+1FC2 (decimal 8130)
+   defining Unicode char U+1FC3 (decimal 8131)
+   defining Unicode char U+1FC4 (decimal 8132)
+   defining Unicode char U+1FC6 (decimal 8134)
+   defining Unicode char U+1FC7 (decimal 8135)
+   defining Unicode char U+1FC8 (decimal 8136)
+   defining Unicode char U+1FC9 (decimal 8137)
+   defining Unicode char U+1FCA (decimal 8138)
+   defining Unicode char U+1FCB (decimal 8139)
+   defining Unicode char U+1FCC (decimal 8140)
+   defining Unicode char U+1FCD (decimal 8141)
+   defining Unicode char U+1FCE (decimal 8142)
+   defining Unicode char U+1FCF (decimal 8143)
+   defining Unicode char U+1FD0 (decimal 8144)
+   defining Unicode char U+1FD1 (decimal 8145)
+   defining Unicode char U+1FD2 (decimal 8146)
+   defining Unicode char U+1FD3 (decimal 8147)
+   defining Unicode char U+1FD6 (decimal 8150)
+   defining Unicode char U+1FD7 (decimal 8151)
+   defining Unicode char U+1FD8 (decimal 8152)
+   defining Unicode char U+1FD9 (decimal 8153)
+   defining Unicode char U+1FDA (decimal 8154)
+   defining Unicode char U+1FDB (decimal 8155)
+   defining Unicode char U+1FDD (decimal 8157)
+   defining Unicode char U+1FDE (decimal 8158)
+   defining Unicode char U+1FDF (decimal 8159)
+   defining Unicode char U+1FE0 (decimal 8160)
+   defining Unicode char U+1FE1 (decimal 8161)
+   defining Unicode char U+1FE2 (decimal 8162)
+   defining Unicode char U+1FE3 (decimal 8163)
+   defining Unicode char U+1FE4 (decimal 8164)
+   defining Unicode char U+1FE5 (decimal 8165)
+   defining Unicode char U+1FE6 (decimal 8166)
+   defining Unicode char U+1FE7 (decimal 8167)
+   defining Unicode char U+1FE8 (decimal 8168)
+   defining Unicode char U+1FE9 (decimal 8169)
+   defining Unicode char U+1FEA (decimal 8170)
+   defining Unicode char U+1FEB (decimal 8171)
+   defining Unicode char U+1FEC (decimal 8172)
+   defining Unicode char U+1FED (decimal 8173)
+   defining Unicode char U+1FEE (decimal 8174)
+   defining Unicode char U+1FEF (decimal 8175)
+   defining Unicode char U+1FF2 (decimal 8178)
+   defining Unicode char U+1FF3 (decimal 8179)
+   defining Unicode char U+1FF4 (decimal 8180)
+   defining Unicode char U+1FF6 (decimal 8182)
+   defining Unicode char U+1FF7 (decimal 8183)
+   defining Unicode char U+1FF8 (decimal 8184)
+   defining Unicode char U+1FF9 (decimal 8185)
+   defining Unicode char U+1FFA (decimal 8186)
+   defining Unicode char U+1FFB (decimal 8187)
+   defining Unicode char U+1FFC (decimal 8188)
+   defining Unicode char U+1FFD (decimal 8189)
+   defining Unicode char U+1FFE (decimal 8190)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+10144 (decimal 65860)
+   defining Unicode char U+10145 (decimal 65861)
+   defining Unicode char U+10146 (decimal 65862)
+   defining Unicode char U+10147 (decimal 65863)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
+File: greek-fontenc.def 2020/10/30 2.0 Common Greek font encoding definitions
+))
+Package textgreek Info: Loaded fontmap: {eur/*/*}{U/eur/*/*} {phv/*/*}{U/psy/*/
+*}. on input line 69.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/01/29 v0.5u Insert pages of external PDF documents (AM)
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen264
+\ESO@tempdimb=\dimen265
+
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+))
+\AM@pagewidth=\dimen266
+\AM@pageheight=\dimen267
+\AM@fboxrule=\dimen268
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count315
+\AM@pagebox=\box70
+\AM@global@opts=\toks28
+\AM@pagecnt=\count316
+\AM@toc@title=\toks29
+\c@AM@survey=\count317
+\AM@templatesizebox=\box71
+)
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 50.
+h' as default language. on input line 51.
  (./main.aux
-(./title-submission.aux) (./publications.aux) (./abstract.aux)
-(./abstract-german.aux) (./intro.aux) (./methodology.aux)
+(./title-submission.aux) (./cool-phrase.aux) (./publications.aux)
+(./abstract.aux) (./abstract-german.aux) (./intro.aux) (./methodology.aux)
 (./paper-malleability/malleability.aux)
 (./paper-multistability/30oct/multistability.aux
 
 LaTeX Warning: Label `sec:results' multiply defined.
 
 ) (./paper-metastability/metastability.aux) (./conclusions.aux)
-(./acknowledgments.aux) (./declaration-independence.aux))
+(./acknowledgments.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-\c@lstlisting=\count315
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
+LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 51.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 5
+1.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2021/12/07 v1.3c Standard LaTeX Color (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
+File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
+)
+LaTeX Font Info:    ... okay on input line 51.
+\c@lstlisting=\count318
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 149.
-)
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
 nary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 50.
+or `english'. on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count316
-\scratchdimen=\dimen264
-\scratchbox=\box70
-\nofMPsegments=\count317
-\nofMParguments=\count318
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count319
-\MPscratchDim=\dimen265
-\MPnumerator=\count320
-\makeMPintoPDFobject=\count321
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count319
+\scratchdimen=\dimen269
+\scratchbox=\box72
+\nofMPsegments=\count320
+\nofMParguments=\count321
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen270
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
+\everyMPtoPDFconversion=\toks31
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -546,17 +956,17 @@ e
 ))
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 50.
-Package gensymb Info: Math companion symbols declared on input line 50.
-LaTeX Info: Redefining \degree on input line 50.
-LaTeX Info: Redefining \celsius on input line 50.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/b/n on input line 51.
+Package gensymb Info: Math companion symbols declared on input line 51.
+LaTeX Info: Redefining \degree on input line 51.
+LaTeX Info: Redefining \celsius on input line 51.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 50.
-LaTeX Info: Redefining \ohm on input line 50.
-Package gensymb Info: Using \textohm for \ohm on input line 50.
-LaTeX Info: Redefining \micro on input line 50.
-Package gensymb Info: Using \textmu for \micro on input line 50.
-Package hyperref Info: Link coloring OFF on input line 50.
+erthousand on input line 51.
+LaTeX Info: Redefining \ohm on input line 51.
+Package gensymb Info: Using \textohm for \ohm on input line 51.
+LaTeX Info: Redefining \micro on input line 51.
+Package gensymb Info: Using \textmu for \micro on input line 51.
+Package hyperref Info: Link coloring OFF on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -567,11 +977,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count322
+\c@section@level=\count325
 )
-LaTeX Info: Redefining \ref on input line 50.
-LaTeX Info: Redefining \pageref on input line 50.
-LaTeX Info: Redefining \nameref on input line 50.
+LaTeX Info: Redefining \ref on input line 51.
+LaTeX Info: Redefining \pageref on input line 51.
+LaTeX Info: Redefining \nameref on input line 51.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -612,10 +1022,19 @@ LaTeX Info: Redefining \nameref on input line 50.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 \openout2 = `title-submission.aux'.
 
+
 (./title-submission.tex
-<title/uni-oldenburg-logo.png, id=243, 770.94023pt x 431.4519pt>
+<title/uni-oldenburg-logo.png, id=231, 770.94023pt x 431.4519pt>
 File: title/uni-oldenburg-logo.png Graphic file (type png)
 <use title/uni-oldenburg-logo.png>
 Package pdftex.def Info: title/uni-oldenburg-logo.png  used on input line 6.
@@ -636,7 +1055,7 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 7.
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-<title/icbm-logo.png, id=245, 225.84375pt x 225.84375pt>
+<title/icbm-logo.png, id=233, 225.84375pt x 225.84375pt>
 File: title/icbm-logo.png Graphic file (type png)
 <use title/icbm-logo.png>
 Package pdftex.def Info: title/icbm-logo.png  used on input line 12.
@@ -645,13 +1064,30 @@ Package pdftex.def Info: title/icbm-logo.png  used on input line 12.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./title/uni-oldenburg-logo
-.png> <./title/icbm-logo.png>] [2]) (./main.toc
+.png> <./title/icbm-logo.png>] [2])
+\openout2 = `cool-phrase.aux'.
+
+ (./cool-phrase.texpdfTeX warning (ext4): destination with the same identifier 
+(name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 \end{titlepage}
+                     [1
+
+
+
+]) (./main.toc
 Overfull \hbox (6.87302pt too wide) in paragraph at lines 37--37
  [] [][]\OT1/cmr/bx/n/10.95 Transients ver-sus net-work in-ter-ac-tions give ri
 se to mul-ti-sta-bil-ity through 
  []
 
-[3
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.44 ... a two-unit network}{74}{subsection.4.3.2}
+                                                  % [2
 
 
 
@@ -659,44 +1095,45 @@ se to mul-ti-sta-bil-ity through
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [4]
+ [3]
 \openout2 = `publications.aux'.
 
- (./publications.tex [5
 
-]) [6]
+(./publications.tex [4
+
+]) [5]
 \openout2 = `abstract.aux'.
 
  (./abstract.tex
 Underfull \vbox (badness 1281) has occurred while \output is active []
 
- [7
+ [6
 
 
 
 ])
-[8]
+[7]
 \openout2 = `abstract-german.aux'.
 
  (./abstract-german.tex
 Underfull \vbox (badness 1281) has occurred while \output is active []
 
- [9
+ [8
 
 
 
 ])
-[10]
+[9]
 \openout2 = `intro.aux'.
 
  (./intro.tex
 Chapter 1.
-<intro/landscape.png, id=368, 2409.0pt x 2007.5pt>
+<intro/landscape.png, id=356, 2409.0pt x 2007.5pt>
 File: intro/landscape.png Graphic file (type png)
 <use intro/landscape.png>
 Package pdftex.def Info: intro/landscape.png  used on input line 6.
 (pdftex.def)             Requested size: 418.25368pt x 348.53026pt.
-[11
+[10
 
 
 
@@ -704,7 +1141,7 @@ Package pdftex.def Info: intro/landscape.png  used on input line 6.
 ]
 Underfull \vbox (badness 6944) has occurred while \output is active []
 
- [12pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+ [11pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -712,17 +1149,17 @@ l.15
       <./intro/landscape.png>]
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
- [13]
+ [12]
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
- [14]
+ [13]
 Underfull \vbox (badness 6592) has occurred while \output is active []
 
- [15]
+ [14]
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
- [16])
-[17]
+ [15])
+[16]
 \openout2 = `methodology.aux'.
 
  (./methodology.tex
@@ -734,13 +1171,13 @@ Overfull \hbox (22.46208pt too wide) in paragraph at lines 6--8
 0.95 x[]; x[]; [] ; x[]\OT1/cmr/m/n/10.95 )[] \OMS/cmsy/m/n/10.95 2
  []
 
-[18
+[17
 
 
 
 
 ]
-<methodology//equilibria-linear/hyperbolic-eq-2d.png, id=578, 2409.0pt x 2007.5
+<methodology//equilibria-linear/hyperbolic-eq-2d.png, id=571, 2409.0pt x 2007.5
 pt>
 File: methodology//equilibria-linear/hyperbolic-eq-2d.png Graphic file (type pn
 g)
@@ -748,7 +1185,7 @@ g)
 Package pdftex.def Info: methodology//equilibria-linear/hyperbolic-eq-2d.png  u
 sed on input line 47.
 (pdftex.def)             Requested size: 418.25368pt x 348.53026pt.
-<methodology//attractors-nonlinear/attractors-nonlinear.png, id=588, 4015.0pt x
+<methodology//attractors-nonlinear/attractors-nonlinear.png, id=582, 4015.0pt x
  2007.5pt>
 File: methodology//attractors-nonlinear/attractors-nonlinear.png Graphic file (
 type png)
@@ -756,22 +1193,20 @@ type png)
 Package pdftex.def Info: methodology//attractors-nonlinear/attractors-nonlinear
 .png  used on input line 73.
 (pdftex.def)             Requested size: 418.25368pt x 209.12428pt.
- [19] [20pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [18] [19pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.77 
-      <./methodology//equilibria-linear/hyperbolic-eq-2d.png>]
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
- [21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
-2}) has been already used, duplicate ignored
+      <./methodology//equilibria-linear/hyperbolic-eq-2d.png>] [20pdfTeX warnin
+g (ext4): destination with the same identifier (name{figure.2.2}) has been alre
+ady used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.97 \end{align}
                  <./methodology//attractors-nonlinear/attractors-nonlinear.png>
-] [22] [23] [24]
-<methodology//global-manifolds/global-manifolds.png, id=675, 415.01047pt x 297.
+] [21] [22] [23]
+<methodology//global-manifolds/global-manifolds.png, id=669, 415.01047pt x 297.
 57173pt>
 File: methodology//global-manifolds/global-manifolds.png Graphic file (type png
 )
@@ -779,108 +1214,108 @@ File: methodology//global-manifolds/global-manifolds.png Graphic file (type png
 Package pdftex.def Info: methodology//global-manifolds/global-manifolds.png  us
 ed on input line 209.
 (pdftex.def)             Requested size: 250.95476pt x 179.9429pt.
- [25pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [24pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.218 
        <./methodology//global-manifolds/global-manifolds.png>]
-<methodology//duffing-bistability.png, id=694, 2131.965pt x 1705.37125pt>
+<methodology//duffing-bistability.png, id=687, 2131.965pt x 1705.37125pt>
 File: methodology//duffing-bistability.png Graphic file (type png)
 <use methodology//duffing-bistability.png>
 Package pdftex.def Info: methodology//duffing-bistability.png  used on input li
 ne 232.
 (pdftex.def)             Requested size: 250.95476pt x 200.73244pt.
- [26] [27pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [25] [26pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.2.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.249 
        <./methodology//duffing-bistability.png>]
-<paper-multistability-george/overview_figure.png, id=717, 918.705pt x 197.538pt
+<paper-multistability-george/overview_figure.png, id=710, 918.705pt x 197.538pt
 >
 File: paper-multistability-george/overview_figure.png Graphic file (type png)
 <use paper-multistability-george/overview_figure.png>
 Package pdftex.def Info: paper-multistability-george/overview_figure.png  used 
 on input line 254.
 (pdftex.def)             Requested size: 418.25368pt x 89.93117pt.
- [28pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [27pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.261 
-       <./paper-multistability-george/overview_figure.png>] [29]
-<methodology/bifurcations/bifurcations.png, id=749, 3212.0pt x 3212.0pt>
+       <./paper-multistability-george/overview_figure.png>] [28]
+<methodology/bifurcations/bifurcations.png, id=742, 3212.0pt x 3212.0pt>
 File: methodology/bifurcations/bifurcations.png Graphic file (type png)
 <use methodology/bifurcations/bifurcations.png>
 Package pdftex.def Info: methodology/bifurcations/bifurcations.png  used on inp
 ut line 301.
 (pdftex.def)             Requested size: 418.25368pt x 418.2118pt.
- [30] [31pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [29] [30pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.2.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.316 
-       <./methodology/bifurcations/bifurcations.png>] [32] [33]
-<methodology/networks/wattsstrogatz.png, id=800, 2131.965pt x 888.31876pt>
+       <./methodology/bifurcations/bifurcations.png>] [31] [32]
+<methodology/networks/wattsstrogatz.png, id=793, 2131.965pt x 888.31876pt>
 File: methodology/networks/wattsstrogatz.png Graphic file (type png)
 <use methodology/networks/wattsstrogatz.png>
 Package pdftex.def Info: methodology/networks/wattsstrogatz.png  used on input 
 line 379.
 (pdftex.def)             Requested size: 418.25368pt x 174.27194pt.
- [34pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
+ [33pdfTeX warning (ext4): destination with the same identifier (name{figure.2.
 7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.396 \end{align}
-                  <./methodology/networks/wattsstrogatz.png>] [35] [36]
-<methodology//kuramoto/kuramoto-thesis-figure.png, id=854, 2131.965pt x 1895.08
+l.394 \begin{align}
+                    <./methodology/networks/wattsstrogatz.png>] [34]
+<methodology//kuramoto/kuramoto-thesis-figure.png, id=822, 2131.965pt x 1895.08
 pt>
 File: methodology//kuramoto/kuramoto-thesis-figure.png Graphic file (type png)
 <use methodology//kuramoto/kuramoto-thesis-figure.png>
 Package pdftex.def Info: methodology//kuramoto/kuramoto-thesis-figure.png  used
- on input line 485.
+ on input line 452.
 (pdftex.def)             Requested size: 418.25368pt x 371.78015pt.
-)
-[37] [38pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.2.8}) has been already used, duplicate ignored
+ [35]
+[36pdfTeX warning (ext4): destination with the same identifier (name{figure.2.8
+}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.63 \include{methodology}
-                           %2 <./methodology//kuramoto/kuramoto-thesis-figure.p
-ng>]
+l.471 \end{align}
+                  <./methodology//kuramoto/kuramoto-thesis-figure.png>])
+[37]
 \openout2 = `paper-malleability/malleability.aux'.
 
  (./paper-malleability/malleability.tex
 Chapter 3.
-[39
+[38
 
 
 
 
 ]
-<paper-malleability/figure1.png, id=923, 337.5009pt x 359.9046pt>
+<paper-malleability/figure1.png, id=916, 337.5009pt x 359.9046pt>
 File: paper-malleability/figure1.png Graphic file (type png)
 <use paper-malleability/figure1.png>
 Package pdftex.def Info: paper-malleability/figure1.png  used on input line 38.
 
 (pdftex.def)             Requested size: 250.95476pt x 267.61029pt.
- [40] [41pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [39] [40pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.59 
-      <./paper-malleability/figure1.png>] [42]
-<paper-malleability/figure2.png, id=994, 473.51305pt x 275.63779pt>
+      <./paper-malleability/figure1.png>] [41]
+<paper-malleability/figure2.png, id=988, 473.51305pt x 275.63779pt>
 File: paper-malleability/figure2.png Graphic file (type png)
 <use paper-malleability/figure2.png>
 Package pdftex.def Info: paper-malleability/figure2.png  used on input line 97.
 
 (pdftex.def)             Requested size: 414.07343pt x 241.03946pt.
- [43]
+ [42]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [43pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -891,35 +1326,35 @@ Overfull \hbox (1.04054pt too wide) in paragraph at lines 118--119
 tributed for distance-dependent
  []
 
-[45]
-<paper-malleability/figure3.png, id=1034, 534.798pt x 273.03606pt>
+[44]
+<paper-malleability/figure3.png, id=1027, 534.798pt x 273.03606pt>
 File: paper-malleability/figure3.png Graphic file (type png)
 <use paper-malleability/figure3.png>
 Package pdftex.def Info: paper-malleability/figure3.png  used on input line 133
 .
 (pdftex.def)             Requested size: 414.07343pt x 211.40494pt.
- [46]
+ [45]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [46pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.142 
        <./paper-malleability/figure3.png>]
-<paper-malleability/figure4.png, id=1058, 511.6716pt x 159.42763pt>
+<paper-malleability/figure4.png, id=1051, 511.6716pt x 159.42763pt>
 File: paper-malleability/figure4.png Graphic file (type png)
 <use paper-malleability/figure4.png>
 Package pdftex.def Info: paper-malleability/figure4.png  used on input line 148
 .
 (pdftex.def)             Requested size: 414.07343pt x 129.02133pt.
-<paper-malleability/figure5.png, id=1064, 513.117pt x 177.20604pt>
+<paper-malleability/figure5.png, id=1057, 513.117pt x 177.20604pt>
 File: paper-malleability/figure5.png Graphic file (type png)
 <use paper-malleability/figure5.png>
 Package pdftex.def Info: paper-malleability/figure5.png  used on input line 160
 .
 (pdftex.def)             Requested size: 414.07343pt x 143.00612pt.
- [48pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [47pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -927,20 +1362,20 @@ l.166
        <./paper-malleability/figure4.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [48pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.170 \begin{align}
                     <./paper-malleability/figure5.png>]
-<paper-malleability/figure6.png, id=1081, 397.34045pt x 195.56262pt>
+<paper-malleability/figure6.png, id=1074, 397.34045pt x 195.56262pt>
 File: paper-malleability/figure6.png Graphic file (type png)
 <use paper-malleability/figure6.png>
 Package pdftex.def Info: paper-malleability/figure6.png  used on input line 192
 .
 (pdftex.def)             Requested size: 397.33948pt x 195.56213pt.
- [50]
-<paper-malleability/figure7.png, id=1093, 267.83263pt x 252.65591pt>
+ [49]
+<paper-malleability/figure7.png, id=1087, 267.83263pt x 252.65591pt>
 File: paper-malleability/figure7.png Graphic file (type png)
 <use paper-malleability/figure7.png>
 Package pdftex.def Info: paper-malleability/figure7.png  used on input line 206
@@ -949,14 +1384,14 @@ Package pdftex.def Info: paper-malleability/figure7.png  used on input line 206
 
 Underfull \vbox (badness 4899) has occurred while \output is active []
 
- [51pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [50pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.212 
        <./paper-malleability/figure6.png>]
 <paper-malleability/multistability-study/continuation-randomnetworks-3shuffles.
-png, id=1107, 3212.0pt x 1204.5pt>
+png, id=1102, 3212.0pt x 1204.5pt>
 File: paper-malleability/multistability-study/continuation-randomnetworks-3shuf
 fles.png Graphic file (type png)
 <use paper-malleability/multistability-study/continuation-randomnetworks-3shuff
@@ -967,14 +1402,14 @@ andomnetworks-3shuffles.png  used on input line 217.
 
 Underfull \vbox (badness 7308) has occurred while \output is active []
 
- [52pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [51pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.221 
        <./paper-malleability/figure7.png>]
 <paper-malleability/multistability-study/continuation-smallworld-singleshuffle.
-png, id=1115, 4015.0pt x 2810.5pt>
+png, id=1109, 4015.0pt x 2810.5pt>
 File: paper-malleability/multistability-study/continuation-smallworld-singleshu
 ffle.png Graphic file (type png)
 <use paper-malleability/multistability-study/continuation-smallworld-singleshuf
@@ -982,52 +1417,115 @@ fle.png>
 Package pdftex.def Info: paper-malleability/multistability-study/continuation-s
 mallworld-singleshuffle.png  used on input line 227.
 (pdftex.def)             Requested size: 418.25368pt x 292.77399pt.
- [53pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [52pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.235 
        <./paper-malleability/multistability-study/continuation-randomnetworks-3
-shuffles.png>] [54pdfTeX warning (ext4): destination with the same identifier (
+shuffles.png>] [53pdfTeX warning (ext4): destination with the same identifier (
 name{figure.3.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.238 
        <./paper-malleability/multistability-study/continuation-smallworld-singl
 eshuffle.png>]
-<paper-malleability/figure8.png, id=1129, 511.6716pt x 255.8358pt>
+<paper-malleability/figure8.png, id=1124, 511.6716pt x 255.8358pt>
 File: paper-malleability/figure8.png Graphic file (type png)
 <use paper-malleability/figure8.png>
 Package pdftex.def Info: paper-malleability/figure8.png  used on input line 245
 .
 (pdftex.def)             Requested size: 376.42575pt x 188.21468pt.
- [55pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [54pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.252 
-       <./paper-malleability/figure8.png>] [56] [57]
+       <./paper-malleability/figure8.png>] [55] [56]
 Underfull \vbox (badness 5161) has occurred while \output is active []
 
- [58]
-[59]) [60]
+ [57]
+[58] [59]
+<paper-malleability/suppfigure1.png, id=1225, 255.8358pt x 255.8358pt>
+File: paper-malleability/suppfigure1.png Graphic file (type png)
+<use paper-malleability/suppfigure1.png>
+Package pdftex.def Info: paper-malleability/suppfigure1.png  used on input line
+ 317.
+(pdftex.def)             Requested size: 209.12683pt x 209.13087pt.
+<paper-malleability/suppfigure2.png, id=1226, 497.57895pt x 286.00853pt>
+File: paper-malleability/suppfigure2.png Graphic file (type png)
+<use paper-malleability/suppfigure2.png>
+Package pdftex.def Info: paper-malleability/suppfigure2.png  used on input line
+ 328.
+(pdftex.def)             Requested size: 418.25368pt x 240.41571pt.
+ [60pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.335 
+       <./paper-malleability/suppfigure1.png>] [61pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.3.12}) has been already used, dupli
+cate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.335 
+       <./paper-malleability/suppfigure2.png>]
+<paper-malleability/suppfigure3.png, id=1239, 450.2421pt x 480.16188pt>
+File: paper-malleability/suppfigure3.png Graphic file (type png)
+<use paper-malleability/suppfigure3.png>
+Package pdftex.def Info: paper-malleability/suppfigure3.png  used on input line
+ 343.
+(pdftex.def)             Requested size: 292.77629pt x 312.24072pt.
+<paper-malleability/suppfigure4.png, id=1240, 511.6716pt x 466.1415pt>
+File: paper-malleability/suppfigure4.png Graphic file (type png)
+<use paper-malleability/suppfigure4.png>
+Package pdftex.def Info: paper-malleability/suppfigure4.png  used on input line
+ 356.
+(pdftex.def)             Requested size: 292.77629pt x 266.72765pt.
+ [62]
+<paper-malleability/suppfigure5.png, id=1245, 383.46461pt x 383.46461pt>
+File: paper-malleability/suppfigure5.png Graphic file (type png)
+<use paper-malleability/suppfigure5.png>
+Package pdftex.def Info: paper-malleability/suppfigure5.png  used on input line
+ 375.
+(pdftex.def)             Requested size: 334.60422pt x 334.62376pt.
+) [63] [64pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.3.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.63 \include{paper-malleability/malleability.tex}
+                                                   %3 chap:malleability <./pape
+r-malleability/suppfigure3.png>] [65pdfTeX warning (ext4): destination with the
+ same identifier (name{figure.3.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.63 \include{paper-malleability/malleability.tex}
+                                                   %3 chap:malleability <./pape
+r-malleability/suppfigure4.png>] [66pdfTeX warning (ext4): destination with the
+ same identifier (name{figure.3.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.63 \include{paper-malleability/malleability.tex}
+                                                   %3 chap:malleability <./pape
+r-malleability/suppfigure5.png>]
 \openout2 = `paper-multistability/30oct/multistability.aux'.
 
- (./paper-multistability/30oct/multistability.tex
+
+(./paper-multistability/30oct/multistability.tex
 Chapter 4.
 
 Overfull \hbox (49.30313pt too wide) in paragraph at lines 1--1
 \OT1/cmr/bx/n/24.88 tions give rise to mul-ti-sta-bil-ity through
  []
 
-[61
+[67
 
 
 
 
-] [62] [63]
+] [68] [69]
 <paper-multistability/30oct/figures/inapk-phase-plane-invariant-manifolds-I_2.0
-.png, id=1338, 2131.965pt x 1705.37125pt>
+.png, id=1376, 2131.965pt x 1705.37125pt>
 File: paper-multistability/30oct/figures/inapk-phase-plane-invariant-manifolds-
 I_2.0.png Graphic file (type png)
 <use paper-multistability/30oct/figures/inapk-phase-plane-invariant-manifolds-I
@@ -1038,15 +1536,15 @@ nvariant-manifolds-I_2.0.png  used on input line 72.
 
 Underfull \vbox (badness 1205) has occurred while \output is active []
 
- [64]
-[65pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+ [70]
+[71pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.82 
       <./paper-multistability/30oct/figures/inapk-phase-plane-invariant-manifol
-ds-I_2.0.png>] [66]
-<paper-multistability/30oct/figures/10unit-attractors.png, id=1391, 358.4592pt 
+ds-I_2.0.png>] [72]
+<paper-multistability/30oct/figures/10unit-attractors.png, id=1431, 358.4592pt 
 x 358.4592pt>
 File: paper-multistability/30oct/figures/10unit-attractors.png Graphic file (ty
 pe png)
@@ -1054,16 +1552,16 @@ pe png)
 Package pdftex.def Info: paper-multistability/30oct/figures/10unit-attractors.p
 ng  used on input line 105.
 (pdftex.def)             Requested size: 418.25368pt x 418.27429pt.
- [67]
+ [73]
 Underfull \vbox (badness 3396) has occurred while \output is active []
 
- [68pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [74pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.120 
        <./paper-multistability/30oct/figures/10unit-attractors.png>]
-<paper-multistability/30oct/figures/2unit-attractors.png, id=1419, 358.4592pt x
+<paper-multistability/30oct/figures/2unit-attractors.png, id=1458, 358.4592pt x
  268.8444pt>
 File: paper-multistability/30oct/figures/2unit-attractors.png Graphic file (typ
 e png)
@@ -1071,7 +1569,7 @@ e png)
 Package pdftex.def Info: paper-multistability/30oct/figures/2unit-attractors.pn
 g  used on input line 134.
 (pdftex.def)             Requested size: 418.25368pt x 313.70573pt.
-<paper-multistability/30oct/figures/bifurcations_twobranches_xpp.png, id=1425, 
+<paper-multistability/30oct/figures/bifurcations_twobranches_xpp.png, id=1464, 
 179.2296pt x 125.56912pt>
 File: paper-multistability/30oct/figures/bifurcations_twobranches_xpp.png Graph
 ic file (type png)
@@ -1079,10 +1577,10 @@ ic file (type png)
 Package pdftex.def Info: paper-multistability/30oct/figures/bifurcations_twobra
 nches_xpp.png  used on input line 145.
 (pdftex.def)             Requested size: 334.60422pt x 234.4375pt.
- [69]
+ [75]
 Underfull \vbox (badness 1097) has occurred while \output is active []
 
- [70pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [76pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1090,13 +1588,13 @@ l.149
        <./paper-multistability/30oct/figures/2unit-attractors.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [71pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [77pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.152 
        <./paper-multistability/30oct/figures/bifurcations_twobranches_xpp.png>]
-<paper-multistability/30oct/figures/trapping_figure.png, id=1450, 327.624pt x 3
+<paper-multistability/30oct/figures/trapping_figure.png, id=1489, 327.624pt x 3
 60.3864pt>
 File: paper-multistability/30oct/figures/trapping_figure.png Graphic file (type
  png)
@@ -1104,21 +1602,21 @@ File: paper-multistability/30oct/figures/trapping_figure.png Graphic file (type
 Package pdftex.def Info: paper-multistability/30oct/figures/trapping_figure.png
   used on input line 157.
 (pdftex.def)             Requested size: 355.51817pt x 391.10318pt.
-[72]
+[78]
 
-LaTeX Warning: Text page 73 contains only floats.
+LaTeX Warning: Text page 79 contains only floats.
 
 
 Underfull \vbox (badness 3646) has occurred while \output is active []
 
- [73pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [79pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.167 
-       <./paper-multistability/30oct/figures/trapping_figure.png>] [74]
-[75] [76] [77]
-<paper-multistability/30oct/figures/attractors-3d-I_2.0.png, id=1518, 972.63374
+       <./paper-multistability/30oct/figures/trapping_figure.png>] [80]
+[81] [82] [83]
+<paper-multistability/30oct/figures/attractors-3d-I_2.0.png, id=1558, 972.63374
 pt x 602.25pt>
 File: paper-multistability/30oct/figures/attractors-3d-I_2.0.png Graphic file (
 type png)
@@ -1130,7 +1628,7 @@ Package pdftex.def Info: paper-multistability/30oct/figures/attractors-3d-I_2.0
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<paper-multistability/30oct/figures/twoparam-cont-all.png, id=1520, 2131.965pt 
+<paper-multistability/30oct/figures/twoparam-cont-all.png, id=1560, 2131.965pt 
 x 1598.97375pt>
 File: paper-multistability/30oct/figures/twoparam-cont-all.png Graphic file (ty
 pe png)
@@ -1142,7 +1640,7 @@ ng  used on input line 231.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 <paper-multistability/30oct/figures/continuation_algebraic_system_node_xpp.png,
- id=1524, 2131.965pt x 1492.57625pt>
+ id=1564, 2131.965pt x 1492.57625pt>
 File: paper-multistability/30oct/figures/continuation_algebraic_system_node_xpp
 .png Graphic file (type png)
 <use paper-multistability/30oct/figures/continuation_algebraic_system_node_xpp.
@@ -1150,46 +1648,46 @@ png>
 Package pdftex.def Info: paper-multistability/30oct/figures/continuation_algebr
 aic_system_node_xpp.png  used on input line 260.
 (pdftex.def)             Requested size: 271.86234pt x 190.32942pt.
-[78]
+[84]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [79pdfTeX warning (ext4): destination with the same identifier (name{figure.4
+) [85pdfTeX warning (ext4): destination with the same identifier (name{figure.4
 .6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.66 ...r-multistability/30oct/multistability.tex}
+l.64 ...r-multistability/30oct/multistability.tex}
                                                    %call it chap:multistability
  <./paper-multistability/30oct/figures/attractors-3d-I_2.0.png>]
 
-LaTeX Warning: Text page 80 contains only floats.
+LaTeX Warning: Text page 86 contains only floats.
 
-[80pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7
+[86pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.66 ...r-multistability/30oct/multistability.tex}
+l.64 ...r-multistability/30oct/multistability.tex}
                                                    %call it chap:multistability
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8}) 
 has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.66 ...r-multistability/30oct/multistability.tex}
+l.64 ...r-multistability/30oct/multistability.tex}
                                                    %call it chap:multistability
  <./paper-multistability/30oct/figures/twoparam-cont-all.png> <./paper-multista
-bility/30oct/figures/continuation_algebraic_system_node_xpp.png>] [81]
+bility/30oct/figures/continuation_algebraic_system_node_xpp.png>] [87]
 \openout2 = `paper-metastability/metastability.aux'.
 
 
 (./paper-metastability/metastability.tex
 Chapter 5.
-[82
+[88
 
 
 
 
 ]
-<paper-metastability/figures/observationsmetastability.png, id=1628, 510.37074p
+<paper-metastability/figures/observationsmetastability.png, id=1666, 510.37074p
 t x 251.21053pt>
 File: paper-metastability/figures/observationsmetastability.png Graphic file (t
 ype png)
@@ -1197,7 +1695,7 @@ ype png)
 Package pdftex.def Info: paper-metastability/figures/observationsmetastability.
 png  used on input line 40.
 (pdftex.def)             Requested size: 418.25368pt x 205.87895pt.
- [83] [84pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [89] [90pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.5.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1208,7 +1706,7 @@ Overfull \hbox (1.92268pt too wide) in paragraph at lines 72--73
 to study the ob-ser-va-tions of metasta-
  []
 
-<paper-metastability/figures/definitionsmetastability.png, id=1758, 511.81615pt
+<paper-metastability/figures/definitionsmetastability.png, id=1797, 511.81615pt
  x 232.42032pt>
 File: paper-metastability/figures/definitionsmetastability.png Graphic file (ty
 pe png)
@@ -1216,7 +1714,7 @@ pe png)
 Package pdftex.def Info: paper-metastability/figures/definitionsmetastability.p
 ng  used on input line 78.
 (pdftex.def)             Requested size: 418.25368pt x 189.93335pt.
-[85] [86pdfTeX warning (ext4): destination with the same identifier (name{figur
+[91] [92pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.5.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1227,8 +1725,8 @@ Overfull \hbox (8.58095pt too wide) in paragraph at lines 97--98
  that gen-er-ate such metastable
  []
 
-[87]
-<paper-metastability/figures/double-well-stability-metastability.png, id=1838, 
+[93]
+<paper-metastability/figures/double-well-stability-metastability.png, id=1876, 
 318.43968pt x 120.0736pt>
 File: paper-metastability/figures/double-well-stability-metastability.png Graph
 ic file (type png)
@@ -1236,7 +1734,7 @@ ic file (type png)
 Package pdftex.def Info: paper-metastability/figures/double-well-stability-meta
 stability.png  used on input line 125.
 (pdftex.def)             Requested size: 418.25368pt x 157.70976pt.
- [88] [89pdfTeX warning (ext4): destination with the same identifier (name{figu
+ [94] [95pdfTeX warning (ext4): destination with the same identifier (name{figu
 re.5.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1248,8 +1746,8 @@ Overfull \hbox (8.33768pt too wide) in paragraph at lines 148--149
 min-i-mum du-ra-tion of metastable
  []
 
-[90]
-<paper-metastability/figures/mechanismsmetastability.png, id=1919, 476.982pt x 
+[96]
+<paper-metastability/figures/mechanismsmetastability.png, id=1958, 476.982pt x 
 218.83356pt>
 File: paper-metastability/figures/mechanismsmetastability.png Graphic file (typ
 e png)
@@ -1260,110 +1758,135 @@ g  used on input line 174.
 
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
- [91]
-[92pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
+ [97]
+[98pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4
 }) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.186 
-       <./paper-metastability/figures/mechanismsmetastability.png>] [93]
+       <./paper-metastability/figures/mechanismsmetastability.png>] [99]
 Underfull \vbox (badness 1953) has occurred while \output is active []
 
- [94]
+ [100]
 Overfull \hbox (10.12619pt too wide) in paragraph at lines 225--226
 []\OT1/cmr/m/n/10.95 A sec-ond im-por-tant pair of sub-types is \OT1/cmr/bx/n/1
 0.95 re-peat-able ver-sus non-repeatable metasta-
  []
 
-[95] [96] [97] [98] [99]) [100]
+[101] [102] [103] [104] [105]) [106]
 \openout2 = `conclusions.aux'.
 
  (./conclusions.tex
 Chapter 6.
-[101
+[107
 
-
-
-
-] [102] [103]
-Underfull \vbox (badness 6592) has occurred while \output is active []
-
- [104]
-[105]) [106] (./main.bbl [107
 
 
 
 ] [108]
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+ [109]
+Underfull \vbox (badness 6592) has occurred while \output is active []
+
+ [110]
+[111]) [112] (./main.bbl [113
+
+
+
+] [114]
 Underfull \hbox (badness 1248) in paragraph at lines 233--236
 \OT1/cmr/m/n/10.95 Bound-aries of syn-chro-niza-tion in os-cil-la-tor net-works
 .  \OT1/cmr/m/it/10.95 Phys-i-cal Re-view E\OT1/cmr/m/n/10.95 ,
  []
 
-[109] [110] [111] [112] [113] [114] [115]
-
-! LaTeX Error: Unicode character β (U+03B2)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.782   activity in human β
-                            -cells}.
-? 
-[116] [117] [118] [119]
+[115] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125]
 Underfull \hbox (badness 1178) in paragraph at lines 1142--1145
 \OT1/cmr/m/n/10.95 ing Se-quences in Cog-ni-tion and Be-hav-ior.  \OT1/cmr/m/it
 /10.95 PLOS Com-pu-ta-tional Bi-ol-ogy\OT1/cmr/m/n/10.95 ,
  []
 
-[120] [121] [122] [123] [124] [125]
+[126] [127] [128] [129] [130] [131]
 Underfull \hbox (badness 10000) in paragraph at lines 1691--1696
 []\OT1/cmr/m/n/10.95 Thorsten Rings, Mah-mood Mazarei, Amin Akhshi, Chris-tian 
 Geier,
  []
 
-[126]
-Underfull \hbox (badness 3098) in paragraph at lines 1767--1771
+[132]
+Underfull \hbox (badness 3098) in paragraph at lines 1775--1779
 []\OT1/cmr/m/n/10.95 K. L. Rossi.  Repos-i-tory for metasta-bil-ity.  \OT1/cmr/
 m/it/10.95 GitHub repos-i-tory\OT1/cmr/m/n/10.95 , 2023.
  []
 
-[127]) [128]
+[133]) [134]
 \openout2 = `acknowledgments.aux'.
 
- (./acknowledgments.tex) [129
+ (./acknowledgments.tex) [135
 
 
 ]
-\openout2 = `declaration-independence.aux'.
+<declaration-independence-signed.pdf, id=2423, 597.50786pt x 845.04686pt>
+File: declaration-independence-signed.pdf Graphic file (type pdf)
+<use declaration-independence-signed.pdf>
+Package pdftex.def Info: declaration-independence-signed.pdf  used on input lin
+e 73.
+(pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
+File: declaration-independence-signed.pdf Graphic file (type pdf)
+<use declaration-independence-signed.pdf>
+Package pdftex.def Info: declaration-independence-signed.pdf  used on input lin
+e 73.
+(pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
+<declaration-independence-signed.pdf, id=2426, page=1, 597.50786pt x 845.04686p
+t>
+File: declaration-independence-signed.pdf Graphic file (type pdf)
+<use declaration-independence-signed.pdf, page 1>
+Package pdftex.def Info: declaration-independence-signed.pdf , page1 used on in
+put line 73.
+(pdftex.def)             Requested size: 597.5064pt x 845.0448pt.
+File: declaration-independence-signed.pdf Graphic file (type pdf)
+<use declaration-independence-signed.pdf, page 1>
+Package pdftex.def Info: declaration-independence-signed.pdf , page1 used on in
+put line 73.
+(pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
+File: declaration-independence-signed.pdf Graphic file (type pdf)
+<use declaration-independence-signed.pdf, page 1>
+Package pdftex.def Info: declaration-independence-signed.pdf , page1 used on in
+put line 73.
+(pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
+File: declaration-independence-signed.pdf Graphic file (type pdf)
+<use declaration-independence-signed.pdf, page 1>
+Package pdftex.def Info: declaration-independence-signed.pdf , page1 used on in
+put line 73.
+(pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
+File: declaration-independence-signed.pdf Graphic file (type pdf)
+<use declaration-independence-signed.pdf, page 1>
+Package pdftex.def Info: declaration-independence-signed.pdf , page1 used on in
+put line 73.
+(pdftex.def)             Requested size: 597.53374pt x 845.08348pt.
+ [136
 
- (./declaration-independence.tex)
-[130
 
-
-
-
-] (./main.aux (./title-submission.aux) (./publications.aux) (./abstract.aux) (.
-/abstract-german.aux) (./intro.aux) (./methodology.aux)
-(./paper-malleability/malleability.aux)
+ <./declaration-independence-signed.pdf>] (./main.aux (./title-submission.aux) 
+(./cool-phrase.aux)
+(./publications.aux) (./abstract.aux) (./abstract-german.aux) (./intro.aux)
+(./methodology.aux) (./paper-malleability/malleability.aux)
 (./paper-multistability/30oct/multistability.aux)
 (./paper-metastability/metastability.aux) (./conclusions.aux)
-(./acknowledgments.aux) (./declaration-independence.aux))
+(./acknowledgments.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CE31DC7C51343A788DAD32A697220297;13308.
+(rerunfilecheck)             Checksum: 9B203478DF2C0FF7CF72E852265192B9;12781.
  ) 
 Here is how much of TeX's memory you used:
- 18509 strings out of 478287
- 362245 string characters out of 5849289
- 652360 words of memory out of 5000000
- 35719 multiletter control sequences out of 15000+600000
- 486616 words of font info for 93 fonts, out of 8000000 for 9000
+ 20898 strings out of 478287
+ 400214 string characters out of 5849289
+ 689391 words of memory out of 5000000
+ 38049 multiletter control sequences out of 15000+600000
+ 488006 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,79p,2825b,891s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,17n,79p,2825b,893s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
@@ -1383,14 +1906,16 @@ pe1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on main.pdf (130 pages, 23898542 bytes).
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/cbfonts/grmn1095.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf
+/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on main.pdf (138 pages, 26825344 bytes).
 PDF statistics:
- 2621 PDF objects out of 2984 (max. 8388607)
- 2339 compressed objects within 24 object streams
- 613 named destinations out of 1000 (max. 500000)
- 646 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2698 PDF objects out of 2984 (max. 8388607)
+ 2382 compressed objects within 24 object streams
+ 622 named destinations out of 1000 (max. 500000)
+ 667 words of extra memory for PDF output out of 10000 (max. 10000000)
 
